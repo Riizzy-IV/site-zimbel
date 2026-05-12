@@ -1,0 +1,160 @@
+const manImg = "https://www.figma.com/api/mcp/asset/723e1951-88a3-43e9-a10f-9596d13409c3";
+
+const gridPl = 'max(16px, calc((100vw - 1312px) / 2))';
+const gridPr = 'max(16px, calc((100vw - 1312px) / 2))';
+
+const stats = [
+  { value: '+500', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed laoreet urna. In rhoncus massa ligula, et luctus leo aliquet et.' },
+  { value: '+200', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed laoreet urna. In rhoncus massa ligula, et luctus leo aliquet et.' },
+  { value: '+10', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed laoreet urna. In rhoncus massa ligula, et luctus leo aliquet et.' },
+  { value: '+50', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed laoreet urna. In rhoncus massa ligula, et luctus leo aliquet et.' },
+];
+
+function ArrowUp() {
+  return (
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+      <path d="M1 9L9 1M9 1H3M9 1V7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export default function Sobre() {
+  return (
+    <section className="bg-white" style={{ paddingTop: '72px', paddingBottom: '80px' }}>
+      <div style={{ paddingLeft: gridPl, paddingRight: gridPr }}>
+
+        {/* ── Breadcrumb + título ── */}
+        <div className="flex flex-col gap-2 mb-8">
+          <div className="flex items-center gap-7">
+            <div className="flex items-center gap-2.5">
+              <svg width="18" height="17" viewBox="0 0 18 17" fill="none">
+                <rect x="1" y="5" width="16" height="11" rx="1" stroke="#779dff" strokeWidth="1.4" />
+                <path d="M5 5V3.5C5 2.12 6.79 1 9 1C11.21 1 13 2.12 13 3.5V5" stroke="#779dff" strokeWidth="1.4" strokeLinecap="round" />
+                <rect x="6.5" y="8" width="5" height="4" rx="0.5" stroke="#779dff" strokeWidth="1.2" />
+              </svg>
+              <span className="text-[#494c4f] text-[13px] font-semibold uppercase tracking-wide">Sobre</span>
+            </div>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#779dff] shrink-0" />
+            <span className="text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
+          </div>
+          <div className="flex flex-col gap-1" style={{ marginTop: '5px' }}>
+            <h2 className="text-[#1d2748] text-[28px] lg:text-[38px] font-extrabold uppercase leading-tight" style={{ maxWidth: '640px' }}>
+              É sobre fazer a diferença na vida das pessoas
+            </h2>
+            <p className="text-[#a7a7a7] text-base font-medium">
+              Transformamos sonhos em projetos reais
+            </p>
+          </div>
+        </div>
+
+        {/* ── Card / layout ── */}
+
+        {/* MOBILE / TABLET: simplified card, no images */}
+        <div className="block lg:hidden mb-10">
+          <div
+            className="rounded-xl bg-white flex flex-col gap-6 p-6"
+            style={{ boxShadow: '0 20px 60px rgba(12,26,54,0.18)' }}
+          >
+            <div className="flex flex-col gap-4">
+              <p className="text-[#4b5563] text-[15px] leading-relaxed">
+                A Zimbel nasceu com um único propósito: Oferecer qualidade de moradia para seus clientes
+                e segurança e rentabilidade para os investidores.
+              </p>
+              <p className="text-[#4b5563] text-[15px] leading-relaxed">
+                Fundada em 2023, a Zimbel foi criada para ser diferente. Temos o compromisso de realizar
+                o sonho da casa própria de nossos clientes e ser uma empresa segura, responsável e transparente.
+              </p>
+              <p className="text-[#4b5563] text-[15px] leading-relaxed">
+                Trazer inovação e qualidade é o que buscaremos incansavelmente em todos nossos projetos.
+              </p>
+            </div>
+            <a
+              href="#"
+              className="flex items-center gap-2 text-white text-sm font-semibold w-fit cursor-pointer hover:opacity-90 transition-opacity"
+              style={{ background: '#779dff', padding: '12px 24px', borderRadius: '6px' }}
+            >
+              Saiba mais sobre a Zimbel
+              <ArrowUp />
+            </a>
+          </div>
+        </div>
+
+        {/* DESKTOP: original layout with images and man */}
+        <div className="hidden lg:block relative" style={{ paddingTop: '72px', marginBottom: '84px' }}>
+
+          {/* Card branco */}
+          <div
+            className="relative rounded-xl bg-white"
+            style={{ marginLeft: '223px', height: '630px', boxShadow: '0 20px 60px rgba(12,26,54,0.18)' }}
+          >
+            {/* Texto no painel direito */}
+            <div
+              className="absolute flex flex-col gap-6 justify-center"
+              style={{ left: '52%', top: 0, bottom: 0, right: '56px' }}
+            >
+              <div className="flex flex-col gap-4">
+                <p className="text-[#4b5563] text-[15px] leading-relaxed">
+                  A Zimbel nasceu com um único propósito: Oferecer qualidade de moradia para seus clientes
+                  e segurança e rentabilidade para os investidores.
+                </p>
+                <p className="text-[#4b5563] text-[15px] leading-relaxed">
+                  Fundada em 2023, a Zimbel foi criada para ser diferente. Temos o compromisso de realizar
+                  o sonho da casa própria de nossos clientes e ser uma empresa segura, responsável e transparente.
+                </p>
+                <p className="text-[#4b5563] text-[15px] leading-relaxed">
+                  Trazer inovação e qualidade é o que buscaremos incansavelmente em todos nossos projetos.
+                </p>
+              </div>
+              <a
+                href="#"
+                className="flex items-center gap-2 text-white text-sm font-semibold w-fit cursor-pointer hover:opacity-90 transition-opacity"
+                style={{ background: '#779dff', padding: '12px 24px', borderRadius: '6px' }}
+              >
+                Saiba mais sobre a Zimbel
+                <ArrowUp />
+              </a>
+            </div>
+          </div>
+
+          {/* Foto interna */}
+          <img
+            src="/sobre/interna.jpg"
+            alt=""
+            className="absolute object-cover rounded-xl pointer-events-none"
+            style={{ top: '124px', left: 0, width: '50%', height: '527px', objectPosition: 'center center', zIndex: 2 }}
+          />
+
+          {/* Homem */}
+          <img
+            src={manImg}
+            alt="Zimbel"
+            className="absolute object-contain object-bottom pointer-events-none"
+            style={{ bottom: -1, left: '350px', width: '420px', height: '690px', zIndex: 3 }}
+          />
+        </div>
+
+        {/* ── Stats ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, i) => (
+            <div key={i} className="flex flex-col gap-4">
+              <p
+                className="text-[#31447b] font-semibold leading-none"
+                style={{ fontSize: 'clamp(48px, 5vw, 64px)' }}
+              >
+                {stat.value}
+              </p>
+              <div>
+                <div className="flex mb-4">
+                  <div className="w-24 h-1 bg-[#779dff] rounded" />
+                  <div className="flex-1 h-px bg-[#e3e3e3] self-center ml-0" />
+                </div>
+                <p className="text-[#6b7280] text-sm leading-relaxed">{stat.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
