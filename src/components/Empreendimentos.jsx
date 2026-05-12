@@ -280,7 +280,7 @@ export default function Empreendimentos() {
           }}
         >
           <img
-            src="/cards/bg.jpg"
+            src="/cards/bg.avif"
             alt=""
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             style={{ mixBlendMode: 'multiply', opacity: 0.6 }}

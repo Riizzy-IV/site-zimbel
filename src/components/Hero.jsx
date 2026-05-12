@@ -8,7 +8,7 @@ const slides = [
     title: 'Vértice Anália Franco',
     badge: { tag: 'Lançamento', location: 'Anália Franco' },
     subtitle: 'O futuro agradece suas escolhas',
-    bg: '/hero/Vertice.jpg',
+    bg: '/hero/Vertice.avif',
     logo: null,
     logoText: 'Vértice',
     specs: [
@@ -23,7 +23,7 @@ const slides = [
     title: 'Evolution Tatuapé',
     badge: { tag: 'Lançamento', location: 'Tatuapé' },
     subtitle: 'Viva a evolução do seu bairro',
-    bg: '/hero/Sala Evolution 1.jpg',
+    bg: '/hero/Sala Evolution 1.avif',
     logo: null,
     logoText: 'Evolution',
     specs: [
@@ -38,7 +38,7 @@ const slides = [
     title: 'Esperança Prime',
     badge: { tag: 'Lançamento', location: 'Esperança' },
     subtitle: 'O prime que você merece',
-    bg: '/hero/Esperanca.jpg',
+    bg: '/hero/Esperanca.avif',
     logo: null,
     logoText: 'Esperança Prime',
     specs: [

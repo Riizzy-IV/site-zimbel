@@ -118,7 +118,7 @@ export default function Sobre() {
 
           {/* Foto interna */}
           <img
-            src="/sobre/interna.jpg"
+            src="/sobre/interna.avif"
             alt=""
             className="absolute object-cover rounded-xl pointer-events-none"
             style={{ top: '124px', left: 0, width: '50%', height: '527px', objectPosition: 'center center', zIndex: 2 }}
