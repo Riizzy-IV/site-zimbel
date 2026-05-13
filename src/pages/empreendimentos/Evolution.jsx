@@ -27,21 +27,25 @@ const PLANTAS = [
 
 const gridPad = 'max(16px, calc((100vw - 1312px) / 2))'
 
-function useIsMobile() {
-  const [v, setV] = useState(() => typeof window !== 'undefined' ? window.innerWidth < 768 : false)
+function useBreakpoint() {
+  const get = () => {
+    const w = typeof window !== 'undefined' ? window.innerWidth : 1440
+    return { isMobile: w < 768, isTablet: w >= 768 && w < 1100 }
+  }
+  const [bp, setBp] = useState(get)
   useEffect(() => {
-    const fn = () => setV(window.innerWidth < 768)
+    const fn = () => setBp(get())
     window.addEventListener('resize', fn)
     return () => window.removeEventListener('resize', fn)
   }, [])
-  return v
+  return bp
 }
 
 /* ════════════════════════════════════════════════════════
    SEÇÃO 1 — HERO
 ════════════════════════════════════════════════════════ */
 function HeroEvolution() {
-  const isMobile = useIsMobile()
+  const { isMobile, isTablet } = useBreakpoint()
   return (
     <section className="relative w-full" style={{ height: isMobile ? '480px' : '624px' }}>
 
@@ -125,12 +129,12 @@ function HeroEvolution() {
    SEÇÃO 2 — CONCEITO
 ════════════════════════════════════════════════════════ */
 function ConceitoEvolution() {
-  const isMobile = useIsMobile()
+  const { isMobile, isTablet } = useBreakpoint()
   return (
     <section className="w-full bg-white" style={{ padding: isMobile ? '48px 0' : '72px 0' }}>
-      <div style={{ paddingLeft: gridPad, paddingRight: gridPad, maxWidth: '1920px', margin: '0 auto', display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'stretch' : 'center', gap: isMobile ? '40px' : '64px' }}>
+      <div style={{ paddingLeft: gridPad, paddingRight: gridPad, maxWidth: '1920px', margin: '0 auto', display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'stretch' : 'center', gap: isMobile ? '40px' : isTablet ? '32px' : '64px' }}>
         {/* Coluna esquerda */}
-        <div style={{ flex: 1, maxWidth: isMobile ? '100%' : '560px' }}>
+        <div style={{ flex: 1, maxWidth: isMobile ? '100%' : isTablet ? '480px' : '560px' }}>
 
           {/* Label */}
           <div style={{ marginBottom: '16px' }}>
@@ -229,7 +233,7 @@ function ConceitoEvolution() {
 
         {/* Coluna direita — fachada (desktop only) */}
         {!isMobile && <div className="flex-1 flex justify-end">
-          <div className="relative" style={{ maxWidth: '540px', width: '100%' }}>
+          <div className="relative" style={{ maxWidth: isTablet ? '380px' : '540px', width: '100%' }}>
             <img
               src={fachada}
               alt="Perspectiva ilustrada da fachada"
@@ -384,7 +388,7 @@ const amenidades = [
 ]
 
 function LazerEvolution() {
-  const isMobile = useIsMobile()
+  const { isMobile, isTablet } = useBreakpoint()
   const [imgIdx, setImgIdx] = useState(0)
   const total = lazerImages.length
   const img   = lazerImages[imgIdx]
@@ -418,7 +422,7 @@ function LazerEvolution() {
 
         {/* Galeria de lazer */}
         <div style={{ position: 'relative', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '16px', marginBottom: '48px' }}>
-          <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: isMobile ? '260px' : '440px' }}>
+          <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: isMobile ? '260px' : isTablet ? '320px' : '440px' }}>
             <img src={img.src} alt={img.caption} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.35))' }} />
             <button onClick={prev} style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -433,7 +437,7 @@ function LazerEvolution() {
             </div>
           </div>
 
-          <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: isMobile ? '260px' : '440px' }}>
+          <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: isMobile ? '260px' : isTablet ? '320px' : '440px' }}>
             <img src={lazerImages[(imgIdx + 1) % total].src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.35))' }} />
             <button onClick={next} style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -476,12 +480,12 @@ function LazerEvolution() {
 const YT_ID = '' /* adicionar o ID do YouTube do Evolution */
 
 function VideoEvolution() {
-  const isMobile = useIsMobile()
+  const { isMobile, isTablet } = useBreakpoint()
   const [open, setOpen] = useState(false)
 
   return (
     <>
-      <section style={{ position: 'relative', height: isMobile ? '360px' : '520px', overflow: 'hidden', background: '#000' }}>
+      <section style={{ position: 'relative', height: isMobile ? '360px' : isTablet ? '440px' : '520px', overflow: 'hidden', background: '#000' }}>
         <img
           src={fachada}
           alt="Capa do vídeo"
@@ -553,7 +557,7 @@ const TOUR_UNITS = [
 ]
 
 function TourEvolution() {
-  const isMobile = useIsMobile()
+  const { isMobile, isTablet } = useBreakpoint()
   const [activeUnit, setActiveUnit] = useState(0)
 
   return (
@@ -604,7 +608,7 @@ function TourEvolution() {
           </div>
         </div>
 
-        <div style={{ width: '100%', height: isMobile ? '340px' : '680px', borderRadius: '8px', overflow: 'hidden' }}>
+        <div style={{ width: '100%', height: isMobile ? '340px' : isTablet ? '480px' : '680px', borderRadius: '8px', overflow: 'hidden' }}>
           <iframe
             key={activeUnit}
             src={TOUR_UNITS[activeUnit].src}
@@ -625,7 +629,7 @@ function TourEvolution() {
    SEÇÃO 7 — PLANTAS
 ════════════════════════════════════════════════════════ */
 function PlantasEvolution() {
-  const isMobile = useIsMobile()
+  const { isMobile, isTablet } = useBreakpoint()
   const [activeTab, setActiveTab] = useState(0)
   const tabRef  = useRef(null)
   const planta  = PLANTAS[activeTab]
@@ -695,10 +699,10 @@ function PlantasEvolution() {
         </div>
 
         {/* Card */}
-        <div style={{ background: '#e7e7e7', borderRadius: '8px', padding: isMobile ? '14px' : '15px 80px 13px 14px', display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '20px' : '60px', alignItems: isMobile ? 'stretch' : 'center' }}>
-          <div style={{ background: 'white', borderRadius: '4px', height: isMobile ? 'auto' : '726px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', position: 'relative', flexShrink: 0 }}>
-            <div style={{ width: '3px', height: isMobile ? '220px' : '512px', background: '#31447b', flexShrink: 0 }} />
-            <div style={{ width: isMobile ? 'calc(100% - 13px)' : '546px', height: isMobile ? '280px' : '454px', flexShrink: 0 }}>
+        <div style={{ background: '#e7e7e7', borderRadius: '8px', padding: isMobile ? '14px' : isTablet ? '15px 24px 13px 14px' : '15px 80px 13px 14px', display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '20px' : '40px', alignItems: isMobile ? 'stretch' : 'center' }}>
+          <div style={{ background: 'white', borderRadius: '4px', height: isMobile ? 'auto' : isTablet ? '560px' : '726px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', position: 'relative', flexShrink: 0 }}>
+            <div style={{ width: '3px', height: isMobile ? '220px' : isTablet ? '380px' : '512px', background: '#31447b', flexShrink: 0 }} />
+            <div style={{ width: isMobile ? 'calc(100% - 13px)' : isTablet ? '380px' : '546px', height: isMobile ? '280px' : isTablet ? '340px' : '454px', flexShrink: 0 }}>
               <img src={planta.floor} alt="Planta" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
             <button style={{ position: 'absolute', top: '14px', right: '14px', width: '48px', height: '48px', background: '#779dff', borderRadius: '4px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -712,7 +716,7 @@ function PlantasEvolution() {
             </a>
           </div>
 
-          <div style={{ flex: '1 1 0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: isMobile ? 'auto' : '726px', paddingTop: isMobile ? '8px' : '32px', paddingBottom: isMobile ? '16px' : '32px', gap: isMobile ? '32px' : '0' }}>
+          <div style={{ flex: '1 1 0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: isMobile ? 'auto' : isTablet ? '560px' : '726px', paddingTop: isMobile ? '8px' : '32px', paddingBottom: isMobile ? '16px' : '32px', gap: isMobile ? '32px' : '0' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '13px' }}>
                 <h3 style={{ fontSize: isMobile ? '32px' : '48px', fontWeight: 800, textTransform: 'uppercase', color: '#31447b', lineHeight: 1, margin: 0 }}>{planta.area}</h3>
@@ -786,7 +790,7 @@ const LOC_FOTOS = [
 ]
 
 function LocalizacaoEvolution() {
-  const isMobile = useIsMobile()
+  const { isMobile, isTablet } = useBreakpoint()
   return (
     <section style={{ borderTop: '1px solid #e7e7e7' }}>
 
@@ -845,7 +849,7 @@ function LocalizacaoEvolution() {
           <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '0' : '32px', alignItems: 'flex-start' }}>
 
             {/* Coluna esquerda */}
-            <div style={{ width: isMobile ? '100%' : '640px', flexShrink: 0 }}>
+            <div style={{ width: isMobile ? '100%' : isTablet ? 'calc(50% - 16px)' : '640px', flexShrink: 0 }}>
               <div style={{ background: '#31477b', borderRadius: '8px 8px 0 0', padding: '23px 17px 14px 21px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <span style={{ fontSize: '12px', color: '#779dff', fontWeight: 600 }}>Endereço:</span>
@@ -910,7 +914,7 @@ function LocalizacaoEvolution() {
             </div>
 
             {/* Coluna direita */}
-            <div style={{ width: isMobile ? '100%' : '640px', flexShrink: 0, paddingTop: isMobile ? '32px' : '180px', display: 'flex', flexDirection: 'column', gap: '36px' }}>
+            <div style={{ width: isMobile ? '100%' : isTablet ? 'calc(50% - 16px)' : '640px', flexShrink: 0, paddingTop: isMobile ? '32px' : isTablet ? '80px' : '180px', display: 'flex', flexDirection: 'column', gap: '36px' }}>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '30px', marginBottom: '12px', flexWrap: 'wrap' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
