@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const imgVertice = "https://www.figma.com/api/mcp/asset/5d623035-f07c-474f-8b7e-a47e771b63bf";
 const imgEvolution = "https://www.figma.com/api/mcp/asset/ecf4e29d-de38-4da8-a5d3-fbe0d5ac44b4";
 const imgEsperanca = "https://www.figma.com/api/mcp/asset/f66c968a-3ec1-4a77-82a9-21c80a8e8b92";
-const iconLocation = "https://www.figma.com/api/mcp/asset/a044c1d1-d1ad-4645-a72f-4cdf90a37b1b";
+const iconLocation = '/icon/localizacao.svg';
 const iconBed = '/cards/cama.svg';
 const iconArea = '/cards/area.svg';
 const iconCar = '/cards/Frame-2.svg';
@@ -15,21 +16,23 @@ const gridPr = 'max(16px, calc((100vw - 1312px) / 2))';
 const tabs = [
   {
     label: 'Lançamentos',
-    icon: <img src="/icon/star.svg" alt="" className="w-[14px] h-[14px] object-contain brightness-0 invert" />,
+    icon: <img src="/icon/star.svg" alt="" className="w-[20px] h-[20px] object-contain" />,
   },
   {
     label: 'Em obras',
-    icon: <img src="/icon/obra.svg" alt="" className="w-[14px] h-[14px] object-contain brightness-0 invert" />,
+    icon: <img src="/icon/obra.svg" alt="" className="w-[20px] h-[20px] object-contain" />,
   },
   {
     label: 'Pronto para morar',
-    icon: <img src="/icon/chave.svg" alt="" className="w-[14px] h-[14px] object-contain brightness-0 invert" />,
+    icon: <img src="/icon/chave.svg" alt="" className="w-[20px] h-[20px] object-contain" />,
   },
 ];
 
 const smallCards = [
-  { img: imgEvolution, city: 'Tatuapé - São Paulo', name: 'Evolution Tatuapé' },
-  { img: imgEsperanca, city: 'Vila Esperança - São Paulo', name: 'Esperança Prime' },
+  { img: imgEvolution, city: 'Tatuapé - São Paulo', name: 'Evolution Tatuapé', href: '/empreendimentos/evolution',
+    specs: [{ icon: iconBed, label: '2 dormitórios' }, { icon: iconArea, label: '34 a 50m²' }, { icon: iconCar, label: '1 vaga' }, { icon: iconBalcony, label: 'Área Gourmet' }] },
+  { img: imgEsperanca, city: 'Vila Esperança - São Paulo', name: 'Esperança Prime', href: null,
+    specs: [{ icon: iconBed, label: 'Suítes e 1 dorm.' }, { icon: iconArea, label: '32 a 200m²' }, { icon: iconCar, label: '1 vaga' }, { icon: iconBalcony, label: 'Varanda Gourmet' }] },
 ];
 
 function SpecIcon({ src, children }) {
@@ -61,6 +64,7 @@ function SaibaMais({ className = '' }) {
 }
 
 export default function Empreendimentos() {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -80,7 +84,7 @@ export default function Empreendimentos() {
                 Empreendimentos em destaque
               </span>
             </div>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#779dff] shrink-0" />
+            <span className="w-1.5 h-1.5 bg-[#779dff] shrink-0" />
             <span className="text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">
               Zimbel Incorporadora
             </span>
@@ -174,7 +178,9 @@ export default function Empreendimentos() {
             height: 'clamp(300px, 35vw, 560px)',
             marginBottom: '24px',
             boxShadow: '0 20px 60px rgba(12,26,54,0.4)',
+            cursor: 'pointer',
           }}
+          onClick={() => navigate('/empreendimentos/vertice')}
         >
           <img
             src={imgVertice}
@@ -194,7 +200,7 @@ export default function Empreendimentos() {
           {/* Info bottom-left */}
           <div
             className="absolute bottom-0 flex items-end gap-5"
-            style={{ left: '20px', right: '160px', paddingBottom: '24px' }}
+            style={{ left: '0px', right: '160px', paddingBottom: '24px' }}
           >
             {/* Barra azul */}
             <div style={{ width: '3px', height: '90px', background: '#779dff', borderRadius: '2px', flexShrink: 0 }} />
@@ -202,7 +208,7 @@ export default function Empreendimentos() {
             <div className="flex flex-col gap-3 md:gap-5">
               <div>
                 <div className="flex items-center gap-2" style={{ marginBottom: '6px' }}>
-                  <img src={iconLocation} alt="" className="w-3 h-[13px] object-contain brightness-0 invert" />
+                  <img src={iconLocation} alt="" className="w-[15px] h-[15px] object-contain brightness-0 invert" />
                   <span className="text-white/80 text-[12px] md:text-[14px] uppercase tracking-wide">Anália Franco - São Paulo</span>
                 </div>
                 <h3 className="text-white text-[20px] md:text-[30px] leading-none font-extrabold uppercase">Vértice Anália Franco</h3>
@@ -224,50 +230,51 @@ export default function Empreendimentos() {
 
         {/* ── Dois cards menores ── */}
         <div className="flex flex-col md:flex-row gap-6" style={{ marginBottom: '72px' }}>
-          {smallCards.map((card) => (
-            <div
-              key={card.name}
-              className="relative flex-1 rounded-lg overflow-hidden"
-              style={{
-                height: 'clamp(240px, 28vw, 380px)',
-                boxShadow: '0 20px 60px rgba(12,26,54,0.4)',
-              }}
-            >
-              <img
-                src={card.img}
-                alt={card.name}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+          {smallCards.map((card) => {
+            const cardInner = (
               <div
-                className="absolute inset-0"
-                style={{ background: 'linear-gradient(to bottom, rgba(12,26,54,0) 20%, #0c1a36 100%)' }}
-              />
+                className="relative flex-1 rounded-lg overflow-hidden"
+                style={{
+                  height: 'clamp(240px, 28vw, 380px)',
+                  boxShadow: '0 20px 60px rgba(12,26,54,0.4)',
+                  cursor: card.href ? 'pointer' : 'default',
+                }}
+                onClick={() => card.href && navigate(card.href)}
+              >
+                <img
+                  src={card.img}
+                  alt={card.name}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: 'linear-gradient(to bottom, rgba(12,26,54,0) 20%, #0c1a36 100%)' }}
+                />
 
-              <div className="absolute left-0 flex items-end gap-4 pl-4 md:pl-6" style={{ bottom: '20px', right: '140px' }}>
-                <div style={{ width: '3px', height: '70px', background: '#779dff', borderRadius: '2px', flexShrink: 0 }} />
-                <div className="flex flex-col gap-2">
-                  <div>
-                    <div className="flex items-center gap-1.5 mb-0.5">
-                      <img src={iconLocation} alt="" className="w-3 h-[13px] object-contain brightness-0 invert" />
-                      <span className="text-white/70 text-xs uppercase tracking-wide">{card.city}</span>
+                <div className="absolute flex items-end gap-4" style={{ bottom: '20px', left: '0px', right: '140px' }}>
+                  <div style={{ width: '3px', height: '70px', background: '#779dff', borderRadius: '2px', flexShrink: 0 }} />
+                  <div className="flex flex-col gap-2">
+                    <div>
+                      <div className="flex items-center gap-1.5 mb-0.5">
+                        <img src={iconLocation} alt="" className="w-[15px] h-[15px] object-contain brightness-0 invert" />
+                        <span className="text-white/70 text-xs uppercase tracking-wide">{card.city}</span>
+                      </div>
+                      <h3 className="text-white text-lg font-extrabold uppercase">{card.name}</h3>
                     </div>
-                    <h3 className="text-white text-lg font-extrabold uppercase">{card.name}</h3>
-                  </div>
-                  <div className="hidden md:grid grid-cols-2 gap-x-4 gap-y-2">
-                    <SpecIcon src={iconBed}>Suítes e 1 dorm.</SpecIcon>
-                    <SpecIcon src={iconArea}>32 a 200m²</SpecIcon>
-                    <SpecIcon src={iconCar}>1 vaga</SpecIcon>
-                    <SpecIcon src={iconBalcony} wide>
-                      <span>Varanda</span>
-                      <span>Gourmet</span>
-                    </SpecIcon>
+                    <div className="hidden md:grid grid-cols-2 gap-x-4 gap-y-2">
+                      {card.specs.map((s) => (
+                        <SpecIcon key={s.label} src={s.icon}>{s.label}</SpecIcon>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <SaibaMais className="absolute bottom-0 right-0 w-32 md:w-40 h-[50px] md:h-[56px] rounded-tl-lg" />
-            </div>
-          ))}
+                <SaibaMais className="absolute bottom-0 right-0 w-32 md:w-40 h-[50px] md:h-[56px] rounded-tl-lg" />
+              </div>
+            )
+
+            return <div key={card.name} style={{ flex: 1 }}>{cardInner}</div>
+          })}
         </div>
 
         {/* ── CTA Banner ── */}

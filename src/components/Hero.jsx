@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const gridPl = 'max(16px, calc((100vw - 1312px) / 2))';
 
@@ -11,6 +12,7 @@ const slides = [
     bg: '/hero/Vertice.avif',
     logo: null,
     logoText: 'Vértice',
+    href: '/empreendimentos/vertice',
     specs: [
       { icon: '/cards/cama.svg', label: 'Suítes e 1 dorm.' },
       { icon: '/cards/area.svg', label: '32 a 200m²' },
@@ -26,9 +28,10 @@ const slides = [
     bg: '/hero/Sala Evolution 1.avif',
     logo: null,
     logoText: 'Evolution',
+    href: '/empreendimentos/evolution',
     specs: [
-      { icon: '/cards/cama.svg', label: 'Suítes e 1 dorm.' },
-      { icon: '/cards/area.svg', label: '40 a 150m²' },
+      { icon: '/cards/cama.svg', label: '2 dormitórios' },
+      { icon: '/cards/area.svg', label: '34 a 50m²' },
       { icon: '/cards/Frame-2.svg', label: '1 vaga' },
       { icon: '/cards/plantas.svg', label: 'Área Gourmet' },
     ],
@@ -41,6 +44,7 @@ const slides = [
     bg: '/hero/Esperanca.avif',
     logo: null,
     logoText: 'Esperança Prime',
+    href: null,
     specs: [
       { icon: '/cards/cama.svg', label: 'Suítes e 2 dorm.' },
       { icon: '/cards/area.svg', label: '50 a 200m²' },
@@ -69,6 +73,7 @@ function Spec({ icon, children }) {
 }
 
 export default function Hero() {
+  const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
   const [bp, setBp] = useState(() => getBreakpoint(window.innerWidth));
 
@@ -182,6 +187,7 @@ export default function Hero() {
             <div
               className="flex flex-col items-center justify-center bg-[#779dff] gap-1 cursor-pointer hover:bg-[#6b8ee8] transition-colors w-full"
               style={{ height: '52px' }}
+              onClick={() => slide.href && navigate(slide.href)}
             >
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                 <path d="M1 9L9 1M9 1H3M9 1V7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -231,6 +237,7 @@ export default function Hero() {
             <div
               className="flex flex-col items-center justify-center bg-[#779dff] shrink-0 gap-1 cursor-pointer hover:bg-[#6b8ee8] transition-colors rounded-tr-[8px]"
               style={{ width: '192px', height: '142px' }}
+              onClick={() => slide.href && navigate(slide.href)}
             >
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                 <path d="M1 9L9 1M9 1H3M9 1V7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

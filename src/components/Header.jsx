@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 /* SVGs locais — sem URLs externas que expiram */
 const logoSrc      = '/Menu/Logotype.svg';
@@ -15,6 +16,7 @@ const gridPl = 'max(16px, calc((100vw - 1312px) / 2))';
 const gridPr = 'max(16px, calc((100vw - 1312px) / 2))';
 
 export default function Header() {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -38,13 +40,13 @@ export default function Header() {
           }}
         >
           {/* On desktop keep 136px right padding; on mobile/tablet use gridPr only */}
-          <a href="#" className="flex items-center">
+          <button onClick={() => navigate('/')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
             <img
               src={logoSrc}
               alt="Zimbel Incorporadora"
               className="h-[40px] lg:h-[47px] w-auto lg:w-[200px] object-contain"
             />
-          </a>
+          </button>
         </div>
 
         {/* ── HAMBURGER (mobile/tablet only) ── */}
@@ -138,10 +140,7 @@ export default function Header() {
                 style={{ width: '122px', height: '42px', padding: '10px' }}
               >
                 Contato
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style={{ flexShrink: 0 }}>
-                  <path d="M1.75 5.75L8.517 9.483C8.818 9.649 9.182 9.649 9.483 9.483L16.25 5.75" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M3.75 14.75L14.25 14.75C15.3546 14.75 16.25 13.8546 16.25 12.75V5.25C16.25 4.14543 15.3546 3.25 14.25 3.25L3.75 3.25C2.64543 3.25 1.75 4.14543 1.75 5.25L1.75 12.75C1.75 13.8546 2.64543 14.75 3.75 14.75Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <img src="/icon/contato.svg" alt="" style={{ width: '18px', height: '18px', objectFit: 'contain', flexShrink: 0 }} />
               </a>
 
             </div>
@@ -160,7 +159,9 @@ export default function Header() {
       >
         {/* Top bar: logo + close */}
         <div className="flex items-center justify-between shrink-0 border-b border-white/10" style={{ height: '64px', paddingLeft: '20px', paddingRight: '20px' }}>
-          <img src={logoSrc} alt="Zimbel" className="h-8 w-auto object-contain brightness-0 invert" />
+          <button onClick={() => { navigate('/'); setMenuOpen(false); }} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
+            <img src={logoSrc} alt="Zimbel" className="h-8 w-auto object-contain brightness-0 invert" />
+          </button>
           <button
             aria-label="Fechar menu"
             onClick={() => setMenuOpen(false)}
@@ -214,10 +215,7 @@ export default function Header() {
             style={{ background: '#779dff', fontSize: '14px', padding: '14px 24px' }}
           >
             Contato
-            <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
-              <path d="M1.75 5.75L8.517 9.483C8.818 9.649 9.182 9.649 9.483 9.483L16.25 5.75" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M3.75 14.75L14.25 14.75C15.3546 14.75 16.25 13.8546 16.25 12.75V5.25C16.25 4.14543 15.3546 3.25 14.25 3.25L3.75 3.25C2.64543 3.25 1.75 4.14543 1.75 5.25L1.75 12.75C1.75 13.8546 2.64543 14.75 3.75 14.75Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <img src="/icon/contato.svg" alt="" style={{ width: '16px', height: '16px', objectFit: 'contain' }} />
           </a>
         </div>
       </div>

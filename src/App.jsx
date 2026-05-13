@@ -1,23 +1,16 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Empreendimentos from './components/Empreendimentos'
-import Sobre from './components/Sobre'
-import VideoSection from './components/VideoSection'
-import Vantagens from './components/Vantagens'
-import Depoimentos from './components/Depoimentos'
-import Footer from './components/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Vertice from './pages/empreendimentos/Vertice'
+import Evolution from './pages/empreendimentos/Evolution'
 
 export default function App() {
   return (
-    <>
-      <Header />
-      <Hero />
-      <Empreendimentos />
-      <Sobre />
-      <VideoSection />
-      <Vantagens />
-      <Depoimentos />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/empreendimentos/vertice" element={<Vertice />} />
+        <Route path="/empreendimentos/evolution" element={<Evolution />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
