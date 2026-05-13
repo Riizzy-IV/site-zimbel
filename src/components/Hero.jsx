@@ -95,7 +95,7 @@ export default function Hero() {
   const badgeWidth    = bp === 'mobile' ? 'auto' : '336px';
   const h1Size        = bp === 'mobile' ? '28px' : bp === 'md' ? '34px' : '40px';
   const isMobile      = bp === 'mobile';
-  const isFluidBar    = bp === 'md' || bp === 'lg-sm';
+  const isFluidBar    = bp === 'md'; // only fluid on 768–1024px; lg-sm+ gets fixed width
 
   const slide = slides[current];
 
@@ -204,8 +204,8 @@ export default function Hero() {
               className="flex items-center gap-6 backdrop-blur-sm shrink-0"
               style={{
                 background: 'rgba(12,26,54,0.9)',
-                width: isFluidBar ? '100%' : '976px',
-                maxWidth: isFluidBar ? 'calc(100% - 192px)' : '976px',
+                width: isFluidBar ? '100%' : 'min(976px, calc(100% - 392px))',
+                maxWidth: isFluidBar ? 'calc(100% - 192px)' : 'min(976px, calc(100% - 392px))',
                 height: '142px',
                 paddingLeft: gridPl,
                 paddingRight: '32px',
@@ -245,9 +245,9 @@ export default function Hero() {
               <span className="text-white text-sm font-semibold uppercase">Saiba mais</span>
             </div>
 
-            {/* Indicadores de slide — lg+ only */}
-            {bp === 'lg' && (
-              <div className="flex-1 flex justify-center items-end gap-[110px] pb-4">
+            {/* Indicadores de slide — tablet/desktop (não-mobile, não-md) */}
+            {!isMobile && bp !== 'md' && (
+              <div className="flex-1 flex justify-around items-end pb-4">
                 {slides.map((s, i) => (
                   <div
                     key={s.num}
