@@ -1,16 +1,29 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Vertice from './pages/empreendimentos/Vertice'
-import Evolution from './pages/empreendimentos/Evolution'
+
+const Home      = lazy(() => import('./pages/Home'))
+const Vertice   = lazy(() => import('./pages/empreendimentos/Vertice'))
+const Evolution = lazy(() => import('./pages/empreendimentos/Evolution'))
+
+function PageLoader() {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', background: '#0c1a36' }}>
+      <div style={{ width: '40px', height: '40px', border: '3px solid rgba(119,157,255,0.2)', borderTop: '3px solid #779dff', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
+      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+    </div>
+  )
+}
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/empreendimentos/vertice" element={<Vertice />} />
-        <Route path="/empreendimentos/evolution" element={<Evolution />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/empreendimentos/vertice" element={<Vertice />} />
+          <Route path="/empreendimentos/evolution" element={<Evolution />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   )
 }
