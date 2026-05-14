@@ -57,9 +57,10 @@ const slides = [
 function getBreakpoint(vw) {
   if (vw < 768) return 'mobile';
   if (vw < 1024) return 'md';
-  if (vw < 1400) return 'sm';   // 1024–1400: sem indicadores
+  if (vw < 1400) return 'sm';    // 1024–1400: sem indicadores
   if (vw < 1800) return 'lg-sm'; // 1400–1800: com indicadores
-  return 'lg';
+  if (vw < 2100) return 'lg';    // 1800–2100: desktop grande
+  return 'xl';                   // 2100+: ultra-wide
 }
 
 function Spec({ icon, children }) {
@@ -229,8 +230,8 @@ export default function Hero() {
               className="flex items-center gap-6 backdrop-blur-sm shrink-0"
               style={{
                 background: 'rgba(12,26,54,0.9)',
-                width: isFluidBar ? '100%' : bp === 'lg' ? 'min(976px, calc(100% - 392px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : 'min(780px, 68%)',
-                maxWidth: isFluidBar ? 'calc(100% - 140px)' : bp === 'lg' ? 'min(976px, calc(100% - 392px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : 'min(780px, 68%)',
+                width: isFluidBar ? '100%' : bp === 'xl' ? 'min(1800px, calc(100% - 600px))' : bp === 'lg' ? 'min(1100px, calc(100% - 450px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : 'min(780px, 68%)',
+                maxWidth: isFluidBar ? 'calc(100% - 140px)' : bp === 'xl' ? 'min(1800px, calc(100% - 600px))' : bp === 'lg' ? 'min(1100px, calc(100% - 450px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : 'min(780px, 68%)',
                 height: '142px',
                 paddingLeft: gridPl,
                 paddingRight: '32px',
@@ -261,7 +262,7 @@ export default function Hero() {
             {/* Botão Saiba Mais */}
             <div
               className="flex flex-col items-center justify-center bg-[#779dff] shrink-0 gap-1 cursor-pointer hover:bg-[#6b8ee8] transition-colors rounded-tr-[8px]"
-              style={{ width: bp === 'lg' || bp === 'lg-sm' ? '192px' : '140px', height: '142px' }}
+              style={{ width: bp === 'xl' || bp === 'lg' || bp === 'lg-sm' ? '192px' : '140px', height: '142px' }}
               onClick={() => slide.href && navigate(slide.href)}
             >
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -274,7 +275,7 @@ export default function Hero() {
             {bp === 'sm' && <div className="flex-1" />}
 
             {/* Indicadores de slide — apenas 1400px+ */}
-            {(bp === 'lg-sm' || bp === 'lg') && (
+            {(bp === 'lg-sm' || bp === 'lg' || bp === 'xl') && (
               <div className="flex-1 flex justify-around items-end pb-4">
                 {slides.map((s, i) => (
                   <div

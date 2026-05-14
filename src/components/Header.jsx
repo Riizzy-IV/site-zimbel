@@ -67,8 +67,8 @@ export default function Header() {
 
           {/* Barra superior escura — 36px, rounded-bl-8px */}
           <div
-            className="bg-[#0c1a36] rounded-bl-[8px] flex items-center justify-end shrink-0"
-            style={{ height: '36px', paddingRight: gridPr }}
+            className="bg-[#0c1a36] rounded-bl-[8px] flex items-center justify-start shrink-0"
+            style={{ height: '36px', paddingLeft: '24px', paddingRight: 'clamp(16px, 3vw, 48px)' }}
           >
             <div className="flex items-center gap-6">
 
