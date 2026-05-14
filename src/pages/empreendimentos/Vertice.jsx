@@ -244,29 +244,31 @@ function ConceitoVertice() {
           </div>
 
           {/* CTAs */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px', background: 'rgba(119,157,255,0.12)', borderRadius: '8px', padding: '24px 24px 24px 0', overflow: 'hidden' }}>
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'stretch', gap: '0', background: 'rgba(119,157,255,0.12)', borderRadius: '8px', overflow: 'hidden' }}>
             {/* Barra lateral esquerda */}
-            <div style={{ width: '5px', height: '59px', background: '#31447b', borderRadius: '0 2px 2px 0', flexShrink: 0 }} />
-            {[
-              { icon: '/empreendimentos/vertice/cta-book.svg', line1: 'Baixe o', line2: 'Book digital', href: '#' },
-              { icon: '/empreendimentos/vertice/cta-house.svg', line1: 'Visite o', line2: 'Hotsite', href: '#' },
-            ].map(({ icon, line1, line2, href }) => (
-              <a
-                key={line2}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:brightness-110 transition-all"
-                style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#779dff', borderRadius: '8px', padding: '12px 36px', textDecoration: 'none' }}
-              >
-                <img src={icon} alt="" style={{ width: '24px', height: '24px', objectFit: 'contain' }} />
-                <img src="/empreendimentos/vertice/cta-arrow.svg" alt="" style={{ width: '8px', height: '14px' }} />
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-                  <span style={{ fontSize: '12px', color: '#0c1a36', fontWeight: 400, lineHeight: 1 }}>{line1}</span>
-                  <span style={{ fontSize: '16px', color: '#0c1a36', fontWeight: 600, whiteSpace: 'nowrap', lineHeight: 1 }}>{line2}</span>
-                </div>
-              </a>
-            ))}
+            <div style={{ width: '5px', background: '#31447b', flexShrink: 0 }} />
+            <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '12px', padding: '16px', flex: 1 }}>
+              {[
+                { icon: '/empreendimentos/vertice/cta-book.svg', line1: 'Baixe o', line2: 'Book digital', href: '#' },
+                { icon: '/empreendimentos/vertice/cta-house.svg', line1: 'Visite o', line2: 'Hotsite', href: '#' },
+              ].map(({ icon, line1, line2, href }) => (
+                <a
+                  key={line2}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:brightness-110 transition-all"
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#779dff', borderRadius: '8px', padding: '12px 24px', textDecoration: 'none', flex: isMobile ? undefined : '1 1 0' }}
+                >
+                  <img src={icon} alt="" style={{ width: '24px', height: '24px', objectFit: 'contain' }} />
+                  <img src="/empreendimentos/vertice/cta-arrow.svg" alt="" style={{ width: '8px', height: '14px' }} />
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                    <span style={{ fontSize: '12px', color: '#0c1a36', fontWeight: 400, lineHeight: 1 }}>{line1}</span>
+                    <span style={{ fontSize: '16px', color: '#0c1a36', fontWeight: 600, whiteSpace: 'nowrap', lineHeight: 1 }}>{line2}</span>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -488,8 +490,8 @@ function LazerVertice() {
           </p>
         </div>
 
-        {/* Galeria de imagens — 2 visíveis + carrossel */}
-        <div style={{ position: 'relative', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '16px', marginBottom: '48px' }}>
+        {/* Galeria de imagens — 1 no mobile, 2 no tablet/desktop */}
+        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '16px', marginBottom: '48px' }}>
           {/* Imagem principal */}
           <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: isMobile ? '260px' : isTablet ? '320px' : '440px' }}>
             <img src={img.src} alt={img.caption} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -497,6 +499,12 @@ function LazerVertice() {
             <button onClick={prev} style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M8 1L1 8L8 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </button>
+            {/* No mobile o next fica na imagem principal */}
+            {isMobile && (
+              <button onClick={next} style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M1 1L8 8L1 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </button>
+            )}
             <button style={{ position: 'absolute', top: '16px', right: '16px', width: '48px', height: '48px', background: 'rgba(21,69,67,0.56)', backdropFilter: 'blur(2px)', border: 'none', cursor: 'pointer', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img src="/empreendimentos/vertice/icon-fullscreen.svg" alt="" style={{ width: '14px', height: '14px' }} />
             </button>
@@ -506,21 +514,23 @@ function LazerVertice() {
             </div>
           </div>
 
-          {/* Imagem secundária (próxima) */}
-          <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: isMobile ? '260px' : isTablet ? '320px' : '440px' }}>
-            <img src={lazerImages[(imgIdx + 1) % total].src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.35))' }} />
-            <button onClick={next} style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M1 1L8 8L1 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </button>
-            <button style={{ position: 'absolute', top: '16px', right: '16px', width: '48px', height: '48px', background: 'rgba(21,69,67,0.56)', backdropFilter: 'blur(2px)', border: 'none', cursor: 'pointer', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <img src="/empreendimentos/vertice/icon-fullscreen.svg" alt="" style={{ width: '14px', height: '14px' }} />
-            </button>
-            <div style={{ position: 'absolute', bottom: '16px', left: '0', display: 'flex', alignItems: 'center', gap: '10px', paddingLeft: '16px' }}>
-              <div style={{ width: '1px', height: '21px', background: '#779dff' }} />
-              <span style={{ fontSize: '12px', color: '#fff', fontWeight: 600 }}>{lazerImages[(imgIdx + 1) % total].caption}</span>
+          {/* Imagem secundária — só tablet/desktop */}
+          {!isMobile && (
+            <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: isTablet ? '320px' : '440px' }}>
+              <img src={lazerImages[(imgIdx + 1) % total].src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.35))' }} />
+              <button onClick={next} style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M1 1L8 8L1 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </button>
+              <button style={{ position: 'absolute', top: '16px', right: '16px', width: '48px', height: '48px', background: 'rgba(21,69,67,0.56)', backdropFilter: 'blur(2px)', border: 'none', cursor: 'pointer', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <img src="/empreendimentos/vertice/icon-fullscreen.svg" alt="" style={{ width: '14px', height: '14px' }} />
+              </button>
+              <div style={{ position: 'absolute', bottom: '16px', left: '0', display: 'flex', alignItems: 'center', gap: '10px', paddingLeft: '16px' }}>
+                <div style={{ width: '1px', height: '21px', background: '#779dff' }} />
+                <span style={{ fontSize: '12px', color: '#fff', fontWeight: 600 }}>{lazerImages[(imgIdx + 1) % total].caption}</span>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Grid de amenidades */}
@@ -564,7 +574,7 @@ function VideoVertice() {
       >
         {/* Capa — fachada do empreendimento */}
         <img
-          src={fachada}
+          src="/empreendimentos/vertice/lazer-img-3.jpg"
           alt="Capa do vídeo"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }}
         />
@@ -713,6 +723,7 @@ function TourVertice() {
 function PlantasVertice() {
   const { isMobile, isTablet } = useBreakpoint()
   const [activeTab, setActiveTab] = useState(0)
+  const [lightbox, setLightbox] = useState(null)
   const tabRef = useRef(null)
   const planta = PLANTAS[activeTab]
 
@@ -856,12 +867,15 @@ function PlantasVertice() {
                 Acesse as perspectivas da planta
               </p>
               <div style={{ display: 'flex', gap: '19px' }}>
-                <div style={{ flex: 1, height: isMobile ? '120px' : '144px', borderRadius: '8px', overflow: 'hidden' }}>
-                  <img src={planta.p1} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div style={{ flex: 1, height: isMobile ? '120px' : '144px', borderRadius: '8px', overflow: 'hidden' }}>
-                  <img src={planta.p2} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
+                {[planta.p1, planta.p2].map((src, i) => (
+                  <div
+                    key={i}
+                    onClick={() => setLightbox(src)}
+                    style={{ flex: 1, height: isMobile ? '120px' : '144px', borderRadius: '8px', overflow: 'hidden', cursor: 'zoom-in', position: 'relative' }}
+                  >
+                    <img src={src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -869,6 +883,25 @@ function PlantasVertice() {
         </div>
 
       </div>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          onClick={() => setLightbox(null)}
+          style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        >
+          <button
+            onClick={() => setLightbox(null)}
+            style={{ position: 'absolute', top: '24px', right: '32px', background: 'none', border: 'none', cursor: 'pointer', color: '#fff', fontSize: '32px', lineHeight: 1 }}
+          >×</button>
+          <img
+            src={lightbox}
+            alt=""
+            onClick={e => e.stopPropagation()}
+            style={{ maxWidth: '90vw', maxHeight: '90vh', objectFit: 'contain', borderRadius: '8px' }}
+          />
+        </div>
+      )}
     </section>
   )
 }
@@ -915,7 +948,7 @@ function LocalizacaoVertice() {
           <span style={{ fontSize: '13px', color: '#a7a7a7', fontWeight: 600, textTransform: 'uppercase' }}>Vértice Anália Franco</span>
         </div>
         <div style={{ height: '1px', background: '#e7e7e7', marginBottom: '32px' }} />
-        <h2 style={{ fontSize: '32px', color: '#31477b', fontWeight: 800, textTransform: 'uppercase', lineHeight: 1.35, maxWidth: '864px', margin: 0 }}>
+        <h2 style={{ fontSize: isMobile ? '20px' : '32px', color: '#31477b', fontWeight: 800, textTransform: 'uppercase', lineHeight: 1.35, maxWidth: '864px', margin: 0 }}>
           Localização Estratégica, Próxima dos Principais Pontos do Bairro
         </h2>
       </div>
@@ -934,7 +967,7 @@ function LocalizacaoVertice() {
               allowFullScreen
             />
             {/* Botões overlay top-right */}
-            <div style={{ position: 'absolute', top: '14px', right: '15px', display: 'flex', gap: '14px', alignItems: 'center', zIndex: 10 }}>
+            <div style={{ position: 'absolute', top: '14px', right: '15px', display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '8px', alignItems: 'flex-end', zIndex: 10 }}>
               <a
                 href="https://maps.google.com/maps?q=Rua+Bruna,+340,+An%C3%A1lia+Franco,+S%C3%A3o+Paulo"
                 target="_blank" rel="noopener noreferrer"
@@ -1049,8 +1082,8 @@ function LocalizacaoVertice() {
                 Uma região em constante valorização e evolução urbana
               </p>
 
-              {/* Grid 2×4 de cards de infra */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px 32px' }}>
+              {/* Grid de cards de infra — 1 col no mobile, 2 cols no desktop */}
+              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '12px' : '24px 32px' }}>
                 {INFRA_CARDS.map(label => (
                   <div key={label} style={{ background: '#0c1a36', borderRadius: '8px', height: '50px', padding: '0 14px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>

@@ -57,7 +57,8 @@ const slides = [
 function getBreakpoint(vw) {
   if (vw < 768) return 'mobile';
   if (vw < 1024) return 'md';
-  if (vw < 1800) return 'lg-sm';
+  if (vw < 1400) return 'sm';   // 1024–1400: sem indicadores
+  if (vw < 1800) return 'lg-sm'; // 1400–1800: com indicadores
   return 'lg';
 }
 
@@ -90,12 +91,12 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, []);
 
-  const sectionHeight = bp === 'mobile' ? 900 : bp === 'md' ? 650 : 817;
-  const paddingTop    = bp === 'mobile' ? 420 : bp === 'md' ? 380 : 430;
-  const badgeWidth    = bp === 'mobile' ? 'auto' : '336px';
-  const h1Size        = bp === 'mobile' ? '28px' : bp === 'md' ? '34px' : '40px';
-  const isMobile      = bp === 'mobile';
-  const isFluidBar    = bp === 'md'; // only fluid on 768–1024px; lg-sm+ gets fixed width
+  const sectionHeight = bp === 'mobile' ? 900 : bp === 'md' ? 650 : bp === 'sm' ? 760 : 817;
+  const paddingTop = bp === 'mobile' ? 420 : bp === 'md' ? 380 : bp === 'sm' ? 370 : 430;
+  const badgeWidth = bp === 'mobile' ? 'auto' : '336px';
+  const h1Size = bp === 'mobile' ? '28px' : bp === 'md' ? '34px' : '40px';
+  const isMobile = bp === 'mobile';
+  const isFluidBar = bp === 'md'; // fluid apenas 768–1024px
 
   const slide = slides[current];
 
@@ -119,6 +120,30 @@ export default function Hero() {
 
       {/* Gradiente escuro na base */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(0,0,0,0.88)]" />
+
+      {/* Botões de navegação laterais */}
+      {!isMobile && (
+        <>
+          <button
+            onClick={() => setCurrent(c => (c - 1 + slides.length) % slides.length)}
+            className="absolute left-0 top-[40%] -translate-y-1/2 z-10 flex items-center justify-center transition-opacity hover:opacity-100"
+            style={{ width: '48px', height: '64px', background: 'rgba(5,46,126,0.85)', borderRadius: '0 8px 8px 0', opacity: 0.75 }}
+          >
+            <svg width="18" height="18" viewBox="0 0 10 10" fill="none">
+              <path d="M7 1L3 5L7 9" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <button
+            onClick={() => setCurrent(c => (c + 1) % slides.length)}
+            className="absolute right-0 top-[40%] -translate-y-1/2 z-10 flex items-center justify-center transition-opacity hover:opacity-100"
+            style={{ width: '48px', height: '64px', background: 'rgba(5,46,126,0.85)', borderRadius: '8px 0 0 8px', opacity: 0.75 }}
+          >
+            <svg width="18" height="18" viewBox="0 0 10 10" fill="none">
+              <path d="M3 1L7 5L3 9" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        </>
+      )}
 
       {/* ── Conteúdo principal ── */}
       <div className="absolute inset-0 flex flex-col" style={{ paddingTop: `${paddingTop}px` }}>
@@ -204,8 +229,8 @@ export default function Hero() {
               className="flex items-center gap-6 backdrop-blur-sm shrink-0"
               style={{
                 background: 'rgba(12,26,54,0.9)',
-                width: isFluidBar ? '100%' : 'min(976px, calc(100% - 392px))',
-                maxWidth: isFluidBar ? 'calc(100% - 192px)' : 'min(976px, calc(100% - 392px))',
+                width: isFluidBar ? '100%' : bp === 'lg' ? 'min(976px, calc(100% - 392px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : 'min(780px, 68%)',
+                maxWidth: isFluidBar ? 'calc(100% - 140px)' : bp === 'lg' ? 'min(976px, calc(100% - 392px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : 'min(780px, 68%)',
                 height: '142px',
                 paddingLeft: gridPl,
                 paddingRight: '32px',
@@ -236,7 +261,7 @@ export default function Hero() {
             {/* Botão Saiba Mais */}
             <div
               className="flex flex-col items-center justify-center bg-[#779dff] shrink-0 gap-1 cursor-pointer hover:bg-[#6b8ee8] transition-colors rounded-tr-[8px]"
-              style={{ width: '192px', height: '142px' }}
+              style={{ width: bp === 'lg' || bp === 'lg-sm' ? '192px' : '140px', height: '142px' }}
               onClick={() => slide.href && navigate(slide.href)}
             >
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -245,8 +270,11 @@ export default function Hero() {
               <span className="text-white text-sm font-semibold uppercase">Saiba mais</span>
             </div>
 
-            {/* Indicadores de slide — tablet/desktop (não-mobile, não-md) */}
-            {!isMobile && bp !== 'md' && (
+            {/* Espaço transparente em 1024–1400px (sem indicadores) */}
+            {bp === 'sm' && <div className="flex-1" />}
+
+            {/* Indicadores de slide — apenas 1400px+ */}
+            {(bp === 'lg-sm' || bp === 'lg') && (
               <div className="flex-1 flex justify-around items-end pb-4">
                 {slides.map((s, i) => (
                   <div

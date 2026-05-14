@@ -34,7 +34,7 @@ export default function Sobre() {
               </svg>
               <span className="text-[#494c4f] text-[13px] font-semibold uppercase tracking-wide">Sobre</span>
             </div>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#779dff] shrink-0" />
+            <span className="w-1.5 h-1.5 bg-[#779dff] shrink-0" />
             <span className="text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
           </div>
           <div className="flex flex-col gap-1" style={{ marginTop: '5px' }}>

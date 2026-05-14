@@ -84,8 +84,8 @@ export default function Empreendimentos() {
                 Empreendimentos em destaque
               </span>
             </div>
-            <span className="w-1.5 h-1.5 bg-[#779dff] shrink-0" />
-            <span className="text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">
+            <span className="hidden md:inline w-1.5 h-1.5 bg-[#779dff] shrink-0" />
+            <span className="hidden md:inline text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">
               Zimbel Incorporadora
             </span>
           </div>
@@ -101,24 +101,25 @@ export default function Empreendimentos() {
         </div>
 
         {/* ── Filter tabs ── */}
-        <div className="no-scrollbar" style={{ overflowX: 'auto', marginTop: '32px', marginBottom: '32px' }}>
+        <div style={{ marginTop: '32px', marginBottom: '32px' }}>
         <div
           style={{
             display: 'flex',
             alignItems: 'stretch',
             background: '#1e3a8a',
             borderRadius: '6px',
-            width: 'fit-content',
+            width: '100%',
           }}
         >
           {tabs.map((tab, i) => (
-            <div key={tab.label} style={{ display: 'flex', alignItems: 'stretch' }}>
+            <div key={tab.label} style={{ display: 'flex', alignItems: 'stretch', flex: 1 }}>
               {i > 0 && (
                 <div style={{
                   width: '1px',
                   background: 'rgba(255,255,255,0.5)',
                   height: '20px',
                   alignSelf: 'center',
+                  flexShrink: 0,
                 }} />
               )}
               <button
@@ -127,15 +128,17 @@ export default function Empreendimentos() {
                   position: 'relative',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '10px',
-                  paddingLeft: '16px',
-                  paddingRight: '16px',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  flex: 1,
+                  paddingLeft: '8px',
+                  paddingRight: '8px',
                   paddingTop: '14px',
                   paddingBottom: '14px',
-                  fontSize: '12px',
+                  fontSize: '11px',
                   fontWeight: 700,
                   textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
+                  letterSpacing: '0.06em',
                   border: 'none',
                   borderBottom: '3px solid transparent',
                   background: 'transparent',
@@ -143,13 +146,15 @@ export default function Empreendimentos() {
                   opacity: activeTab === i ? 1 : 0.75,
                   cursor: 'pointer',
                   transition: 'opacity 0.2s',
-                  whiteSpace: 'nowrap',
+                  whiteSpace: 'normal',
+                  textAlign: 'center',
+                  lineHeight: 1.3,
                   outline: 'none',
                   boxShadow: 'none',
                 }}
                 className="md:!px-[40px] md:!py-[16px] md:!text-[13px]"
               >
-                <span style={{ width: '18px', height: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ width: '16px', height: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   {tab.icon}
                 </span>
                 {tab.label}
@@ -209,9 +214,9 @@ export default function Empreendimentos() {
               <div>
                 <div className="flex items-center gap-2" style={{ marginBottom: '6px' }}>
                   <img src={iconLocation} alt="" className="w-[15px] h-[15px] object-contain brightness-0 invert" />
-                  <span className="text-white/80 text-[12px] md:text-[14px] uppercase tracking-wide">Anália Franco - São Paulo</span>
+                  <span className="text-white/80 text-[10px] md:text-[14px] uppercase tracking-wide whitespace-nowrap">Anália Franco - São Paulo</span>
                 </div>
-                <h3 className="text-white text-[20px] md:text-[30px] leading-none font-extrabold uppercase">Vértice Anália Franco</h3>
+                <h3 className="text-white text-[13px] md:text-[30px] leading-none font-extrabold uppercase whitespace-nowrap">Vértice Anália Franco</h3>
               </div>
               <div className="hidden md:flex items-center gap-8">
                 <SpecIcon src={iconBed}>Suítes e 1 dorm.</SpecIcon>
@@ -259,7 +264,7 @@ export default function Empreendimentos() {
                         <img src={iconLocation} alt="" className="w-[15px] h-[15px] object-contain brightness-0 invert" />
                         <span className="text-white/70 text-xs uppercase tracking-wide">{card.city}</span>
                       </div>
-                      <h3 className="text-white text-lg font-extrabold uppercase">{card.name}</h3>
+                      <h3 className="text-white text-[13px] md:text-lg font-extrabold uppercase whitespace-nowrap">{card.name}</h3>
                     </div>
                     <div className="hidden md:grid grid-cols-2 gap-x-4 gap-y-2">
                       {card.specs.map((s) => (

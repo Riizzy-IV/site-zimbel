@@ -1,44 +1,17 @@
 const gridPl = 'max(16px, calc((100vw - 1312px) / 2))';
 const gridPr = 'max(16px, calc((100vw - 1312px) / 2))';
 
-function ArrowDiagonal() {
-  return (
-    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-      <path d="M1 9L9 1M9 1H3M9 1V7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 function IconAddress() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-      <path d="M10 1.667A5.833 5.833 0 0110 13.333C6.318 13.333 3.333 10.349 3.333 6.667A6.667 6.667 0 0110 0a6.667 6.667 0 016.667 6.667c0 3.681-2.985 6.666-6.667 6.666z" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="10" cy="6.667" r="2" stroke="white" strokeWidth="1.4" />
-      <path d="M3 14.5C1.5 15.5 1 16.5 1 17.5c0 1 .667 1.833 9 1.833s9-.833 9-1.833c0-1-.5-2-2-3" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
-    </svg>
-  );
+  return <img src="/icon/localizacao.svg" alt="" style={{ width: '20px', height: '20px', objectFit: 'contain' }} />;
 }
 
 function IconClients() {
-  return (
-    <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
-      <path d="M58 56c0-8.837-9.85-16-22-16s-22 7.163-22 16" stroke="rgba(119,157,255,0.6)" strokeWidth="4" strokeLinecap="round" />
-      <circle cx="36" cy="24" r="12" stroke="rgba(119,157,255,0.6)" strokeWidth="4" />
-      <path d="M68 56c0-6.627-7.163-12-16-12" stroke="rgba(119,157,255,0.4)" strokeWidth="4" strokeLinecap="round" />
-      <circle cx="52" cy="22" r="9" stroke="rgba(119,157,255,0.4)" strokeWidth="4" />
-    </svg>
-  );
+  return <img src="/icon/clientes.svg" alt="" style={{ width: '72px', height: '72px', objectFit: 'contain' }} />;
 }
 
 function IconPartners() {
-  return (
-    <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
-      <rect x="8" y="20" width="28" height="36" rx="4" stroke="rgba(119,157,255,0.6)" strokeWidth="4" />
-      <path d="M36 30h16a4 4 0 014 4v22a4 4 0 01-4 4H36" stroke="rgba(119,157,255,0.4)" strokeWidth="4" />
-      <path d="M20 32h8M20 40h8M20 48h8" stroke="rgba(119,157,255,0.6)" strokeWidth="3" strokeLinecap="round" />
-      <path d="M44 38h4M44 46h4" stroke="rgba(119,157,255,0.4)" strokeWidth="3" strokeLinecap="round" />
-    </svg>
-  );
+  return <img src="/icon/parceiros.svg" alt="" style={{ width: '72px', height: '72px', objectFit: 'contain' }} />;
 }
 
 export default function Footer() {
@@ -51,14 +24,10 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-7">
               <div className="flex items-center gap-2.5">
-                <svg width="18" height="17" viewBox="0 0 18 17" fill="none">
-                  <rect x="1" y="5" width="16" height="11" rx="1" stroke="#779dff" strokeWidth="1.4" />
-                  <path d="M5 5V3.5C5 2.12 6.79 1 9 1C11.21 1 13 2.12 13 3.5V5" stroke="#779dff" strokeWidth="1.4" strokeLinecap="round" />
-                  <rect x="6.5" y="8" width="5" height="4" rx="0.5" stroke="#779dff" strokeWidth="1.2" />
-                </svg>
+                <img src="/icon/contato.svg" alt="" style={{ width: '18px', height: '18px', objectFit: 'contain' }} />
                 <span className="text-[#494c4f] text-[13px] font-semibold uppercase tracking-wide">Contato</span>
               </div>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#779dff] shrink-0" />
+              <span className="w-1.5 h-1.5 bg-[#779dff] shrink-0" />
               <span className="text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
             </div>
             <div className="w-full h-px bg-[#e3e3e3]" />
@@ -82,21 +51,21 @@ export default function Footer() {
         paddingTop: '24px',
         paddingBottom: '24px',
       }}>
-        {/* Contact cards: flex-col on mobile, flex-row on md+ */}
-        <div className="flex flex-col md:flex-row gap-4 md:gap-8 w-full">
+        {/* Contact cards: sempre side-by-side */}
+        <div className="flex flex-row gap-3 md:gap-8 w-full">
           {[
             { icon: <IconClients />, label: 'Contato para', title: 'Clientes' },
             { icon: <IconPartners />, label: 'Contato para', title: 'Parceiros' },
           ].map((card) => (
             <div
               key={card.title}
-              className="flex-1 flex items-center gap-8 md:gap-14 cursor-pointer hover:opacity-90 transition-opacity"
-              style={{ background: '#052e7e', borderRadius: '10px', height: '120px', padding: '0 24px' }}
+              className="flex-1 flex items-center gap-4 md:gap-14 cursor-pointer"
+              style={{ background: '#052e7e', borderRadius: '10px', height: '90px', padding: '0 16px', minWidth: 0 }}
             >
               <div className="hidden md:block">{card.icon}</div>
-              <div className="flex flex-col gap-2">
-                <p className="text-[#779dff] text-[13px] md:text-[15px] font-semibold">{card.label}</p>
-                <p className="text-white text-[28px] md:text-[40px] font-extrabold leading-none">{card.title}</p>
+              <div className="flex flex-col gap-1">
+                <p className="text-[#779dff] text-[11px] md:text-[15px] font-semibold">{card.label}</p>
+                <p className="text-white text-[22px] md:text-[40px] font-extrabold leading-none">{card.title}</p>
               </div>
             </div>
           ))}
@@ -191,7 +160,9 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-3">
               <span className="text-white text-sm font-normal opacity-70">Feito com ♥ por</span>
-              <span className="text-white font-extrabold text-lg tracking-wide opacity-80">Balzani</span>
+              <a href="https://balzani.com.br" target="_blank" rel="noopener noreferrer">
+                <img src="/icon/Logo balzani menu.svg" alt="Balzani" className="h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              </a>
             </div>
           </div>
         </div>

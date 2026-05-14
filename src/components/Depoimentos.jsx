@@ -115,7 +115,7 @@ export default function Depoimentos() {
               </svg>
               <span className="text-[#494c4f] text-[13px] font-semibold uppercase tracking-wide">Depoimentos</span>
             </div>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#779dff] shrink-0" />
+            <span className="w-1.5 h-1.5 bg-[#779dff] shrink-0" />
             <span className="text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
           </div>
           <div className="w-full h-px bg-[#e3e3e3]" />
