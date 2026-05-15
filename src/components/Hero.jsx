@@ -98,7 +98,7 @@ export default function Hero() {
 
   const baseSectionHeight = bp === 'mobile' ? 900 : bp === 'md' ? 650 : bp === 'sm' ? 760 : 817;
   const sectionHeight = bp === 'mobile' ? baseSectionHeight : Math.min(baseSectionHeight, vh - 90);
-  const paddingTop = bp === 'mobile' ? 420 : bp === 'md' ? Math.round(sectionHeight * 0.4) : bp === 'sm' ? Math.round(sectionHeight * 0.4) : 430;
+  const paddingTop = bp === 'mobile' ? 420 : bp === 'md' ? Math.round(sectionHeight * 0.48) : bp === 'sm' ? Math.round(sectionHeight * 0.48) : 430;
   const badgeWidth = bp === 'mobile' ? 'auto' : '336px';
   const h1Size = bp === 'mobile' ? '28px' : bp === 'md' ? '34px' : '40px';
   const isMobile = bp === 'mobile';
@@ -235,8 +235,8 @@ export default function Hero() {
               className="flex items-center gap-6 backdrop-blur-sm shrink-0"
               style={{
                 background: 'rgba(12,26,54,0.9)',
-                width: isFluidBar ? '100%' : bp === 'xl' ? 'min(1200px, calc(100% - 900px))' : bp === 'lg' ? 'min(1100px, calc(100% - 450px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : 'min(780px, 68%)',
-                maxWidth: isFluidBar ? 'calc(100% - 140px)' : bp === 'xl' ? 'min(1200px, calc(100% - 900px))' : bp === 'lg' ? 'min(1100px, calc(100% - 450px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : 'min(780px, 68%)',
+                width: bp === 'xl' ? 'min(1200px, calc(100% - 900px))' : bp === 'lg' ? 'min(1100px, calc(100% - 450px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : bp === 'md' ? 'min(600px, calc(100% - 280px))' : 'min(780px, 68%)',
+                maxWidth: bp === 'xl' ? 'min(1200px, calc(100% - 900px))' : bp === 'lg' ? 'min(1100px, calc(100% - 450px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : bp === 'md' ? 'min(600px, calc(100% - 280px))' : 'min(780px, 68%)',
                 height: '142px',
                 paddingLeft: gridPl,
                 paddingRight: '32px',
@@ -276,8 +276,8 @@ export default function Hero() {
               <span className="text-white text-sm font-semibold uppercase">Saiba mais</span>
             </div>
 
-            {/* Espaço transparente em 1024–1400px (sem indicadores) */}
-            {bp === 'sm' && <div className="flex-1" />}
+            {/* Espaço transparente em 768–1400px (sem indicadores) */}
+            {(bp === 'sm' || bp === 'md') && <div className="flex-1" />}
 
             {/* Indicadores de slide — apenas 1400px+ */}
             {(bp === 'lg-sm' || bp === 'lg' || bp === 'xl') && (
