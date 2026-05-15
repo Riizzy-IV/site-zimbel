@@ -78,9 +78,13 @@ export default function Hero() {
   const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
   const [bp, setBp] = useState(() => getBreakpoint(window.innerWidth));
+  const [vh, setVh] = useState(() => window.innerHeight);
 
   useEffect(() => {
-    const update = () => setBp(getBreakpoint(window.innerWidth));
+    const update = () => {
+      setBp(getBreakpoint(window.innerWidth));
+      setVh(window.innerHeight);
+    };
     window.addEventListener('resize', update);
     return () => window.removeEventListener('resize', update);
   }, []);
@@ -92,7 +96,8 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, []);
 
-  const sectionHeight = bp === 'mobile' ? 900 : bp === 'md' ? 650 : bp === 'sm' ? 760 : 817;
+  const baseSectionHeight = bp === 'mobile' ? 900 : bp === 'md' ? 650 : bp === 'sm' ? 760 : 817;
+  const sectionHeight = bp === 'mobile' ? baseSectionHeight : Math.min(baseSectionHeight, vh - 90);
   const paddingTop = bp === 'mobile' ? 420 : bp === 'md' ? 380 : bp === 'sm' ? 370 : 430;
   const badgeWidth = bp === 'mobile' ? 'auto' : '336px';
   const h1Size = bp === 'mobile' ? '28px' : bp === 'md' ? '34px' : '40px';
@@ -230,8 +235,8 @@ export default function Hero() {
               className="flex items-center gap-6 backdrop-blur-sm shrink-0"
               style={{
                 background: 'rgba(12,26,54,0.9)',
-                width: isFluidBar ? '100%' : bp === 'xl' ? 'min(1800px, calc(100% - 600px))' : bp === 'lg' ? 'min(1100px, calc(100% - 450px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : 'min(780px, 68%)',
-                maxWidth: isFluidBar ? 'calc(100% - 140px)' : bp === 'xl' ? 'min(1800px, calc(100% - 600px))' : bp === 'lg' ? 'min(1100px, calc(100% - 450px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : 'min(780px, 68%)',
+                width: isFluidBar ? '100%' : bp === 'xl' ? 'min(1200px, calc(100% - 900px))' : bp === 'lg' ? 'min(1100px, calc(100% - 450px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : 'min(780px, 68%)',
+                maxWidth: isFluidBar ? 'calc(100% - 140px)' : bp === 'xl' ? 'min(1200px, calc(100% - 900px))' : bp === 'lg' ? 'min(1100px, calc(100% - 450px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : 'min(780px, 68%)',
                 height: '142px',
                 paddingLeft: gridPl,
                 paddingRight: '32px',
