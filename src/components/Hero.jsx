@@ -98,7 +98,7 @@ export default function Hero() {
 
   const baseSectionHeight = bp === 'mobile' ? 900 : bp === 'md' ? 650 : bp === 'sm' ? 760 : 817;
   const sectionHeight = bp === 'mobile' ? baseSectionHeight : Math.min(baseSectionHeight, vh - 90);
-  const paddingTop = bp === 'mobile' ? 420 : bp === 'md' ? 380 : bp === 'sm' ? Math.round(sectionHeight * 0.4) : 430;
+  const paddingTop = bp === 'mobile' ? 420 : bp === 'md' ? Math.round(sectionHeight * 0.4) : bp === 'sm' ? Math.round(sectionHeight * 0.4) : 430;
   const badgeWidth = bp === 'mobile' ? 'auto' : '336px';
   const h1Size = bp === 'mobile' ? '28px' : bp === 'md' ? '34px' : '40px';
   const isMobile = bp === 'mobile';
