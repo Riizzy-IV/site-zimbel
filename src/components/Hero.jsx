@@ -98,12 +98,10 @@ export default function Hero() {
 
   const baseSectionHeight = bp === 'mobile' ? 900 : bp === 'md' ? 650 : bp === 'sm' ? 760 : 817;
   const sectionHeight = bp === 'mobile' ? baseSectionHeight : Math.min(baseSectionHeight, vh - 90);
-  const paddingTop = bp === 'mobile' ? 420 : bp === 'md' ? Math.round(sectionHeight * 0.48) : bp === 'sm' ? Math.round(sectionHeight * 0.48) : 430;
+  const paddingTop = bp === 'mobile' ? 420 : bp === 'md' ? Math.round(sectionHeight * 0.50) : bp === 'sm' ? Math.round(sectionHeight * 0.50) : 430;
   const badgeWidth = bp === 'mobile' ? 'auto' : '336px';
   const h1Size = bp === 'mobile' ? '28px' : bp === 'md' ? '34px' : '40px';
   const isMobile = bp === 'mobile';
-  const isFluidBar = bp === 'md'; // fluid apenas 768–1024px
-
   const slide = slides[current];
 
   return (
@@ -175,7 +173,7 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="flex-1" />
+        <div className="flex-1" style={{ minHeight: '32px' }} />
 
         {/* ── Barra inferior ── */}
         {isMobile ? (
@@ -240,6 +238,7 @@ export default function Hero() {
                 height: '142px',
                 paddingLeft: gridPl,
                 paddingRight: '32px',
+                paddingBottom: '16px',
               }}
             >
               <div className="shrink-0">
