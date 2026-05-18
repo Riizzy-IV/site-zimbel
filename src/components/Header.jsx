@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 const logoSrc      = '/Menu/Logotype.svg';
 const wppSrc       = '/Menu/whatsapp.svg';
 const mailSrc      = '/Menu/mail.svg';
-const telSrc       = '/Menu/telefone.svg';
 const instaSrc     = '/Menu/instagram.svg';
 const youtubeSrc   = '/Menu/Youtube.svg';
 
@@ -17,6 +16,8 @@ const gridPr = 'max(40px, calc((100vw - 1312px) / 2))';
 export default function Header() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [empOpen, setEmpOpen] = useState(false);
+  const [mobileEmpOpen, setMobileEmpOpen] = useState(false);
 
   return (
     <>
@@ -87,14 +88,6 @@ export default function Header() {
 
               <span className="text-white opacity-20 text-xs select-none">|</span>
 
-              {/* Telefone */}
-              <a href="tel:" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                <img src={telSrc} alt="" className="w-[18px] h-[18px] object-contain brightness-0 invert" />
-                <span className="text-[#e3e3e3] text-[12px] font-semibold">Telefone</span>
-              </a>
-
-              <span className="text-white opacity-20 text-xs select-none">|</span>
-
               {/* Redes sociais */}
               <div className="flex items-center gap-4">
                 <span className="text-[#e3e3e3] text-[12px] font-semibold">
@@ -115,18 +108,43 @@ export default function Header() {
 
               {/* Links de navegação */}
               <nav className="flex items-center gap-[30px]">
-                <div className="flex items-center gap-2 cursor-pointer">
-                  <span className="text-[#31447b] text-[14px] font-semibold">Sobre a Zimbel</span>
-                  <svg width="9" height="5" viewBox="0 0 9 5" fill="none">
-                    <path d="M0 0L4.5 5L9 0H0Z" fill="#31447b" />
-                  </svg>
+                <a href="#" className="text-[#31447b] text-[14px] font-semibold hover:text-[#4f6db5] transition-colors whitespace-nowrap">Sobre a Zimbel</a>
+                <span className="w-1 h-1 rounded-full bg-[#779dff] shrink-0" />
+
+                {/* Empreendimentos dropdown */}
+                <div className="relative">
+                  <button
+                    onClick={() => setEmpOpen(o => !o)}
+                    onBlur={() => setTimeout(() => setEmpOpen(false), 150)}
+                    className="flex items-center gap-2 cursor-pointer"
+                    style={{ background: 'none', border: 'none', padding: 0 }}
+                  >
+                    <span className="text-[#31447b] text-[14px] font-semibold whitespace-nowrap">Empreendimentos</span>
+                    <svg width="9" height="5" viewBox="0 0 9 5" fill="none" style={{ transition: 'transform 0.2s', transform: empOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                      <path d="M0 0L4.5 5L9 0H0Z" fill="#31447b" />
+                    </svg>
+                  </button>
+                  {empOpen && (
+                    <div
+                      className="absolute top-full left-0 bg-white rounded-lg shadow-lg flex flex-col overflow-hidden"
+                      style={{ marginTop: '12px', minWidth: '200px', border: '1px solid rgba(49,68,123,0.12)', zIndex: 100 }}
+                    >
+                      {['Pronto para Morar', 'Em Obras', 'Lançamento'].map((item) => (
+                        <a
+                          key={item}
+                          href="#"
+                          className="text-[#31447b] text-[14px] font-semibold hover:bg-[#f0f4ff] transition-colors whitespace-nowrap"
+                          style={{ padding: '12px 20px' }}
+                        >
+                          {item}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
+
                 <span className="w-1 h-1 rounded-full bg-[#779dff] shrink-0" />
-                <a href="#" className="text-[#31447b] text-[14px] font-semibold hover:text-[#4f6db5] transition-colors whitespace-nowrap">Imóveis</a>
-                <span className="w-1 h-1 rounded-full bg-[#779dff] shrink-0" />
-                <a href="#" className="text-[#31447b] text-[14px] font-semibold hover:text-[#4f6db5] transition-colors whitespace-nowrap">Futuros Lançamentos</a>
-                <span className="w-1 h-1 rounded-full bg-[#779dff] shrink-0" />
-                <a href="#" className="text-[#31447b] text-[14px] font-semibold hover:text-[#4f6db5] transition-colors whitespace-nowrap">Portfólio</a>
+                <a href="#" className="text-[#31447b] text-[14px] font-semibold hover:text-[#4f6db5] transition-colors whitespace-nowrap">Investidores</a>
                 <span className="w-1 h-1 rounded-full bg-[#779dff] shrink-0" />
                 <a href="#" className="text-[#31447b] text-[14px] font-semibold hover:text-[#4f6db5] transition-colors whitespace-nowrap">Seja um Corretor</a>
               </nav>
@@ -174,26 +192,75 @@ export default function Header() {
 
         {/* Nav links */}
         <nav className="flex flex-col flex-1 overflow-y-auto" style={{ padding: '8px 20px' }}>
-          {[
-            'Sobre a Zimbel',
-            'Imóveis',
-            'Futuros Lançamentos',
-            'Portfólio',
-            'Seja um Corretor',
-          ].map((label) => (
-            <a
-              key={label}
-              href="#"
-              onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-between border-b border-white/10 hover:text-[#779dff] transition-colors"
-              style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600 }}
+
+          {/* Sobre a Zimbel */}
+          <a
+            href="#"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center justify-between border-b border-white/10 hover:text-[#779dff] transition-colors"
+            style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600 }}
+          >
+            Sobre a Zimbel
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" style={{ opacity: 0.4, flexShrink: 0 }}>
+              <path d="M1 1l5 5-5 5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
+
+          {/* Empreendimentos com submenu */}
+          <div className="border-b border-white/10">
+            <button
+              onClick={() => setMobileEmpOpen(o => !o)}
+              className="flex items-center justify-between w-full hover:text-[#779dff] transition-colors"
+              style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer' }}
             >
-              {label}
-              <svg width="7" height="12" viewBox="0 0 7 12" fill="none" style={{ opacity: 0.4, flexShrink: 0 }}>
-                <path d="M1 1l5 5-5 5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              Empreendimentos
+              <svg width="9" height="5" viewBox="0 0 9 5" fill="none" style={{ opacity: 0.6, flexShrink: 0, transition: 'transform 0.2s', transform: mobileEmpOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                <path d="M0 0L4.5 5L9 0H0Z" fill="white" />
               </svg>
-            </a>
-          ))}
+            </button>
+            {mobileEmpOpen && (
+              <div className="flex flex-col" style={{ paddingBottom: '8px' }}>
+                {['Pronto para Morar', 'Em Obras', 'Lançamento'].map((item) => (
+                  <a
+                    key={item}
+                    href="#"
+                    onClick={() => setMenuOpen(false)}
+                    className="hover:text-[#779dff] transition-colors"
+                    style={{ paddingTop: '12px', paddingBottom: '12px', paddingLeft: '16px', color: 'rgba(255,255,255,0.7)', fontSize: '14px', fontWeight: 500 }}
+                  >
+                    {item}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Investidores */}
+          <a
+            href="#"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center justify-between border-b border-white/10 hover:text-[#779dff] transition-colors"
+            style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600 }}
+          >
+            Investidores
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" style={{ opacity: 0.4, flexShrink: 0 }}>
+              <path d="M1 1l5 5-5 5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
+
+          {/* Seja um Corretor */}
+          <a
+            href="#"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center justify-between border-b border-white/10 hover:text-[#779dff] transition-colors"
+            style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600 }}
+          >
+            Seja um Corretor
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" style={{ opacity: 0.4, flexShrink: 0 }}>
+              <path d="M1 1l5 5-5 5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
+
         </nav>
 
         {/* Bottom: social icons + contact button */}

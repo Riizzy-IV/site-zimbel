@@ -938,6 +938,8 @@ const LOC_FOTOS = [
 
 function LocalizacaoVertice() {
   const { isMobile, isTablet } = useBreakpoint()
+  const [mapaView, setMapaView] = useState('maps') // 'maps' | '360'
+
   return (
     <section style={{ borderTop: '1px solid #e7e7e7' }}>
 
@@ -952,7 +954,7 @@ function LocalizacaoVertice() {
           <span style={{ fontSize: '13px', color: '#a7a7a7', fontWeight: 600, textTransform: 'uppercase' }}>Vértice Anália Franco</span>
         </div>
         <div style={{ height: '1px', background: '#e7e7e7', marginBottom: '32px' }} />
-        <h2 style={{ fontSize: isMobile ? '20px' : '32px', color: '#31477b', fontWeight: 800, textTransform: 'uppercase', lineHeight: 1.35, maxWidth: '864px', margin: 0 }}>
+        <h2 style={{ fontSize: isMobile ? '20px' : '32px', color: '#31447b', fontWeight: 800, textTransform: 'uppercase', lineHeight: 1.35, maxWidth: '864px', margin: 0 }}>
           Localização Estratégica, Próxima dos Principais Pontos do Bairro
         </h2>
       </div>
@@ -961,35 +963,77 @@ function LocalizacaoVertice() {
       <div>
         {/* Mapa full-width com margem negativa para overlap */}
         <div style={{ marginBottom: isMobile ? '-60px' : '-127px' }}>
+
+          {/* Abas Maps / 360° */}
+          <div style={{ display: 'flex', paddingLeft: gridPad }}>
+            {[
+              { key: 'maps', label: 'Mapa' },
+              { key: '360', label: 'Tour 360°' },
+            ].map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => setMapaView(tab.key)}
+                style={{
+                  padding: '10px 28px',
+                  fontSize: '13px',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  border: 'none',
+                  cursor: 'pointer',
+                  borderRadius: '6px 6px 0 0',
+                  marginRight: '4px',
+                  background: mapaView === tab.key ? '#31477b' : '#e8edf5',
+                  color: mapaView === tab.key ? 'white' : '#6b7280',
+                  transition: 'background 0.2s, color 0.2s',
+                }}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
           <div style={{ width: '100%', aspectRatio: isMobile ? '4/3' : '1920/800', position: 'relative', overflow: 'hidden' }}>
+            {/* Google Maps */}
             <iframe
               src="https://maps.google.com/maps?q=Rua+Bruna+340+Analia+Franco+Sao+Paulo+SP&output=embed&hl=pt-BR&z=16"
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', opacity: mapaView === 'maps' ? 1 : 0, pointerEvents: mapaView === 'maps' ? 'auto' : 'none', transition: 'opacity 0.3s' }}
               title="Mapa Vértice Anália Franco"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
-            {/* Botões overlay top-right */}
-            <div style={{ position: 'absolute', top: '14px', right: '15px', display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '8px', alignItems: 'flex-end', zIndex: 10 }}>
-              <a
-                href="https://maps.google.com/maps?q=Rua+Bruna,+340,+An%C3%A1lia+Franco,+S%C3%A3o+Paulo"
-                target="_blank" rel="noopener noreferrer"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', height: '38px', padding: '0 24px', background: '#0c1a36', borderRadius: '4px', textDecoration: 'none' }}
-              >
-                <img src={locMapsIcon} alt="" style={{ width: '14px', height: '14px' }} />
-                <span style={{ fontSize: '14px', color: 'white', fontWeight: 500, whiteSpace: 'nowrap' }}>Abrir com Maps</span>
-              </a>
-              <a
-                href="https://www.waze.com/ul?q=Rua+Bruna+340+An%C3%A1lia+Franco+S%C3%A3o+Paulo"
-                target="_blank" rel="noopener noreferrer"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', height: '38px', padding: '0 24px', background: '#0c1a36', borderRadius: '4px', textDecoration: 'none' }}
-              >
-                <img src={locWazeIcon} alt="" style={{ width: '18px', height: '18px' }} />
-                <span style={{ fontSize: '14px', color: 'white', fontWeight: 500, whiteSpace: 'nowrap' }}>Abrir com Waze</span>
-              </a>
-              <img src={locShare} alt="Compartilhar" style={{ width: '38px', height: '38px', cursor: 'pointer', display: 'block' }} />
-            </div>
+            {/* Tour 360° */}
+            <iframe
+              src="https://tour.meupasseiovirtual.com/view/aRH3SqOsnal"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', opacity: mapaView === '360' ? 1 : 0, pointerEvents: mapaView === '360' ? 'auto' : 'none', transition: 'opacity 0.3s' }}
+              title="Tour Virtual 360° Vértice Anália Franco"
+              referrerPolicy="origin"
+              allow="fullscreen *; autoplay *; screen-wake-lock *; geolocation *; accelerometer *; gyroscope *; xr-spatial-tracking *; vr *; web-share *;"
+              allowFullScreen
+            />
+            {/* Botões overlay top-right — só no Maps */}
+            {mapaView === 'maps' && (
+              <div style={{ position: 'absolute', top: '14px', right: '15px', display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '8px', alignItems: 'flex-end', zIndex: 10 }}>
+                <a
+                  href="https://maps.google.com/maps?q=Rua+Bruna,+340,+An%C3%A1lia+Franco,+S%C3%A3o+Paulo"
+                  target="_blank" rel="noopener noreferrer"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', height: '38px', padding: '0 24px', background: '#0c1a36', borderRadius: '4px', textDecoration: 'none' }}
+                >
+                  <img src={locMapsIcon} alt="" style={{ width: '14px', height: '14px' }} />
+                  <span style={{ fontSize: '14px', color: 'white', fontWeight: 500, whiteSpace: 'nowrap' }}>Abrir com Maps</span>
+                </a>
+                <a
+                  href="https://www.waze.com/ul?q=Rua+Bruna+340+An%C3%A1lia+Franco+S%C3%A3o+Paulo"
+                  target="_blank" rel="noopener noreferrer"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', height: '38px', padding: '0 24px', background: '#0c1a36', borderRadius: '4px', textDecoration: 'none' }}
+                >
+                  <img src={locWazeIcon} alt="" style={{ width: '18px', height: '18px' }} />
+                  <span style={{ fontSize: '14px', color: 'white', fontWeight: 500, whiteSpace: 'nowrap' }}>Abrir com Waze</span>
+                </a>
+                <img src={locShare} alt="Compartilhar" style={{ width: '38px', height: '38px', cursor: 'pointer', display: 'block' }} />
+              </div>
+            )}
           </div>
         </div>
 

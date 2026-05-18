@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const imgVertice = "/empreendimentos/vertice/fachada.jpg";
-const imgEvolution = "/hero/Sala Evolution 1.avif";
-const imgEsperanca = "/hero/Esperanca.avif";
+const imgVertice = "/empreendimentos/vertice/hero-bg.jpg";
+const imgEvolution = "/empreendimentos/evolution-fachada.avif";
+const imgEsperanca = "/empreendimentos/esperanca-fachada.avif";
 const iconLocation = '/icon/localizacao.svg';
 const iconBed = '/cards/cama.svg';
 const iconArea = '/cards/area.svg';
@@ -176,7 +176,7 @@ export default function Empreendimentos() {
         <div
           className="relative w-full rounded-lg overflow-hidden"
           style={{
-            height: 'clamp(300px, 35vw, 560px)',
+            height: 'clamp(280px, 75vw, 560px)',
             marginBottom: '24px',
             boxShadow: '0 20px 60px rgba(12,26,54,0.4)',
             cursor: 'pointer',
@@ -228,7 +228,7 @@ export default function Empreendimentos() {
             </div>
           </div>
 
-          <SaibaMais className="absolute bottom-0 right-0 w-36 md:w-48 h-[56px] md:h-[70px] rounded-tl-lg" />
+          <SaibaMais className="absolute bottom-0 right-0 w-32 md:w-48 h-[50px] md:h-[70px] rounded-tl-lg" />
         </div>
 
         {/* ── Dois cards menores ── */}
@@ -238,7 +238,7 @@ export default function Empreendimentos() {
               <div
                 className="relative flex-1 rounded-lg overflow-hidden"
                 style={{
-                  height: 'clamp(240px, 28vw, 380px)',
+                  height: 'clamp(280px, 75vw, 380px)',
                   boxShadow: '0 20px 60px rgba(12,26,54,0.4)',
                   cursor: card.href ? 'pointer' : 'default',
                 }}
