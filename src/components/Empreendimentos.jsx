@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const imgVertice = "https://www.figma.com/api/mcp/asset/5d623035-f07c-474f-8b7e-a47e771b63bf";
-const imgEvolution = "https://www.figma.com/api/mcp/asset/ecf4e29d-de38-4da8-a5d3-fbe0d5ac44b4";
-const imgEsperanca = "https://www.figma.com/api/mcp/asset/f66c968a-3ec1-4a77-82a9-21c80a8e8b92";
+const imgVertice = "/empreendimentos/vertice/fachada.jpg";
+const imgEvolution = "/hero/Sala Evolution 1.avif";
+const imgEsperanca = "/hero/Esperanca.avif";
 const iconLocation = '/icon/localizacao.svg';
 const iconBed = '/cards/cama.svg';
 const iconArea = '/cards/area.svg';
 const iconCar = '/cards/Frame-2.svg';
 const iconBalcony = '/cards/area.svg';
 
-const gridPl = 'max(16px, calc((100vw - 1312px) / 2))';
-const gridPr = 'max(16px, calc((100vw - 1312px) / 2))';
+const gridPl = 'max(40px, calc((100vw - 1312px) / 2))';
+const gridPr = 'max(40px, calc((100vw - 1312px) / 2))';
 
 const tabs = [
   {
@@ -75,11 +75,7 @@ export default function Empreendimentos() {
         <div className="flex flex-col gap-2 mb-8">
           <div className="flex items-center gap-7">
             <div className="flex items-center gap-2.5">
-              <svg width="18" height="17" viewBox="0 0 18 17" fill="none">
-                <rect x="1" y="5" width="16" height="11" rx="1" stroke="#779dff" strokeWidth="1.4" />
-                <path d="M5 5V3.5C5 2.12 6.79 1 9 1C11.21 1 13 2.12 13 3.5V5" stroke="#779dff" strokeWidth="1.4" strokeLinecap="round" />
-                <rect x="6.5" y="8" width="5" height="4" rx="0.5" stroke="#779dff" strokeWidth="1.2" />
-              </svg>
+              <img src="/icon/vantagens.svg" alt="" style={{ width: '18px', height: '18px', objectFit: 'contain' }} />
               <span className="text-[#494c4f] text-[13px] font-semibold uppercase tracking-wide">
                 Empreendimentos em destaque
               </span>
@@ -192,6 +188,8 @@ export default function Empreendimentos() {
             alt="Vértice Anália Franco"
             className="absolute inset-0 w-full h-full object-cover"
             style={{ objectPosition: 'center center' }}
+            loading="lazy"
+            decoding="async"
           />
 
           <div
@@ -250,6 +248,8 @@ export default function Empreendimentos() {
                   src={card.img}
                   alt={card.name}
                   className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div
                   className="absolute inset-0"

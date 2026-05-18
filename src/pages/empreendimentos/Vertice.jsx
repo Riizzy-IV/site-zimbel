@@ -51,7 +51,7 @@ const PLANTAS = [
   { id: 21, area: '28,14m²', tipo: 'Planta Final 5 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
 ]
 
-const gridPad = 'max(16px, calc((100vw - 1312px) / 2))'
+const gridPad = 'max(40px, calc((100vw - 1312px) / 2))'
 
 function useBreakpoint() {
   const get = () => {
@@ -77,7 +77,7 @@ function HeroVertice() {
 
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover object-center" />
+        <img src={heroBg} alt="" className="w-full h-full object-cover object-center" fetchpriority="high" decoding="sync" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(12,26,54,0.88) 0%, rgba(12,26,54,0.6) 50%, rgba(12,26,54,0.1) 100%)' }} />
       </div>
 
@@ -380,6 +380,8 @@ function GaleriaVertice() {
           <img
             src={img.src}
             alt={img.caption}
+            loading="lazy"
+            decoding="async"
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
           {/* Gradient overlay */}
@@ -576,6 +578,8 @@ function VideoVertice() {
         <img
           src="/empreendimentos/vertice/lazer-img-3.jpg"
           alt="Capa do vídeo"
+          loading="lazy"
+          decoding="async"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }}
         />
 
@@ -873,7 +877,7 @@ function PlantasVertice() {
                     onClick={() => setLightbox(src)}
                     style={{ flex: 1, height: isMobile ? '120px' : '144px', borderRadius: '8px', overflow: 'hidden', cursor: 'zoom-in', position: 'relative' }}
                   >
-                    <img src={src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    <img src={src} alt="" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                   </div>
                 ))}
               </div>
@@ -1106,7 +1110,7 @@ function LocalizacaoVertice() {
             {LOC_FOTOS.map(f => (
               <div key={f.label} style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '25px' }}>
                 <div style={{ aspectRatio: '416/277', borderRadius: '8px', overflow: 'hidden' }}>
-                  <img src={f.src} alt={f.label} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={f.src} alt={f.label} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', borderLeft: '1px solid #779dff', padding: '0 18px', height: '18px' }}>
                   <span style={{ fontSize: '12px', color: '#31477b', fontWeight: 600, whiteSpace: 'nowrap' }}>{f.label}</span>

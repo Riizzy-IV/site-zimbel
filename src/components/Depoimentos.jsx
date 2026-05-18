@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const gridPl = 'max(16px, calc((100vw - 1312px) / 2))';
-const gridPr = 'max(16px, calc((100vw - 1312px) / 2))';
+const gridPl = 'max(40px, calc((100vw - 1312px) / 2))';
+const gridPr = 'max(40px, calc((100vw - 1312px) / 2))';
 
 const testimonials = [
   { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis massa lorem, a malesuada nulla sodales non. Sed felis nisl, lacinia vel dui non, viverra aliquam elit.', author: 'Ana Clara - Vértice Anália Franco' },

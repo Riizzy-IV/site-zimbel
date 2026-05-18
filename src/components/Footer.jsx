@@ -1,5 +1,5 @@
-const gridPl = 'max(16px, calc((100vw - 1312px) / 2))';
-const gridPr = 'max(16px, calc((100vw - 1312px) / 2))';
+const gridPl = 'max(40px, calc((100vw - 1312px) / 2))';
+const gridPr = 'max(40px, calc((100vw - 1312px) / 2))';
 
 
 function IconAddress() {
@@ -103,7 +103,6 @@ export default function Footer() {
                       <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                     </svg>
                   </div>
-                  <img src="/Menu/Linkedin.svg" alt="LinkedIn" className="w-9 h-9 object-contain cursor-pointer brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
                 </div>
               </div>
             </div>

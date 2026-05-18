@@ -8,12 +8,11 @@ const mailSrc      = '/Menu/mail.svg';
 const telSrc       = '/Menu/telefone.svg';
 const instaSrc     = '/Menu/instagram.svg';
 const youtubeSrc   = '/Menu/Youtube.svg';
-const linkedinSrc  = '/Menu/Linkedin.svg';
 
 /* Padding dinâmico que respeita o grid de 1312px centralizado.
    Em 1920px → 304px  |  Em 1440px → 64px  |  Em 1312px → 16px */
-const gridPl = 'max(16px, calc((100vw - 1312px) / 2))';
-const gridPr = 'max(16px, calc((100vw - 1312px) / 2))';
+const gridPl = 'max(40px, calc((100vw - 1312px) / 2))';
+const gridPr = 'max(40px, calc((100vw - 1312px) / 2))';
 
 export default function Header() {
   const navigate = useNavigate();
@@ -36,7 +35,7 @@ export default function Header() {
           className="flex items-center shrink-0"
           style={{
             paddingLeft: gridPl,
-            paddingRight: 'max(16px, calc((100vw - 1312px) / 2))',
+            paddingRight: 'max(40px, calc((100vw - 1312px) / 2))',
           }}
         >
           {/* On desktop keep 136px right padding; on mobile/tablet use gridPr only */}
@@ -104,7 +103,6 @@ export default function Header() {
                 <div className="flex items-center gap-4">
                   <img src={instaSrc}    alt="Instagram" className="w-4 h-4 object-contain cursor-pointer" />
                   <img src={youtubeSrc}  alt="Youtube"   className="w-4 h-4 object-contain cursor-pointer" />
-                  <img src={linkedinSrc} alt="LinkedIn"  className="w-4 h-4 object-contain cursor-pointer" />
                 </div>
               </div>
 
@@ -205,7 +203,6 @@ export default function Header() {
             <div className="flex items-center gap-4">
               <img src={instaSrc}    alt="Instagram" className="w-6 h-6 object-contain cursor-pointer brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
               <img src={youtubeSrc}  alt="Youtube"   className="w-6 h-6 object-contain cursor-pointer brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
-              <img src={linkedinSrc} alt="LinkedIn"  className="w-6 h-6 object-contain cursor-pointer brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
             </div>
           </div>
           <a

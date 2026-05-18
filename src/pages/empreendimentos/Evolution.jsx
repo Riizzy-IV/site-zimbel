@@ -25,7 +25,7 @@ const PLANTAS = [
   { id: 0, area: '—m²', tipo: 'Planta tipo • Unidade 1', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
 ]
 
-const gridPad = 'max(16px, calc((100vw - 1312px) / 2))'
+const gridPad = 'max(40px, calc((100vw - 1312px) / 2))'
 
 function useBreakpoint() {
   const get = () => {
@@ -51,7 +51,7 @@ function HeroEvolution() {
 
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover object-center" />
+        <img src={heroBg} alt="" className="w-full h-full object-cover object-center" fetchpriority="high" decoding="sync" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(12,26,54,0.88) 0%, rgba(12,26,54,0.6) 50%, rgba(12,26,54,0.1) 100%)' }} />
       </div>
 
@@ -425,7 +425,7 @@ function LazerEvolution() {
         {/* Galeria de lazer — 1 no mobile, 2 no tablet/desktop */}
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '16px', marginBottom: '48px' }}>
           <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: isMobile ? '260px' : isTablet ? '320px' : '440px' }}>
-            <img src={img.src} alt={img.caption} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={img.src} alt={img.caption} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.35))' }} />
             <button onClick={prev} style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M8 1L1 8L8 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -447,7 +447,7 @@ function LazerEvolution() {
           {/* Imagem secundária — só tablet/desktop */}
           {!isMobile && (
             <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: isTablet ? '320px' : '440px' }}>
-              <img src={lazerImages[(imgIdx + 1) % total].src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={lazerImages[(imgIdx + 1) % total].src} alt="" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.35))' }} />
               <button onClick={next} style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M1 1L8 8L1 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>

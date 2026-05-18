@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const gridPl = 'max(16px, calc((100vw - 1312px) / 2))';
+const gridPl = 'max(40px, calc((100vw - 1312px) / 2))';
 
 const slides = [
   {
@@ -119,6 +119,9 @@ export default function Hero() {
             opacity: i === current ? 1 : 0,
             transition: 'opacity 0.8s ease',
           }}
+          loading={i === 0 ? 'eager' : 'lazy'}
+          fetchpriority={i === 0 ? 'high' : 'low'}
+          decoding={i === 0 ? 'sync' : 'async'}
         />
       ))}
 

@@ -1,7 +1,7 @@
 const manImg = "https://www.figma.com/api/mcp/asset/723e1951-88a3-43e9-a10f-9596d13409c3";
 
-const gridPl = 'max(16px, calc((100vw - 1312px) / 2))';
-const gridPr = 'max(16px, calc((100vw - 1312px) / 2))';
+const gridPl = 'max(40px, calc((100vw - 1312px) / 2))';
+const gridPr = 'max(40px, calc((100vw - 1312px) / 2))';
 
 const stats = [
   { value: '+500', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed laoreet urna. In rhoncus massa ligula, et luctus leo aliquet et.' },
