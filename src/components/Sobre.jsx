@@ -50,11 +50,8 @@ export default function Sobre() {
         {/* ── Card / layout ── */}
 
         {/* MOBILE / TABLET: simplified card, no images */}
-        <div className="block lg:hidden mb-10">
-          <div
-            className="rounded-xl bg-white flex flex-col gap-6 p-6"
-            style={{ boxShadow: '0 20px 60px rgba(12,26,54,0.18)' }}
-          >
+        <div className="block lg:hidden" style={{ marginBottom: '64px' }}>
+          <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-4">
               <p className="text-[#4b5563] text-[15px] leading-relaxed">
                 A Zimbel nasceu com um único propósito: Oferecer qualidade de moradia para seus clientes
