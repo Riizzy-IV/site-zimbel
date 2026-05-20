@@ -132,21 +132,6 @@ function HeroVertice() {
         </div>
       </div>
 
-      {/* CTA WhatsApp */}
-      <a
-        href="https://wa.me/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="absolute z-10 flex items-center gap-3 rounded-[6px] hover:brightness-110 transition-all"
-        style={{ right: isMobile ? undefined : gridPad, left: isMobile ? gridPad : undefined, bottom: isMobile ? undefined : '32px', top: isMobile ? '16px' : undefined, background: '#25D366', padding: '8px 14px' }}
-      >
-        <img src={icoWpp} alt="" style={{ width: '20px', height: '20px', objectFit: 'contain' }} />
-        <span style={{ width: '1px', alignSelf: 'stretch', background: 'rgba(255,255,255,0.3)' }} />
-        <div className="flex flex-col leading-tight">
-          <span className="text-white font-medium" style={{ fontSize: '11px' }}>Fale com um</span>
-          <span className="text-white font-bold" style={{ fontSize: '12px' }}>corretor</span>
-        </div>
-      </a>
     </section>
   )
 }
@@ -318,6 +303,7 @@ const tabs = [
 ]
 
 function GaleriaVertice() {
+  const { isMobile } = useBreakpoint()
   const [activeTab, setActiveTab] = useState(0)
   const [currentImg, setCurrentImg] = useState(0)
 
@@ -338,8 +324,8 @@ function GaleriaVertice() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
             <img src="/empreendimentos/vertice/icon-galeria.svg" alt="" style={{ width: '17px', height: '16px', objectFit: 'contain' }} />
             <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#494c4f' }}>Galeria de Imagens</span>
-            <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
-            <span style={{ fontSize: '13px', fontWeight: 400, color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Vértice Anália Franco</span>
+            {!isMobile && <><span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+            <span style={{ fontSize: '13px', fontWeight: 400, color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Vértice Anália Franco</span></>}
           </div>
           <div style={{ width: '100%', height: '1px', background: '#d4d4d4' }} />
         </div>
@@ -353,30 +339,30 @@ function GaleriaVertice() {
         </div>
 
         {/* Tabs */}
-        <div style={{ display: 'inline-flex', alignItems: 'center', background: '#fff', borderRadius: '4px', padding: '0 40px', marginBottom: '24px', gap: '48px' }}>
+        <div style={{ display: 'flex', width: isMobile ? '100%' : 'auto', alignItems: 'center', background: '#fff', borderRadius: '4px', padding: isMobile ? '0 12px' : '0 40px', marginBottom: '24px', gap: isMobile ? '0' : '48px', overflowX: isMobile ? 'auto' : 'visible' }}>
           {tabs.map((tab, i) => (
-            <div key={tab.label} style={{ display: 'flex', alignItems: 'center', gap: '48px' }}>
+            <div key={tab.label} style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '12px' : '48px', flexShrink: 0 }}>
               <button
                 onClick={() => selectTab(i)}
                 style={{
-                  display: 'flex', alignItems: 'center', gap: '8px',
-                  padding: '12px 0', background: 'none', border: 'none', cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0,
+                  padding: isMobile ? '12px 8px' : '12px 0', background: 'none', border: 'none', cursor: 'pointer',
                   borderBottom: activeTab === i ? '2px solid #052e7e' : '2px solid transparent',
-                  color: '#494c4f', fontSize: '14px', fontWeight: 600,
+                  color: '#494c4f', fontSize: isMobile ? '13px' : '14px', fontWeight: 600, whiteSpace: 'nowrap',
                 }}
               >
                 <img src="/empreendimentos/vertice/icon-tab.svg" alt="" style={{ width: '21px', height: '21px', objectFit: 'contain' }} />
                 {tab.label}
               </button>
               {i < tabs.length - 1 && (
-                <div style={{ width: '1px', height: '11px', background: '#d4d4d4' }} />
+                <div style={{ width: '1px', height: '11px', background: '#d4d4d4', flexShrink: 0 }} />
               )}
             </div>
           ))}
         </div>
 
         {/* Carousel */}
-        <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', aspectRatio: '1312/578' }}>
+        <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', aspectRatio: isMobile ? '4/3' : '1312/578' }}>
           <img
             src={img.src}
             alt={img.caption}
@@ -536,20 +522,33 @@ function LazerVertice() {
         </div>
 
         {/* Grid de amenidades */}
-        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', gap: '16px 0' }}>
-          {amenidades.map((col, ci) => (
-            <div key={ci} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              {col.map(({ icon, label }) => (
-                <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <div style={{ width: '1px', height: '18px', background: '#779dff', flexShrink: 0 }} />
-                  <img src={`/empreendimentos/vertice/${icon}`} alt="" style={{ width: '16px', height: '16px', objectFit: 'contain', flexShrink: 0 }} />
-                  <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#31477b', flexShrink: 0 }} />
-                  <span style={{ fontSize: '16px', color: '#a7a7a7', fontWeight: 600 }}>{label}</span>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
+        {isMobile ? (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px 8px' }}>
+            {amenidades.flat().map(({ icon, label }) => (
+              <div key={label} style={{ display: 'flex', alignItems: 'flex-start', gap: '6px' }}>
+                <div style={{ width: '1px', minHeight: '18px', background: '#779dff', flexShrink: 0, marginTop: '2px' }} />
+                <img src={`/empreendimentos/vertice/${icon}`} alt="" style={{ width: '14px', height: '14px', objectFit: 'contain', flexShrink: 0, marginTop: '3px' }} />
+                <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#31477b', flexShrink: 0, marginTop: '7px' }} />
+                <span style={{ fontSize: '13px', color: '#a7a7a7', fontWeight: 600, lineHeight: 1.3 }}>{label}</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px 0' }}>
+            {amenidades.map((col, ci) => (
+              <div key={ci} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {col.map(({ icon, label }) => (
+                  <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <div style={{ width: '1px', height: '18px', background: '#779dff', flexShrink: 0 }} />
+                    <img src={`/empreendimentos/vertice/${icon}`} alt="" style={{ width: '16px', height: '16px', objectFit: 'contain', flexShrink: 0 }} />
+                    <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#31477b', flexShrink: 0 }} />
+                    <span style={{ fontSize: '16px', color: '#a7a7a7', fontWeight: 600 }}>{label}</span>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
 
       </div>
     </section>
@@ -598,8 +597,10 @@ function VideoVertice() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <img src="/empreendimentos/vertice/icon-video-label.svg" alt="" style={{ width: '20px', height: '20px', objectFit: 'contain' }} />
                 <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#e3e3e3' }}>Vídeo Conceito</span>
-                <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
-                <span style={{ fontSize: '13px', color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Vértice Anália Franco</span>
+                {!isMobile && <>
+                  <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+                  <span style={{ fontSize: '13px', color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Vértice Anália Franco</span>
+                </>}
               </div>
               <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.15)' }} />
             </div>
@@ -686,8 +687,10 @@ function TourVertice() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
             <img src="/empreendimentos/vertice/icon-tour.svg" alt="" style={{ width: '24px', height: '24px', objectFit: 'contain' }} />
             <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#494c4f' }}>Tour Virtual</span>
-            <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
-            <span style={{ fontSize: '13px', color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Vértice Anália Franco</span>
+            {!isMobile && <>
+              <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+              <span style={{ fontSize: '13px', color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Vértice Anália Franco</span>
+            </>}
           </div>
           <div style={{ width: '100%', height: '1px', background: '#e8e8e8' }} />
         </div>
@@ -950,8 +953,10 @@ function LocalizacaoVertice() {
             <img src={icoPin} alt="" style={{ width: '18px', height: '22px', objectFit: 'contain' }} />
             <span style={{ fontSize: '13px', color: '#494c4f', fontWeight: 600, textTransform: 'uppercase' }}>Localização</span>
           </div>
-          <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
-          <span style={{ fontSize: '13px', color: '#a7a7a7', fontWeight: 600, textTransform: 'uppercase' }}>Vértice Anália Franco</span>
+          {!isMobile && <>
+            <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+            <span style={{ fontSize: '13px', color: '#a7a7a7', fontWeight: 600, textTransform: 'uppercase' }}>Vértice Anália Franco</span>
+          </>}
         </div>
         <div style={{ height: '1px', background: '#e7e7e7', marginBottom: '32px' }} />
         <h2 style={{ fontSize: isMobile ? '20px' : '32px', color: '#31447b', fontWeight: 800, textTransform: 'uppercase', lineHeight: 1.35, maxWidth: '864px', margin: 0 }}>
@@ -993,7 +998,7 @@ function LocalizacaoVertice() {
             ))}
           </div>
 
-          <div style={{ width: '100%', aspectRatio: isMobile ? '4/3' : '1920/800', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ width: '100%', aspectRatio: isMobile ? '3/4' : '1920/800', position: 'relative', overflow: 'hidden' }}>
             {/* Google Maps */}
             <iframe
               src="https://maps.google.com/maps?q=Rua+Bruna+340+Analia+Franco+Sao+Paulo+SP&output=embed&hl=pt-BR&z=16"
@@ -1185,6 +1190,17 @@ export default function Vertice() {
       <PlantasVertice />
       <LocalizacaoVertice />
       <Footer />
+
+      {/* WhatsApp flutuante */}
+      <a
+        href="https://wa.me/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:brightness-110 transition-all"
+        style={{ position: 'fixed', bottom: '24px', right: '24px', zIndex: 9998, background: '#25D366', width: '52px', height: '52px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 16px rgba(0,0,0,0.25)' }}
+      >
+        <img src={icoWpp} alt="WhatsApp" style={{ width: '26px', height: '26px', objectFit: 'contain' }} />
+      </a>
     </>
   )
 }

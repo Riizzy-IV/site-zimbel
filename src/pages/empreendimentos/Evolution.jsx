@@ -106,21 +106,6 @@ function HeroEvolution() {
         </div>
       </div>
 
-      {/* CTA WhatsApp */}
-      <a
-        href="https://wa.me/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="absolute z-10 flex items-center gap-3 rounded-[6px] hover:brightness-110 transition-all"
-        style={{ right: isMobile ? undefined : gridPad, left: isMobile ? gridPad : undefined, bottom: isMobile ? undefined : '32px', top: isMobile ? '16px' : undefined, background: '#25D366', padding: '8px 14px' }}
-      >
-        <img src={icoWpp} alt="" style={{ width: '20px', height: '20px', objectFit: 'contain' }} />
-        <span style={{ width: '1px', alignSelf: 'stretch', background: 'rgba(255,255,255,0.3)' }} />
-        <div className="flex flex-col leading-tight">
-          <span className="text-white font-medium" style={{ fontSize: '11px' }}>Fale com um</span>
-          <span className="text-white font-bold" style={{ fontSize: '12px' }}>corretor</span>
-        </div>
-      </a>
     </section>
   )
 }
@@ -276,6 +261,7 @@ const galeriaTabs = [
 ]
 
 function GaleriaEvolution() {
+  const { isMobile } = useBreakpoint()
   const [activeTab, setActiveTab] = useState(0)
   const [currentImg, setCurrentImg] = useState(0)
 
@@ -296,8 +282,8 @@ function GaleriaEvolution() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
             <img src="/empreendimentos/vertice/icon-galeria.svg" alt="" style={{ width: '17px', height: '16px', objectFit: 'contain' }} />
             <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#494c4f' }}>Galeria de Imagens</span>
-            <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
-            <span style={{ fontSize: '13px', fontWeight: 400, color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Evolution Tatuapé</span>
+            {!isMobile && <><span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+            <span style={{ fontSize: '13px', fontWeight: 400, color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Evolution Tatuapé</span></>}
           </div>
           <div style={{ width: '100%', height: '1px', background: '#d4d4d4' }} />
         </div>
@@ -311,9 +297,9 @@ function GaleriaEvolution() {
         </div>
 
         {/* Tabs */}
-        <div style={{ display: 'inline-flex', alignItems: 'center', background: '#fff', borderRadius: '4px', padding: '0 40px', marginBottom: '24px', gap: '48px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', background: '#fff', borderRadius: '4px', padding: isMobile ? '0 16px' : '0 40px', marginBottom: '24px', gap: isMobile ? '16px' : '48px', overflowX: isMobile ? 'auto' : undefined, whiteSpace: 'nowrap' }}>
           {galeriaTabs.map((tab, i) => (
-            <div key={tab.label} style={{ display: 'flex', alignItems: 'center', gap: '48px' }}>
+            <div key={tab.label} style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '16px' : '48px', flexShrink: 0 }}>
               <button
                 onClick={() => selectTab(i)}
                 style={{
@@ -334,7 +320,7 @@ function GaleriaEvolution() {
         </div>
 
         {/* Carousel */}
-        <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', aspectRatio: '1312/578' }}>
+        <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', aspectRatio: isMobile ? '4/3' : '1312/578' }}>
           <img src={img.src} alt={img.caption} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 50%)' }} />
 
@@ -406,8 +392,8 @@ function LazerEvolution() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
             <img src="/empreendimentos/vertice/icon-lazer-label.svg" alt="" style={{ width: '24px', height: '24px', objectFit: 'contain' }} />
             <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#494c4f' }}>Lazer</span>
-            <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
-            <span style={{ fontSize: '13px', color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Evolution Tatuapé</span>
+            {!isMobile && <><span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+            <span style={{ fontSize: '13px', color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Evolution Tatuapé</span></>}
           </div>
           <div style={{ width: '100%', height: '1px', background: '#e8e8e8' }} />
         </div>
@@ -464,20 +450,33 @@ function LazerEvolution() {
         </div>
 
         {/* Grid de amenidades — 2 colunas */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px 0' }}>
-          {amenidades.map((col, ci) => (
-            <div key={ci} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              {col.map(({ icon, label }) => (
-                <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <div style={{ width: '1px', height: '18px', background: '#779dff', flexShrink: 0 }} />
-                  <img src={`/empreendimentos/vertice/${icon}`} alt="" style={{ width: '16px', height: '16px', objectFit: 'contain', flexShrink: 0 }} />
-                  <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#31477b', flexShrink: 0 }} />
-                  <span style={{ fontSize: '16px', color: '#a7a7a7', fontWeight: 600 }}>{label}</span>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
+        {isMobile ? (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px 16px' }}>
+            {amenidades.flat().map(({ icon, label }) => (
+              <div key={label} style={{ display: 'flex', alignItems: 'flex-start', gap: '6px' }}>
+                <div style={{ width: '1px', height: '18px', background: '#779dff', flexShrink: 0, marginTop: '1px' }} />
+                <img src={`/empreendimentos/vertice/${icon}`} alt="" style={{ width: '16px', height: '16px', objectFit: 'contain', flexShrink: 0 }} />
+                <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#31477b', flexShrink: 0, marginTop: '7px' }} />
+                <span style={{ fontSize: '13px', color: '#a7a7a7', fontWeight: 600 }}>{label}</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px 0' }}>
+            {amenidades.map((col, ci) => (
+              <div key={ci} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {col.map(({ icon, label }) => (
+                  <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <div style={{ width: '1px', height: '18px', background: '#779dff', flexShrink: 0 }} />
+                    <img src={`/empreendimentos/vertice/${icon}`} alt="" style={{ width: '16px', height: '16px', objectFit: 'contain', flexShrink: 0 }} />
+                    <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#31477b', flexShrink: 0 }} />
+                    <span style={{ fontSize: '16px', color: '#a7a7a7', fontWeight: 600 }}>{label}</span>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
 
       </div>
     </section>
@@ -507,8 +506,8 @@ function VideoEvolution() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <img src="/empreendimentos/vertice/icon-video-label.svg" alt="" style={{ width: '20px', height: '20px', objectFit: 'contain' }} />
                 <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#e3e3e3' }}>Vídeo Conceito</span>
-                <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
-                <span style={{ fontSize: '13px', color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Evolution Tatuapé</span>
+                {!isMobile && <><span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+                <span style={{ fontSize: '13px', color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Evolution Tatuapé</span></>}
               </div>
               <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.15)' }} />
             </div>
@@ -578,8 +577,8 @@ function TourEvolution() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
             <img src="/empreendimentos/vertice/icon-tour.svg" alt="" style={{ width: '24px', height: '24px', objectFit: 'contain' }} />
             <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#494c4f' }}>Tour Virtual</span>
-            <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
-            <span style={{ fontSize: '13px', color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Evolution Tatuapé</span>
+            {!isMobile && <><span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+            <span style={{ fontSize: '13px', color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Evolution Tatuapé</span></>}
           </div>
           <div style={{ width: '100%', height: '1px', background: '#e8e8e8' }} />
         </div>
@@ -834,8 +833,8 @@ function LocalizacaoEvolution() {
             <img src={icoPin} alt="" style={{ width: '18px', height: '22px', objectFit: 'contain' }} />
             <span style={{ fontSize: '13px', color: '#494c4f', fontWeight: 600, textTransform: 'uppercase' }}>Localização</span>
           </div>
-          <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
-          <span style={{ fontSize: '13px', color: '#a7a7a7', fontWeight: 600, textTransform: 'uppercase' }}>Evolution Tatuapé</span>
+          {!isMobile && <><div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+          <span style={{ fontSize: '13px', color: '#a7a7a7', fontWeight: 600, textTransform: 'uppercase' }}>Evolution Tatuapé</span></>}
         </div>
         <div style={{ height: '1px', background: '#e7e7e7', marginBottom: '32px' }} />
         <h2 style={{ fontSize: isMobile ? '20px' : '32px', color: '#31477b', fontWeight: 800, textTransform: 'uppercase', lineHeight: 1.35, maxWidth: '864px', margin: 0 }}>
@@ -846,7 +845,7 @@ function LocalizacaoEvolution() {
       {/* Mapa + conteúdo */}
       <div>
         <div style={{ marginBottom: isMobile ? '-60px' : '-127px' }}>
-          <div style={{ width: '100%', aspectRatio: isMobile ? '4/3' : '1920/800', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ width: '100%', aspectRatio: isMobile ? '3/4' : '1920/800', position: 'relative', overflow: 'hidden' }}>
             <iframe
               src="https://maps.google.com/maps?q=R.+Prof.+Pedreira+de+Freitas+848+Tatua%C3%A9+S%C3%A3o+Paulo+SP&output=embed&hl=pt-BR&z=16"
               style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
@@ -1018,6 +1017,15 @@ export default function Evolution() {
       <PlantasEvolution />
       <LocalizacaoEvolution />
       <Footer />
+      <a
+        href="https://wa.me/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:brightness-110 transition-all"
+        style={{ position: 'fixed', bottom: '24px', right: '24px', zIndex: 9998, background: '#25D366', width: '52px', height: '52px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 16px rgba(0,0,0,0.25)' }}
+      >
+        <img src={icoWpp} alt="WhatsApp" style={{ width: '26px', height: '26px', objectFit: 'contain' }} />
+      </a>
     </>
   )
 }
