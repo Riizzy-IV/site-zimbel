@@ -5,7 +5,7 @@ import Footer from '../../components/Footer'
 
 /* ─── assets ─── */
 const heroBg   = '/hero/Sala Evolution 1.avif'
-const fachada  = '/empreendimentos/evolution/fachada.jpg'
+const fachada  = '/empreendimentos/evolution-fachada.avif'
 const icoPin   = '/empreendimentos/vertice/icon-pin.svg'
 const icoWpp   = '/empreendimentos/vertice/icon-wpp.svg'
 
@@ -244,18 +244,21 @@ function ConceitoEvolution() {
 ════════════════════════════════════════════════════════ */
 const galeriaTabs = [
   {
-    label: 'Perspectiva', images: [
-      { src: '/empreendimentos/evolution/galeria-placeholder.jpg', caption: 'Perspectiva ilustrada da fachada' },
+    label: 'Fachada', images: [
+      { src: '/empreendimentos/evolution/fachada/fachada-1.avif', caption: 'Perspectiva ilustrada da fachada' },
+      { src: '/empreendimentos/evolution/fachada/fachada-2.avif', caption: 'Perspectiva ilustrada da fachada' },
     ]
   },
   {
     label: 'Apartamentos', images: [
-      { src: '/empreendimentos/evolution/galeria-placeholder.jpg', caption: 'Perspectiva ilustrada do apartamento' },
-    ]
-  },
-  {
-    label: 'Lazer', images: [
-      { src: '/empreendimentos/evolution/galeria-placeholder.jpg', caption: 'Perspectiva ilustrada do lazer' },
+      { src: '/empreendimentos/evolution/apartamentos/sala.avif',       caption: 'Perspectiva ilustrada da Sala de Estar' },
+      { src: '/empreendimentos/evolution/apartamentos/cozinha-1.avif',  caption: 'Perspectiva ilustrada da Cozinha' },
+      { src: '/empreendimentos/evolution/apartamentos/cozinha-2.avif',  caption: 'Perspectiva ilustrada da Cozinha' },
+      { src: '/empreendimentos/evolution/apartamentos/dorm-1.avif',     caption: 'Perspectiva ilustrada do Dormitório' },
+      { src: '/empreendimentos/evolution/apartamentos/dorm-2.avif',     caption: 'Perspectiva ilustrada do Dormitório' },
+      { src: '/empreendimentos/evolution/apartamentos/banheiro.avif',   caption: 'Perspectiva ilustrada do Banheiro' },
+      { src: '/empreendimentos/evolution/apartamentos/lavanderia.avif', caption: 'Perspectiva ilustrada da Lavanderia' },
+      { src: '/empreendimentos/evolution/apartamentos/gourmet.avif',    caption: 'Perspectiva ilustrada do Espaço Gourmet' },
     ]
   },
 ]
@@ -354,10 +357,19 @@ function GaleriaEvolution() {
    SEÇÃO 4 — LAZER
 ════════════════════════════════════════════════════════ */
 const lazerImages = [
-  { src: '/empreendimentos/evolution/lazer-img-1.jpg', caption: 'Perspectiva ilustrada da Academia' },
-  { src: '/empreendimentos/evolution/lazer-img-2.jpg', caption: 'Perspectiva ilustrada da Jacuzzi' },
-  { src: '/empreendimentos/evolution/lazer-img-3.jpg', caption: 'Perspectiva ilustrada do Salão de Festas' },
-  { src: '/empreendimentos/evolution/lazer-img-4.jpg', caption: 'Perspectiva ilustrada do Coworking' },
+  { src: '/empreendimentos/evolution/lazer/academia.avif',     caption: 'Academia' },
+  { src: '/empreendimentos/evolution/lazer/jacuzzi-1.avif',    caption: 'Jacuzzi' },
+  { src: '/empreendimentos/evolution/lazer/jacuzzi-2.avif',    caption: 'Jacuzzi' },
+  { src: '/empreendimentos/evolution/lazer/gourmet-1.avif',    caption: 'Espaço Gourmet' },
+  { src: '/empreendimentos/evolution/lazer/gourmet-2.avif',    caption: 'Espaço Gourmet' },
+  { src: '/empreendimentos/evolution/lazer/gourmet-3.avif',    caption: 'Espaço Gourmet' },
+  { src: '/empreendimentos/evolution/lazer/gourmet-4.avif',    caption: 'Espaço Gourmet' },
+  { src: '/empreendimentos/evolution/lazer/coworking.avif',    caption: 'Coworking' },
+  { src: '/empreendimentos/evolution/lazer/marketplace.avif',  caption: 'Marketplace' },
+  { src: '/empreendimentos/evolution/lazer/bicicletario.avif', caption: 'Bicicletário' },
+  { src: '/empreendimentos/evolution/lazer/espaco-pet.avif',   caption: 'Espaço Pet' },
+  { src: '/empreendimentos/evolution/lazer/petcap.avif',       caption: 'Espaço Pet' },
+  { src: '/empreendimentos/evolution/lazer/hall.avif',         caption: 'Hall de Entrada' },
 ]
 
 const amenidades = [
@@ -561,8 +573,8 @@ function VideoEvolution() {
    SEÇÃO 6 — TOUR VIRTUAL
 ════════════════════════════════════════════════════════ */
 const TOUR_UNITS = [
-  { label: 'Unidade 1', src: 'https://tour360.meupasseiovirtual.com/064248/273055/tourvirtual/index.html?autoplaysound=yes&showfloorplans=no' },
-  { label: 'Unidade 2', src: 'https://tour360.meupasseiovirtual.com/064248/273098/tourvirtual/index.html?autoplaysound=yes&showfloorplans=no' },
+  { label: '34,97m² + terraço descoberto', src: 'https://tour360.meupasseiovirtual.com/064248/273055/tourvirtual/index.html?autoplaysound=yes&showfloorplans=no' },
+  { label: '44,30m² + terraço descoberto', src: 'https://tour360.meupasseiovirtual.com/064248/273098/tourvirtual/index.html?autoplaysound=yes&showfloorplans=no' },
 ]
 
 function TourEvolution() {

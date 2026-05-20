@@ -931,6 +931,16 @@ function PlantasVertice() {
                   <span style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600, whiteSpace: 'nowrap' }}>{planta.pe}</span>
                 </div>
               </div>
+
+              {/* Aviso unidades com * */}
+              {planta.area.includes('*') && (
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', background: '#fff8e1', border: '1px solid #f0c040', borderRadius: '6px', padding: '12px 14px' }}>
+                  <span style={{ fontSize: '16px', lineHeight: 1, marginTop: '1px' }}>⚠️</span>
+                  <p style={{ margin: 0, fontSize: '13px', color: '#6b5000', lineHeight: 1.5 }}>
+                    <strong>Atenção:</strong> Esta unidade não será entregue com o segundo pavimento construído.
+                  </p>
+                </div>
+              )}
             </div>
 
           </div>
