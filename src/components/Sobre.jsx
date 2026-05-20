@@ -37,7 +37,7 @@ export default function Sobre() {
             <span className="w-1.5 h-1.5 bg-[#779dff] shrink-0" />
             <span className="text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
           </div>
-          <div className="flex flex-col gap-1" style={{ marginTop: '5px' }}>
+          <div className="flex flex-col gap-3" style={{ marginTop: '16px' }}>
             <h2 className="text-[#1d2748] text-[28px] lg:text-[38px] font-extrabold uppercase leading-tight" style={{ maxWidth: '640px' }}>
               É sobre fazer a diferença na vida das pessoas
             </h2>

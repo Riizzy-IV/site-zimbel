@@ -61,7 +61,7 @@ export default function Depoimentos() {
     const update = () => {
       const vw = window.innerWidth;
       const newVisible = getVisibleCount(vw);
-      const pad = Math.max(16, (vw - 1312) / 2);
+      const pad = Math.max(40, (vw - 1312) / 2);
       const available = vw - pad * 2;
       setCardWidth((available - GAP * (newVisible - 1)) / newVisible);
       setVisibleCount(prev => {
@@ -115,12 +115,12 @@ export default function Depoimentos() {
               </svg>
               <span className="text-[#494c4f] text-[13px] font-semibold uppercase tracking-wide">Depoimentos</span>
             </div>
-            <span className="w-1.5 h-1.5 bg-[#779dff] shrink-0" />
-            <span className="text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
+            <span className="hidden md:inline w-1.5 h-1.5 bg-[#779dff] shrink-0" />
+            <span className="hidden md:inline text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
           </div>
           <div className="w-full h-px bg-[#e3e3e3]" />
 
-          <div className="flex items-end justify-between gap-4 mt-3">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mt-3">
             <div className="flex flex-col gap-1">
               <h2 className="text-[#1d2748] text-[26px] lg:text-[38px] font-extrabold uppercase leading-tight">
                 O que falam os nossos clientes

@@ -98,9 +98,9 @@ export default function Hero() {
 
   const baseSectionHeight = bp === 'mobile' ? 760 : bp === 'md' ? 650 : bp === 'sm' ? 760 : 817;
   const sectionHeight = bp === 'mobile' ? baseSectionHeight : Math.min(baseSectionHeight, vh - 90);
-  const paddingTop = bp === 'mobile' ? 260 : bp === 'md' ? Math.round(sectionHeight * 0.50) : bp === 'sm' ? Math.round(sectionHeight * 0.50) : 430;
-  const badgeWidth = bp === 'mobile' ? 'auto' : '336px';
-  const h1Size = bp === 'mobile' ? '28px' : bp === 'md' ? '34px' : '40px';
+  const paddingTop = bp === 'mobile' ? 300 :bp === 'md' ? Math.round(sectionHeight * 0.50) : bp === 'sm' ? Math.round(sectionHeight * 0.50) : 430;
+  const badgeWidth = bp === 'mobile' ? 'fit-content' : '336px';
+  const h1Size = bp === 'mobile' ? 'clamp(18px, 5.5vw, 26px)' : bp === 'md' ? '34px' : '40px';
   const isMobile = bp === 'mobile';
   const slide = slides[current];
 
@@ -126,7 +126,14 @@ export default function Hero() {
       ))}
 
       {/* Gradiente escuro na base */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(0,0,0,0.88)]" />
+      <div
+        className="absolute inset-0"
+        style={{
+          background: isMobile
+            ? 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.1) 30%, rgba(12,26,54,0.75) 60%, rgba(12,26,54,0.95) 100%)'
+            : 'linear-gradient(to bottom, transparent, transparent, rgba(0,0,0,0.88))',
+        }}
+      />
 
       {/* Botões de navegação laterais */}
       {!isMobile && (
@@ -159,7 +166,7 @@ export default function Hero() {
         <div style={{ paddingLeft: gridPl, paddingRight: isMobile ? gridPl : undefined }}>
           <div
             className="flex items-center justify-center gap-[16px] bg-[#31477b] h-9 rounded-sm"
-            style={{ marginBottom: '20px', width: badgeWidth }}
+            style={{ marginBottom: '20px', width: badgeWidth, paddingLeft: '20px', paddingRight: '20px' }}
           >
             <span className="text-white text-[13.8px] font-bold uppercase tracking-wide">{slide.badge.tag}</span>
             <span className="w-1 h-1 rounded-full bg-white" />
@@ -171,7 +178,7 @@ export default function Hero() {
           >
             {slide.title}
           </h1>
-          <p className="text-[#779dff] text-lg font-bold uppercase">
+          <p className="text-[#779dff] font-bold uppercase" style={{ fontSize: isMobile ? '13px' : '18px' }}>
             {slide.subtitle}
           </p>
         </div>

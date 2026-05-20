@@ -125,16 +125,7 @@ export default function Empreendimentos() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: '8px',
                   flex: 1,
-                  paddingLeft: '8px',
-                  paddingRight: '8px',
-                  paddingTop: '14px',
-                  paddingBottom: '14px',
-                  fontSize: '11px',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.06em',
                   border: 'none',
                   borderBottom: '3px solid transparent',
                   background: 'transparent',
@@ -142,18 +133,19 @@ export default function Empreendimentos() {
                   opacity: activeTab === i ? 1 : 0.75,
                   cursor: 'pointer',
                   transition: 'opacity 0.2s',
-                  whiteSpace: 'normal',
-                  textAlign: 'center',
-                  lineHeight: 1.3,
                   outline: 'none',
                   boxShadow: 'none',
                 }}
-                className="md:!px-[40px] md:!py-[16px] md:!text-[13px]"
+                className="flex-col gap-[6px] py-[14px] px-[6px] md:!flex-row md:!gap-[8px] md:!px-[40px] md:!py-[16px]"
               >
-                <span style={{ width: '16px', height: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <span style={{ width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   {tab.icon}
                 </span>
-                {tab.label}
+                <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', lineHeight: 1.2, textAlign: 'center' }}
+                  className="md:!text-[13px] md:!tracking-[0.06em]"
+                >
+                  {tab.label}
+                </span>
                 {activeTab === i && (
                   <span style={{
                     position: 'absolute',
