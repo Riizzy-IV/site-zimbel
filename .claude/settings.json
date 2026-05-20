@@ -1,7 +1,51 @@
 {
   "permissions": {
     "allow": [
-      "Bash(netstat -ano)"
+      "Bash(netstat -ano)",
+      "Bash(curl -s -N -X POST http://127.0.0.1:3845/mcp -H 'Content-Type: application/json' -H 'Accept: application/json, text/event-stream' -d '{\"jsonrpc\":\"2.0\",\"method\":\"tools/list\",\"params\":{},\"id\":2}')",
+      "Bash(node -e ' *)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/94767357-81f6-4f7b-aa91-9ef7ebc55686\" -o \"public/empreendimentos/vertice/icon-galeria.svg\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/961a58ba-e837-4789-add0-a2d0114d1de8\" -o \"public/empreendimentos/vertice/icon-tab.svg\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/bd71a365-21db-4ea4-bf24-7cbce1727fbe\" -o \"public/empreendimentos/vertice/icon-nav-arrow.svg\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/77b2bba9-f497-465e-821a-4c7c30fd9fee\" -o \"public/empreendimentos/vertice/icon-fullscreen.svg\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/f5904b76-975f-49d8-b6d6-810931a4b07f\" -o \"public/empreendimentos/vertice/galeria-placeholder.jpg\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/bf5716ef-411e-43e2-8967-05a99288d56c\" -o \"public/empreendimentos/vertice/plantas-download-icon.svg\")",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/54639d32-6ffc-4ace-ab55-2dc35bd02f40\" -o \"public/empreendimentos/vertice/plantas-spec-bed.svg\")",
+      "Bash(curl -s -L \"https://www.figma.com/api/mcp/asset/b6a71162-163c-4372-a565-636e445f4eb7\" -o \"public/empreendimentos/vertice/localizacao-mapa3d-icon.svg\")",
+      "Bash(git commit -m ' *)",
+      "Bash(convert --version)",
+      "Bash(node -e \"require\\('sharp'\\)\")",
+      "Bash(grep -v \"^cards$\\\\|^empreendimentos$\\\\|^hero$\\\\|^icon$\\\\|^Menu$\\\\|^sobre$\\\\|^cards\\\\|^empreend\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)",
+      "mcp__claude_ai_Google_Drive__search_files",
+      "mcp__claude_ai_Google_Drive__download_file_content",
+      "mcp__claude_ai_Google_Drive__list_recent_files",
+      "WebFetch(domain:vertice.zimbel.com.br)",
+      "Bash(curl -s -o \"lazer-rooftop04.avif\" \"https://vertice.zimbel.com.br/wp-content/uploads/2025/11/ROOFTOP04-1.avif\")",
+      "Bash(curl -s -o \"lazer-fitness.avif\" \"https://vertice.zimbel.com.br/wp-content/uploads/2025/11/FITNESS02-1.avif\")",
+      "Bash(curl -s -o \"lazer-ifood.avif\" \"https://vertice.zimbel.com.br/wp-content/uploads/2025/11/IFOOD01-1.avif\")",
+      "Bash(curl -s -o \"lazer-rooftop03.avif\" \"https://vertice.zimbel.com.br/wp-content/uploads/2025/11/ROOFTOP03-1.avif\")",
+      "Bash(curl -s -o \"lazer-churrasqueira.avif\" \"https://vertice.zimbel.com.br/wp-content/uploads/2026/03/CHURRASQUEIRA02-1.avif\")",
+      "Bash(curl -s -o \"lazer-coworking.avif\" \"https://vertice.zimbel.com.br/wp-content/uploads/2026/03/COWORKING02-1.avif\")",
+      "Bash(curl -s -o \"lazer-gourmet.avif\" \"https://vertice.zimbel.com.br/wp-content/uploads/2026/03/GOURMET02-1.avif\")",
+      "Read(//c/Users/win/**)",
+      "Bash(curl -L -A 'Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 Chrome/120 Safari/537.36' -o 'c:/Users/win/Desktop/SITE ZIMBEL CERTO/public/empreendimentos/vertice/lazer-fitness.avif' https://vertice.zimbel.com.br/wp-content/uploads/2025/11/FITNESS02-1.avif)",
+      "Bash(curl -L -A 'Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 Chrome/120 Safari/537.36' -o 'c:/Users/win/Desktop/SITE ZIMBEL CERTO/public/empreendimentos/vertice/lazer-ifood.avif' https://vertice.zimbel.com.br/wp-content/uploads/2025/11/IFOOD01-1.avif)",
+      "Bash(mv \"30,57m² UNIDADE 1_INFERIOR.png\" \"30,57m²-inf.png\")",
+      "Bash(mv \"30,57m²_ UNIDADE superior.png\" \"30,57m²-sup.png\")",
+      "Bash(mv \"27,98m²_ UNIDADE 1_INFERIOR.png\" \"27,98m²-inf.png\")",
+      "Bash(mv \"27,98m²_ superior.png\" \"27,98m²-sup.png\")",
+      "Bash(mv \"29,31m²_ UNIDADE 1_INFERIOR.png\" \"29,31m²-inf.png\")",
+      "Bash(git reset *)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\win\\Desktop\\SITE ZIMBEL CERTO\\public\\empreendimentos\\vertice"
     ]
+  },
+  "mcpServers": {
+    "local": {
+      "type": "http",
+      "url": "http://127.0.0.1:3845/mcp"
+    }
   }
 }

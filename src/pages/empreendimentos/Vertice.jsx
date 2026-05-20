@@ -19,36 +19,34 @@ const plantasDownload = '/empreendimentos/vertice/plantas-download-icon.svg'
 const plantasSpecBed = '/empreendimentos/vertice/plantas-spec-bed.svg'
 const plantasSpecPe = '/empreendimentos/vertice/plantas-spec-pe-direito.svg'
 const plantaFloor = '/empreendimentos/vertice/planta-unidade1.png'
-const plantaPersp1 = '/empreendimentos/vertice/planta-perspectiva-1.jpg'
-const plantaPersp2 = '/empreendimentos/vertice/planta-perspectiva-2.jpg'
 
 const PLANTAS = [
   /* ── Pavimento Térreo (pé direito duplo) ── */
-  { id: 0, area: '32,58m²', tipo: 'Unidade 1 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 1, area: '26,71m²', tipo: 'Unidade 2 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 2, area: '29,46m²', tipo: 'Unidade 3 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 3, area: '39,05m²', tipo: 'Unidade 4 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 4, area: '36,33m²', tipo: 'Unidade 5 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
+  { id: 0, area: '32,58m²*', tipo: 'Unidade 1 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: '/plantas/32,58m%C2%B2-inf.png', floorSup: '/plantas/32,58m%C2%B2-sup.png' },
+  { id: 1, area: '26,71m²*', tipo: 'Unidade 2 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: '/plantas/26,71m%C2%B2-inf.png', floorSup: '/plantas/26,71m%C2%B2-sup.png' },
+  { id: 2, area: '29,46m²*', tipo: 'Unidade 3 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: '/plantas/29,46m%C2%B2-inf.png', floorSup: '/plantas/29,46m%C2%B2-sup.png' },
+  { id: 3, area: '39,06m²*', tipo: 'Unidade 4 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: '/plantas/39,06m%C2%B2-inf.png', floorSup: '/plantas/39,06m%C2%B2-sup.png' },
+  { id: 4, area: '36,33m²*', tipo: 'Unidade 5 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: '/plantas/36,33m%C2%B2-inf.png', floorSup: '/plantas/36,33m%C2%B2-sup.png' },
   /* ── Pavimento Tipo 2 — 1º e 2º Pav. ── */
-  { id: 5, area: '24,17m²', tipo: 'Unidades 11 e 21 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 6, area: '24,20m²', tipo: 'Unidades 12 e 22 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 7, area: '24,91m²', tipo: 'Unidades 13 e 23 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 8, area: '30,35m²', tipo: 'Unidades 14 e 24 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 9, area: '29,31m²', tipo: 'Unidades 15 e 25 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 10, area: '31,15m²', tipo: 'Unidades 16 e 26 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 11, area: '29,10m²', tipo: 'Unidades 17 e 27 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 12, area: '28,85m²', tipo: 'Unidades 18 e 28 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 13, area: '27,50m²', tipo: 'Unidades 19 e 29 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
+  { id: 5,  area: '24,17m²', tipo: 'Unidades 11 e 21 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,17m%C2%B2.png' },
+  { id: 6,  area: '24,30m²', tipo: 'Unidades 12 e 22 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,30m%C2%B2.png' },
+  { id: 7,  area: '24,91m²', tipo: 'Unidades 13 e 23 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,91m%C2%B2.png' },
+  { id: 8,  area: '30,35m²', tipo: 'Unidades 14 e 24 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/30,35m%C2%B2.png' },
+  { id: 9,  area: '29,31m²', tipo: 'Unidades 15 e 25 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/29,31m%C2%B2.png' },
+  { id: 10, area: '31,15m²', tipo: 'Unidades 16 e 26 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/31,15m%C2%B2.png' },
+  { id: 11, area: '29,10m²', tipo: 'Unidades 17 e 27 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/29,10m%C2%B2.png' },
+  { id: 12, area: '28,85m²', tipo: 'Unidades 18 e 28 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor },
+  { id: 13, area: '27,50m²', tipo: 'Unidades 19 e 29 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/27,50m%C2%B2.jpg' },
   /* ── Pavimento Tipo 3 — 3º Pav. (com área descoberta) ── */
-  { id: 14, area: '33,37m²', tipo: 'Unidade 33 • 3º Pavimento', dorms: '1 dorm.', pe: 'Área descoberta', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 15, area: '33,52m²', tipo: 'Unidade 34 • 3º Pavimento', dorms: '1 dorm.', pe: 'Área descoberta', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 16, area: '54,42m²', tipo: 'Unidade 35 • 3º Pavimento', dorms: '1 dorm.', pe: 'Área descoberta', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
+  { id: 14, area: '33,37m²', tipo: 'Unidade 33 • 3º Pavimento', dorms: '1 dorm.', pe: 'Área descoberta', floor: plantaFloor },
+  { id: 15, area: '33,52m²', tipo: 'Unidade 34 • 3º Pavimento', dorms: '1 dorm.', pe: 'Área descoberta', floor: plantaFloor },
+  { id: 16, area: '54,42m²', tipo: 'Unidade 35 • 3º Pavimento', dorms: '1 dorm.', pe: 'Área descoberta', floor: '/plantas/54,42m%C2%B2.png' },
   /* ── Pavimento Tipo 4 — 4º ao 12º Pav. ── */
-  { id: 17, area: '35,57m²', tipo: 'Planta Final 1 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 18, area: '36,10m²', tipo: 'Planta Final 2 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 19, area: '24,72m²', tipo: 'Planta Final 3 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 20, area: '26,58m²', tipo: 'Planta Final 4 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
-  { id: 21, area: '28,14m²', tipo: 'Planta Final 5 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
+  { id: 17, area: '35,57m²', tipo: 'Planta Final 1 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/35,57m%C2%B2.png' },
+  { id: 18, area: '36,10m²', tipo: 'Planta Final 2 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/36,10m%C2%B2.png' },
+  { id: 19, area: '24,72m²', tipo: 'Planta Final 3 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,72m%C2%B2.png' },
+  { id: 20, area: '26,58m²', tipo: 'Planta Final 4 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/26,58m%C2%B2.jpg' },
+  { id: 21, area: '28,14m²', tipo: 'Planta Final 5 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/28,14m%C2%B2.png' },
 ]
 
 const gridPad = 'max(40px, calc((100vw - 1312px) / 2))'
@@ -111,7 +109,7 @@ function HeroVertice() {
         {/* Endereço */}
         <div className="flex items-center gap-2 text-[#779dff] font-semibold uppercase" style={{ fontSize: isMobile ? '11px' : '13px', marginBottom: '14px' }}>
           <img src={icoPin} alt="" className="w-4 h-4 object-contain brightness-0 invert opacity-70 shrink-0" />
-          <span>Rua Bruna, 340 - Anália Franco, São Paulo - SP</span>
+          <span>Rua Bruna, 340 - Chácara Mafalda, São Paulo - SP</span>
         </div>
 
         {/* Separador */}
@@ -175,8 +173,7 @@ function ConceitoVertice() {
           {/* Corpo */}
           <div style={{ color: '#494c4f', fontSize: '16px', lineHeight: 1.7, marginBottom: '28px' }}>
             <p style={{ marginBottom: '8px' }}>Moderno, funcional e cheio de facilidades. Cada detalhe foi pensado para simplificar o cotidiano e elevar o conforto, com uma infraestrutura completa e conectada.</p>
-            <p style={{ marginBottom: '8px' }}>Nossa parceria com a Housi reforça esse propósito: oferecer moradia sob demanda, com aluguéis flexíveis, gestão 100% online e zero burocracia. É viver no seu ritmo, com autonomia e conveniência.</p>
-            <p>Porque morar vai muito além de um endereço — é viver uma experiência. O futuro da moradia começa aqui.</p>
+            <p>Nossa parceria com a Housi reforça esse propósito: Oferecer uma gama de serviços para os futuros moradores e gestão inteligente e sem burocracia para investidores. É viver no seu ritmo, com autonomia e conveniência.</p>
           </div>
 
           {/* Separador */}
@@ -286,18 +283,27 @@ function ConceitoVertice() {
 ════════════════════════════════════════════════════════ */
 const tabs = [
   {
-    label: 'Perspectiva', images: [
-      { src: '/empreendimentos/vertice/galeria-placeholder.jpg', caption: 'Perspectiva ilustrada da fachada' },
+    label: 'Fachada', images: [
+      { src: '/empreendimentos/vertice/fachada-1.avif', caption: 'Perspectiva ilustrada da fachada' },
+      { src: '/empreendimentos/vertice/fachada-2.avif', caption: 'Perspectiva ilustrada da fachada' },
+      { src: '/empreendimentos/vertice/fachada-3.avif', caption: 'Perspectiva ilustrada da fachada' },
+      { src: '/empreendimentos/vertice/fachada-4.avif', caption: 'Perspectiva ilustrada da fachada' },
+      { src: '/empreendimentos/vertice/fachada-5.avif', caption: 'Perspectiva ilustrada da fachada' },
     ]
   },
   {
     label: 'Apartamentos', images: [
-      { src: '/empreendimentos/vertice/galeria-placeholder.jpg', caption: 'Perspectiva ilustrada do apartamento' },
-    ]
-  },
-  {
-    label: 'Lazer', images: [
-      { src: '/empreendimentos/vertice/galeria-placeholder.jpg', caption: 'Perspectiva ilustrada do lazer' },
+      { src: '/empreendimentos/vertice/interna-1.avif',  caption: 'Perspectiva ilustrada do apartamento' },
+      { src: '/empreendimentos/vertice/interna-2.avif',  caption: 'Perspectiva ilustrada do apartamento' },
+      { src: '/empreendimentos/vertice/interna-3.avif',  caption: 'Perspectiva ilustrada do apartamento' },
+      { src: '/empreendimentos/vertice/interna-4.avif',  caption: 'Perspectiva ilustrada do apartamento' },
+      { src: '/empreendimentos/vertice/interna-5.avif',  caption: 'Perspectiva ilustrada do apartamento' },
+      { src: '/empreendimentos/vertice/interna-6.avif',  caption: 'Perspectiva ilustrada do apartamento' },
+      { src: '/empreendimentos/vertice/interna-7.avif',  caption: 'Perspectiva ilustrada do apartamento' },
+      { src: '/empreendimentos/vertice/interna-8.avif',  caption: 'Perspectiva ilustrada do apartamento' },
+      { src: '/empreendimentos/vertice/interna-9.avif',  caption: 'Perspectiva ilustrada do apartamento' },
+      { src: '/empreendimentos/vertice/interna-10.avif', caption: 'Perspectiva ilustrada do apartamento' },
+      { src: '/empreendimentos/vertice/interna-11.avif', caption: 'Perspectiva ilustrada do apartamento' },
     ]
   },
 ]
@@ -410,12 +416,21 @@ function GaleriaVertice() {
    SEÇÃO 4 — LAZER
 ════════════════════════════════════════════════════════ */
 const lazerImages = [
-  { src: '/empreendimentos/vertice/lazer-img-1.jpg', caption: 'Perspectiva ilustrada da Fachada' },
-  { src: '/empreendimentos/vertice/lazer-img-2.jpg', caption: 'Perspectiva ilustrada do Salão de Jogos' },
-  { src: '/empreendimentos/vertice/lazer-img-3.jpg', caption: 'Perspectiva ilustrada do Rooftop' },
-  { src: '/empreendimentos/vertice/lazer-img-4.jpg', caption: 'Perspectiva ilustrada do Rooftop' },
-  { src: '/empreendimentos/vertice/lazer-img-5.jpg', caption: 'Perspectiva ilustrada da Academia' },
-  { src: '/empreendimentos/vertice/lazer-img-6.jpg', caption: 'Perspectiva ilustrada do Gourmet' },
+  { src: '/empreendimentos/vertice/lazer-img-1.jpg',      caption: 'Perspectiva ilustrada da Fachada' },
+  { src: '/empreendimentos/vertice/lazer-rooftop01.avif', caption: 'Perspectiva ilustrada do Rooftop' },
+  { src: '/empreendimentos/vertice/lazer-rooftop03.avif', caption: 'Perspectiva ilustrada do Rooftop' },
+  { src: '/empreendimentos/vertice/lazer-rooftop04.avif', caption: 'Perspectiva ilustrada do Rooftop' },
+  { src: '/empreendimentos/vertice/lazer-img-2.jpg',      caption: 'Perspectiva ilustrada do Salão de Jogos' },
+  { src: '/empreendimentos/vertice/lazer-jogos.avif',     caption: 'Perspectiva ilustrada do Salão de Jogos' },
+  { src: '/empreendimentos/vertice/lazer-img-5.jpg',      caption: 'Perspectiva ilustrada da Academia' },
+  { src: '/empreendimentos/vertice/lazer-fitness.avif',   caption: 'Perspectiva ilustrada da Academia' },
+  { src: '/empreendimentos/vertice/lazer-img-6.jpg',      caption: 'Perspectiva ilustrada do Gourmet' },
+  { src: '/empreendimentos/vertice/lazer-gourmet.avif',   caption: 'Perspectiva ilustrada do Gourmet' },
+  { src: '/empreendimentos/vertice/lazer-churrasqueira.avif', caption: 'Perspectiva ilustrada da Churrasqueira' },
+  { src: '/empreendimentos/vertice/lazer-coworking.avif', caption: 'Perspectiva ilustrada do Coworking' },
+  { src: '/empreendimentos/vertice/lazer-pet.avif',       caption: 'Perspectiva ilustrada do Pet Place' },
+  { src: '/empreendimentos/vertice/lazer-sauna.avif',     caption: 'Perspectiva ilustrada da Sauna' },
+  { src: '/empreendimentos/vertice/lazer-ifood.avif',     caption: 'Perspectiva ilustrada do iFood' },
 ]
 
 const amenidades = [
@@ -582,6 +597,29 @@ function VideoVertice() {
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }}
         />
 
+        {/* Botão play central-direito */}
+        {!isMobile && (
+          <button
+            onClick={() => setOpen(true)}
+            style={{
+              position: 'absolute', zIndex: 2,
+              right: '25%', top: '50%', transform: 'translate(50%, -50%)',
+              width: '140px', height: '140px', borderRadius: '50%',
+              background: 'rgba(119,157,255,0.2)',
+              border: '2px solid rgba(119,157,255,0.7)',
+              backdropFilter: 'blur(6px)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer', transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(119,157,255,0.45)'; e.currentTarget.style.transform = 'translate(50%, -50%) scale(1.08)' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(119,157,255,0.2)'; e.currentTarget.style.transform = 'translate(50%, -50%) scale(1)' }}
+          >
+            <svg width="52" height="52" viewBox="0 0 32 32" fill="none">
+              <path d="M10 6L26 16L10 26V6Z" fill="white" />
+            </svg>
+          </button>
+        )}
+
         {/* Conteúdo */}
         <div
           style={{
@@ -730,9 +768,14 @@ function TourVertice() {
 function PlantasVertice() {
   const { isMobile, isTablet } = useBreakpoint()
   const [activeTab, setActiveTab] = useState(0)
-  const [lightbox, setLightbox] = useState(null)
+  const [floorTab, setFloorTab] = useState('inf')
   const tabRef = useRef(null)
   const planta = PLANTAS[activeTab]
+
+  function selectTab(i) {
+    setActiveTab(i)
+    setFloorTab('inf')
+  }
 
   function scrollTabs(dir) {
     if (tabRef.current) tabRef.current.scrollBy({ left: dir * 220, behavior: 'smooth' })
@@ -784,7 +827,7 @@ function PlantasVertice() {
                   <div style={{ width: '1px', height: '11px', background: '#c5c5c5', flexShrink: 0, margin: '0 20px' }} />
                 )}
                 <button
-                  onClick={() => setActiveTab(i)}
+                  onClick={() => selectTab(i)}
                   style={{
                     display: 'flex', alignItems: 'center', gap: '8px', height: '46px', padding: '0', border: 'none', background: 'none', cursor: 'pointer', flexShrink: 0,
                     borderBottom: activeTab === i ? '2px solid #052e7e' : '2px solid transparent',
@@ -810,13 +853,35 @@ function PlantasVertice() {
         <div style={{ background: '#e7e7e7', borderRadius: '8px', padding: isMobile ? '14px' : isTablet ? '15px 24px 13px 14px' : '15px 80px 13px 14px', display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '20px' : '40px', alignItems: isMobile ? 'stretch' : 'center' }}>
 
           {/* Left — floor plan panel */}
-          <div style={{ background: 'white', borderRadius: '4px', height: isMobile ? 'auto' : isTablet ? '560px' : '726px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', position: 'relative', flexShrink: 0 }}>
+          <div style={{ background: 'white', borderRadius: '4px', height: isMobile ? 'auto' : '726px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', position: 'relative', flexShrink: 0 }}>
             {/* Blue vertical accent */}
-            <div style={{ width: '3px', height: isMobile ? '220px' : isTablet ? '380px' : '512px', background: '#31447b', flexShrink: 0 }} />
-            {/* Floor plan image */}
-            <div style={{ width: isMobile ? 'calc(100% - 13px)' : isTablet ? '380px' : '546px', height: isMobile ? '280px' : isTablet ? '340px' : '454px', flexShrink: 0 }}>
-              <img src={planta.floor} alt="Planta" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            <div style={{ width: '3px', height: isMobile ? '220px' : '512px', background: '#31447b', flexShrink: 0 }} />
+
+            <div style={{ width: isMobile ? 'calc(100% - 13px)' : '546px', height: isMobile ? '300px' : '474px', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              {planta.floorSup && (
+                /* Inferior / Superior tabs */
+                <div style={{ display: 'flex', gap: '4px' }}>
+                  {[{ key: 'inf', label: 'Inferior' }, { key: 'sup', label: 'Superior' }].map(({ key, label }) => (
+                    <button
+                      key={key}
+                      onClick={() => setFloorTab(key)}
+                      style={{
+                        padding: '5px 16px', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em',
+                        background: floorTab === key ? '#31447b' : 'rgba(119,157,255,0.15)',
+                        color: floorTab === key ? '#fff' : '#779dff',
+                        transition: 'all 0.2s ease',
+                      }}
+                    >{label}</button>
+                  ))}
+                </div>
+              )}
+              <img
+                src={planta.floorSup && floorTab === 'sup' ? planta.floorSup : planta.floor}
+                alt="Planta"
+                style={{ flex: 1, width: '100%', objectFit: 'contain' }}
+              />
             </div>
+
             {/* Fullscreen button */}
             <button style={{ position: 'absolute', top: '14px', right: '14px', width: '48px', height: '48px', background: '#779dff', borderRadius: '4px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -868,47 +933,10 @@ function PlantasVertice() {
               </div>
             </div>
 
-            {/* Bottom: perspectives */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <p style={{ fontSize: '12px', fontWeight: 800, textTransform: 'uppercase', color: '#31447b', letterSpacing: '0.07em', margin: 0 }}>
-                Acesse as perspectivas da planta
-              </p>
-              <div style={{ display: 'flex', gap: '19px' }}>
-                {[planta.p1, planta.p2].map((src, i) => (
-                  <div
-                    key={i}
-                    onClick={() => setLightbox(src)}
-                    style={{ flex: 1, height: isMobile ? '120px' : '144px', borderRadius: '8px', overflow: 'hidden', cursor: 'zoom-in', position: 'relative' }}
-                  >
-                    <img src={src} alt="" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                  </div>
-                ))}
-              </div>
-            </div>
-
           </div>
         </div>
 
       </div>
-
-      {/* Lightbox */}
-      {lightbox && (
-        <div
-          onClick={() => setLightbox(null)}
-          style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-        >
-          <button
-            onClick={() => setLightbox(null)}
-            style={{ position: 'absolute', top: '24px', right: '32px', background: 'none', border: 'none', cursor: 'pointer', color: '#fff', fontSize: '32px', lineHeight: 1 }}
-          >×</button>
-          <img
-            src={lightbox}
-            alt=""
-            onClick={e => e.stopPropagation()}
-            style={{ maxWidth: '90vw', maxHeight: '90vh', objectFit: 'contain', borderRadius: '8px' }}
-          />
-        </div>
-      )}
     </section>
   )
 }
@@ -1060,7 +1088,7 @@ function LocalizacaoVertice() {
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '17px' }}>
                     <img src={icoPin} alt="" style={{ width: '18px', height: '22px', flexShrink: 0, filter: 'brightness(0) invert(1)' }} />
-                    <span style={{ fontSize: '16px', color: 'white', fontWeight: 600 }}>Rua Bruna, 340 - Anália Franco</span>
+                    <span style={{ fontSize: '16px', color: 'white', fontWeight: 600 }}>Rua Bruna, 340 - Chácara Mafalda</span>
                   </div>
                   <a href="https://maps.google.com/maps?q=Rua+Bruna,+340,+An%C3%A1lia+Franco,+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer"
                     style={{ display: 'inline-flex', alignItems: 'center', gap: '7px', textDecoration: 'none', flexShrink: 0 }}>
