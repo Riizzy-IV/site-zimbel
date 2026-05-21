@@ -416,15 +416,11 @@ function GaleriaVertice() {
    SEÇÃO 4 — LAZER
 ════════════════════════════════════════════════════════ */
 const lazerImages = [
-  { src: '/empreendimentos/vertice/lazer-img-1.jpg',      caption: 'Perspectiva ilustrada da Fachada' },
   { src: '/empreendimentos/vertice/lazer-rooftop01.avif', caption: 'Perspectiva ilustrada do Rooftop' },
   { src: '/empreendimentos/vertice/lazer-rooftop03.avif', caption: 'Perspectiva ilustrada do Rooftop' },
   { src: '/empreendimentos/vertice/lazer-rooftop04.avif', caption: 'Perspectiva ilustrada do Rooftop' },
-  { src: '/empreendimentos/vertice/lazer-img-2.jpg',      caption: 'Perspectiva ilustrada do Salão de Jogos' },
   { src: '/empreendimentos/vertice/lazer-jogos.avif',     caption: 'Perspectiva ilustrada do Salão de Jogos' },
-  { src: '/empreendimentos/vertice/lazer-img-5.jpg',      caption: 'Perspectiva ilustrada da Academia' },
   { src: '/empreendimentos/vertice/lazer-fitness.avif',   caption: 'Perspectiva ilustrada da Academia' },
-  { src: '/empreendimentos/vertice/lazer-img-6.jpg',      caption: 'Perspectiva ilustrada do Gourmet' },
   { src: '/empreendimentos/vertice/lazer-gourmet.avif',   caption: 'Perspectiva ilustrada do Gourmet' },
   { src: '/empreendimentos/vertice/lazer-churrasqueira.avif', caption: 'Perspectiva ilustrada da Churrasqueira' },
   { src: '/empreendimentos/vertice/lazer-coworking.avif', caption: 'Perspectiva ilustrada do Coworking' },
@@ -464,9 +460,9 @@ function LazerVertice() {
   const { isMobile, isTablet } = useBreakpoint()
   const [imgIdx, setImgIdx] = useState(0)
   const total = lazerImages.length
-  const img = lazerImages[imgIdx]
-  const next = () => setImgIdx(i => (i + 1) % total)
-  const prev = () => setImgIdx(i => (i - 1 + total) % total)
+  const img   = lazerImages[imgIdx]
+  const next  = () => setImgIdx(i => (i + 1) % total)
+  const prev  = () => setImgIdx(i => (i - 1 + total) % total)
 
   return (
     <section style={{ background: '#fff', padding: isMobile ? '48px 0' : '80px 0' }}>
@@ -769,6 +765,7 @@ function PlantasVertice() {
   const { isMobile, isTablet } = useBreakpoint()
   const [activeTab, setActiveTab] = useState(0)
   const [floorTab, setFloorTab] = useState('inf')
+  const [lightbox, setLightbox] = useState(null)
   const tabRef = useRef(null)
   const planta = PLANTAS[activeTab]
 
@@ -782,6 +779,7 @@ function PlantasVertice() {
   }
 
   return (
+    <>
     <section style={{ background: '#fff', borderTop: '1px solid #e7e7e7', paddingTop: isMobile ? '60px' : '120px', paddingBottom: isMobile ? '60px' : '120px' }}>
       <div style={{ paddingLeft: gridPad, paddingRight: gridPad }}>
 
@@ -878,7 +876,8 @@ function PlantasVertice() {
               <img
                 src={planta.floorSup && floorTab === 'sup' ? planta.floorSup : planta.floor}
                 alt="Planta"
-                style={{ flex: 1, width: '100%', objectFit: 'contain' }}
+                onClick={() => setLightbox(planta.floorSup && floorTab === 'sup' ? planta.floorSup : planta.floor)}
+                style={{ flex: 1, width: '100%', objectFit: 'contain', cursor: 'zoom-in' }}
               />
             </div>
 
@@ -948,6 +947,26 @@ function PlantasVertice() {
 
       </div>
     </section>
+
+    {/* Lightbox */}
+    {lightbox && (
+      <div
+        onClick={() => setLightbox(null)}
+        style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+      >
+        <button
+          onClick={() => setLightbox(null)}
+          style={{ position: 'absolute', top: '24px', right: '32px', background: 'none', border: 'none', cursor: 'pointer', color: '#fff', fontSize: '32px', lineHeight: 1 }}
+        >×</button>
+        <img
+          src={lightbox}
+          alt=""
+          onClick={e => e.stopPropagation()}
+          style={{ maxWidth: '90vw', maxHeight: '90vh', objectFit: 'contain', borderRadius: '4px' }}
+        />
+      </div>
+    )}
+    </>
   )
 }
 

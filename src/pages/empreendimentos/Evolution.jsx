@@ -16,13 +16,17 @@ const plantasNavArrow  = '/empreendimentos/vertice/plantas-nav-arrow.svg'
 const plantasDownload  = '/empreendimentos/vertice/plantas-download-icon.svg'
 const plantasSpecBed   = '/empreendimentos/vertice/plantas-spec-bed.svg'
 const plantasSpecPe    = '/empreendimentos/vertice/plantas-spec-pe-direito.svg'
-const plantaFloor      = '/empreendimentos/evolution/planta-unidade1.png'
-const plantaPersp1     = '/empreendimentos/evolution/planta-perspectiva-1.jpg'
-const plantaPersp2     = '/empreendimentos/evolution/planta-perspectiva-2.jpg'
-
 const PLANTAS = [
-  /* ── a preencher com os dados reais das plantas do Evolution ── */
-  { id: 0, area: '—m²', tipo: 'Planta tipo • Unidade 1', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor, p1: plantaPersp1, p2: plantaPersp2 },
+  { id: 0, area: '44,30m²', tipo: 'Planta tipo • Unidade 11 + Terraço descoberto', dorms: '2 dorms.', pe: 'Varanda Gourmet • 1 vaga', floor: '/empreendimentos/evolution/plantas/planta-0.webp' },
+  { id: 1, area: '34,97m²', tipo: 'Planta tipo • Unidades 12–17 + Terraço descoberto', dorms: '2 dorms.', pe: '', floor: '/empreendimentos/evolution/plantas/planta-1.webp' },
+  { id: 2, area: '40,40m²', tipo: 'Planta tipo • Unidade 18 + Terraço descoberto', dorms: '2 dorms.', pe: '', floor: '/empreendimentos/evolution/plantas/planta-2.webp' },
+  { id: 3, area: '44,30m²', tipo: 'Planta tipo • Unidades 21 e 31', dorms: '2 dorms.', pe: 'Varanda Gourmet • 1 vaga', floor: '/empreendimentos/evolution/plantas/planta-3.webp' },
+  { id: 4, area: '34,97m²', tipo: 'Planta tipo • Unidades 22–27 e 32–37', dorms: '2 dorms.', pe: '', floor: '/empreendimentos/evolution/plantas/planta-4.webp' },
+  { id: 5, area: '40,40m²', tipo: 'Planta tipo • Unidades 28 e 38', dorms: '2 dorms.', pe: '', floor: '/empreendimentos/evolution/plantas/planta-5.webp' },
+  { id: 6, area: '49,90m²', tipo: 'Planta tipo • Unidade 41 + Área externa', dorms: '2 dorms. c/ 1 suíte', pe: 'Varanda Gourmet • 1 vaga', floor: '/empreendimentos/evolution/plantas/planta-6.webp' },
+  { id: 7, area: '49,90m²', tipo: 'Planta tipo • Unidades 51, 61, 71, 81 e 91', dorms: '2 dorms. c/ 1 suíte', pe: 'Varanda Gourmet • 1 vaga', floor: '/empreendimentos/evolution/plantas/planta-7.webp' },
+  { id: 8, area: '38,96m²', tipo: 'Planta tipo • Unidades 52, 62, 72, 82 e 92', dorms: '2 dorms.', pe: '', floor: '/empreendimentos/evolution/plantas/planta-8.webp' },
+  { id: 9, area: '44,74m²', tipo: 'Planta tipo • Unidades 53, 63, 73, 83 e 93', dorms: '2 dorms.', pe: 'Varanda Gourmet • 1 vaga', floor: '/empreendimentos/evolution/plantas/planta-9.webp' },
 ]
 
 const gridPad = 'max(40px, calc((100vw - 1312px) / 2))'
@@ -85,7 +89,7 @@ function HeroEvolution() {
         {/* Endereço */}
         <div className="flex items-center gap-2 text-[#779dff] font-semibold uppercase" style={{ fontSize: isMobile ? '11px' : '13px', marginBottom: '14px' }}>
           <img src={icoPin} alt="" className="w-4 h-4 object-contain brightness-0 invert opacity-70 shrink-0" />
-          <span>R. Prof. Pedreira de Freitas, 848/854 - Tatuapé, SP</span>
+          <span>R. Prof. Pedreira de Freitas, 848 - Tatuapé, SP</span>
         </div>
 
         {/* Separador */}
@@ -412,7 +416,7 @@ function LazerEvolution() {
 
         {/* Título + descrição */}
         <div style={{ maxWidth: '790px', marginBottom: '40px' }}>
-          <h2 style={{ fontSize: 'clamp(22px, 2vw, 32px)', color: '#31477b', fontWeight: 800, textTransform: 'uppercase', marginBottom: '16px' }}>
+          <h2 style={{ fontSize: 'clamp(18px, 1.8vw, 28px)', color: '#31477b', fontWeight: 800, textTransform: 'uppercase', marginBottom: '16px', whiteSpace: 'nowrap' }}>
             Estrutura Completa Para o Seu Bem-Estar
           </h2>
           <p style={{ fontSize: '16px', color: '#a7a7a7', lineHeight: 1.35 }}>
@@ -498,7 +502,7 @@ function LazerEvolution() {
 /* ════════════════════════════════════════════════════════
    SEÇÃO 5 — VÍDEO
 ════════════════════════════════════════════════════════ */
-const YT_ID = '' /* adicionar o ID do YouTube do Evolution */
+const YT_ID = 'feZbQ4nK-z4'
 
 function VideoEvolution() {
   const { isMobile, isTablet } = useBreakpoint()
@@ -512,6 +516,30 @@ function VideoEvolution() {
           alt="Capa do vídeo"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }}
         />
+
+        {/* Botão play central-direito */}
+        {!isMobile && (
+          <button
+            onClick={() => setOpen(true)}
+            style={{
+              position: 'absolute', zIndex: 2,
+              right: '25%', top: '50%', transform: 'translate(50%, -50%)',
+              width: '140px', height: '140px', borderRadius: '50%',
+              background: 'rgba(119,157,255,0.2)',
+              border: '2px solid rgba(119,157,255,0.7)',
+              backdropFilter: 'blur(6px)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer', transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(119,157,255,0.45)'; e.currentTarget.style.transform = 'translate(50%, -50%) scale(1.08)' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(119,157,255,0.2)'; e.currentTarget.style.transform = 'translate(50%, -50%) scale(1)' }}
+          >
+            <svg width="52" height="52" viewBox="0 0 32 32" fill="none">
+              <path d="M10 6L26 16L10 26V6Z" fill="white" />
+            </svg>
+          </button>
+        )}
+
         <div style={{ position: 'relative', zIndex: 1, height: '100%', paddingLeft: gridPad, paddingRight: gridPad, display: 'flex', alignItems: 'center' }}>
           <div style={{ maxWidth: '620px' }}>
             <div style={{ marginBottom: '20px' }}>
@@ -549,19 +577,13 @@ function VideoEvolution() {
         >
           <button onClick={() => setOpen(false)} style={{ position: 'absolute', top: '24px', right: '32px', background: 'none', border: 'none', cursor: 'pointer', color: '#fff', fontSize: '32px', lineHeight: 1 }}>×</button>
           <div onClick={e => e.stopPropagation()} style={{ width: '90vw', maxWidth: '1100px', aspectRatio: '16/9' }}>
-            {YT_ID ? (
-              <iframe
-                src={`https://www.youtube.com/embed/${YT_ID}?autoplay=1`}
-                title="Vídeo Evolution Tatuapé"
-                allow="autoplay; fullscreen"
-                allowFullScreen
-                style={{ width: '100%', height: '100%', border: 'none', borderRadius: '8px' }}
-              />
-            ) : (
-              <div style={{ width: '100%', height: '100%', background: '#1a1a1a', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ color: '#a7a7a7', fontSize: '16px' }}>Vídeo em breve</span>
-              </div>
-            )}
+            <iframe
+              src={`https://www.youtube.com/embed/${YT_ID}?autoplay=1`}
+              title="Vídeo Evolution Tatuapé"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              style={{ width: '100%', height: '100%', border: 'none', borderRadius: '8px' }}
+            />
           </div>
         </div>
       )}
@@ -724,7 +746,7 @@ function PlantasEvolution() {
         <div style={{ background: '#e7e7e7', borderRadius: '8px', padding: isMobile ? '14px' : isTablet ? '15px 24px 13px 14px' : '15px 80px 13px 14px', display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '20px' : '40px', alignItems: isMobile ? 'stretch' : 'center' }}>
           <div style={{ background: 'white', borderRadius: '4px', height: isMobile ? 'auto' : isTablet ? '560px' : '726px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', position: 'relative', flexShrink: 0 }}>
             <div style={{ width: '3px', height: isMobile ? '220px' : isTablet ? '380px' : '512px', background: '#31447b', flexShrink: 0 }} />
-            <div style={{ width: isMobile ? 'calc(100% - 13px)' : isTablet ? '380px' : '546px', height: isMobile ? '280px' : isTablet ? '340px' : '454px', flexShrink: 0 }}>
+            <div onClick={() => setLightbox(planta.floor)} style={{ width: isMobile ? 'calc(100% - 13px)' : isTablet ? '380px' : '546px', height: isMobile ? '280px' : isTablet ? '340px' : '454px', flexShrink: 0, padding: isMobile ? '12px' : '28px', cursor: 'zoom-in' }}>
               <img src={planta.floor} alt="Planta" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
             <button style={{ position: 'absolute', top: '14px', right: '14px', width: '48px', height: '48px', background: '#779dff', borderRadius: '4px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -755,31 +777,17 @@ function PlantasEvolution() {
                   </div>
                   <span style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600, whiteSpace: 'nowrap' }}>{planta.dorms}</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
-                  <div style={{ width: '32px', height: '32px', border: '1px solid #779dff', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <img src={plantasSpecPe} alt="" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
+                {planta.pe && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
+                    <div style={{ width: '32px', height: '32px', border: '1px solid #779dff', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <img src={plantasSpecPe} alt="" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
+                    </div>
+                    <span style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600, whiteSpace: 'nowrap' }}>{planta.pe}</span>
                   </div>
-                  <span style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600, whiteSpace: 'nowrap' }}>{planta.pe}</span>
-                </div>
+                )}
               </div>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <p style={{ fontSize: '12px', fontWeight: 800, textTransform: 'uppercase', color: '#31447b', letterSpacing: '0.07em', margin: 0 }}>
-                Acesse as perspectivas da planta
-              </p>
-              <div style={{ display: 'flex', gap: '19px' }}>
-                {[planta.p1, planta.p2].map((src, i) => (
-                  <div
-                    key={i}
-                    onClick={() => setLightbox(src)}
-                    style={{ flex: 1, height: isMobile ? '120px' : '144px', borderRadius: '8px', overflow: 'hidden', cursor: 'zoom-in', position: 'relative' }}
-                  >
-                    <img src={src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 
