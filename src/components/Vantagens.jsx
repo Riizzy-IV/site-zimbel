@@ -52,7 +52,7 @@ export default function Vantagens() {
             <a
               href="#contato"
               className="flex items-center gap-3 text-white text-[15px] font-semibold w-fit hover:opacity-90 transition-opacity"
-              style={{ background: '#1d2748', padding: '16px 32px', borderRadius: '50px' }}
+              style={{ background: '#779dff', padding: '16px 32px', borderRadius: '10px' }}
             >
               Oferecer meu terreno
               <ArrowRight />

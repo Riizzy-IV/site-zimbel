@@ -9,7 +9,7 @@ const slides = [
     title: 'Vértice Anália Franco',
     badge: { tag: 'Lançamento', location: 'Anália Franco' },
     subtitle: 'O futuro agradece suas escolhas',
-    bg: '/empreendimentos/vertice/fachada.jpg',
+    bg: '/empreendimentos/vertice/fachada-hero.avif',
     logo: null,
     logoText: 'Vértice',
     href: '/empreendimentos/vertice',
@@ -41,7 +41,7 @@ const slides = [
     title: 'Esperança Prime',
     badge: { tag: 'Lançamento', location: 'Esperança' },
     subtitle: 'O prime que você merece',
-    bg: '/empreendimentos/esperanca-fachada.avif',
+    bg: '/empreendimentos/fachada-esperanca.avif',
     logo: null,
     logoText: 'Esperança Prime',
     href: null,
@@ -178,7 +178,7 @@ export default function Hero() {
           >
             {slide.title}
           </h1>
-          <p className="text-[#779dff] font-bold uppercase" style={{ fontSize: isMobile ? '13px' : '18px' }}>
+          <p className="text-[#779dff] font-bold uppercase" style={{ fontSize: isMobile ? '13px' : '18px', textShadow: '0 1px 8px rgba(0,0,0,0.8)' }}>
             {slide.subtitle}
           </p>
         </div>

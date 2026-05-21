@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useState, useRef, useEffect } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import EvolucaoObra from '../../components/EvolucaoObra'
 
 /* ─── assets ─── */
 const heroBg   = '/hero/Sala Evolution 1.avif'
@@ -992,9 +993,6 @@ function LocalizacaoEvolution() {
                       <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#4f6db5', flexShrink: 0 }} />
                       <span style={{ fontSize: '16px', color: '#e3e3e3', fontWeight: 700, whiteSpace: 'nowrap' }}>{label}</span>
                     </div>
-                    <svg width="8" height="5" viewBox="0 0 8 5" fill="none" style={{ flexShrink: 0 }}>
-                      <path d="M1 1L4 4L7 1" stroke="#779dff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
                   </div>
                 ))}
               </div>
@@ -1036,6 +1034,14 @@ export default function Evolution() {
       <TourEvolution />
       <PlantasEvolution />
       <LocalizacaoEvolution />
+      <EvolucaoObra etapas={[
+        { label: 'Estrutura',  pct: 100 },
+        { label: 'Alvenaria',  pct: 100 },
+        { label: 'Hidráulica', pct: 95  },
+        { label: 'Elétrica',   pct: 95  },
+        { label: 'Acabamento', pct: 60  },
+        { label: 'Pintura',    pct: 60  },
+      ]} />
       <Footer />
       <a
         href="https://wa.me/"

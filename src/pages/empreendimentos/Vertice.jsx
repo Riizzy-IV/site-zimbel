@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom'
 import { useState, useRef, useEffect } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import EvolucaoObra from '../../components/EvolucaoObra'
 
 /* ─── assets ─── */
-const heroBg = '/empreendimentos/vertice/hero-bg.jpg'
+const heroBg = '/empreendimentos/vertice/fachada-hero.avif'
 const fachada = '/empreendimentos/vertice/fachada.jpg'
 const icoPin = '/empreendimentos/vertice/icon-pin.svg'
 const icoBed = '/empreendimentos/vertice/icon-bed.svg'
@@ -22,11 +23,11 @@ const plantaFloor = '/empreendimentos/vertice/planta-unidade1.png'
 
 const PLANTAS = [
   /* ── Pavimento Térreo (pé direito duplo) ── */
-  { id: 0, area: '32,58m²*', tipo: 'Unidade 1 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: '/plantas/32,58m%C2%B2-inf.png', floorSup: '/plantas/32,58m%C2%B2-sup.png' },
-  { id: 1, area: '26,71m²*', tipo: 'Unidade 2 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: '/plantas/26,71m%C2%B2-inf.png', floorSup: '/plantas/26,71m%C2%B2-sup.png' },
-  { id: 2, area: '29,46m²*', tipo: 'Unidade 3 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: '/plantas/29,46m%C2%B2-inf.png', floorSup: '/plantas/29,46m%C2%B2-sup.png' },
-  { id: 3, area: '39,06m²*', tipo: 'Unidade 4 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: '/plantas/39,06m%C2%B2-inf.png', floorSup: '/plantas/39,06m%C2%B2-sup.png' },
-  { id: 4, area: '36,33m²*', tipo: 'Unidade 5 Inf/Sup • Pavimento Térreo', dorms: '1 dorm.', pe: 'Pé direito duplo', floor: '/plantas/36,33m%C2%B2-inf.png', floorSup: '/plantas/36,33m%C2%B2-sup.png' },
+  { id: 0, area: '32,58m²*', tipo: 'Unidade 1 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/32,58m%C2%B2-inf.png', floorSup: '/plantas/32,58m%C2%B2-sup.png' },
+  { id: 1, area: '26,71m²*', tipo: 'Unidade 2 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/26,71m%C2%B2-inf.png', floorSup: '/plantas/26,71m%C2%B2-sup.png' },
+  { id: 2, area: '29,46m²*', tipo: 'Unidade 3 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/29,46m%C2%B2-inf.png', floorSup: '/plantas/29,46m%C2%B2-sup.png' },
+  { id: 3, area: '39,06m²*', tipo: 'Unidade 4 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/39,06m%C2%B2-inf.png', floorSup: '/plantas/39,06m%C2%B2-sup.png' },
+  { id: 4, area: '36,33m²*', tipo: 'Unidade 5 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/36,33m%C2%B2-inf.png', floorSup: '/plantas/36,33m%C2%B2-sup.png' },
   /* ── Pavimento Tipo 2 — 1º e 2º Pav. ── */
   { id: 5,  area: '24,17m²', tipo: 'Unidades 11 e 21 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,17m%C2%B2.png' },
   { id: 6,  area: '24,30m²', tipo: 'Unidades 12 e 22 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,30m%C2%B2.png' },
@@ -1133,9 +1134,9 @@ function LocalizacaoVertice() {
               <div style={{ background: '#f6f6f6', borderRadius: '0 0 8px 8px', padding: '42px 35px 31px 29px', display: 'flex', flexDirection: 'column', gap: '47px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '47px' }}>
                   <p style={{ fontSize: '16px', color: '#494c4f', fontWeight: 600, lineHeight: 1.6, margin: 0 }}>
-                    No coração do Anália Franco, onde a cidade cresce, se reinventa e cada novo passo aponta para o futuro, nasce um projeto criado para quem enxerga além
+                    No coração do Anália Franco, onde a cidade cresce, se reinventa e cada novo passo aponta para o futuro, nasce um projeto criado para quem enxerga além.
                     <br /><br />
-                    Vertice Anália Franco, um encontro raro entre mobilidade, modernidade e o privilégio de estar onde tudo acontece
+                    Vertice Anália Franco, um encontro raro entre mobilidade, modernidade e o privilégio de estar onde tudo acontece.
                   </p>
                   <p style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600, lineHeight: 1.6, margin: 0 }}>
                     O Jardim Anália Franco é um bairro nobre na Zona Leste de São Paulo que oferece alta qualidade de vida, combinando segurança, excelente infraestrutura (com vias de acesso importantes e serviços completos) e lazer de alto padrão (como o Shopping Anália Franco e o Parque CERET).
@@ -1202,9 +1203,6 @@ function LocalizacaoVertice() {
                       <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#4f6db5', flexShrink: 0 }} />
                       <span style={{ fontSize: '16px', color: '#e3e3e3', fontWeight: 700, whiteSpace: 'nowrap' }}>{label}</span>
                     </div>
-                    <svg width="8" height="5" viewBox="0 0 8 5" fill="none" style={{ flexShrink: 0 }}>
-                      <path d="M1 1L4 4L7 1" stroke="#779dff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
                   </div>
                 ))}
               </div>
@@ -1246,6 +1244,11 @@ export default function Vertice() {
       <TourVertice />
       <PlantasVertice />
       <LocalizacaoVertice />
+      <EvolucaoObra etapas={[
+        { label: 'Demolição',    pct: 100 },
+        { label: 'Terraplanagem', pct: 100 },
+        { label: 'Fundação',     pct: 30  },
+      ]} />
       <Footer />
 
       {/* WhatsApp flutuante */}

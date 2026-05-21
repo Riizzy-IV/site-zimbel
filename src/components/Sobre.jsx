@@ -4,10 +4,9 @@ const gridPl = 'max(40px, calc((100vw - 1312px) / 2))';
 const gridPr = 'max(40px, calc((100vw - 1312px) / 2))';
 
 const stats = [
-  { value: '+500', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed laoreet urna. In rhoncus massa ligula, et luctus leo aliquet et.' },
-  { value: '+200', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed laoreet urna. In rhoncus massa ligula, et luctus leo aliquet et.' },
-  { value: '+10', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed laoreet urna. In rhoncus massa ligula, et luctus leo aliquet et.' },
-  { value: '+50', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed laoreet urna. In rhoncus massa ligula, et luctus leo aliquet et.' },
+  { value: '+10 mil', desc: 'Metros quadrados de obra executados.' },
+  { value: '+150', desc: 'Famílias atendidas.' },
+  { value: '+3 anos', desc: 'De experiência no mercado imobiliário.' },
 ];
 
 function ArrowUp() {
@@ -115,7 +114,7 @@ export default function Sobre() {
 
           {/* Foto interna */}
           <img
-            src="/sobre/interna.avif"
+            src="/img/IMG_4622.JPG.jpeg"
             alt=""
             className="absolute object-cover rounded-xl pointer-events-none"
             style={{ top: '124px', left: 0, width: '50%', height: '527px', objectPosition: 'center center', zIndex: 2 }}
@@ -131,7 +130,7 @@ export default function Sobre() {
         </div>
 
         {/* ── Stats ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center text-center">
           {stats.map((stat, i) => (
             <div key={i} className="flex flex-col gap-4">
               <p
@@ -141,9 +140,8 @@ export default function Sobre() {
                 {stat.value}
               </p>
               <div>
-                <div className="flex mb-4">
+                <div className="flex justify-center mb-4">
                   <div className="w-24 h-1 bg-[#779dff] rounded" />
-                  <div className="flex-1 h-px bg-[#e3e3e3] self-center ml-0" />
                 </div>
                 <p className="text-[#6b7280] text-sm leading-relaxed">{stat.desc}</p>
               </div>

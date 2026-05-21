@@ -14,10 +14,7 @@ const gridPl = 'max(40px, calc((100vw - 1312px) / 2))';
 const gridPr = 'max(40px, calc((100vw - 1312px) / 2))';
 
 const images = [
-  { src: '/sobre/palestra-target-60.avif' },
   { src: '/sobre/palestra-target-28.avif', pos: 'top' },
-  { src: '/sobre/sobre-17.avif' },
-  { src: '/sobre/sobre-20.avif' },
   { src: '/sobre/sobre-1.avif' },
   { src: '/sobre/sobre-2.avif' },
   { src: '/sobre/sobre-3.avif' },
@@ -26,10 +23,18 @@ const images = [
   { src: '/sobre/sobre-6.avif' },
   { src: '/sobre/sobre-7.avif' },
   { src: '/sobre/sobre-8.avif' },
-  { src: '/sobre/sobre-9.avif' },
   { src: '/sobre/sobre-10.avif' },
-  { src: '/sobre/sobre-11.avif' },
   { src: '/sobre/sobre-12.avif' },
+  { src: '/sobre/obra-1.avif' },
+  { src: '/sobre/obra-2.avif' },
+  { src: '/sobre/obra-3.avif' },
+  { src: '/sobre/obra-4.avif' },
+  { src: '/sobre/obra-5.avif' },
+  { src: '/sobre/obra-6.avif' },
+  { src: '/sobre/obra-7.avif' },
+  { src: '/sobre/obra-8.avif' },
+  { src: '/sobre/obra-9.avif' },
+  { src: '/sobre/obra-10.avif' },
 ];
 
 function ChevronLeft() {
