@@ -14,17 +14,22 @@ const gridPl = 'max(40px, calc((100vw - 1312px) / 2))';
 const gridPr = 'max(40px, calc((100vw - 1312px) / 2))';
 
 const images = [
-  { src: '/empreendimentos/vertice/interna-1.avif',  caption: 'Vértice Anália Franco' },
-  { src: '/empreendimentos/vertice/interna-2.avif',  caption: 'Vértice Anália Franco' },
-  { src: '/empreendimentos/vertice/interna-3.avif',  caption: 'Vértice Anália Franco' },
-  { src: '/empreendimentos/vertice/interna-4.avif',  caption: 'Vértice Anália Franco' },
-  { src: '/empreendimentos/vertice/interna-5.avif',  caption: 'Vértice Anália Franco' },
-  { src: '/empreendimentos/vertice/interna-6.avif',  caption: 'Vértice Anália Franco' },
-  { src: '/empreendimentos/vertice/interna-7.avif',  caption: 'Vértice Anália Franco' },
-  { src: '/empreendimentos/vertice/interna-8.avif',  caption: 'Vértice Anália Franco' },
-  { src: '/empreendimentos/vertice/interna-9.avif',  caption: 'Vértice Anália Franco' },
-  { src: '/empreendimentos/vertice/interna-10.avif', caption: 'Vértice Anália Franco' },
-  { src: '/empreendimentos/vertice/interna-11.avif', caption: 'Vértice Anália Franco' },
+  { src: '/sobre/palestra-target-60.avif' },
+  { src: '/sobre/palestra-target-28.avif', pos: 'top' },
+  { src: '/sobre/sobre-17.avif' },
+  { src: '/sobre/sobre-20.avif' },
+  { src: '/sobre/sobre-1.avif' },
+  { src: '/sobre/sobre-2.avif' },
+  { src: '/sobre/sobre-3.avif' },
+  { src: '/sobre/sobre-4.avif' },
+  { src: '/sobre/sobre-5.avif' },
+  { src: '/sobre/sobre-6.avif' },
+  { src: '/sobre/sobre-7.avif' },
+  { src: '/sobre/sobre-8.avif' },
+  { src: '/sobre/sobre-9.avif' },
+  { src: '/sobre/sobre-10.avif' },
+  { src: '/sobre/sobre-11.avif' },
+  { src: '/sobre/sobre-12.avif' },
 ];
 
 function ChevronLeft() {
@@ -46,6 +51,7 @@ function ChevronRight() {
 export default function Depoimentos() {
   const isMobile = useIsMobile();
   const [current, setCurrent] = useState(0);
+  const [lightbox, setLightbox] = useState(null);
   const intervalRef = useRef(null);
   const total = images.length;
 
@@ -65,6 +71,7 @@ export default function Depoimentos() {
   const next = images[(current + 1) % total];
 
   return (
+    <>
     <section style={{ background: '#0c1a36', paddingTop: '72px', paddingBottom: '80px', overflow: 'hidden' }}>
 
       {/* ── Header ── */}
@@ -124,16 +131,11 @@ export default function Depoimentos() {
               <img
                 key={img.src}
                 src={img.src}
-                alt={img.caption}
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: i === current ? 1 : 0, transition: 'opacity 0.6s ease' }}
+                alt=""
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: img.pos || 'center', opacity: i === current ? 1 : 0, transition: 'opacity 0.6s ease' }}
                 loading={i === 0 ? 'eager' : 'lazy'}
               />
             ))}
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 50%)', pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', bottom: '20px', left: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <div style={{ width: '3px', height: '18px', background: '#779dff', borderRadius: '2px', flexShrink: 0 }} />
-              <span style={{ fontSize: '13px', color: '#fff', fontWeight: 600 }}>{curr.caption}</span>
-            </div>
           </div>
         ) : (
           /* Desktop: 3 colunas — anterior / atual / seguinte */
@@ -144,24 +146,19 @@ export default function Depoimentos() {
               onMouseEnter={e => e.currentTarget.style.opacity = '0.6'}
               onMouseLeave={e => e.currentTarget.style.opacity = '0.4'}
             >
-              <img src={prev.src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
+              <img src={prev.src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: prev.pos || 'center', display: 'block' }} loading="lazy" />
             </div>
 
-            <div style={{ position: 'relative', borderRadius: '12px', overflow: 'hidden', aspectRatio: '4/3', boxShadow: '0 24px 64px rgba(0,0,0,0.6)' }}>
+            <div onClick={() => setLightbox(curr.src)} style={{ position: 'relative', borderRadius: '12px', overflow: 'hidden', aspectRatio: '4/3', boxShadow: '0 24px 64px rgba(0,0,0,0.6)', cursor: 'zoom-in' }}>
               {images.map((img, i) => (
                 <img
                   key={img.src}
                   src={img.src}
-                  alt={img.caption}
-                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: i === current ? 1 : 0, transition: 'opacity 0.6s ease' }}
+                  alt=""
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: img.pos || 'center', opacity: i === current ? 1 : 0, transition: 'opacity 0.6s ease' }}
                   loading={i === 0 ? 'eager' : 'lazy'}
                 />
               ))}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 50%)', pointerEvents: 'none' }} />
-              <div style={{ position: 'absolute', bottom: '20px', left: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <div style={{ width: '3px', height: '18px', background: '#779dff', borderRadius: '2px', flexShrink: 0 }} />
-                <span style={{ fontSize: '13px', color: '#fff', fontWeight: 600 }}>{curr.caption}</span>
-              </div>
             </div>
 
             <div
@@ -170,7 +167,7 @@ export default function Depoimentos() {
               onMouseEnter={e => e.currentTarget.style.opacity = '0.6'}
               onMouseLeave={e => e.currentTarget.style.opacity = '0.4'}
             >
-              <img src={next.src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
+              <img src={next.src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: next.pos || 'center', display: 'block' }} loading="lazy" />
             </div>
           </div>
         )}
@@ -197,5 +194,13 @@ export default function Depoimentos() {
       </div>
 
     </section>
+
+    {lightbox && (
+      <div onClick={() => setLightbox(null)} style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.92)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <button onClick={() => setLightbox(null)} style={{ position: 'absolute', top: '24px', right: '32px', background: 'none', border: 'none', cursor: 'pointer', color: '#fff', fontSize: '32px', lineHeight: 1 }}>×</button>
+        <img src={lightbox} alt="" onClick={e => e.stopPropagation()} style={{ maxWidth: '90vw', maxHeight: '90vh', objectFit: 'contain', borderRadius: '8px' }} />
+      </div>
+    )}
+    </>
   );
 }
