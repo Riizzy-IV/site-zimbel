@@ -1,5 +1,5 @@
-const gridPl = 'max(120px, calc((100vw - 1312px) / 2))';
-const gridPr = 'max(120px, calc((100vw - 1312px) / 2))';
+const gridPl = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
+const gridPr = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
 
 export default function EvolucaoObra({ etapas }) {
   return (

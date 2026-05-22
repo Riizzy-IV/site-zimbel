@@ -50,7 +50,7 @@ const PLANTAS = [
   { id: 21, area: '28,14m²', tipo: 'Planta Final 5 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/28,14m%C2%B2.png' },
 ]
 
-const gridPad = 'max(120px, calc((100vw - 1312px) / 2))'
+const gridPad = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))'
 
 function useBreakpoint() {
   const get = () => {
@@ -889,17 +889,6 @@ function PlantasVertice() {
                 <path d="M1 6V1H6M10 1H15V6M15 10V15H10M6 15H1V10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-            {/* Download button */}
-            <a
-              href={planta.floor}
-              download
-              style={{ position: 'absolute', bottom: '18px', right: '24px', display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}
-            >
-              <span style={{ fontSize: '12px', fontWeight: 800, textTransform: 'uppercase', color: '#31447b', letterSpacing: '0.07em' }}>Baixar a planta</span>
-              <div style={{ width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img src={plantasDownload} alt="" style={{ width: '18px', height: '18px', objectFit: 'contain', transform: 'rotate(90deg)' }} />
-              </div>
-            </a>
           </div>
 
           {/* Right — specs */}
@@ -1197,12 +1186,12 @@ function LocalizacaoVertice() {
               {/* Grid de cards de infra — 1 col no mobile, 2 cols no desktop */}
               <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '12px' : '24px 32px' }}>
                 {INFRA_CARDS.map(label => (
-                  <div key={label} style={{ background: '#0c1a36', borderRadius: '8px', height: '50px', padding: '0 14px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <div key={label} style={{ background: '#0c1a36', borderRadius: '8px', height: '50px', padding: '0 14px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', minWidth: 0, overflow: 'hidden' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', minWidth: 0, overflow: 'hidden' }}>
                       <div style={{ width: '1px', height: '18px', background: '#4f6db5', flexShrink: 0 }} />
                       <img src={locCardIcon} alt="" style={{ width: '24px', height: '24px', flexShrink: 0 }} />
                       <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#4f6db5', flexShrink: 0 }} />
-                      <span style={{ fontSize: '16px', color: '#e3e3e3', fontWeight: 700, whiteSpace: 'nowrap' }}>{label}</span>
+                      <span style={{ fontSize: '16px', color: '#e3e3e3', fontWeight: 700, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0 }}>{label}</span>
                     </div>
                   </div>
                 ))}

@@ -10,8 +10,8 @@ function useIsMobile() {
   return mobile;
 }
 
-const gridPl = 'max(120px, calc((100vw - 1312px) / 2))';
-const gridPr = 'max(120px, calc((100vw - 1312px) / 2))';
+const gridPl = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
+const gridPr = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
 
 const images = [
   { src: '/sobre/palestra-target-28.avif', pos: 'top' },

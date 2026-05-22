@@ -30,7 +30,7 @@ const PLANTAS = [
   { id: 9, area: '44,74m²', tipo: 'Planta tipo • Unidades 53, 63, 73, 83 e 93', dorms: '2 dorms.', pe: 'Varanda Gourmet • 1 vaga', floor: '/empreendimentos/evolution/plantas/planta-9.webp' },
 ]
 
-const gridPad = 'max(120px, calc((100vw - 1312px) / 2))'
+const gridPad = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))'
 
 function useBreakpoint() {
   const get = () => {
@@ -753,12 +753,6 @@ function PlantasEvolution() {
             <button style={{ position: 'absolute', top: '14px', right: '14px', width: '48px', height: '48px', background: '#779dff', borderRadius: '4px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 6V1H6M10 1H15V6M15 10V15H10M6 15H1V10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </button>
-            <a href={planta.floor} download style={{ position: 'absolute', bottom: '18px', right: '24px', display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-              <span style={{ fontSize: '12px', fontWeight: 800, textTransform: 'uppercase', color: '#31447b', letterSpacing: '0.07em' }}>Baixar a planta</span>
-              <div style={{ width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img src={plantasDownload} alt="" style={{ width: '18px', height: '18px', objectFit: 'contain', transform: 'rotate(90deg)' }} />
-              </div>
-            </a>
           </div>
 
           <div style={{ flex: '1 1 0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: isMobile ? 'auto' : isTablet ? '560px' : '726px', paddingTop: isMobile ? '8px' : '32px', paddingBottom: isMobile ? '16px' : '32px', gap: isMobile ? '32px' : '0' }}>
