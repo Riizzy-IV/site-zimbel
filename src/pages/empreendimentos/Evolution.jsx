@@ -417,7 +417,7 @@ function LazerEvolution() {
 
         {/* Título + descrição */}
         <div style={{ maxWidth: '790px', marginBottom: '40px' }}>
-          <h2 style={{ fontSize: 'clamp(18px, 1.8vw, 28px)', color: '#31477b', fontWeight: 800, textTransform: 'uppercase', marginBottom: '16px', whiteSpace: 'nowrap' }}>
+          <h2 style={{ fontSize: 'clamp(18px, 1.8vw, 28px)', color: '#31477b', fontWeight: 800, textTransform: 'uppercase', marginBottom: '16px' }}>
             Estrutura Completa Para o Seu Bem-Estar
           </h2>
           <p style={{ fontSize: '16px', color: '#a7a7a7', lineHeight: 1.35 }}>
@@ -771,19 +771,19 @@ function PlantasEvolution() {
                 <div style={{ width: '77px', height: '2px', background: '#779dff', marginBottom: '1px' }} />
                 <div style={{ width: '100%', height: '1px', background: '#d0d0d0' }} />
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '48px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '16px 32px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
                   <div style={{ width: '32px', height: '32px', border: '1px solid #779dff', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <img src={plantasSpecBed} alt="" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
                   </div>
-                  <span style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600, whiteSpace: 'nowrap' }}>{planta.dorms}</span>
+                  <span style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600 }}>{planta.dorms}</span>
                 </div>
                 {planta.pe && (
                   <div style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
                     <div style={{ width: '32px', height: '32px', border: '1px solid #779dff', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <img src={plantasSpecPe} alt="" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
                     </div>
-                    <span style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600, whiteSpace: 'nowrap' }}>{planta.pe}</span>
+                    <span style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600 }}>{planta.pe}</span>
                   </div>
                 )}
               </div>
@@ -953,16 +953,6 @@ function LocalizacaoEvolution() {
                   ))}
                 </div>
 
-                <button style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: '#779dff', borderRadius: '8px', border: 'none', cursor: 'pointer', alignSelf: 'flex-start' }}>
-                  <img src="/empreendimentos/vertice/localizacao-mapa3d-icon.svg" alt="" style={{ width: '18px', height: '18px' }} />
-                  <svg width="7" height="13" viewBox="0 0 7.75 14" fill="none" style={{ flexShrink: 0 }}>
-                    <path d="M0.75 0.75L7 7L0.75 13.25" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', textAlign: 'left' }}>
-                    <span style={{ fontSize: '12px', color: '#0c1a36', fontWeight: 700, display: 'block', lineHeight: 1 }}>Acesse o</span>
-                    <span style={{ fontSize: '16px', color: '#0c1a36', fontWeight: 700, display: 'block', lineHeight: 1 }}>Mapa 3D</span>
-                  </div>
-                </button>
               </div>
             </div>
 
