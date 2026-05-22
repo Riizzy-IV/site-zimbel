@@ -1,5 +1,5 @@
-const gridPl = 'max(40px, calc((100vw - 1312px) / 2))';
-const gridPr = 'max(40px, calc((100vw - 1312px) / 2))';
+const gridPl = 'max(120px, calc((100vw - 1312px) / 2))';
+const gridPr = 'max(120px, calc((100vw - 1312px) / 2))';
 
 
 function IconAddress() {

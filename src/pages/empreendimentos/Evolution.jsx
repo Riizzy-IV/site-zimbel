@@ -30,7 +30,7 @@ const PLANTAS = [
   { id: 9, area: '44,74m²', tipo: 'Planta tipo • Unidades 53, 63, 73, 83 e 93', dorms: '2 dorms.', pe: 'Varanda Gourmet • 1 vaga', floor: '/empreendimentos/evolution/plantas/planta-9.webp' },
 ]
 
-const gridPad = 'max(40px, calc((100vw - 1312px) / 2))'
+const gridPad = 'max(120px, calc((100vw - 1312px) / 2))'
 
 function useBreakpoint() {
   const get = () => {
