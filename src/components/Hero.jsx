@@ -97,8 +97,8 @@ export default function Hero() {
   }, []);
 
   const baseSectionHeight = bp === 'mobile' ? 760 : bp === 'md' ? 650 : bp === 'sm' ? 760 : 817;
-  const sectionHeight = bp === 'mobile' ? baseSectionHeight : Math.min(baseSectionHeight, vh - 90);
-  const paddingTop = bp === 'mobile' ? 300 :bp === 'md' ? Math.round(sectionHeight * 0.50) : bp === 'sm' ? Math.round(sectionHeight * 0.50) : 430;
+  const sectionHeight = bp === 'mobile' ? baseSectionHeight : Math.max(580, Math.min(baseSectionHeight, vh - 90));
+  const paddingTop = bp === 'mobile' ? 300 : bp === 'md' ? Math.round(sectionHeight * 0.42) : bp === 'sm' ? Math.round(sectionHeight * 0.40) : 430;
   const badgeWidth = bp === 'mobile' ? 'fit-content' : '336px';
   const h1Size = bp === 'mobile' ? 'clamp(18px, 5.5vw, 26px)' : bp === 'md' ? '34px' : '40px';
   const isMobile = bp === 'mobile';
