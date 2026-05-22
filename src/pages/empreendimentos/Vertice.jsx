@@ -5,8 +5,8 @@ import Footer from '../../components/Footer'
 import EvolucaoObra from '../../components/EvolucaoObra'
 
 /* ─── assets ─── */
-const heroBg = '/empreendimentos/vertice/fachada-hero.avif'
-const fachada = '/empreendimentos/vertice/fachada.jpg'
+const heroBg = '/empreendimentos/vertice/hero-bg.jpg'
+const fachada = '/empreendimentos/vertice/fachada-portrait.avif'
 const icoPin = '/empreendimentos/vertice/icon-pin.svg'
 const icoBed = '/empreendimentos/vertice/icon-bed.svg'
 const icoLazer = '/empreendimentos/vertice/icon-lazer.svg'
@@ -26,11 +26,11 @@ const PLANTAS = [
   { id: 0, area: '32,58m²*', tipo: 'Unidade 1 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/32,58m%C2%B2-inf.png', floorSup: '/plantas/32,58m%C2%B2-sup.png' },
   { id: 1, area: '26,71m²*', tipo: 'Unidade 2 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/26,71m%C2%B2-inf.png', floorSup: '/plantas/26,71m%C2%B2-sup.png' },
   { id: 2, area: '29,46m²*', tipo: 'Unidade 3 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/29,46m%C2%B2-inf.png', floorSup: '/plantas/29,46m%C2%B2-sup.png' },
-  { id: 3, area: '39,06m²*', tipo: 'Unidade 4 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/39,06m%C2%B2-inf.png', floorSup: '/plantas/39,06m%C2%B2-sup.png' },
+  { id: 3, area: '39,05m²*', tipo: 'Unidade 4 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/39,05m%C2%B2-inf.png', floorSup: '/plantas/39,05m%C2%B2-sup.png' },
   { id: 4, area: '36,33m²*', tipo: 'Unidade 5 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/36,33m%C2%B2-inf.png', floorSup: '/plantas/36,33m%C2%B2-sup.png' },
   /* ── Pavimento Tipo 2 — 1º e 2º Pav. ── */
   { id: 5,  area: '24,17m²', tipo: 'Unidades 11 e 21 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,17m%C2%B2.png' },
-  { id: 6,  area: '24,30m²', tipo: 'Unidades 12 e 22 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,30m%C2%B2.png' },
+  { id: 6,  area: '24,20m²', tipo: 'Unidades 12 e 22 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,20m%C2%B2.png' },
   { id: 7,  area: '24,91m²', tipo: 'Unidades 13 e 23 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,91m%C2%B2.png' },
   { id: 8,  area: '30,35m²', tipo: 'Unidades 14 e 24 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/30,35m%C2%B2.png' },
   { id: 9,  area: '29,31m²', tipo: 'Unidades 15 e 25 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/29,31m%C2%B2.png' },
@@ -290,6 +290,7 @@ const tabs = [
       { src: '/empreendimentos/vertice/fachada-3.avif', caption: 'Perspectiva ilustrada da fachada' },
       { src: '/empreendimentos/vertice/fachada-4.avif', caption: 'Perspectiva ilustrada da fachada' },
       { src: '/empreendimentos/vertice/fachada-5.avif', caption: 'Perspectiva ilustrada da fachada' },
+      { src: '/empreendimentos/vertice/fachada-6.avif', caption: 'Perspectiva ilustrada da fachada' },
     ]
   },
   {
@@ -856,7 +857,7 @@ function PlantasVertice() {
             {/* Blue vertical accent */}
             <div style={{ width: '3px', height: isMobile ? '220px' : '512px', background: '#31447b', flexShrink: 0 }} />
 
-            <div style={{ width: isMobile ? 'calc(100% - 13px)' : '546px', height: isMobile ? '300px' : '474px', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div style={{ width: isMobile ? 'calc(100% - 13px)' : '546px', height: isMobile ? '300px' : '474px', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '10px', overflow: 'hidden' }}>
               {planta.floorSup && (
                 /* Inferior / Superior tabs */
                 <div style={{ display: 'flex', gap: '4px' }}>
@@ -878,7 +879,7 @@ function PlantasVertice() {
                 src={planta.floorSup && floorTab === 'sup' ? planta.floorSup : planta.floor}
                 alt="Planta"
                 onClick={() => setLightbox(planta.floorSup && floorTab === 'sup' ? planta.floorSup : planta.floor)}
-                style={{ flex: 1, width: '100%', objectFit: 'contain', cursor: 'zoom-in' }}
+                style={{ flex: 1, width: '100%', height: 0, objectFit: 'contain', cursor: 'zoom-in' }}
               />
             </div>
 

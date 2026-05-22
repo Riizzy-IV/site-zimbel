@@ -68,7 +68,7 @@ export default function Empreendimentos() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section className="bg-white" style={{ paddingTop: '72px', paddingBottom: '80px' }}>
+    <section className="bg-white" style={{ paddingTop: '72px', paddingBottom: '32px' }}>
       <div style={{ paddingLeft: gridPl, paddingRight: gridPr }}>
 
         {/* ── Breadcrumb + título ── */}

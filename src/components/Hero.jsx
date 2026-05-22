@@ -9,7 +9,7 @@ const slides = [
     title: 'Vértice Anália Franco',
     badge: { tag: 'Lançamento', location: 'Anália Franco' },
     subtitle: 'O futuro agradece suas escolhas',
-    bg: '/empreendimentos/vertice/fachada-hero.avif',
+    bg: '/empreendimentos/vertice/fachada-6.avif',
     logo: null,
     logoText: 'Vértice',
     href: '/empreendimentos/vertice',
