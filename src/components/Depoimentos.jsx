@@ -41,7 +41,6 @@ const images = [
   { src: '/sobre/obra-drive-3.avif' },
   { src: '/sobre/obra-drive-4.avif' },
   { src: '/sobre/obra-drive-5.avif' },
-  { src: '/sobre/obra-drive-6.avif' },
 ];
 
 function ChevronLeft() {
