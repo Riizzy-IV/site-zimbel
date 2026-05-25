@@ -520,9 +520,11 @@ function LazerVertice() {
               <div style={{ width: '1px', height: '21px', background: '#779dff' }} />
               <span style={{ fontSize: '12px', color: '#fff', fontWeight: 600 }}>{img.caption}</span>
             </div>
-            <span style={{ position: 'absolute', bottom: '16px', right: '16px', fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontStyle: 'italic' }}>
-              Imagens meramente ilustrativas
-            </span>
+            {!isMobile && (
+              <span style={{ position: 'absolute', bottom: '16px', right: '16px', fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontStyle: 'italic' }}>
+                Imagens meramente ilustrativas
+              </span>
+            )}
           </div>
 
           {/* Imagem secundária — só tablet/desktop */}

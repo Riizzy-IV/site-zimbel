@@ -23,7 +23,7 @@ const slides = [
   {
     num: '02',
     title: 'Evolution Tatuapé',
-    badge: { tag: 'Lançamento', location: 'Tatuapé' },
+    badge: { tag: 'Em Obras', location: 'Tatuapé' },
     subtitle: 'Viva a evolução do seu bairro',
     bg: '/empreendimentos/evolution-fachada.avif',
     logo: null,
@@ -39,7 +39,7 @@ const slides = [
   {
     num: '03',
     title: 'Esperança Prime',
-    badge: { tag: 'Lançamento', location: 'Esperança' },
+    badge: { tag: 'Pronto para Morar', location: 'Esperança' },
     subtitle: 'O prime que você merece',
     bg: '/empreendimentos/fachada-esperanca.avif',
     logo: null,
@@ -173,12 +173,12 @@ export default function Hero() {
         {/* Badge + Título */}
         <div style={{ paddingLeft: gridPl, paddingRight: isMobile ? gridPl : undefined }}>
           <div
-            className="flex items-center justify-center gap-[16px] bg-[#31477b] h-9 rounded-sm"
-            style={{ marginBottom: '20px', width: badgeWidth, paddingLeft: '20px', paddingRight: '20px' }}
+            className="flex items-center justify-center gap-[16px] bg-[#31477b] rounded-sm"
+            style={{ marginBottom: '20px', width: badgeWidth, paddingLeft: '20px', paddingRight: '20px', height: '36px' }}
           >
-            <span className="text-white text-[13.8px] font-bold uppercase tracking-wide">{slide.badge.tag}</span>
-            <span className="w-1 h-1 rounded-full bg-white" />
-            <span className="text-white text-[13.8px] font-bold uppercase tracking-wide">{slide.badge.location}</span>
+            <span className="text-white text-[13.8px] font-bold uppercase tracking-wide whitespace-nowrap">{slide.badge.tag}</span>
+            <span className="w-1 h-1 rounded-full bg-white shrink-0" />
+            <span className="text-white text-[13.8px] font-bold uppercase tracking-wide whitespace-nowrap">{slide.badge.location}</span>
           </div>
           <h1
             className="text-white font-extrabold uppercase leading-tight"
