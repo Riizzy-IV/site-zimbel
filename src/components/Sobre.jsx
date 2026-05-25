@@ -114,7 +114,7 @@ export default function Sobre() {
 
           {/* Foto interna */}
           <img
-            src="/img/sobre-foto.avif"
+            src="/img/letreiro-02.avif"
             alt=""
             loading="lazy"
             decoding="async"
