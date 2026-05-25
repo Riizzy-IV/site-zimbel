@@ -23,7 +23,7 @@ export default function Vantagens() {
             style={{ aspectRatio: '4/3', boxShadow: '0 24px 64px rgba(12,26,54,0.18)' }}
           >
             <img
-              src="/img/letreiro.avif"
+              src="/img/letreiro-02.avif"
               alt="Ofereça seu terreno"
               className="w-full h-full object-cover"
               loading="lazy"
