@@ -204,9 +204,9 @@ export default function Empreendimentos() {
               <div>
                 <div className="flex items-center gap-2" style={{ marginBottom: '6px' }}>
                   <img src={iconLocation} alt="" className="w-[15px] h-[15px] object-contain brightness-0 invert" />
-                  <span className="text-white/80 text-[10px] md:text-[14px] uppercase tracking-wide whitespace-nowrap">Anália Franco - São Paulo</span>
+                  <span className="text-white/80 text-[10px] md:text-[14px] uppercase tracking-wide md:whitespace-nowrap">Anália Franco - São Paulo</span>
                 </div>
-                <h3 className="text-white text-[13px] md:text-[30px] leading-none font-extrabold uppercase whitespace-nowrap">Vértice Anália Franco</h3>
+                <h3 className="text-white text-[13px] md:text-[30px] leading-none font-extrabold uppercase md:whitespace-nowrap">Vértice Anália Franco</h3>
               </div>
               <div className="hidden md:flex items-center gap-8">
                 <SpecIcon src={iconBed}>Studio e 1 dorm.</SpecIcon>

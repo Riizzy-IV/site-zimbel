@@ -24,7 +24,6 @@ const images = [
   { src: '/sobre/sobre-7.avif' },
   { src: '/sobre/sobre-8.avif' },
   { src: '/sobre/sobre-10.avif' },
-  { src: '/sobre/sobre-12.avif' },
   { src: '/sobre/obra-1.avif' },
   { src: '/sobre/obra-2.avif' },
   { src: '/sobre/obra-3.avif' },
