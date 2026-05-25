@@ -1262,12 +1262,12 @@ export default function Vertice() {
           { label: 'Pintura',       pct: 0   },
         ]}
         fotos={[
-          { src: 'https://drive.google.com/thumbnail?id=1SPueACIxXUzJ54VyTq-jnZblmbG5S5mU&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
-          { src: 'https://drive.google.com/thumbnail?id=1tOkYVbHCO5SPc7wwcJ_yBfygEeKHdIkE&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
-          { src: 'https://drive.google.com/thumbnail?id=1m0zaNTVR1uzYClSMfqWkctiFStY-STCj&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
-          { src: 'https://drive.google.com/thumbnail?id=150xBO04L70vsySanckM3OqQSjeGtpSWU&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
-          { src: 'https://drive.google.com/thumbnail?id=1hOAHMQ4VGVTiwx9ZenMbM0O5mDD8O4rZ&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
-          { src: 'https://drive.google.com/thumbnail?id=1JiH6Lb7VYowvgfg1NlWgpA9LTDNQDH1b&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/vertice/obra/obra-1.avif', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/vertice/obra/obra-2.avif', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/vertice/obra/obra-3.avif', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/vertice/obra/obra-4.avif', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/vertice/obra/obra-5.avif', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/vertice/obra/obra-6.avif', date: 'Mai / 2026', caption: 'Andamento da obra' },
         ]}
       />
       <Footer />

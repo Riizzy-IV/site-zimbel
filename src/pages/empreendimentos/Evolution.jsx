@@ -1043,17 +1043,17 @@ export default function Evolution() {
         ]}
         fotos={[
           /* ── Julho 2025 ── */
-          { src: 'https://drive.google.com/thumbnail?id=1XzaiAYQik0yJg3CXg5MmFJusAvNvE-sS&sz=w1200', date: 'Jul / 2025', caption: 'Andamento da obra' },
-          { src: 'https://drive.google.com/thumbnail?id=1sRPLJXGNief8xGPYtqTWftTa37q_50Gt&sz=w1200', date: 'Jul / 2025', caption: 'Andamento da obra' },
-          { src: 'https://drive.google.com/thumbnail?id=1mT-eMrCeXymwIPsAvq3oWT8E1oOt2q39&sz=w1200', date: 'Jul / 2025', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/evolution/obra/obra-jul-1.avif', date: 'Jul / 2025', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/evolution/obra/obra-jul-2.avif', date: 'Jul / 2025', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/evolution/obra/obra-jul-3.avif', date: 'Jul / 2025', caption: 'Andamento da obra' },
           /* ── Março 2026 ── */
-          { src: 'https://drive.google.com/thumbnail?id=1DnRlqT_vWDamITiZ5kD_nBirVOrwVQvO&sz=w1200', date: 'Mar / 2026', caption: 'Andamento da obra' },
-          { src: 'https://drive.google.com/thumbnail?id=1dodd1fJuy5uk96KGf1Mf2B27oFaxP3eA&sz=w1200', date: 'Mar / 2026', caption: 'Andamento da obra' },
-          { src: 'https://drive.google.com/thumbnail?id=1z0nAbB-_CpUuBugBZr1pxr93TcHiLhW6&sz=w1200', date: 'Mar / 2026', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/evolution/obra/obra-mar-1.avif', date: 'Mar / 2026', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/evolution/obra/obra-mar-2.avif', date: 'Mar / 2026', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/evolution/obra/obra-mar-3.avif', date: 'Mar / 2026', caption: 'Andamento da obra' },
           /* ── Maio 2026 ── */
-          { src: 'https://drive.google.com/thumbnail?id=1r1QWgEjCn3Bop3CkVq5hNX1fjUyWapEz&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
-          { src: 'https://drive.google.com/thumbnail?id=17pRsqqXAx3JCPDgqVUxNSLiGvlKgYGOM&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
-          { src: 'https://drive.google.com/thumbnail?id=1vej4L32epBrnSgyr8gapcB9Zt3hxcJip&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/evolution/obra/obra-mai-1.avif', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/evolution/obra/obra-mai-2.avif', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/evolution/obra/obra-mai-3.avif', date: 'Mai / 2026', caption: 'Andamento da obra' },
         ]}
       />
       <Footer />
