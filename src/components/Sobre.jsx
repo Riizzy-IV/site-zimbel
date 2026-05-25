@@ -143,20 +143,20 @@ export default function Sobre() {
         </div>
 
         {/* ── Stats ── */}
-        <div className="grid grid-cols-3 gap-4 justify-items-center text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 justify-items-center text-center">
           {stats.map((stat, i) => (
-            <div key={i} className="flex flex-col gap-2 md:gap-4">
+            <div key={i} className="flex flex-col gap-1 md:gap-4">
               <p
                 className="text-[#31447b] font-semibold leading-none"
-                style={{ fontSize: 'clamp(24px, 5vw, 64px)' }}
+                style={{ fontSize: 'clamp(48px, 5vw, 64px)' }}
               >
                 {stat.value}
               </p>
               <div>
-                <div className="flex justify-center mb-2 md:mb-4">
-                  <div className="w-12 md:w-24 h-1 bg-[#779dff] rounded" />
+                <div className="flex justify-center mb-1 md:mb-4">
+                  <div className="w-8 md:w-24 h-[3px] bg-[#779dff] rounded" />
                 </div>
-                <p className="text-[#6b7280] text-xs md:text-sm leading-relaxed">{stat.desc}</p>
+                <p className="text-[#6b7280] leading-snug" style={{ fontSize: 'clamp(15px, 1.1vw, 15px)' }}>{stat.desc}</p>
               </div>
             </div>
           ))}
