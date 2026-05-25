@@ -35,6 +35,13 @@ const images = [
   { src: '/sobre/obra-8.avif' },
   { src: '/sobre/obra-9.avif' },
   { src: '/sobre/obra-10.avif' },
+  /* ── Fotos de obra Evolution (Mai/2026) ── */
+  { src: 'https://drive.google.com/thumbnail?id=1r1QWgEjCn3Bop3CkVq5hNX1fjUyWapEz&sz=w1200' },
+  { src: 'https://drive.google.com/thumbnail?id=1pvN8fORE29w_k0KJ6qzpVdi_ExTsisgA&sz=w1200' },
+  { src: 'https://drive.google.com/thumbnail?id=1wS65j6JtDPcfs0vRadA953bFFk1ujZ89&sz=w1200' },
+  { src: 'https://drive.google.com/thumbnail?id=1cyXD5UVsZeCvIBkmbTuKs3_rmv7hmWeo&sz=w1200' },
+  { src: 'https://drive.google.com/thumbnail?id=1QeGWgcH6rydzj_XOlJOi-sddPBbw9zZb&sz=w1200' },
+  { src: 'https://drive.google.com/thumbnail?id=1PS7L-z7dNUxSkpWxn8pzPuPCdHWmtsiW&sz=w1200' },
 ];
 
 function ChevronLeft() {

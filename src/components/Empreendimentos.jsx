@@ -209,13 +209,10 @@ export default function Empreendimentos() {
                 <h3 className="text-white text-[13px] md:text-[30px] leading-none font-extrabold uppercase whitespace-nowrap">Vértice Anália Franco</h3>
               </div>
               <div className="hidden md:flex items-center gap-8">
-                <SpecIcon src={iconBed}>Suítes e 1 dorm.</SpecIcon>
-                <SpecIcon src={iconArea}>32 a 200m²</SpecIcon>
+                <SpecIcon src={iconBed}>Studio e 1 dorm.</SpecIcon>
+                <SpecIcon src={iconArea}>24 a 54m²</SpecIcon>
                 <SpecIcon src={iconCar}>1 vaga</SpecIcon>
-                <SpecIcon src={iconBalcony} wide>
-                  <span>Varanda</span>
-                  <span>Gourmet</span>
-                </SpecIcon>
+                <SpecIcon src={iconBalcony}>Rooftop com vista livre</SpecIcon>
               </div>
             </div>
           </div>

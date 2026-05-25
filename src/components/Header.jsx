@@ -73,7 +73,7 @@ export default function Header() {
             <div className="flex items-center gap-6">
 
               {/* WhatsApp */}
-              <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <a href="https://wa.me/5511910837322" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                 <img src={wppSrc} alt="" className="w-[18px] h-[18px] object-contain brightness-0 invert" />
                 <span className="text-[#e3e3e3] text-[12px] font-semibold">Whatsapp</span>
               </a>
@@ -81,7 +81,7 @@ export default function Header() {
               <span className="text-white opacity-20 text-xs select-none">|</span>
 
               {/* Email */}
-              <a href="mailto:" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <a href="mailto:contato@zimbel.com.br" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                 <img src={mailSrc} alt="" className="w-[18px] h-[18px] object-contain brightness-0 invert" />
                 <span className="text-[#e3e3e3] text-[12px] font-semibold">Email</span>
               </a>
@@ -94,8 +94,12 @@ export default function Header() {
                   Acesse nossas redes sociais:
                 </span>
                 <div className="flex items-center gap-4">
-                  <img src={instaSrc}    alt="Instagram" className="w-4 h-4 object-contain cursor-pointer" />
-                  <img src={youtubeSrc}  alt="Youtube"   className="w-4 h-4 object-contain cursor-pointer" />
+                  <a href="https://www.instagram.com/zimbel.incorporadora?igsh=OHZsZDRub3A5czY1" target="_blank" rel="noopener noreferrer">
+                    <img src={instaSrc}   alt="Instagram" className="w-4 h-4 object-contain cursor-pointer hover:opacity-70 transition-opacity" />
+                  </a>
+                  <a href="https://www.youtube.com/@Zimbel.Incorporadora" target="_blank" rel="noopener noreferrer">
+                    <img src={youtubeSrc} alt="Youtube"   className="w-4 h-4 object-contain cursor-pointer hover:opacity-70 transition-opacity" />
+                  </a>
                 </div>
               </div>
 
@@ -151,7 +155,9 @@ export default function Header() {
 
               {/* Botão Contato */}
               <a
-                href="#contato"
+                href="https://wa.me/5511910837322"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-[10px] bg-[#0c1a36] text-[#e3e3e3] text-[14px] font-semibold rounded-[4px] hover:bg-[#1a2d4e] transition-colors shrink-0"
                 style={{ width: '122px', height: '42px', padding: '10px' }}
               >
@@ -268,12 +274,18 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <span className="text-white/40 text-[11px] font-semibold uppercase tracking-widest">Redes</span>
             <div className="flex items-center gap-4">
-              <img src={instaSrc}    alt="Instagram" className="w-6 h-6 object-contain cursor-pointer brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
-              <img src={youtubeSrc}  alt="Youtube"   className="w-6 h-6 object-contain cursor-pointer brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+              <a href="https://www.instagram.com/zimbel.incorporadora?igsh=OHZsZDRub3A5czY1" target="_blank" rel="noopener noreferrer">
+                <img src={instaSrc}   alt="Instagram" className="w-6 h-6 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+              </a>
+              <a href="https://www.youtube.com/@Zimbel.Incorporadora" target="_blank" rel="noopener noreferrer">
+                <img src={youtubeSrc} alt="Youtube"   className="w-6 h-6 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+              </a>
             </div>
           </div>
           <a
-            href="#contato"
+            href="https://wa.me/5511910837322"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
             className="flex items-center justify-center gap-2 text-white font-semibold rounded-[8px] hover:bg-[#6b8ee8] transition-colors"
             style={{ background: '#779dff', fontSize: '14px', padding: '14px 24px' }}
