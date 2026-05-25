@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const gridPl = 'max(40px, calc((100vw - 1312px) / 2))';
@@ -98,14 +98,22 @@ export default function Hero() {
 
   const baseSectionHeight = bp === 'mobile' ? 760 : bp === 'md' ? 650 : bp === 'sm' ? 760 : 817;
   const sectionHeight = bp === 'mobile' ? baseSectionHeight : Math.max(580, Math.min(baseSectionHeight, vh - 90));
-  const paddingTop = bp === 'mobile' ? 300 : bp === 'md' ? Math.round(sectionHeight * 0.42) : bp === 'sm' ? Math.round(sectionHeight * 0.40) : Math.min(430, sectionHeight - 310);
+  const paddingTop = bp === 'mobile' ? 375 :bp === 'md' ? Math.round(sectionHeight * 0.42) : bp === 'sm' ? Math.round(sectionHeight * 0.40) : Math.min(430, sectionHeight - 310);
   const badgeWidth = bp === 'mobile' ? 'fit-content' : '336px';
   const h1Size = bp === 'mobile' ? 'clamp(18px, 5.5vw, 26px)' : bp === 'md' ? '34px' : '40px';
   const isMobile = bp === 'mobile';
   const slide = slides[current];
+  const touchX = useRef(null);
+  const handleTouchStart = e => { touchX.current = e.touches[0].clientX; };
+  const handleTouchEnd = e => {
+    if (touchX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchX.current;
+    if (Math.abs(dx) > 40) setCurrent(c => dx < 0 ? (c + 1) % slides.length : (c - 1 + slides.length) % slides.length);
+    touchX.current = null;
+  };
 
   return (
-    <section className="relative w-full overflow-hidden" style={{ height: `${sectionHeight}px` }}>
+    <section className="relative w-full overflow-hidden" style={{ height: `${sectionHeight}px` }} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
 
       {/* Backgrounds — crossfade por opacity */}
       {slides.map((s, i) => (

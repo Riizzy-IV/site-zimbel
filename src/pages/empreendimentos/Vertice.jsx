@@ -409,9 +409,11 @@ function GaleriaVertice() {
           </div>
 
           {/* Aviso direito */}
-          <span style={{ position: 'absolute', bottom: '22px', right: '24px', fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontStyle: 'italic' }}>
-            Imagens meramente ilustrativas
-          </span>
+          {!isMobile && (
+            <span style={{ position: 'absolute', bottom: '22px', right: '24px', fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontStyle: 'italic' }}>
+              Imagens meramente ilustrativas
+            </span>
+          )}
         </div>
 
       </div>

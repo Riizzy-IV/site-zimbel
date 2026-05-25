@@ -352,9 +352,11 @@ function GaleriaEvolution() {
             </span>
           </div>
 
-          <span style={{ position: 'absolute', bottom: '22px', right: '24px', fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontStyle: 'italic' }}>
-            Imagens meramente ilustrativas
-          </span>
+          {!isMobile && (
+            <span style={{ position: 'absolute', bottom: '22px', right: '24px', fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontStyle: 'italic' }}>
+              Imagens meramente ilustrativas
+            </span>
+          )}
         </div>
 
       </div>
@@ -639,21 +641,22 @@ function TourEvolution() {
           </div>
 
           {/* Seletor de unidade */}
-          <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', width: isMobile ? '100%' : 'auto' }}>
             {TOUR_UNITS.map((unit, i) => (
               <button
                 key={i}
                 onClick={() => setActiveUnit(i)}
                 style={{
-                  padding: '10px 24px',
+                  padding: '10px 20px',
                   borderRadius: '100px',
                   border: activeUnit === i ? 'none' : '1px solid #d8d8d8',
                   background: activeUnit === i ? '#779dff' : '#fff',
                   color: activeUnit === i ? '#fff' : '#494c4f',
-                  fontSize: '14px',
+                  fontSize: isMobile ? '13px' : '14px',
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all 0.2s',
+                  flex: isMobile ? '1 1 auto' : 'none',
                 }}
               >
                 {unit.label}
