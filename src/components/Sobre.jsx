@@ -1,6 +1,3 @@
-import { useState, useEffect } from 'react';
-
-const manImg = "https://www.figma.com/api/mcp/asset/723e1951-88a3-43e9-a10f-9596d13409c3";
 
 const gridPl = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
 const gridPr = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
@@ -20,12 +17,6 @@ function ArrowUp() {
 }
 
 export default function Sobre() {
-  const [isWide, setIsWide] = useState(() => window.innerWidth >= 1560);
-  useEffect(() => {
-    const update = () => setIsWide(window.innerWidth >= 1560);
-    window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
-  }, []);
 
   return (
     <section className="bg-white" style={{ paddingTop: '72px', paddingBottom: '80px' }}>
@@ -131,15 +122,6 @@ export default function Sobre() {
             style={{ top: '124px', left: 0, width: '50%', height: '527px', objectPosition: 'center center', zIndex: 2 }}
           />
 
-          {/* Homem — só aparece em 1560px+ para não tapar o texto */}
-          {isWide && (
-            <img
-              src={manImg}
-              alt="Zimbel"
-              className="absolute object-contain object-bottom pointer-events-none"
-              style={{ bottom: -1, left: '350px', width: '420px', height: '690px', zIndex: 3 }}
-            />
-          )}
         </div>
 
         {/* ── Stats ── */}

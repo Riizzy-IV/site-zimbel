@@ -35,6 +35,12 @@ const images = [
   { src: '/sobre/obra-8.avif' },
   { src: '/sobre/obra-9.avif' },
   { src: '/sobre/obra-10.avif' },
+  /* ── Escritório ── */
+  { src: '/escritorio/escritorio-1.avif' },
+  { src: '/escritorio/escritorio-2.avif' },
+  { src: '/escritorio/escritorio-3.avif' },
+  { src: '/escritorio/escritorio-4.avif' },
+  { src: '/escritorio/escritorio-5.avif' },
   /* ── Fotos de obra Evolution ── */
   { src: '/sobre/obra-drive-1.avif' },
   { src: '/sobre/obra-drive-2.avif' },
