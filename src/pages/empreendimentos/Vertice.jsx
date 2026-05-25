@@ -1108,7 +1108,7 @@ function LocalizacaoVertice() {
           <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '0' : '32px', alignItems: 'flex-start' }}>
 
             {/* Coluna esquerda */}
-            <div style={{ width: isMobile ? '100%' : isTablet ? 'calc(50% - 16px)' : '640px', flexShrink: 0 }}>
+            <div style={{ width: isMobile ? '100%' : 'calc(50% - 16px)', flexShrink: 0 }}>
               {/* Card azul escuro (127px — overlap com mapa) */}
               <div style={{ background: '#31477b', borderRadius: '8px 8px 0 0', padding: '23px 17px 14px 21px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -1175,7 +1175,7 @@ function LocalizacaoVertice() {
             </div>
 
             {/* Coluna direita */}
-            <div style={{ width: isMobile ? '100%' : isTablet ? 'calc(50% - 16px)' : '640px', flexShrink: 0, paddingTop: isMobile ? '32px' : isTablet ? '80px' : '180px', display: 'flex', flexDirection: 'column', gap: '36px' }}>
+            <div style={{ width: isMobile ? '100%' : 'calc(50% - 16px)', flexShrink: 0, paddingTop: isMobile ? '32px' : '80px', display: 'flex', flexDirection: 'column', gap: '36px' }}>
               {/* Sub-label */}
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '30px', marginBottom: '12px', flexWrap: 'wrap' }}>
@@ -1246,9 +1246,15 @@ export default function Vertice() {
       <PlantasVertice />
       <LocalizacaoVertice />
       <EvolucaoObra etapas={[
-        { label: 'Demolição',    pct: 100 },
+        { label: 'Demolição',     pct: 100 },
         { label: 'Terraplanagem', pct: 100 },
-        { label: 'Fundação',     pct: 30  },
+        { label: 'Fundação',      pct: 30  },
+        { label: 'Estrutura',     pct: 0   },
+        { label: 'Alvenaria',     pct: 0   },
+        { label: 'Hidráulica',    pct: 0   },
+        { label: 'Elétrica',      pct: 0   },
+        { label: 'Acabamento',    pct: 0   },
+        { label: 'Pintura',       pct: 0   },
       ]} />
       <Footer />
 

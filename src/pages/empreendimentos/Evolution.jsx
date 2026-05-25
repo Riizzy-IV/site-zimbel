@@ -906,7 +906,7 @@ function LocalizacaoEvolution() {
           <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '0' : '32px', alignItems: 'flex-start' }}>
 
             {/* Coluna esquerda */}
-            <div style={{ width: isMobile ? '100%' : isTablet ? 'calc(50% - 16px)' : '640px', flexShrink: 0 }}>
+            <div style={{ width: isMobile ? '100%' : 'calc(50% - 16px)', flexShrink: 0 }}>
               <div style={{ background: '#31477b', borderRadius: '8px 8px 0 0', padding: '23px 17px 14px 21px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <span style={{ fontSize: '12px', color: '#779dff', fontWeight: 600 }}>Endereço:</span>
@@ -961,7 +961,7 @@ function LocalizacaoEvolution() {
             </div>
 
             {/* Coluna direita */}
-            <div style={{ width: isMobile ? '100%' : isTablet ? 'calc(50% - 16px)' : '640px', flexShrink: 0, paddingTop: isMobile ? '32px' : isTablet ? '80px' : '180px', display: 'flex', flexDirection: 'column', gap: '36px' }}>
+            <div style={{ width: isMobile ? '100%' : 'calc(50% - 16px)', flexShrink: 0, paddingTop: isMobile ? '32px' : '80px', display: 'flex', flexDirection: 'column', gap: '36px' }}>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '30px', marginBottom: '12px', flexWrap: 'wrap' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
