@@ -802,18 +802,22 @@ function PlantasEvolution() {
       {lightbox && (
         <div
           onClick={() => setLightbox(null)}
-          style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.75)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
         >
           <button
             onClick={() => setLightbox(null)}
             style={{ position: 'absolute', top: '24px', right: '32px', background: 'none', border: 'none', cursor: 'pointer', color: '#fff', fontSize: '32px', lineHeight: 1 }}
           >×</button>
-          <img
-            src={lightbox}
-            alt=""
+          <div
             onClick={e => e.stopPropagation()}
-            style={{ maxWidth: '90vw', maxHeight: '90vh', objectFit: 'contain', borderRadius: '8px' }}
-          />
+            style={{ background: '#fff', borderRadius: '8px', padding: '24px', maxWidth: '90vw', maxHeight: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <img
+              src={lightbox}
+              alt=""
+              style={{ maxWidth: 'calc(90vw - 48px)', maxHeight: 'calc(90vh - 48px)', objectFit: 'contain' }}
+            />
+          </div>
         </div>
       )}
     </section>
@@ -828,9 +832,9 @@ const locWazeIcon  = '/empreendimentos/vertice/localizacao-waze-icon.svg'
 const locShare     = '/empreendimentos/vertice/localizacao-share.svg'
 const locDestaques = '/empreendimentos/vertice/localizacao-destaques-icon.svg'
 const locCardIcon  = '/empreendimentos/vertice/localizacao-card-icon.svg'
-const locFoto1     = '/empreendimentos/evolution/localizacao-foto-1.jpg'
-const locFoto2     = '/empreendimentos/evolution/localizacao-foto-2.jpg'
-const locFoto3     = '/empreendimentos/evolution/localizacao-foto-3.jpg'
+const locFoto1     = '/empreendimentos/evolution/localizacao-foto-1.avif'
+const locFoto2     = '/empreendimentos/evolution/localizacao-foto-2.avif'
+const locFoto3     = '/empreendimentos/evolution/localizacao-foto-3.avif'
 
 const DESTAQ_TAGS = [
   'Sky Fit Academia', 'Coco Bambu',
@@ -1028,14 +1032,30 @@ export default function Evolution() {
       <TourEvolution />
       <PlantasEvolution />
       <LocalizacaoEvolution />
-      <EvolucaoObra etapas={[
-        { label: 'Estrutura',  pct: 100 },
-        { label: 'Alvenaria',  pct: 100 },
-        { label: 'Hidráulica', pct: 95  },
-        { label: 'Elétrica',   pct: 95  },
-        { label: 'Acabamento', pct: 60  },
-        { label: 'Pintura',    pct: 60  },
-      ]} />
+      <EvolucaoObra
+        etapas={[
+          { label: 'Estrutura',  pct: 100 },
+          { label: 'Alvenaria',  pct: 100 },
+          { label: 'Hidráulica', pct: 95  },
+          { label: 'Elétrica',   pct: 95  },
+          { label: 'Acabamento', pct: 60  },
+          { label: 'Pintura',    pct: 60  },
+        ]}
+        fotos={[
+          /* ── Julho 2025 ── */
+          { src: 'https://drive.google.com/thumbnail?id=1XzaiAYQik0yJg3CXg5MmFJusAvNvE-sS&sz=w1200', date: 'Jul / 2025', caption: 'Andamento da obra' },
+          { src: 'https://drive.google.com/thumbnail?id=1sRPLJXGNief8xGPYtqTWftTa37q_50Gt&sz=w1200', date: 'Jul / 2025', caption: 'Andamento da obra' },
+          { src: 'https://drive.google.com/thumbnail?id=1mT-eMrCeXymwIPsAvq3oWT8E1oOt2q39&sz=w1200', date: 'Jul / 2025', caption: 'Andamento da obra' },
+          /* ── Março 2026 ── */
+          { src: 'https://drive.google.com/thumbnail?id=1DnRlqT_vWDamITiZ5kD_nBirVOrwVQvO&sz=w1200', date: 'Mar / 2026', caption: 'Andamento da obra' },
+          { src: 'https://drive.google.com/thumbnail?id=1dodd1fJuy5uk96KGf1Mf2B27oFaxP3eA&sz=w1200', date: 'Mar / 2026', caption: 'Andamento da obra' },
+          { src: 'https://drive.google.com/thumbnail?id=1z0nAbB-_CpUuBugBZr1pxr93TcHiLhW6&sz=w1200', date: 'Mar / 2026', caption: 'Andamento da obra' },
+          /* ── Maio 2026 ── */
+          { src: 'https://drive.google.com/thumbnail?id=1r1QWgEjCn3Bop3CkVq5hNX1fjUyWapEz&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: 'https://drive.google.com/thumbnail?id=17pRsqqXAx3JCPDgqVUxNSLiGvlKgYGOM&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: 'https://drive.google.com/thumbnail?id=1vej4L32epBrnSgyr8gapcB9Zt3hxcJip&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
+        ]}
+      />
       <Footer />
       <a
         href="https://wa.me/"

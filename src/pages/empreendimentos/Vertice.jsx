@@ -5,7 +5,7 @@ import Footer from '../../components/Footer'
 import EvolucaoObra from '../../components/EvolucaoObra'
 
 /* ─── assets ─── */
-const heroBg = '/empreendimentos/vertice/hero-bg.jpg'
+const heroBg = '/empreendimentos/vertice/hero-bg.avif'
 const fachada = '/empreendimentos/vertice/fachada-portrait.avif'
 const icoPin = '/empreendimentos/vertice/icon-pin.svg'
 const icoBed = '/empreendimentos/vertice/icon-bed.svg'
@@ -19,35 +19,35 @@ const plantasNavArrow = '/empreendimentos/vertice/plantas-nav-arrow.svg'
 const plantasDownload = '/empreendimentos/vertice/plantas-download-icon.svg'
 const plantasSpecBed = '/empreendimentos/vertice/plantas-spec-bed.svg'
 const plantasSpecPe = '/empreendimentos/vertice/plantas-spec-pe-direito.svg'
-const plantaFloor = '/empreendimentos/vertice/planta-unidade1.png'
+const plantaFloor = '/empreendimentos/vertice/planta-unidade1.avif'
 
 const PLANTAS = [
   /* ── Pavimento Térreo (pé direito duplo) ── */
-  { id: 0, area: '32,58m²*', tipo: 'Unidade 1 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/32,58m%C2%B2-inf.png', floorSup: '/plantas/32,58m%C2%B2-sup.png' },
-  { id: 1, area: '26,71m²*', tipo: 'Unidade 2 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/26,71m%C2%B2-inf.png', floorSup: '/plantas/26,71m%C2%B2-sup.png' },
-  { id: 2, area: '29,46m²*', tipo: 'Unidade 3 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/29,46m%C2%B2-inf.png', floorSup: '/plantas/29,46m%C2%B2-sup.png' },
-  { id: 3, area: '39,05m²*', tipo: 'Unidade 4 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/39,05m%C2%B2-inf.png', floorSup: '/plantas/39,05m%C2%B2-sup.png' },
-  { id: 4, area: '36,33m²*', tipo: 'Unidade 5 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/36,33m%C2%B2-inf.png', floorSup: '/plantas/36,33m%C2%B2-sup.png' },
+  { id: 0, area: '32,58m²*', tipo: 'Unidade 1 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/32,58m%C2%B2-inf.avif', floorSup: '/plantas/32,58m%C2%B2-sup.avif' },
+  { id: 1, area: '26,71m²*', tipo: 'Unidade 2 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/26,71m%C2%B2-inf.avif', floorSup: '/plantas/26,71m%C2%B2-sup.avif' },
+  { id: 2, area: '29,46m²*', tipo: 'Unidade 3 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/29,46m%C2%B2-inf.avif', floorSup: '/plantas/29,46m%C2%B2-sup.avif' },
+  { id: 3, area: '39,05m²*', tipo: 'Unidade 4 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/39,05m%C2%B2-inf.avif', floorSup: '/plantas/39,05m%C2%B2-sup.avif' },
+  { id: 4, area: '36,33m²*', tipo: 'Unidade 5 Inf/Sup • Pavimento Térreo', dorms: 'Loft', pe: 'Pé direito duplo', floor: '/plantas/36,33m%C2%B2-inf.avif', floorSup: '/plantas/36,33m%C2%B2-sup.avif' },
   /* ── Pavimento Tipo 2 — 1º e 2º Pav. ── */
-  { id: 5,  area: '24,17m²', tipo: 'Unidades 11 e 21 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,17m%C2%B2.png' },
-  { id: 6,  area: '24,20m²', tipo: 'Unidades 12 e 22 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,20m%C2%B2.png' },
-  { id: 7,  area: '24,91m²', tipo: 'Unidades 13 e 23 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,91m%C2%B2.png' },
-  { id: 8,  area: '30,35m²', tipo: 'Unidades 14 e 24 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/30,35m%C2%B2.png' },
-  { id: 9,  area: '29,31m²', tipo: 'Unidades 15 e 25 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/29,31m%C2%B2.png' },
-  { id: 10, area: '31,15m²', tipo: 'Unidades 16 e 26 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/31,15m%C2%B2.png' },
-  { id: 11, area: '29,10m²', tipo: 'Unidades 17 e 27 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/29,10m%C2%B2.png' },
+  { id: 5,  area: '24,17m²', tipo: 'Unidades 11 e 21 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,17m%C2%B2.avif' },
+  { id: 6,  area: '24,20m²', tipo: 'Unidades 12 e 22 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,20m%C2%B2.avif' },
+  { id: 7,  area: '24,91m²', tipo: 'Unidades 13 e 23 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,91m%C2%B2.avif' },
+  { id: 8,  area: '30,35m²', tipo: 'Unidades 14 e 24 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/30,35m%C2%B2.avif' },
+  { id: 9,  area: '29,31m²', tipo: 'Unidades 15 e 25 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/29,31m%C2%B2.avif' },
+  { id: 10, area: '31,15m²', tipo: 'Unidades 16 e 26 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/31,15m%C2%B2.avif' },
+  { id: 11, area: '29,10m²', tipo: 'Unidades 17 e 27 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/29,10m%C2%B2.avif' },
   { id: 12, area: '28,85m²', tipo: 'Unidades 18 e 28 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: plantaFloor },
-  { id: 13, area: '27,50m²', tipo: 'Unidades 19 e 29 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/27,50m%C2%B2.jpg' },
+  { id: 13, area: '27,50m²', tipo: 'Unidades 19 e 29 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/27,50m%C2%B2.avif' },
   /* ── Pavimento Tipo 3 — 3º Pav. (com área descoberta) ── */
   { id: 14, area: '33,37m²', tipo: 'Unidade 33 • 3º Pavimento', dorms: '1 dorm.', pe: 'Área descoberta', floor: plantaFloor },
   { id: 15, area: '33,52m²', tipo: 'Unidade 34 • 3º Pavimento', dorms: '1 dorm.', pe: 'Área descoberta', floor: plantaFloor },
-  { id: 16, area: '54,42m²', tipo: 'Unidade 35 • 3º Pavimento', dorms: '1 dorm.', pe: 'Área descoberta', floor: '/plantas/54,42m%C2%B2.png' },
+  { id: 16, area: '54,42m²', tipo: 'Unidade 35 • 3º Pavimento', dorms: '1 dorm.', pe: 'Área descoberta', floor: '/plantas/54,42m%C2%B2.avif' },
   /* ── Pavimento Tipo 4 — 4º ao 12º Pav. ── */
-  { id: 17, area: '35,57m²', tipo: 'Planta Final 1 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/35,57m%C2%B2.png' },
-  { id: 18, area: '36,10m²', tipo: 'Planta Final 2 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/36,10m%C2%B2.png' },
-  { id: 19, area: '24,72m²', tipo: 'Planta Final 3 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,72m%C2%B2.png' },
-  { id: 20, area: '26,58m²', tipo: 'Planta Final 4 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/26,58m%C2%B2.jpg' },
-  { id: 21, area: '28,14m²', tipo: 'Planta Final 5 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/28,14m%C2%B2.png' },
+  { id: 17, area: '35,57m²', tipo: 'Planta Final 1 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/35,57m%C2%B2.avif' },
+  { id: 18, area: '36,10m²', tipo: 'Planta Final 2 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/36,10m%C2%B2.avif' },
+  { id: 19, area: '24,72m²', tipo: 'Planta Final 3 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/24,72m%C2%B2.avif' },
+  { id: 20, area: '26,58m²', tipo: 'Planta Final 4 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/26,58m%C2%B2.avif' },
+  { id: 21, area: '28,14m²', tipo: 'Planta Final 5 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: 'Studio', floor: '/plantas/28,14m%C2%B2.avif' },
 ]
 
 const gridPad = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))'
@@ -599,7 +599,7 @@ function VideoVertice() {
       >
         {/* Capa — fachada do empreendimento */}
         <img
-          src="/empreendimentos/vertice/lazer-img-3.jpg"
+          src="/empreendimentos/vertice/lazer-img-3.avif"
           alt="Capa do vídeo"
           loading="lazy"
           decoding="async"
@@ -954,18 +954,22 @@ function PlantasVertice() {
     {lightbox && (
       <div
         onClick={() => setLightbox(null)}
-        style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.75)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
         <button
           onClick={() => setLightbox(null)}
           style={{ position: 'absolute', top: '24px', right: '32px', background: 'none', border: 'none', cursor: 'pointer', color: '#fff', fontSize: '32px', lineHeight: 1 }}
         >×</button>
-        <img
-          src={lightbox}
-          alt=""
+        <div
           onClick={e => e.stopPropagation()}
-          style={{ maxWidth: '90vw', maxHeight: '90vh', objectFit: 'contain', borderRadius: '4px' }}
-        />
+          style={{ background: '#fff', borderRadius: '8px', padding: '24px', maxWidth: '90vw', maxHeight: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        >
+          <img
+            src={lightbox}
+            alt=""
+            style={{ maxWidth: 'calc(90vw - 48px)', maxHeight: 'calc(90vh - 48px)', objectFit: 'contain' }}
+          />
+        </div>
       </div>
     )}
     </>
@@ -980,9 +984,9 @@ const locWazeIcon = '/empreendimentos/vertice/localizacao-waze-icon.svg'
 const locShare = '/empreendimentos/vertice/localizacao-share.svg'
 const locDestaques = '/empreendimentos/vertice/localizacao-destaques-icon.svg'
 const locCardIcon = '/empreendimentos/vertice/localizacao-card-icon.svg'
-const locCeret = '/empreendimentos/vertice/localizacao-ceret.jpg'
-const locSuper = '/empreendimentos/vertice/localizacao-supermercado.jpg'
-const locHospital = '/empreendimentos/vertice/localizacao-hospital.jpg'
+const locCeret = '/empreendimentos/vertice/localizacao-ceret.avif'
+const locSuper = '/empreendimentos/vertice/localizacao-supermercado.avif'
+const locHospital = '/empreendimentos/vertice/localizacao-hospital.avif'
 
 const DESTAQ_TAGS = [
   'Shopping Anália Franco', 'Hospital e Maternidade Vitória',
@@ -1245,17 +1249,27 @@ export default function Vertice() {
       <TourVertice />
       <PlantasVertice />
       <LocalizacaoVertice />
-      <EvolucaoObra etapas={[
-        { label: 'Demolição',     pct: 100 },
-        { label: 'Terraplanagem', pct: 100 },
-        { label: 'Fundação',      pct: 30  },
-        { label: 'Estrutura',     pct: 0   },
-        { label: 'Alvenaria',     pct: 0   },
-        { label: 'Hidráulica',    pct: 0   },
-        { label: 'Elétrica',      pct: 0   },
-        { label: 'Acabamento',    pct: 0   },
-        { label: 'Pintura',       pct: 0   },
-      ]} />
+      <EvolucaoObra
+        etapas={[
+          { label: 'Demolição',     pct: 100 },
+          { label: 'Terraplanagem', pct: 100 },
+          { label: 'Fundação',      pct: 30  },
+          { label: 'Estrutura',     pct: 0   },
+          { label: 'Alvenaria',     pct: 0   },
+          { label: 'Hidráulica',    pct: 0   },
+          { label: 'Elétrica',      pct: 0   },
+          { label: 'Acabamento',    pct: 0   },
+          { label: 'Pintura',       pct: 0   },
+        ]}
+        fotos={[
+          { src: 'https://drive.google.com/thumbnail?id=1SPueACIxXUzJ54VyTq-jnZblmbG5S5mU&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: 'https://drive.google.com/thumbnail?id=1tOkYVbHCO5SPc7wwcJ_yBfygEeKHdIkE&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: 'https://drive.google.com/thumbnail?id=1m0zaNTVR1uzYClSMfqWkctiFStY-STCj&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: 'https://drive.google.com/thumbnail?id=150xBO04L70vsySanckM3OqQSjeGtpSWU&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: 'https://drive.google.com/thumbnail?id=1hOAHMQ4VGVTiwx9ZenMbM0O5mDD8O4rZ&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
+          { src: 'https://drive.google.com/thumbnail?id=1JiH6Lb7VYowvgfg1NlWgpA9LTDNQDH1b&sz=w1200', date: 'Mai / 2026', caption: 'Andamento da obra' },
+        ]}
+      />
       <Footer />
 
       {/* WhatsApp flutuante */}

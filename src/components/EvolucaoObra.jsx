@@ -1,7 +1,21 @@
+import { useState, useEffect } from 'react';
+
 const gridPl = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
 const gridPr = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
 
-export default function EvolucaoObra({ etapas }) {
+export default function EvolucaoObra({ etapas, fotos = [] }) {
+  const [imgIdx, setImgIdx] = useState(0);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 1024);
+  useEffect(() => {
+    const fn = () => setIsMobile(window.innerWidth < 1024);
+    window.addEventListener('resize', fn);
+    return () => window.removeEventListener('resize', fn);
+  }, []);
+  const total = fotos.length;
+  const prev = () => setImgIdx(i => (i - 1 + total) % total);
+  const next = () => setImgIdx(i => (i + 1) % total);
+  const hasCarousel = total > 0;
+
   return (
     <section style={{ background: '#f8f9fb', paddingTop: '72px', paddingBottom: '80px' }}>
       <div style={{ paddingLeft: gridPl, paddingRight: gridPr }}>
@@ -24,29 +38,115 @@ export default function EvolucaoObra({ etapas }) {
           </h2>
         </div>
 
-        {/* Etapas */}
-        <div className="flex flex-col gap-6" style={{ maxWidth: '720px' }}>
-          {etapas.map((etapa) => (
-            <div key={etapa.label} className="flex flex-col gap-2">
-              <div className="flex justify-between items-center">
-                <span style={{ fontSize: '15px', fontWeight: 600, color: '#1d2748' }}>{etapa.label}</span>
-                <span style={{ fontSize: '14px', fontWeight: 700, color: etapa.pct === 100 ? '#22c55e' : '#779dff' }}>
-                  {etapa.pct}%
-                </span>
-              </div>
-              <div style={{ height: '8px', borderRadius: '100px', background: 'rgba(29,39,72,0.1)', overflow: 'hidden' }}>
-                <div
-                  style={{
-                    height: '100%',
-                    width: `${etapa.pct}%`,
-                    borderRadius: '100px',
-                    background: etapa.pct === 100 ? '#22c55e' : '#779dff',
-                    transition: 'width 1s ease',
-                  }}
+        {/* Layout 50/50 */}
+        <div style={{
+          display: 'flex',
+          flexDirection: isMobile ? 'column' : 'row',
+          gap: isMobile ? '40px' : '48px',
+          alignItems: 'center',
+        }}>
+          {/* Esquerda — barras de progresso */}
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div className="flex flex-col gap-6">
+              {etapas.map((etapa) => (
+                <div key={etapa.label} className="flex flex-col gap-2">
+                  <div className="flex justify-between items-center">
+                    <span style={{ fontSize: '15px', fontWeight: 600, color: '#1d2748' }}>{etapa.label}</span>
+                    <span style={{ fontSize: '14px', fontWeight: 700, color: etapa.pct === 100 ? '#22c55e' : '#779dff' }}>
+                      {etapa.pct}%
+                    </span>
+                  </div>
+                  <div style={{ height: '8px', borderRadius: '100px', background: 'rgba(29,39,72,0.1)', overflow: 'hidden' }}>
+                    <div
+                      style={{
+                        height: '100%',
+                        width: `${etapa.pct}%`,
+                        borderRadius: '100px',
+                        background: etapa.pct === 100 ? '#22c55e' : '#779dff',
+                        transition: 'width 1s ease',
+                      }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Direita — carrossel de fotos */}
+          {hasCarousel && (
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', aspectRatio: '4/3' }}>
+                <img
+                  key={imgIdx}
+                  src={fotos[imgIdx].src}
+                  alt={fotos[imgIdx].caption ?? ''}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  loading="lazy"
+                  decoding="async"
                 />
+
+                {/* Overlay gradiente inferior */}
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 50%)', pointerEvents: 'none' }} />
+
+                {/* Botão anterior */}
+                <button
+                  onClick={prev}
+                  style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: '48px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                >
+                  <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M8 1L1 8L8 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </button>
+
+                {/* Botão próximo */}
+                <button
+                  onClick={next}
+                  style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '48px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                >
+                  <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M1 1L8 8L1 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </button>
+
+                {/* Badge de data — canto superior esquerdo */}
+                {fotos[imgIdx].date && (
+                  <div style={{ position: 'absolute', top: '14px', left: '14px', background: 'rgba(5,46,126,0.85)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '5px 12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1" stroke="#779dff" strokeWidth="1.2"/><path d="M4 1V3M8 1V3M1 5H11" stroke="#779dff" strokeWidth="1.2" strokeLinecap="round"/></svg>
+                    <span style={{ fontSize: '12px', color: '#fff', fontWeight: 700, letterSpacing: '0.03em' }}>{fotos[imgIdx].date}</span>
+                  </div>
+                )}
+
+                {/* Caption + contador */}
+                <div style={{ position: 'absolute', bottom: '16px', left: '16px', right: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  {fotos[imgIdx].caption && (
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <div style={{ width: '1px', height: '18px', background: '#779dff', flexShrink: 0 }} />
+                      <span style={{ fontSize: '12px', color: '#fff', fontWeight: 600 }}>{fotos[imgIdx].caption}</span>
+                    </div>
+                  )}
+                  <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.7)', fontWeight: 600, marginLeft: 'auto' }}>
+                    {imgIdx + 1} <span style={{ color: '#779dff' }}>/</span> {total}
+                  </span>
+                </div>
+
+                {/* Dots */}
+                <div style={{ position: 'absolute', bottom: '48px', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '6px' }}>
+                  {fotos.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setImgIdx(i)}
+                      style={{
+                        width: i === imgIdx ? '20px' : '8px',
+                        height: '8px',
+                        borderRadius: '100px',
+                        background: i === imgIdx ? '#779dff' : 'rgba(255,255,255,0.5)',
+                        border: 'none',
+                        cursor: 'pointer',
+                        padding: 0,
+                        transition: 'all 0.3s ease',
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
-          ))}
+          )}
         </div>
 
       </div>
