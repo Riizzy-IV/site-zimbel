@@ -56,9 +56,9 @@ export default function Header() {
             onClick={() => setMenuOpen(true)}
             className="flex flex-col justify-center items-center gap-[5px] w-10 h-10"
           >
-            <span className="block w-6 h-[2px] bg-[#0c1a36] rounded" />
-            <span className="block w-6 h-[2px] bg-[#0c1a36] rounded" />
-            <span className="block w-6 h-[2px] bg-[#0c1a36] rounded" />
+            <span className="block w-6 h-[2px] bg-[#330218] rounded" />
+            <span className="block w-6 h-[2px] bg-[#330218] rounded" />
+            <span className="block w-6 h-[2px] bg-[#330218] rounded" />
           </button>
         </div>
 
@@ -67,7 +67,7 @@ export default function Header() {
 
           {/* Barra superior escura — 36px, rounded-bl-8px */}
           <div
-            className="bg-[#0c1a36] rounded-bl-[8px] flex items-center justify-start shrink-0"
+            className="bg-[#330218] rounded-bl-[8px] flex items-center justify-start shrink-0"
             style={{ height: '36px', paddingLeft: '24px', paddingRight: 'clamp(16px, 3vw, 48px)' }}
           >
             <div className="flex items-center gap-6">
@@ -112,8 +112,8 @@ export default function Header() {
 
               {/* Links de navegação */}
               <nav className="flex items-center gap-[30px]">
-                <a href="#" className="text-[#31447b] text-[14px] font-semibold hover:text-[#4f6db5] transition-colors whitespace-nowrap">Sobre a Zimbel</a>
-                <span className="w-1 h-1 rounded-full bg-[#779dff] shrink-0" />
+                <a href="#" className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap">Sobre a Zimbel</a>
+                <span className="w-1 h-1 rounded-full bg-[#5b0a28] shrink-0" />
 
                 {/* Empreendimentos dropdown */}
                 <div className="relative">
@@ -123,21 +123,21 @@ export default function Header() {
                     className="flex items-center gap-2 cursor-pointer"
                     style={{ background: 'none', border: 'none', padding: 0 }}
                   >
-                    <span className="text-[#31447b] text-[14px] font-semibold whitespace-nowrap">Empreendimentos</span>
+                    <span className="text-[#330218] text-[14px] font-semibold whitespace-nowrap">Empreendimentos</span>
                     <svg width="9" height="5" viewBox="0 0 9 5" fill="none" style={{ transition: 'transform 0.2s', transform: empOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
-                      <path d="M0 0L4.5 5L9 0H0Z" fill="#31447b" />
+                      <path d="M0 0L4.5 5L9 0H0Z" fill="#330218" />
                     </svg>
                   </button>
                   {empOpen && (
                     <div
                       className="absolute top-full left-0 bg-white rounded-lg shadow-lg flex flex-col overflow-hidden"
-                      style={{ marginTop: '12px', minWidth: '200px', border: '1px solid rgba(49,68,123,0.12)', zIndex: 100 }}
+                      style={{ marginTop: '12px', minWidth: '200px', border: '1px solid rgba(51,2,24,0.12)', zIndex: 100 }}
                     >
                       {['Pronto para Morar', 'Em Obras', 'Lançamento'].map((item) => (
                         <a
                           key={item}
                           href="#"
-                          className="text-[#31447b] text-[14px] font-semibold hover:bg-[#f0f4ff] transition-colors whitespace-nowrap"
+                          className="text-[#330218] text-[14px] font-semibold hover:bg-[#f0f4ff] transition-colors whitespace-nowrap"
                           style={{ padding: '12px 20px' }}
                         >
                           {item}
@@ -147,10 +147,10 @@ export default function Header() {
                   )}
                 </div>
 
-                <span className="w-1 h-1 rounded-full bg-[#779dff] shrink-0" />
-                <a href="#" className="text-[#31447b] text-[14px] font-semibold hover:text-[#4f6db5] transition-colors whitespace-nowrap">Investidores</a>
-                <span className="w-1 h-1 rounded-full bg-[#779dff] shrink-0" />
-                <a href="#" className="text-[#31447b] text-[14px] font-semibold hover:text-[#4f6db5] transition-colors whitespace-nowrap">Seja um Corretor</a>
+                <span className="w-1 h-1 rounded-full bg-[#5b0a28] shrink-0" />
+                <a href="#" className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap">Investidores</a>
+                <span className="w-1 h-1 rounded-full bg-[#5b0a28] shrink-0" />
+                <a href="#" className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap">Seja um Corretor</a>
               </nav>
 
               {/* Botão Contato */}
@@ -158,7 +158,7 @@ export default function Header() {
                 href="https://wa.me/5511910837322"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-[10px] bg-[#0c1a36] text-[#e3e3e3] text-[14px] font-semibold rounded-[4px] hover:bg-[#1a2d4e] transition-colors shrink-0"
+                className="flex items-center justify-center gap-[10px] bg-[#330218] text-[#e3e3e3] text-[14px] font-semibold rounded-[4px] hover:bg-[#45081f] transition-colors shrink-0"
                 style={{ width: '122px', height: '42px', padding: '10px' }}
               >
                 Contato
@@ -173,7 +173,7 @@ export default function Header() {
 
       {/* ── MOBILE OVERLAY MENU ── */}
       <div
-        className="fixed inset-0 z-[60] bg-[#0c1a36] flex flex-col lg:hidden"
+        className="fixed inset-0 z-[60] bg-[#330218] flex flex-col lg:hidden"
         style={{
           transform: menuOpen ? 'translateX(0)' : 'translateX(-100%)',
           transition: 'transform 300ms ease',
@@ -203,7 +203,7 @@ export default function Header() {
           <a
             href="#"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center justify-between border-b border-white/10 hover:text-[#779dff] transition-colors"
+            className="flex items-center justify-between border-b border-white/10 hover:text-[#5b0a28] transition-colors"
             style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600 }}
           >
             Sobre a Zimbel
@@ -216,7 +216,7 @@ export default function Header() {
           <div className="border-b border-white/10">
             <button
               onClick={() => setMobileEmpOpen(o => !o)}
-              className="flex items-center justify-between w-full hover:text-[#779dff] transition-colors"
+              className="flex items-center justify-between w-full hover:text-[#5b0a28] transition-colors"
               style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer' }}
             >
               Empreendimentos
@@ -231,7 +231,7 @@ export default function Header() {
                     key={item}
                     href="#"
                     onClick={() => setMenuOpen(false)}
-                    className="hover:text-[#779dff] transition-colors"
+                    className="hover:text-[#5b0a28] transition-colors"
                     style={{ paddingTop: '12px', paddingBottom: '12px', paddingLeft: '16px', color: 'rgba(255,255,255,0.7)', fontSize: '14px', fontWeight: 500 }}
                   >
                     {item}
@@ -245,7 +245,7 @@ export default function Header() {
           <a
             href="#"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center justify-between border-b border-white/10 hover:text-[#779dff] transition-colors"
+            className="flex items-center justify-between border-b border-white/10 hover:text-[#5b0a28] transition-colors"
             style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600 }}
           >
             Investidores
@@ -258,7 +258,7 @@ export default function Header() {
           <a
             href="#"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center justify-between border-b border-white/10 hover:text-[#779dff] transition-colors"
+            className="flex items-center justify-between border-b border-white/10 hover:text-[#5b0a28] transition-colors"
             style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600 }}
           >
             Seja um Corretor
@@ -287,8 +287,8 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center justify-center gap-2 text-white font-semibold rounded-[8px] hover:bg-[#6b8ee8] transition-colors"
-            style={{ background: '#779dff', fontSize: '14px', padding: '14px 24px' }}
+            className="flex items-center justify-center gap-2 text-white font-semibold rounded-[8px] hover:bg-[#45081f] transition-colors"
+            style={{ background: '#5b0a28', fontSize: '14px', padding: '14px 24px' }}
           >
             Contato
             <img src="/icon/contato.svg" alt="" style={{ width: '16px', height: '16px', objectFit: 'contain' }} />

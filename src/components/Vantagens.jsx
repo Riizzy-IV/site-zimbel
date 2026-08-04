@@ -20,7 +20,7 @@ export default function Vantagens() {
           {/* Imagem */}
           <div
             className="w-full lg:w-[480px] xl:w-[540px] shrink-0 rounded-2xl overflow-hidden"
-            style={{ aspectRatio: '4/3', boxShadow: '0 24px 64px rgba(12,26,54,0.18)' }}
+            style={{ aspectRatio: '4/3', boxShadow: '0 24px 64px rgba(51,2,24,0.18)' }}
           >
             <img
               src="/sobre/obra-3.avif"
@@ -34,11 +34,11 @@ export default function Vantagens() {
           {/* Texto */}
           <div className="flex flex-col gap-6 flex-1">
             <div className="flex flex-col gap-3">
-              <h2 className="text-[#1d2748] text-[32px] md:text-[42px] font-extrabold leading-tight">
+              <h2 className="text-[#3d3d3d] text-[32px] md:text-[42px] font-extrabold leading-tight">
                 Ofereça{' '}
-                <span className="text-[#779dff]">seu terreno</span>
+                <span className="text-[#5b0a28]">seu terreno</span>
               </h2>
-              <p className="text-[#31447b] text-[16px] font-bold">
+              <p className="text-[#330218] text-[16px] font-bold">
                 Tem um terreno? Transforme em oportunidade!
               </p>
             </div>
@@ -52,7 +52,7 @@ export default function Vantagens() {
             <a
               href="#contato"
               className="flex items-center gap-3 text-white text-[15px] font-semibold w-fit hover:opacity-90 transition-opacity"
-              style={{ background: '#779dff', padding: '16px 32px', borderRadius: '10px' }}
+              style={{ background: '#5b0a28', padding: '16px 32px', borderRadius: '10px' }}
             >
               Oferecer meu terreno
               <ArrowRight />

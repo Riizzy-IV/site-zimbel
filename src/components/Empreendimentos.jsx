@@ -56,7 +56,7 @@ function ArrowUp() {
 
 function SaibaMais({ className = '' }) {
   return (
-    <div className={`flex flex-col items-center justify-center bg-[#779dff] cursor-pointer hover:bg-[#6b8ee8] transition-colors gap-1.5 ${className}`}>
+    <div className={`flex flex-col items-center justify-center bg-[#932f5d]/80 cursor-pointer hover:bg-[#932f5d] transition-colors gap-1.5 ${className}`}>
       <ArrowUp />
       <span className="text-white text-sm font-semibold uppercase">Saiba mais</span>
     </div>
@@ -80,14 +80,14 @@ export default function Empreendimentos() {
                 Empreendimentos em destaque
               </span>
             </div>
-            <span className="hidden md:inline w-1.5 h-1.5 bg-[#779dff] shrink-0" />
+            <span className="hidden md:inline w-1.5 h-1.5 bg-[#5b0a28] shrink-0" />
             <span className="hidden md:inline text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">
               Zimbel Incorporadora
             </span>
           </div>
           <div className="w-full h-px bg-[#e3e3e3]" />
           <div className="flex flex-col gap-1 mt-3">
-            <h2 className="text-[#1d2748] text-[28px] md:text-[38px] font-extrabold uppercase leading-tight">
+            <h2 className="text-[#3d3d3d] text-[28px] md:text-[38px] font-extrabold uppercase leading-tight">
               Conheça os empreendimentos Zimbel
             </h2>
             <p className="text-[#a7a7a7] text-base font-medium">
@@ -102,7 +102,7 @@ export default function Empreendimentos() {
           style={{
             display: 'flex',
             alignItems: 'stretch',
-            background: '#1e3a8a',
+            background: '#4c0522',
             borderRadius: '6px',
             width: '100%',
           }}
@@ -154,7 +154,7 @@ export default function Empreendimentos() {
                     transform: 'translateX(-50%)',
                     width: '65%',
                     height: '3px',
-                    background: '#93b4ff',
+                    background: '#ca4080',
                     borderRadius: '2px 2px 0 0',
                   }} />
                 )}
@@ -170,7 +170,7 @@ export default function Empreendimentos() {
           style={{
             height: 'clamp(280px, 75vw, 560px)',
             marginBottom: '24px',
-            boxShadow: '0 20px 60px rgba(12,26,54,0.4)',
+            boxShadow: '0 20px 60px rgba(51,2,24,0.4)',
             cursor: 'pointer',
           }}
           onClick={() => navigate('/empreendimentos/vertice')}
@@ -188,7 +188,7 @@ export default function Empreendimentos() {
             className="absolute inset-0"
             style={{
               background:
-                'linear-gradient(to bottom, rgba(12,26,54,0) 35%, rgba(12,26,54,0.72) 72%, #0c1a36 100%)',
+                'linear-gradient(to bottom, rgba(51,2,24,0) 35%, rgba(51,2,24,0.72) 72%, #330218 100%)',
             }}
           />
 
@@ -198,7 +198,7 @@ export default function Empreendimentos() {
             style={{ left: '0px', right: '160px', paddingBottom: '24px' }}
           >
             {/* Barra azul */}
-            <div style={{ width: '3px', height: '90px', background: '#779dff', borderRadius: '2px', flexShrink: 0 }} />
+            <div style={{ width: '3px', height: '90px', background: '#5b0a28', borderRadius: '2px', flexShrink: 0 }} />
 
             <div className="flex flex-col gap-3 md:gap-5">
               <div>
@@ -228,7 +228,7 @@ export default function Empreendimentos() {
                 className="relative flex-1 rounded-lg overflow-hidden"
                 style={{
                   height: 'clamp(280px, 75vw, 380px)',
-                  boxShadow: '0 20px 60px rgba(12,26,54,0.4)',
+                  boxShadow: '0 20px 60px rgba(51,2,24,0.4)',
                   cursor: card.href ? 'pointer' : 'default',
                 }}
                 onClick={() => card.href && navigate(card.href)}
@@ -242,11 +242,11 @@ export default function Empreendimentos() {
                 />
                 <div
                   className="absolute inset-0"
-                  style={{ background: 'linear-gradient(to bottom, rgba(12,26,54,0) 20%, #0c1a36 100%)' }}
+                  style={{ background: 'linear-gradient(to bottom, rgba(51,2,24,0) 20%, #330218 100%)' }}
                 />
 
                 <div className="absolute flex items-end gap-4" style={{ bottom: '20px', left: '0px', right: '140px' }}>
-                  <div style={{ width: '3px', height: '70px', background: '#779dff', borderRadius: '2px', flexShrink: 0 }} />
+                  <div style={{ width: '3px', height: '70px', background: '#5b0a28', borderRadius: '2px', flexShrink: 0 }} />
                   <div className="flex flex-col gap-2">
                     <div>
                       <div className="flex items-center gap-1.5 mb-0.5">
@@ -275,9 +275,9 @@ export default function Empreendimentos() {
         <div
           className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-0 rounded-lg overflow-hidden"
           style={{
-            background: '#052E7E',
+            background: '#4c0522',
             padding: '24px 24px',
-            boxShadow: '0 20px 60px rgba(12,26,54,0.4)',
+            boxShadow: '0 20px 60px rgba(51,2,24,0.4)',
           }}
         >
           <img
@@ -290,13 +290,13 @@ export default function Empreendimentos() {
             <h3 className="text-white text-[18px] md:text-[22px] font-extrabold uppercase tracking-wide">
               Veja todos os imóveis da Zimbel
             </h3>
-            <p className="text-[#a8bfff] text-sm italic">
+            <p className="text-white/70 text-sm italic">
               Faça da exclusividade o seu novo padrão.
             </p>
           </div>
           <button
             className="relative flex items-center justify-center gap-3 text-white text-[15px] font-semibold cursor-pointer transition-colors hover:opacity-90 w-full md:w-auto shrink-0"
-            style={{ background: '#779dff', padding: '18px 36px', borderRadius: '10px' }}
+            style={{ background: '#5b0a28', padding: '18px 36px', borderRadius: '10px' }}
           >
             Veja todos os imóveis
             <ArrowUp />

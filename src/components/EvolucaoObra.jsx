@@ -35,21 +35,21 @@ export default function EvolucaoObra({ etapas, fotos = [] }) {
 
       <button
         onClick={e => { e.stopPropagation(); prev(); }}
-        style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: '48px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: '48px', height: '56px', background: '#330218', border: 'none', cursor: 'pointer', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
         <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M8 1L1 8L8 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>
 
       <button
         onClick={e => { e.stopPropagation(); next(); }}
-        style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '48px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '48px', height: '56px', background: '#330218', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
         <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M1 1L8 8L1 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>
 
       {fotos[imgIdx].date && (
-        <div style={{ position: 'absolute', top: '14px', left: '14px', background: 'rgba(5,46,126,0.85)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '5px 12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1" stroke="#779dff" strokeWidth="1.2"/><path d="M4 1V3M8 1V3M1 5H11" stroke="#779dff" strokeWidth="1.2" strokeLinecap="round"/></svg>
+        <div style={{ position: 'absolute', top: '14px', left: '14px', background: 'rgba(51,2,24,0.85)', backdropFilter: 'blur(4px)', borderRadius: '4px', padding: '5px 12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1" stroke="#5b0a28" strokeWidth="1.2"/><path d="M4 1V3M8 1V3M1 5H11" stroke="#5b0a28" strokeWidth="1.2" strokeLinecap="round"/></svg>
           <span style={{ fontSize: '12px', color: '#fff', fontWeight: 700, letterSpacing: '0.03em' }}>{fotos[imgIdx].date}</span>
         </div>
       )}
@@ -57,12 +57,12 @@ export default function EvolucaoObra({ etapas, fotos = [] }) {
       <div style={{ position: 'absolute', bottom: '16px', left: '16px', right: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {fotos[imgIdx].caption && (
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <div style={{ width: '1px', height: '18px', background: '#779dff', flexShrink: 0 }} />
+            <div style={{ width: '1px', height: '18px', background: '#5b0a28', flexShrink: 0 }} />
             <span style={{ fontSize: '12px', color: '#fff', fontWeight: 600 }}>{fotos[imgIdx].caption}</span>
           </div>
         )}
         <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.7)', fontWeight: 600, marginLeft: 'auto' }}>
-          {imgIdx + 1} <span style={{ color: '#779dff' }}>/</span> {total}
+          {imgIdx + 1} <span style={{ color: '#5b0a28' }}>/</span> {total}
         </span>
       </div>
 
@@ -71,7 +71,7 @@ export default function EvolucaoObra({ etapas, fotos = [] }) {
           <button
             key={i}
             onClick={e => { e.stopPropagation(); setImgIdx(i); }}
-            style={{ width: i === imgIdx ? '20px' : '8px', height: '8px', borderRadius: '100px', background: i === imgIdx ? '#779dff' : 'rgba(255,255,255,0.5)', border: 'none', cursor: 'pointer', padding: 0, transition: 'all 0.3s ease' }}
+            style={{ width: i === imgIdx ? '20px' : '8px', height: '8px', borderRadius: '100px', background: i === imgIdx ? '#5b0a28' : 'rgba(255,255,255,0.5)', border: 'none', cursor: 'pointer', padding: 0, transition: 'all 0.3s ease' }}
           />
         ))}
       </div>
@@ -88,15 +88,15 @@ export default function EvolucaoObra({ etapas, fotos = [] }) {
           <div className="flex items-center gap-7">
             <div className="flex items-center gap-2.5">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <rect x="1" y="9" width="4" height="8" rx="1" stroke="#1d2748" strokeWidth="1.4"/>
-                <rect x="7" y="5" width="4" height="12" rx="1" stroke="#1d2748" strokeWidth="1.4"/>
-                <rect x="13" y="1" width="4" height="16" rx="1" stroke="#1d2748" strokeWidth="1.4"/>
+                <rect x="1" y="9" width="4" height="8" rx="1" stroke="#330218" strokeWidth="1.4"/>
+                <rect x="7" y="5" width="4" height="12" rx="1" stroke="#330218" strokeWidth="1.4"/>
+                <rect x="13" y="1" width="4" height="16" rx="1" stroke="#330218" strokeWidth="1.4"/>
               </svg>
-              <span style={{ color: '#1d2748' }} className="text-[13px] font-semibold uppercase tracking-wide">Evolução de obra</span>
+              <span style={{ color: '#330218' }} className="text-[13px] font-semibold uppercase tracking-wide">Evolução de obra</span>
             </div>
           </div>
-          <div className="w-full h-px" style={{ background: 'rgba(29,39,72,0.1)' }} />
-          <h2 className="text-[#1d2748] text-[26px] lg:text-[38px] font-extrabold uppercase leading-tight mt-3">
+          <div className="w-full h-px" style={{ background: 'rgba(51,2,24,0.1)' }} />
+          <h2 className="text-[#330218] text-[26px] lg:text-[38px] font-extrabold uppercase leading-tight mt-3">
             Andamento da obra
           </h2>
         </div>
@@ -108,11 +108,11 @@ export default function EvolucaoObra({ etapas, fotos = [] }) {
               {etapas.map((etapa) => (
                 <div key={etapa.label} className="flex flex-col gap-2">
                   <div className="flex justify-between items-center">
-                    <span style={{ fontSize: '15px', fontWeight: 600, color: '#1d2748' }}>{etapa.label}</span>
-                    <span style={{ fontSize: '14px', fontWeight: 700, color: etapa.pct === 100 ? '#22c55e' : '#779dff' }}>{etapa.pct}%</span>
+                    <span style={{ fontSize: '15px', fontWeight: 600, color: '#330218' }}>{etapa.label}</span>
+                    <span style={{ fontSize: '14px', fontWeight: 700, color: etapa.pct === 100 ? '#22c55e' : '#5b0a28' }}>{etapa.pct}%</span>
                   </div>
-                  <div style={{ height: '8px', borderRadius: '100px', background: 'rgba(29,39,72,0.1)', overflow: 'hidden' }}>
-                    <div style={{ height: '100%', width: `${etapa.pct}%`, borderRadius: '100px', background: etapa.pct === 100 ? '#22c55e' : '#779dff', transition: 'width 1s ease' }} />
+                  <div style={{ height: '8px', borderRadius: '100px', background: 'rgba(51,2,24,0.1)', overflow: 'hidden' }}>
+                    <div style={{ height: '100%', width: `${etapa.pct}%`, borderRadius: '100px', background: etapa.pct === 100 ? '#22c55e' : '#5b0a28', transition: 'width 1s ease' }} />
                   </div>
                 </div>
               ))}
@@ -126,11 +126,11 @@ export default function EvolucaoObra({ etapas, fotos = [] }) {
                 {etapas.map((etapa) => (
                   <div key={etapa.label} className="flex flex-col gap-2">
                     <div className="flex justify-between items-center">
-                      <span style={{ fontSize: '15px', fontWeight: 600, color: '#1d2748' }}>{etapa.label}</span>
-                      <span style={{ fontSize: '14px', fontWeight: 700, color: etapa.pct === 100 ? '#22c55e' : '#779dff' }}>{etapa.pct}%</span>
+                      <span style={{ fontSize: '15px', fontWeight: 600, color: '#330218' }}>{etapa.label}</span>
+                      <span style={{ fontSize: '14px', fontWeight: 700, color: etapa.pct === 100 ? '#22c55e' : '#5b0a28' }}>{etapa.pct}%</span>
                     </div>
-                    <div style={{ height: '8px', borderRadius: '100px', background: 'rgba(29,39,72,0.1)', overflow: 'hidden' }}>
-                      <div style={{ height: '100%', width: `${etapa.pct}%`, borderRadius: '100px', background: etapa.pct === 100 ? '#22c55e' : '#779dff', transition: 'width 1s ease' }} />
+                    <div style={{ height: '8px', borderRadius: '100px', background: 'rgba(51,2,24,0.1)', overflow: 'hidden' }}>
+                      <div style={{ height: '100%', width: `${etapa.pct}%`, borderRadius: '100px', background: etapa.pct === 100 ? '#22c55e' : '#5b0a28', transition: 'width 1s ease' }} />
                     </div>
                   </div>
                 ))}

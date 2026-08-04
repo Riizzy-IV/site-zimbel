@@ -26,18 +26,14 @@ export default function Sobre() {
         <div className="flex flex-col gap-2 mb-8">
           <div className="flex items-center gap-7">
             <div className="flex items-center gap-2.5">
-              <svg width="18" height="17" viewBox="0 0 18 17" fill="none">
-                <rect x="1" y="5" width="16" height="11" rx="1" stroke="#779dff" strokeWidth="1.4" />
-                <path d="M5 5V3.5C5 2.12 6.79 1 9 1C11.21 1 13 2.12 13 3.5V5" stroke="#779dff" strokeWidth="1.4" strokeLinecap="round" />
-                <rect x="6.5" y="8" width="5" height="4" rx="0.5" stroke="#779dff" strokeWidth="1.2" />
-              </svg>
+              <img src="/icon/vantagens.svg" alt="" style={{ width: '18px', height: '17px', objectFit: 'contain' }} />
               <span className="text-[#494c4f] text-[13px] font-semibold uppercase tracking-wide">Sobre</span>
             </div>
-            <span className="w-1.5 h-1.5 bg-[#779dff] shrink-0" />
+            <span className="w-1.5 h-1.5 bg-[#5b0a28] shrink-0" />
             <span className="text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
           </div>
           <div className="flex flex-col gap-3" style={{ marginTop: '16px' }}>
-            <h2 className="text-[#1d2748] text-[28px] lg:text-[38px] font-extrabold uppercase leading-tight" style={{ maxWidth: '640px' }}>
+            <h2 className="text-[#3d3d3d] text-[28px] lg:text-[38px] font-extrabold uppercase leading-tight" style={{ maxWidth: '640px' }}>
               É sobre fazer a diferença na vida das pessoas
             </h2>
             <p className="text-[#a7a7a7] text-base font-medium">
@@ -67,7 +63,7 @@ export default function Sobre() {
             <a
               href="#"
               className="flex items-center gap-2 text-white text-sm font-semibold w-fit cursor-pointer hover:opacity-90 transition-opacity"
-              style={{ background: '#779dff', padding: '12px 24px', borderRadius: '6px' }}
+              style={{ background: '#5b0a28', padding: '12px 24px', borderRadius: '6px' }}
             >
               Saiba mais sobre a Zimbel
               <ArrowUp />
@@ -81,7 +77,7 @@ export default function Sobre() {
           {/* Card branco */}
           <div
             className="relative rounded-xl bg-white"
-            style={{ marginLeft: '223px', height: '630px', boxShadow: '0 20px 60px rgba(12,26,54,0.18)' }}
+            style={{ marginLeft: '223px', height: '630px', boxShadow: '0 20px 60px rgba(51,2,24,0.18)' }}
           >
             {/* Texto no painel direito */}
             <div
@@ -104,7 +100,7 @@ export default function Sobre() {
               <a
                 href="#"
                 className="flex items-center gap-2 text-white text-sm font-semibold w-fit cursor-pointer hover:opacity-90 transition-opacity"
-                style={{ background: '#779dff', padding: '12px 24px', borderRadius: '6px' }}
+                style={{ background: '#5b0a28', padding: '12px 24px', borderRadius: '6px' }}
               >
                 Saiba mais sobre a Zimbel
                 <ArrowUp />
@@ -129,14 +125,14 @@ export default function Sobre() {
           {stats.map((stat, i) => (
             <div key={i} className="flex flex-col gap-1 md:gap-4">
               <p
-                className="text-[#31447b] font-semibold leading-none"
+                className="text-[#330218] font-semibold leading-none"
                 style={{ fontSize: 'clamp(48px, 5vw, 64px)' }}
               >
                 {stat.value}
               </p>
               <div>
                 <div className="flex justify-center mb-1 md:mb-4">
-                  <div className="w-8 md:w-24 h-[3px] bg-[#779dff] rounded" />
+                  <div className="w-8 md:w-24 h-[3px] bg-[#5b0a28] rounded" />
                 </div>
                 <p className="text-[#6b7280] leading-snug" style={{ fontSize: 'clamp(15px, 1.1vw, 15px)' }}>{stat.desc}</p>
               </div>

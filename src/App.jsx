@@ -7,8 +7,8 @@ const Evolution = lazy(() => import('./pages/empreendimentos/Evolution'))
 
 function PageLoader() {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', background: '#0c1a36' }}>
-      <div style={{ width: '40px', height: '40px', border: '3px solid rgba(119,157,255,0.2)', borderTop: '3px solid #779dff', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', background: '#330218' }}>
+      <div style={{ width: '40px', height: '40px', border: '3px solid rgba(91,10,40,0.2)', borderTop: '3px solid #5b0a28', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
       <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
     </div>
   )

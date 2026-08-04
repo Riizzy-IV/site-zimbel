@@ -138,7 +138,7 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background: isMobile
-            ? 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.1) 30%, rgba(12,26,54,0.75) 60%, rgba(12,26,54,0.95) 100%)'
+            ? 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.1) 30%, rgba(51,2,24,0.75) 60%, rgba(51,2,24,0.95) 100%)'
             : 'linear-gradient(to bottom, transparent, transparent, rgba(0,0,0,0.88))',
         }}
       />
@@ -149,7 +149,7 @@ export default function Hero() {
           <button
             onClick={() => setCurrent(c => (c - 1 + slides.length) % slides.length)}
             className="absolute left-0 top-[40%] -translate-y-1/2 z-10 flex items-center justify-center transition-opacity hover:opacity-100"
-            style={{ width: '48px', height: '64px', background: 'rgba(5,46,126,0.85)', borderRadius: '0 8px 8px 0', opacity: 0.75 }}
+            style={{ width: '48px', height: '64px', background: 'rgba(51,2,24,0.85)', borderRadius: '0 8px 8px 0', opacity: 0.75 }}
           >
             <svg width="18" height="18" viewBox="0 0 10 10" fill="none">
               <path d="M7 1L3 5L7 9" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -158,7 +158,7 @@ export default function Hero() {
           <button
             onClick={() => setCurrent(c => (c + 1) % slides.length)}
             className="absolute right-0 top-[40%] -translate-y-1/2 z-10 flex items-center justify-center transition-opacity hover:opacity-100"
-            style={{ width: '48px', height: '64px', background: 'rgba(5,46,126,0.85)', borderRadius: '8px 0 0 8px', opacity: 0.75 }}
+            style={{ width: '48px', height: '64px', background: 'rgba(51,2,24,0.85)', borderRadius: '8px 0 0 8px', opacity: 0.75 }}
           >
             <svg width="18" height="18" viewBox="0 0 10 10" fill="none">
               <path d="M3 1L7 5L3 9" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -173,7 +173,7 @@ export default function Hero() {
         {/* Badge + Título */}
         <div style={{ paddingLeft: gridPl, paddingRight: isMobile ? gridPl : undefined }}>
           <div
-            className="flex items-center justify-center gap-[16px] bg-[#31477b] rounded-sm"
+            className="flex items-center justify-center gap-[16px] bg-[#5b0a28] rounded-sm"
             style={{ marginBottom: '20px', width: badgeWidth, paddingLeft: '20px', paddingRight: '20px', height: '36px' }}
           >
             <span className="text-white text-[13.8px] font-bold uppercase tracking-wide whitespace-nowrap">{slide.badge.tag}</span>
@@ -186,7 +186,7 @@ export default function Hero() {
           >
             {slide.title}
           </h1>
-          <p className="text-[#779dff] font-bold uppercase" style={{ fontSize: isMobile ? '13px' : '18px', textShadow: '0 1px 8px rgba(0,0,0,0.8)' }}>
+          <p className="text-[#c5a26a] font-bold uppercase" style={{ fontSize: isMobile ? '13px' : '18px', textShadow: '0 1px 8px rgba(0,0,0,0.8)' }}>
             {slide.subtitle}
           </p>
         </div>
@@ -207,7 +207,7 @@ export default function Hero() {
                   style={{
                     width: i === current ? '20px' : '8px',
                     height: '8px',
-                    background: i === current ? '#779dff' : 'rgba(255,255,255,0.5)',
+                    background: i === current ? '#5b0a28' : 'rgba(255,255,255,0.5)',
                   }}
                 />
               ))}
@@ -215,7 +215,7 @@ export default function Hero() {
             {/* Specs panel */}
             <div
               className="flex flex-col gap-3 backdrop-blur-sm w-full"
-              style={{ background: 'rgba(12,26,54,0.9)', padding: '16px' }}
+              style={{ background: 'rgba(91,10,40,0.9)', padding: '16px' }}
             >
               <div className="shrink-0">
                 {slide.logo
@@ -232,7 +232,7 @@ export default function Hero() {
             </div>
             {/* Saiba Mais */}
             <div
-              className="flex flex-col items-center justify-center bg-[#779dff] gap-1 cursor-pointer hover:bg-[#6b8ee8] transition-colors w-full"
+              className="flex flex-col items-center justify-center bg-[#932f5d]/80 gap-1 cursor-pointer hover:bg-[#932f5d] transition-colors w-full"
               style={{ height: '52px' }}
               onClick={() => slide.href && navigate(slide.href)}
             >
@@ -250,7 +250,7 @@ export default function Hero() {
             <div
               className="flex items-center gap-6 backdrop-blur-sm shrink-0"
               style={{
-                background: 'rgba(12,26,54,0.9)',
+                background: 'rgba(91,10,40,0.9)',
                 width: bp === 'xl' ? 'min(1200px, calc(100% - 900px))' : bp === 'lg' ? 'min(1100px, calc(100% - 450px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : bp === 'md' ? 'min(600px, calc(100% - 280px))' : 'min(780px, 68%)',
                 maxWidth: bp === 'xl' ? 'min(1200px, calc(100% - 900px))' : bp === 'lg' ? 'min(1100px, calc(100% - 450px))' : bp === 'lg-sm' ? 'min(780px, calc(100% - 340px))' : bp === 'md' ? 'min(600px, calc(100% - 280px))' : 'min(780px, 68%)',
                 height: '142px',
@@ -283,7 +283,7 @@ export default function Hero() {
 
             {/* Botão Saiba Mais */}
             <div
-              className="flex flex-col items-center justify-center bg-[#779dff] shrink-0 gap-1 cursor-pointer hover:bg-[#6b8ee8] transition-colors rounded-tr-[8px]"
+              className="flex flex-col items-center justify-center bg-[#932f5d]/80 shrink-0 gap-1 cursor-pointer hover:bg-[#932f5d] transition-colors rounded-tr-[8px]"
               style={{ width: bp === 'xl' || bp === 'lg' || bp === 'lg-sm' ? '192px' : '140px', height: '142px' }}
               onClick={() => slide.href && navigate(slide.href)}
             >
@@ -306,7 +306,7 @@ export default function Hero() {
                     className="flex flex-col gap-[3px] cursor-pointer"
                     style={{
                       height: '74px',
-                      borderBottom: i === current ? '4px solid #779dff' : '4px solid transparent',
+                      borderBottom: i === current ? '4px solid #5b0a28' : '4px solid transparent',
                       transition: 'border-color 0.3s ease',
                     }}
                   >

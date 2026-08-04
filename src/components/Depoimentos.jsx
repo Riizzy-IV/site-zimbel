@@ -88,7 +88,7 @@ export default function Depoimentos() {
 
   return (
     <>
-    <section style={{ background: '#0c1a36', paddingTop: '72px', paddingBottom: '80px', overflow: 'hidden' }}>
+    <section style={{ background: '#330218', paddingTop: '72px', paddingBottom: '80px', overflow: 'hidden' }}>
 
       {/* ── Header ── */}
       <div style={{ paddingLeft: gridPl, paddingRight: gridPr, marginBottom: '48px' }}>
@@ -96,14 +96,14 @@ export default function Depoimentos() {
           <div className="flex items-center gap-7">
             <div className="flex items-center gap-2.5">
               <svg width="18" height="17" viewBox="0 0 18 17" fill="none">
-                <rect x="1" y="5" width="16" height="11" rx="1" stroke="#779dff" strokeWidth="1.4"/>
-                <path d="M5 5V3.5C5 2.12 6.79 1 9 1C11.21 1 13 2.12 13 3.5V5" stroke="#779dff" strokeWidth="1.4" strokeLinecap="round"/>
-                <rect x="6.5" y="8" width="5" height="4" rx="0.5" stroke="#779dff" strokeWidth="1.2"/>
+                <rect x="1" y="5" width="16" height="11" rx="1" stroke="#5b0a28" strokeWidth="1.4"/>
+                <path d="M5 5V3.5C5 2.12 6.79 1 9 1C11.21 1 13 2.12 13 3.5V5" stroke="#5b0a28" strokeWidth="1.4" strokeLinecap="round"/>
+                <rect x="6.5" y="8" width="5" height="4" rx="0.5" stroke="#5b0a28" strokeWidth="1.2"/>
               </svg>
-              <span className="text-[#779dff] text-[13px] font-semibold uppercase tracking-wide">Sobre</span>
+              <span className="text-[#5b0a28] text-[13px] font-semibold uppercase tracking-wide">Sobre</span>
             </div>
-            <span className="w-1.5 h-1.5 bg-[#779dff] shrink-0" />
-            <span className="text-[#4f6db5] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
+            <span className="w-1.5 h-1.5 bg-[#5b0a28] shrink-0" />
+            <span className="text-[#45081f] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
           </div>
           <div className="w-full h-px" style={{ background: 'rgba(255,255,255,0.1)' }} />
 
@@ -112,7 +112,7 @@ export default function Depoimentos() {
               <h2 className="text-white text-[26px] lg:text-[38px] font-extrabold uppercase leading-tight">
                 Conheça um pouco sobre a Zimbel
               </h2>
-              <p style={{ color: '#4f6db5' }} className="text-base font-medium">
+              <p style={{ color: '#45081f' }} className="text-base font-medium">
                 Transformamos sonhos em projetos reais
               </p>
             </div>
@@ -122,14 +122,14 @@ export default function Depoimentos() {
               <button
                 onClick={() => goTo(current - 1)}
                 className="flex items-center justify-center cursor-pointer"
-                style={{ width: '56px', height: '56px', borderRadius: '10px 0 0 10px', background: 'rgba(119,157,255,0.15)', border: '1px solid rgba(119,157,255,0.2)' }}
+                style={{ width: '56px', height: '56px', borderRadius: '10px 0 0 10px', background: 'rgba(91,10,40,0.15)', border: '1px solid rgba(91,10,40,0.2)' }}
               >
                 <ChevronLeft />
               </button>
               <button
                 onClick={() => goTo(current + 1)}
                 className="flex items-center justify-center cursor-pointer"
-                style={{ width: '56px', height: '56px', borderRadius: '0 10px 10px 0', background: '#779dff' }}
+                style={{ width: '56px', height: '56px', borderRadius: '0 10px 10px 0', background: '#5b0a28' }}
               >
                 <ChevronRight />
               </button>
@@ -198,7 +198,7 @@ export default function Depoimentos() {
                 width: i === current ? '24px' : '8px',
                 height: '8px',
                 borderRadius: '100px',
-                background: i === current ? '#779dff' : 'rgba(119,157,255,0.3)',
+                background: i === current ? '#5b0a28' : 'rgba(91,10,40,0.3)',
                 border: 'none',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',

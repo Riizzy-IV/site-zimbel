@@ -27,12 +27,12 @@ export default function Footer() {
                 <img src="/icon/contato.svg" alt="" style={{ width: '18px', height: '18px', objectFit: 'contain' }} />
                 <span className="text-[#494c4f] text-[13px] font-semibold uppercase tracking-wide">Contato</span>
               </div>
-              <span className="w-1.5 h-1.5 bg-[#779dff] shrink-0" />
+              <span className="w-1.5 h-1.5 bg-[#5b0a28] shrink-0" />
               <span className="text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
             </div>
             <div className="w-full h-px bg-[#e3e3e3]" />
             <div className="flex flex-col gap-1" style={{ marginTop: '20px' }}>
-              <h2 className="text-[#1d2748] text-[26px] md:text-[38px] font-extrabold uppercase leading-tight">
+              <h2 className="text-[#3d3d3d] text-[26px] md:text-[38px] font-extrabold uppercase leading-tight">
                 Entre em contato com a Zimbel
               </h2>
               <p className="text-[#a7a7a7] text-base font-medium">
@@ -45,7 +45,7 @@ export default function Footer() {
 
       {/* ── Zona de transição: cards metade branco / metade navy ── */}
       <div style={{
-        background: 'linear-gradient(to bottom, #ffffff 50%, #0c1a36 50%)',
+        background: 'linear-gradient(to bottom, #ffffff 50%, #330218 50%)',
         paddingLeft: gridPl,
         paddingRight: gridPr,
         paddingTop: '24px',
@@ -60,11 +60,11 @@ export default function Footer() {
             <div
               key={card.title}
               className="flex-1 flex items-center gap-4 md:gap-14 cursor-pointer"
-              style={{ background: '#052e7e', borderRadius: '10px', height: '90px', padding: '0 16px', minWidth: 0 }}
+              style={{ background: '#4c0522', borderRadius: '10px', height: '90px', padding: '0 16px', minWidth: 0 }}
             >
               <div className="hidden md:block">{card.icon}</div>
               <div className="flex flex-col gap-1">
-                <p className="text-[#779dff] text-[11px] md:text-[15px] font-semibold">{card.label}</p>
+                <p className="text-[#5b0a28] text-[11px] md:text-[15px] font-semibold">{card.label}</p>
                 <p className="text-white text-[22px] md:text-[40px] font-extrabold leading-none">{card.title}</p>
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div style={{ background: '#0c1a36' }}>
+      <div style={{ background: '#330218' }}>
 
         {/* Footer body */}
         <div style={{ paddingLeft: gridPl, paddingRight: gridPr, paddingTop: '40px', paddingBottom: '40px' }}>
@@ -90,7 +90,7 @@ export default function Footer() {
                   <img src="/Menu/Logotype.svg" alt="Zimbel" className="h-10 object-contain brightness-0 invert" />
                 </div>
               </div>
-              <p className="text-[#c8d0e0] text-[15px] leading-relaxed lg:max-w-[580px]">
+              <p className="text-[#e3e3e3] text-[15px] leading-relaxed lg:max-w-[580px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non lectus laoreet, vulputate ligula nec, pretium dolor. Praesent a faucibus urna.
               </p>
               <div className="flex items-center gap-4">
@@ -125,7 +125,7 @@ export default function Footer() {
               <div className="flex flex-col md:flex-row gap-8 md:gap-16">
                 <div className="flex flex-col gap-5">
                   <div className="flex flex-col gap-3">
-                    <p className="text-[#779dff] text-sm font-bold uppercase tracking-wide">Empreendimentos</p>
+                    <p className="text-[#ca4080] text-sm font-bold uppercase tracking-wide">Empreendimentos</p>
                     <div className="w-8 h-0.5 bg-white opacity-25" />
                   </div>
                   <div className="flex flex-col gap-2 text-[#abb6ba] text-sm">
@@ -136,7 +136,7 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col gap-5">
                   <div className="flex flex-col gap-3">
-                    <p className="text-[#779dff] text-sm font-bold uppercase tracking-wide">Páginas</p>
+                    <p className="text-[#ca4080] text-sm font-bold uppercase tracking-wide">Páginas</p>
                     <div className="w-8 h-0.5 bg-white opacity-25" />
                   </div>
                   <div className="flex flex-col gap-2 text-[#abb6ba] text-sm">

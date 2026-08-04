@@ -57,7 +57,7 @@ function HeroEvolution() {
       {/* Background */}
       <div className="absolute inset-0">
         <img src={heroBg} alt="" className="w-full h-full object-cover object-center" fetchpriority="high" decoding="sync" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(12,26,54,0.88) 0%, rgba(12,26,54,0.6) 50%, rgba(12,26,54,0.1) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(51,2,24,0.55) 0%, rgba(51,2,24,0.35) 50%, rgba(51,2,24,0.05) 100%)' }} />
       </div>
 
       {/* Breadcrumb (desktop only) */}
@@ -76,7 +76,7 @@ function HeroEvolution() {
       {/* Conteúdo principal */}
       <div className="absolute z-10 flex flex-col" style={{ left: gridPad, right: gridPad, bottom: isMobile ? '24px' : '48px' }}>
         {/* Badge */}
-        <div className="flex items-center justify-center gap-4 bg-[#31477b] rounded-sm" style={{ width: isMobile ? 'auto' : '336px', alignSelf: isMobile ? 'flex-start' : undefined, height: '36px', marginBottom: '16px', padding: isMobile ? '0 16px' : undefined }}>
+        <div className="flex items-center justify-center gap-4 bg-[#5b0a28] rounded-sm" style={{ width: isMobile ? 'auto' : '336px', alignSelf: isMobile ? 'flex-start' : undefined, height: '36px', marginBottom: '16px', padding: isMobile ? '0 16px' : undefined }}>
           <span className="text-white text-[13px] font-bold uppercase tracking-wide">Lançamento</span>
           <span className="w-1 h-1 rounded-full bg-white" />
           <span className="text-white text-[13px] font-bold uppercase tracking-wide">Tatuapé</span>
@@ -88,7 +88,7 @@ function HeroEvolution() {
         </h1>
 
         {/* Endereço */}
-        <div className="flex items-center gap-2 text-[#779dff] font-semibold uppercase" style={{ fontSize: isMobile ? '11px' : '13px', marginBottom: '14px' }}>
+        <div className="flex items-center gap-2 text-[#c5a26a] font-semibold uppercase" style={{ fontSize: isMobile ? '11px' : '13px', marginBottom: '14px' }}>
           <img src={icoPin} alt="" className="w-4 h-4 object-contain brightness-0 invert opacity-70 shrink-0" />
           <span>R. Prof. Pedreira de Freitas, 848 - Tatuapé, SP</span>
         </div>
@@ -130,8 +130,8 @@ function ConceitoEvolution() {
           <div style={{ marginBottom: '16px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
               <img src="/empreendimentos/vertice/icon-conceito.svg" alt="" style={{ width: '18px', height: '17px', objectFit: 'contain' }} />
-              <span style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#31447b' }}>Conceito</span>
-              <span style={{ color: '#779dff', fontSize: '12px' }}>•</span>
+              <span style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#330218' }}>Conceito</span>
+              <span style={{ color: '#5b0a28', fontSize: '12px' }}>•</span>
               <span style={{ fontSize: '12px', fontWeight: 400, color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Evolution Tatuapé</span>
             </div>
             <div style={{ width: '100%', height: '1px', background: '#e8e8e8' }} />
@@ -139,7 +139,7 @@ function ConceitoEvolution() {
 
           {/* Título */}
           <h2
-            style={{ fontSize: 'clamp(26px, 2.2vw, 38px)', color: '#31447b', lineHeight: 1.35, marginBottom: '16px', fontWeight: 400, textTransform: 'uppercase' }}
+            style={{ fontSize: 'clamp(26px, 2.2vw, 38px)', color: '#330218', lineHeight: 1.35, marginBottom: '16px', fontWeight: 400, textTransform: 'uppercase' }}
           >
             Viver Bem é<br />Evoluir Sempre
           </h2>
@@ -167,12 +167,12 @@ function ConceitoEvolution() {
                 { icon: '/empreendimentos/vertice/spec-plantas.svg', label: 'Unidades',      value: '40 unidades' },
               ].map(({ icon, label, value }) => (
                 <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
-                  <div style={{ width: '32px', height: '32px', border: '1px solid #779dff', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <div style={{ width: '32px', height: '32px', border: '1px solid #ca4080', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <img src={icon} alt="" style={{ width: '20px', height: '20px', objectFit: 'contain' }} />
                   </div>
                   <div>
                     <p style={{ fontSize: '12px', color: '#a7a7a7', marginBottom: '2px' }}>{label}</p>
-                    <p style={{ fontSize: '15px', fontWeight: 600, color: '#31447b' }}>{value}</p>
+                    <p style={{ fontSize: '15px', fontWeight: 600, color: '#330218' }}>{value}</p>
                   </div>
                 </div>
               ))}
@@ -183,12 +183,12 @@ function ConceitoEvolution() {
                 { icon: '/empreendimentos/vertice/spec-housi.svg', label: 'Entrega prevista', value: 'Outubro/2026' },
               ].map(({ icon, label, value }) => (
                 <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
-                  <div style={{ width: '32px', height: '32px', border: '1px solid #779dff', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <div style={{ width: '32px', height: '32px', border: '1px solid #ca4080', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <img src={icon} alt="" style={{ width: '20px', height: '20px', objectFit: 'contain' }} />
                   </div>
                   <div>
                     <p style={{ fontSize: '12px', color: '#a7a7a7', marginBottom: '2px' }}>{label}</p>
-                    <p style={{ fontSize: '15px', fontWeight: 600, color: '#31447b' }}>{value}</p>
+                    <p style={{ fontSize: '15px', fontWeight: 600, color: '#330218' }}>{value}</p>
                   </div>
                 </div>
               ))}
@@ -196,8 +196,8 @@ function ConceitoEvolution() {
           </div>
 
           {/* CTAs */}
-          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'stretch', gap: '0', background: 'rgba(119,157,255,0.12)', borderRadius: '8px', overflow: 'hidden' }}>
-            <div style={{ width: '5px', background: '#31447b', flexShrink: 0 }} />
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'stretch', gap: '0', background: 'rgba(91,10,40,0.12)', borderRadius: '8px', overflow: 'hidden' }}>
+            <div style={{ width: '5px', background: '#330218', flexShrink: 0 }} />
             <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '12px', padding: '16px', flex: 1 }}>
               {[
                 { icon: '/empreendimentos/vertice/cta-book.svg',  line1: 'Baixe o',  line2: 'Book digital', href: '#' },
@@ -209,13 +209,13 @@ function ConceitoEvolution() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:brightness-110 transition-all"
-                  style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#779dff', borderRadius: '8px', padding: '12px 24px', textDecoration: 'none', flex: isMobile ? undefined : '1 1 0' }}
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#ca4080', borderRadius: '8px', padding: '12px 24px', textDecoration: 'none', flex: isMobile ? undefined : '1 1 0' }}
                 >
                   <img src={icon} alt="" style={{ width: '24px', height: '24px', objectFit: 'contain' }} />
                   <img src="/empreendimentos/vertice/cta-arrow.svg" alt="" style={{ width: '8px', height: '14px' }} />
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-                    <span style={{ fontSize: '12px', color: '#0c1a36', fontWeight: 400, lineHeight: 1 }}>{line1}</span>
-                    <span style={{ fontSize: '16px', color: '#0c1a36', fontWeight: 600, whiteSpace: 'nowrap', lineHeight: 1 }}>{line2}</span>
+                    <span style={{ fontSize: '12px', color: '#330218', fontWeight: 400, lineHeight: 1 }}>{line1}</span>
+                    <span style={{ fontSize: '16px', color: '#330218', fontWeight: 600, whiteSpace: 'nowrap', lineHeight: 1 }}>{line2}</span>
                   </div>
                 </a>
               ))}
@@ -232,7 +232,7 @@ function ConceitoEvolution() {
               className="w-full rounded-2xl object-cover"
               style={{ aspectRatio: '4/5' }}
             />
-            <div className="absolute top-4 right-4 w-8 h-8 rounded" style={{ background: '#31447b' }} />
+            <div className="absolute top-4 right-4 w-8 h-8 rounded" style={{ background: '#330218' }} />
             <p className="absolute bottom-4 right-4 text-white text-[11px] font-medium px-3 py-1 rounded-full"
               style={{ background: 'rgba(0,0,0,0.45)' }}>
               Perspectiva ilustrada da fachada
@@ -290,7 +290,7 @@ function GaleriaEvolution() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
             <img src="/empreendimentos/vertice/icon-galeria.svg" alt="" style={{ width: '17px', height: '16px', objectFit: 'contain' }} />
             <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#494c4f' }}>Galeria de Imagens</span>
-            {!isMobile && <><span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+            {!isMobile && <><span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#5b0a28', flexShrink: 0 }} />
             <span style={{ fontSize: '13px', fontWeight: 400, color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Evolution Tatuapé</span></>}
           </div>
           <div style={{ width: '100%', height: '1px', background: '#d4d4d4' }} />
@@ -298,7 +298,7 @@ function GaleriaEvolution() {
 
         {/* Título */}
         <div style={{ marginBottom: '32px' }}>
-          <h2 style={{ fontSize: 'clamp(22px, 2vw, 32px)', color: '#31477b', fontWeight: 800, textTransform: 'uppercase', marginBottom: '8px' }}>
+          <h2 style={{ fontSize: 'clamp(22px, 2vw, 32px)', color: '#330218', fontWeight: 800, textTransform: 'uppercase', marginBottom: '8px' }}>
             Espaços Pensados Para Sua Convivência
           </h2>
           <p style={{ fontSize: '16px', color: '#a7a7a7' }}>Acesse as imagens no menu abaixo</p>
@@ -313,7 +313,7 @@ function GaleriaEvolution() {
                 style={{
                   display: 'flex', alignItems: 'center', gap: '8px',
                   padding: '12px 0', background: 'none', border: 'none', cursor: 'pointer',
-                  borderBottom: activeTab === i ? '2px solid #052e7e' : '2px solid transparent',
+                  borderBottom: activeTab === i ? '2px solid #330218' : '2px solid transparent',
                   color: '#494c4f', fontSize: '14px', fontWeight: 600,
                 }}
               >
@@ -332,10 +332,10 @@ function GaleriaEvolution() {
           <img src={img.src} alt={img.caption} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 50%)' }} />
 
-          <button onClick={prev} style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <button onClick={prev} style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#330218', border: 'none', cursor: 'pointer', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M8 1L1 8L8 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </button>
-          <button onClick={next} style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <button onClick={next} style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#330218', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M1 1L8 8L1 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </button>
 
@@ -344,11 +344,11 @@ function GaleriaEvolution() {
           </button>
 
           <div style={{ position: 'absolute', bottom: '22px', left: '24px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <div style={{ width: '1px', height: '21px', background: '#779dff' }} />
+            <div style={{ width: '1px', height: '21px', background: '#5b0a28' }} />
             <span style={{ fontSize: '12px', color: '#fff', fontWeight: 600 }}>{img.caption}</span>
-            <div style={{ width: '1px', height: '21px', background: '#779dff' }} />
+            <div style={{ width: '1px', height: '21px', background: '#5b0a28' }} />
             <span style={{ fontSize: '12px', color: '#fff', fontWeight: 600 }}>
-              {currentImg + 1} <span style={{ color: '#779dff' }}>/</span> {total}
+              {currentImg + 1} <span style={{ color: '#5b0a28' }}>/</span> {total}
             </span>
           </div>
 
@@ -415,7 +415,7 @@ function LazerEvolution() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
             <img src="/empreendimentos/vertice/icon-lazer-label.svg" alt="" style={{ width: '24px', height: '24px', objectFit: 'contain' }} />
             <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#494c4f' }}>Lazer</span>
-            {!isMobile && <><span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+            {!isMobile && <><span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#5b0a28', flexShrink: 0 }} />
             <span style={{ fontSize: '13px', color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Evolution Tatuapé</span></>}
           </div>
           <div style={{ width: '100%', height: '1px', background: '#e8e8e8' }} />
@@ -423,7 +423,7 @@ function LazerEvolution() {
 
         {/* Título + descrição */}
         <div style={{ maxWidth: '790px', marginBottom: '40px' }}>
-          <h2 style={{ fontSize: 'clamp(18px, 1.8vw, 28px)', color: '#31477b', fontWeight: 800, textTransform: 'uppercase', marginBottom: '16px' }}>
+          <h2 style={{ fontSize: 'clamp(18px, 1.8vw, 28px)', color: '#330218', fontWeight: 800, textTransform: 'uppercase', marginBottom: '16px' }}>
             Estrutura Completa Para o Seu Bem-Estar
           </h2>
           <p style={{ fontSize: '16px', color: '#a7a7a7', lineHeight: 1.35 }}>
@@ -436,11 +436,11 @@ function LazerEvolution() {
           <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: isMobile ? '260px' : isTablet ? '320px' : '440px' }}>
             <img src={img.src} alt={img.caption} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.35))' }} />
-            <button onClick={prev} style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <button onClick={prev} style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#330218', border: 'none', cursor: 'pointer', borderRadius: '0 8px 8px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M8 1L1 8L8 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </button>
             {isMobile && (
-              <button onClick={next} style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <button onClick={next} style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#330218', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M1 1L8 8L1 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </button>
             )}
@@ -448,7 +448,7 @@ function LazerEvolution() {
               <img src="/empreendimentos/vertice/icon-fullscreen.svg" alt="" style={{ width: '14px', height: '14px' }} />
             </button>
             <div style={{ position: 'absolute', bottom: '16px', left: '0', display: 'flex', alignItems: 'center', gap: '10px', paddingLeft: '16px' }}>
-              <div style={{ width: '1px', height: '21px', background: '#779dff' }} />
+              <div style={{ width: '1px', height: '21px', background: '#5b0a28' }} />
               <span style={{ fontSize: '12px', color: '#fff', fontWeight: 600 }}>{img.caption}</span>
             </div>
             <span style={{ position: 'absolute', bottom: '16px', right: '16px', fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontStyle: 'italic' }}>
@@ -461,14 +461,14 @@ function LazerEvolution() {
             <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: isTablet ? '320px' : '440px' }}>
               <img src={lazerImages[(imgIdx + 1) % total].src} alt="" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.35))' }} />
-              <button onClick={next} style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <button onClick={next} style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', width: '56px', height: '56px', background: '#330218', border: 'none', cursor: 'pointer', borderRadius: '8px 0 0 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="9" height="16" viewBox="0 0 9 16" fill="none"><path d="M1 1L8 8L1 15" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </button>
               <button style={{ position: 'absolute', top: '16px', right: '16px', width: '48px', height: '48px', background: 'rgba(21,69,67,0.56)', backdropFilter: 'blur(2px)', border: 'none', cursor: 'pointer', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <img src="/empreendimentos/vertice/icon-fullscreen.svg" alt="" style={{ width: '14px', height: '14px' }} />
               </button>
               <div style={{ position: 'absolute', bottom: '16px', left: '0', display: 'flex', alignItems: 'center', gap: '10px', paddingLeft: '16px' }}>
-                <div style={{ width: '1px', height: '21px', background: '#779dff' }} />
+                <div style={{ width: '1px', height: '21px', background: '#5b0a28' }} />
                 <span style={{ fontSize: '12px', color: '#fff', fontWeight: 600 }}>{lazerImages[(imgIdx + 1) % total].caption}</span>
               </div>
               <span style={{ position: 'absolute', bottom: '16px', right: '16px', fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontStyle: 'italic' }}>
@@ -483,9 +483,9 @@ function LazerEvolution() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px 16px' }}>
             {amenidades.flat().map(({ icon, label }) => (
               <div key={label} style={{ display: 'flex', alignItems: 'flex-start', gap: '6px' }}>
-                <div style={{ width: '1px', height: '18px', background: '#779dff', flexShrink: 0, marginTop: '1px' }} />
+                <div style={{ width: '1px', height: '18px', background: '#5b0a28', flexShrink: 0, marginTop: '1px' }} />
                 <img src={`/empreendimentos/vertice/${icon}`} alt="" style={{ width: '16px', height: '16px', objectFit: 'contain', flexShrink: 0 }} />
-                <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#31477b', flexShrink: 0, marginTop: '7px' }} />
+                <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#330218', flexShrink: 0, marginTop: '7px' }} />
                 <span style={{ fontSize: '13px', color: '#a7a7a7', fontWeight: 600 }}>{label}</span>
               </div>
             ))}
@@ -496,9 +496,9 @@ function LazerEvolution() {
               <div key={ci} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {col.map(({ icon, label }) => (
                   <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <div style={{ width: '1px', height: '18px', background: '#779dff', flexShrink: 0 }} />
+                    <div style={{ width: '1px', height: '18px', background: '#5b0a28', flexShrink: 0 }} />
                     <img src={`/empreendimentos/vertice/${icon}`} alt="" style={{ width: '16px', height: '16px', objectFit: 'contain', flexShrink: 0 }} />
-                    <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#31477b', flexShrink: 0 }} />
+                    <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#330218', flexShrink: 0 }} />
                     <span style={{ fontSize: '16px', color: '#a7a7a7', fontWeight: 600 }}>{label}</span>
                   </div>
                 ))}
@@ -538,14 +538,14 @@ function VideoEvolution() {
               position: 'absolute', zIndex: 2,
               right: '25%', top: '50%', transform: 'translate(50%, -50%)',
               width: '140px', height: '140px', borderRadius: '50%',
-              background: 'rgba(119,157,255,0.2)',
-              border: '2px solid rgba(119,157,255,0.7)',
+              background: 'rgba(91,10,40,0.2)',
+              border: '2px solid rgba(91,10,40,0.7)',
               backdropFilter: 'blur(6px)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               cursor: 'pointer', transition: 'all 0.2s ease',
             }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(119,157,255,0.45)'; e.currentTarget.style.transform = 'translate(50%, -50%) scale(1.08)' }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(119,157,255,0.2)'; e.currentTarget.style.transform = 'translate(50%, -50%) scale(1)' }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(91,10,40,0.45)'; e.currentTarget.style.transform = 'translate(50%, -50%) scale(1.08)' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(91,10,40,0.2)'; e.currentTarget.style.transform = 'translate(50%, -50%) scale(1)' }}
           >
             <svg width="52" height="52" viewBox="0 0 32 32" fill="none">
               <path d="M10 6L26 16L10 26V6Z" fill="white" />
@@ -559,12 +559,12 @@ function VideoEvolution() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <img src="/empreendimentos/vertice/icon-video-label.svg" alt="" style={{ width: '20px', height: '20px', objectFit: 'contain' }} />
                 <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#e3e3e3' }}>Vídeo Conceito</span>
-                {!isMobile && <><span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+                {!isMobile && <><span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#5b0a28', flexShrink: 0 }} />
                 <span style={{ fontSize: '13px', color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Evolution Tatuapé</span></>}
               </div>
               <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.15)' }} />
             </div>
-            <h2 style={{ fontSize: 'clamp(22px, 2vw, 32px)', color: '#779dff', fontWeight: 800, textTransform: 'uppercase', marginBottom: '16px', lineHeight: 1.2 }}>
+            <h2 style={{ fontSize: 'clamp(22px, 2vw, 32px)', color: '#ca4080', fontWeight: 800, textTransform: 'uppercase', marginBottom: '16px', lineHeight: 1.2 }}>
               Viver Bem é<br />Evoluir Sempre
             </h2>
             <p style={{ fontSize: '16px', color: '#a7a7a7', marginBottom: '64px' }}>
@@ -574,7 +574,7 @@ function VideoEvolution() {
               onClick={() => setOpen(true)}
               style={{ display: 'flex', alignItems: 'center', gap: '16px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
             >
-              <span style={{ fontSize: '16px', fontWeight: 800, color: '#779dff', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <span style={{ fontSize: '16px', fontWeight: 800, color: '#ca4080', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Assista ao vídeo
               </span>
               <img src="/empreendimentos/vertice/icon-play.svg" alt="" style={{ width: '24px', height: '24px', objectFit: 'contain' }} />
@@ -624,7 +624,7 @@ function TourEvolution() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
             <img src="/empreendimentos/vertice/icon-tour.svg" alt="" style={{ width: '24px', height: '24px', objectFit: 'contain' }} />
             <span style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#494c4f' }}>Tour Virtual</span>
-            {!isMobile && <><span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+            {!isMobile && <><span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#5b0a28', flexShrink: 0 }} />
             <span style={{ fontSize: '13px', color: '#a7a7a7', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Evolution Tatuapé</span></>}
           </div>
           <div style={{ width: '100%', height: '1px', background: '#e8e8e8' }} />
@@ -632,7 +632,7 @@ function TourEvolution() {
 
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '24px', marginBottom: '40px' }}>
           <div style={{ maxWidth: '790px' }}>
-            <h2 style={{ fontSize: 'clamp(22px, 2vw, 32px)', color: '#31477b', fontWeight: 800, textTransform: 'uppercase', marginBottom: '16px' }}>
+            <h2 style={{ fontSize: 'clamp(22px, 2vw, 32px)', color: '#330218', fontWeight: 800, textTransform: 'uppercase', marginBottom: '16px' }}>
               Explore o empreendimento em 360°
             </h2>
             <p style={{ fontSize: '16px', color: '#a7a7a7', lineHeight: 1.6 }}>
@@ -650,7 +650,7 @@ function TourEvolution() {
                   padding: '10px 20px',
                   borderRadius: '100px',
                   border: activeUnit === i ? 'none' : '1px solid #d8d8d8',
-                  background: activeUnit === i ? '#779dff' : '#fff',
+                  background: activeUnit === i ? '#5b0a28' : '#fff',
                   color: activeUnit === i ? '#fff' : '#494c4f',
                   fontSize: isMobile ? '13px' : '14px',
                   fontWeight: 600,
@@ -705,7 +705,7 @@ function PlantasEvolution() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
             <img src={plantasLabelIcon} alt="" style={{ width: '24px', height: '24px', objectFit: 'contain' }} />
             <span style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', color: '#494c4f', letterSpacing: '0.07em' }}>Plantas</span>
-            <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+            <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#5b0a28', flexShrink: 0 }} />
             <span style={{ fontSize: '13px', textTransform: 'uppercase', color: '#a7a7a7', letterSpacing: '0.07em' }}>Evolution Tatuapé</span>
           </div>
           <div style={{ width: '100%', height: '1px', background: '#e7e7e7' }} />
@@ -713,7 +713,7 @@ function PlantasEvolution() {
 
         {/* Título + descrição */}
         <div style={{ maxWidth: '864px', marginBottom: '40px', display: 'flex', flexDirection: 'column', gap: '22px' }}>
-          <h2 style={{ fontSize: 'clamp(22px, 2.4vw, 32px)', fontWeight: 800, textTransform: 'uppercase', color: '#31447b', lineHeight: 1.35, margin: 0 }}>
+          <h2 style={{ fontSize: 'clamp(22px, 2.4vw, 32px)', fontWeight: 800, textTransform: 'uppercase', color: '#330218', lineHeight: 1.35, margin: 0 }}>
             Praticidade, sofisticação e bem-estar em cada metro quadrado.
           </h2>
           <p style={{ fontSize: '16px', color: '#a7a7a7', lineHeight: 1.6, margin: 0 }}>
@@ -725,21 +725,21 @@ function PlantasEvolution() {
         <div style={{ position: 'relative', height: '46px', marginBottom: '24px' }}>
           <button
             onClick={() => scrollTabs(-1)}
-            style={{ position: 'absolute', left: 0, top: 0, zIndex: 2, width: '28px', height: '46px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '4px 0 0 4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            style={{ position: 'absolute', left: 0, top: 0, zIndex: 2, width: '28px', height: '46px', background: '#330218', border: 'none', cursor: 'pointer', borderRadius: '4px 0 0 4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
             <img src={plantasNavArrow} alt="" style={{ width: '6px', height: '11px', transform: 'rotate(180deg)' }} />
           </button>
 
           <div
             ref={tabRef}
-            style={{ overflowX: 'auto', overflowY: 'hidden', scrollbarWidth: 'none', msOverflowStyle: 'none', position: 'absolute', left: '28px', right: '28px', top: 0, height: '46px', background: 'rgba(119,157,255,0.2)', display: 'flex', alignItems: 'center', padding: '0 20px' }}
+            style={{ overflowX: 'auto', overflowY: 'hidden', scrollbarWidth: 'none', msOverflowStyle: 'none', position: 'absolute', left: '28px', right: '28px', top: 0, height: '46px', background: 'rgba(91,10,40,0.2)', display: 'flex', alignItems: 'center', padding: '0 20px' }}
           >
             {PLANTAS.map((p, i) => (
               <div key={p.id} style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
                 {i > 0 && <div style={{ width: '1px', height: '11px', background: '#c5c5c5', flexShrink: 0, margin: '0 20px' }} />}
                 <button
                   onClick={() => setActiveTab(i)}
-                  style={{ display: 'flex', alignItems: 'center', gap: '8px', height: '46px', padding: '0', border: 'none', background: 'none', cursor: 'pointer', flexShrink: 0, borderBottom: activeTab === i ? '2px solid #052e7e' : '2px solid transparent' }}
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', height: '46px', padding: '0', border: 'none', background: 'none', cursor: 'pointer', flexShrink: 0, borderBottom: activeTab === i ? '2px solid #330218' : '2px solid transparent' }}
                 >
                   <img src={plantasTabIcon} alt="" style={{ width: '18px', height: '18px', objectFit: 'contain' }} />
                   <span style={{ fontSize: '14px', color: '#494c4f', whiteSpace: 'nowrap', fontWeight: 600 }}>{p.area.toLowerCase()}</span>
@@ -750,7 +750,7 @@ function PlantasEvolution() {
 
           <button
             onClick={() => scrollTabs(1)}
-            style={{ position: 'absolute', right: 0, top: 0, zIndex: 2, width: '28px', height: '46px', background: '#052e7e', border: 'none', cursor: 'pointer', borderRadius: '0 4px 4px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            style={{ position: 'absolute', right: 0, top: 0, zIndex: 2, width: '28px', height: '46px', background: '#330218', border: 'none', cursor: 'pointer', borderRadius: '0 4px 4px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
             <img src={plantasNavArrow} alt="" style={{ width: '6px', height: '11px' }} />
           </button>
@@ -759,11 +759,11 @@ function PlantasEvolution() {
         {/* Card */}
         <div style={{ background: '#e7e7e7', borderRadius: '8px', padding: isMobile ? '14px' : isTablet ? '15px 24px 13px 14px' : '15px 80px 13px 14px', display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '20px' : '40px', alignItems: isMobile ? 'stretch' : 'center' }}>
           <div style={{ background: 'white', borderRadius: '4px', height: isMobile ? 'auto' : isTablet ? '560px' : '726px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', position: 'relative', flexShrink: 0 }}>
-            <div style={{ width: '3px', height: isMobile ? '220px' : isTablet ? '380px' : '512px', background: '#31447b', flexShrink: 0 }} />
+            <div style={{ width: '3px', height: isMobile ? '220px' : isTablet ? '380px' : '512px', background: '#330218', flexShrink: 0 }} />
             <div onClick={() => setLightbox(planta.floor)} style={{ width: isMobile ? 'calc(100% - 13px)' : isTablet ? '380px' : '546px', height: isMobile ? '280px' : isTablet ? '340px' : '454px', flexShrink: 0, padding: isMobile ? '12px' : '28px', cursor: 'zoom-in' }}>
               <img src={planta.floor} alt="Planta" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
-            <button style={{ position: 'absolute', top: '14px', right: '14px', width: '48px', height: '48px', background: '#779dff', borderRadius: '4px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <button style={{ position: 'absolute', top: '14px', right: '14px', width: '48px', height: '48px', background: '#5b0a28', borderRadius: '4px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 6V1H6M10 1H15V6M15 10V15H10M6 15H1V10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </button>
           </div>
@@ -771,23 +771,23 @@ function PlantasEvolution() {
           <div style={{ flex: '1 1 0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: isMobile ? 'auto' : isTablet ? '560px' : '726px', paddingTop: isMobile ? '8px' : '32px', paddingBottom: isMobile ? '16px' : '32px', gap: isMobile ? '32px' : '0' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '13px' }}>
-                <h3 style={{ fontSize: isMobile ? '32px' : '48px', fontWeight: 800, textTransform: 'uppercase', color: '#31447b', lineHeight: 1, margin: 0 }}>{planta.area}</h3>
+                <h3 style={{ fontSize: isMobile ? '32px' : '48px', fontWeight: 800, textTransform: 'uppercase', color: '#330218', lineHeight: 1, margin: 0 }}>{planta.area}</h3>
                 <p style={{ fontSize: '16px', color: '#a7a7a7', textTransform: 'uppercase', margin: 0 }}>{planta.tipo}</p>
               </div>
               <div>
-                <div style={{ width: '77px', height: '2px', background: '#779dff', marginBottom: '1px' }} />
+                <div style={{ width: '77px', height: '2px', background: '#5b0a28', marginBottom: '1px' }} />
                 <div style={{ width: '100%', height: '1px', background: '#d0d0d0' }} />
               </div>
               <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '16px 32px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
-                  <div style={{ width: '32px', height: '32px', border: '1px solid #779dff', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <div style={{ width: '32px', height: '32px', border: '1px solid #ca4080', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <img src={plantasSpecBed} alt="" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
                   </div>
                   <span style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600 }}>{planta.dorms}</span>
                 </div>
                 {planta.pe && (
                   <div style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
-                    <div style={{ width: '32px', height: '32px', border: '1px solid #779dff', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <div style={{ width: '32px', height: '32px', border: '1px solid #ca4080', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <img src={plantasSpecPe} alt="" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
                     </div>
                     <span style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600 }}>{planta.pe}</span>
@@ -865,11 +865,11 @@ function LocalizacaoEvolution() {
             <img src={icoPin} alt="" style={{ width: '18px', height: '22px', objectFit: 'contain' }} />
             <span style={{ fontSize: '13px', color: '#494c4f', fontWeight: 600, textTransform: 'uppercase' }}>Localização</span>
           </div>
-          {!isMobile && <><div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+          {!isMobile && <><div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#5b0a28', flexShrink: 0 }} />
           <span style={{ fontSize: '13px', color: '#a7a7a7', fontWeight: 600, textTransform: 'uppercase' }}>Evolution Tatuapé</span></>}
         </div>
         <div style={{ height: '1px', background: '#e7e7e7', marginBottom: '32px' }} />
-        <h2 style={{ fontSize: isMobile ? '20px' : '32px', color: '#31477b', fontWeight: 800, textTransform: 'uppercase', lineHeight: 1.35, maxWidth: '864px', margin: 0 }}>
+        <h2 style={{ fontSize: isMobile ? '20px' : '32px', color: '#330218', fontWeight: 800, textTransform: 'uppercase', lineHeight: 1.35, maxWidth: '864px', margin: 0 }}>
           Localização Estratégica, Próxima dos Principais Pontos do Bairro
         </h2>
       </div>
@@ -890,7 +890,7 @@ function LocalizacaoEvolution() {
               <a
                 href="https://maps.google.com/maps?q=R.+Prof.+Pedreira+de+Freitas,+848,+Tatuap%C3%A9,+S%C3%A3o+Paulo"
                 target="_blank" rel="noopener noreferrer"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', height: '38px', padding: '0 24px', background: '#0c1a36', borderRadius: '4px', textDecoration: 'none' }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', height: '38px', padding: '0 24px', background: '#330218', borderRadius: '4px', textDecoration: 'none' }}
               >
                 <img src={locMapsIcon} alt="" style={{ width: '14px', height: '14px' }} />
                 <span style={{ fontSize: '14px', color: 'white', fontWeight: 500, whiteSpace: 'nowrap' }}>Abrir com Maps</span>
@@ -898,7 +898,7 @@ function LocalizacaoEvolution() {
               <a
                 href="https://www.waze.com/ul?q=R.+Prof.+Pedreira+de+Freitas+848+Tatua%C3%A9+S%C3%A3o+Paulo"
                 target="_blank" rel="noopener noreferrer"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', height: '38px', padding: '0 24px', background: '#0c1a36', borderRadius: '4px', textDecoration: 'none' }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', height: '38px', padding: '0 24px', background: '#330218', borderRadius: '4px', textDecoration: 'none' }}
               >
                 <img src={locWazeIcon} alt="" style={{ width: '18px', height: '18px' }} />
                 <span style={{ fontSize: '14px', color: 'white', fontWeight: 500, whiteSpace: 'nowrap' }}>Abrir com Waze</span>
@@ -914,9 +914,9 @@ function LocalizacaoEvolution() {
 
             {/* Coluna esquerda */}
             <div style={{ width: isMobile ? '100%' : 'calc(50% - 16px)', flexShrink: 0 }}>
-              <div style={{ background: '#31477b', borderRadius: '8px 8px 0 0', padding: '23px 17px 14px 21px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              <div style={{ background: '#330218', borderRadius: '8px 8px 0 0', padding: '23px 17px 14px 21px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <span style={{ fontSize: '12px', color: '#779dff', fontWeight: 600 }}>Endereço:</span>
+                  <span style={{ fontSize: '12px', color: '#5b0a28', fontWeight: 600 }}>Endereço:</span>
                   <span style={{ fontSize: '14px', color: 'white', fontWeight: 600 }}>R. Prof. Pedreira de Freitas, 848/854 - Tatuapé</span>
                 </div>
                 <div style={{ height: '1px', background: 'rgba(255,255,255,0.15)' }} />
@@ -952,14 +952,14 @@ function LocalizacaoEvolution() {
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                   <img src={locDestaques} alt="" style={{ width: '24px', height: '24px', flexShrink: 0 }} />
-                  <span style={{ fontSize: '14px', color: '#31477b', fontWeight: 600, whiteSpace: 'nowrap' }}>Destaques da localização</span>
+                  <span style={{ fontSize: '14px', color: '#330218', fontWeight: 600, whiteSpace: 'nowrap' }}>Destaques da localização</span>
                   <div style={{ flex: 1, height: '1px', background: '#e7e7e7' }} />
                 </div>
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px 16px' }}>
                   {DESTAQ_TAGS.map(tag => (
-                    <div key={tag} style={{ border: '1px solid #779dff', borderRadius: '8px', padding: '10px 12px' }}>
-                      <span style={{ fontSize: '14px', color: '#31477b', fontWeight: 600, whiteSpace: 'nowrap' }}>{tag}</span>
+                    <div key={tag} style={{ border: '1px solid #5b0a28', borderRadius: '8px', padding: '10px 12px' }}>
+                      <span style={{ fontSize: '14px', color: '#330218', fontWeight: 600, whiteSpace: 'nowrap' }}>{tag}</span>
                     </div>
                   ))}
                 </div>
@@ -975,23 +975,23 @@ function LocalizacaoEvolution() {
                     <img src={icoPin} alt="" style={{ width: '18px', height: '22px' }} />
                     <span style={{ fontSize: '13px', color: '#494c4f', fontWeight: 600, textTransform: 'uppercase' }}>Infraestrutura e Mobilidade</span>
                   </div>
-                  <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#779dff', flexShrink: 0 }} />
+                  <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#5b0a28', flexShrink: 0 }} />
                   <span style={{ fontSize: '13px', color: '#a7a7a7', fontWeight: 600, textTransform: 'uppercase' }}>Evolution Tatuapé</span>
                 </div>
                 <div style={{ height: '1px', background: '#e7e7e7' }} />
               </div>
 
-              <p style={{ fontSize: '20px', color: '#31477b', fontWeight: 600, textTransform: 'uppercase', lineHeight: 1.3, maxWidth: '448px', margin: 0 }}>
+              <p style={{ fontSize: '20px', color: '#330218', fontWeight: 600, textTransform: 'uppercase', lineHeight: 1.3, maxWidth: '448px', margin: 0 }}>
                 Uma região em constante valorização e evolução urbana
               </p>
 
               <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '12px' : '24px 32px' }}>
                 {INFRA_CARDS.map(label => (
-                  <div key={label} style={{ background: '#0c1a36', borderRadius: '8px', height: '50px', padding: '0 14px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+                  <div key={label} style={{ background: '#330218', borderRadius: '8px', height: '50px', padding: '0 14px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <div style={{ width: '1px', height: '18px', background: '#4f6db5', flexShrink: 0 }} />
+                      <div style={{ width: '1px', height: '18px', background: '#45081f', flexShrink: 0 }} />
                       <img src={locCardIcon} alt="" style={{ width: '24px', height: '24px', flexShrink: 0 }} />
-                      <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#4f6db5', flexShrink: 0 }} />
+                      <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: '#45081f', flexShrink: 0 }} />
                       <span style={{ fontSize: '16px', color: '#e3e3e3', fontWeight: 700, whiteSpace: 'nowrap' }}>{label}</span>
                     </div>
                   </div>
@@ -1007,8 +1007,8 @@ function LocalizacaoEvolution() {
                 <div style={{ aspectRatio: '416/277', borderRadius: '8px', overflow: 'hidden' }}>
                   <img src={f.src} alt={f.label} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', borderLeft: '1px solid #779dff', padding: '0 18px', height: '18px' }}>
-                  <span style={{ fontSize: '12px', color: '#31477b', fontWeight: 600, whiteSpace: 'nowrap' }}>{f.label}</span>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', borderLeft: '1px solid #5b0a28', padding: '0 18px', height: '18px' }}>
+                  <span style={{ fontSize: '12px', color: '#330218', fontWeight: 600, whiteSpace: 'nowrap' }}>{f.label}</span>
                 </div>
               </div>
             ))}
