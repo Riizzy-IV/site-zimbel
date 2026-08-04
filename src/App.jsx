@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 const Home      = lazy(() => import('./pages/Home'))
 const Vertice   = lazy(() => import('./pages/empreendimentos/Vertice'))
 const Evolution = lazy(() => import('./pages/empreendimentos/Evolution'))
+const PoliticaDePrivacidade = lazy(() => import('./pages/PoliticaDePrivacidade'))
 
 function PageLoader() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/empreendimentos/vertice" element={<Vertice />} />
           <Route path="/empreendimentos/evolution" element={<Evolution />} />
+          <Route path="/politica-de-privacidade" element={<PoliticaDePrivacidade />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

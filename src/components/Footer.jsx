@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const gridPl = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
 const gridPr = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
 
@@ -64,7 +66,7 @@ export default function Footer() {
             >
               <div className="hidden md:block">{card.icon}</div>
               <div className="flex flex-col gap-1">
-                <p className="text-[#5b0a28] text-[11px] md:text-[15px] font-semibold">{card.label}</p>
+                <p className="text-[#ca4080] text-[11px] md:text-[15px] font-semibold">{card.label}</p>
                 <p className="text-white text-[22px] md:text-[40px] font-extrabold leading-none">{card.title}</p>
               </div>
             </div>
@@ -91,7 +93,7 @@ export default function Footer() {
                 </div>
               </div>
               <p className="text-[#e3e3e3] text-[15px] leading-relaxed lg:max-w-[580px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non lectus laoreet, vulputate ligula nec, pretium dolor. Praesent a faucibus urna.
+                A Zimbel nasceu com um único propósito: oferecer qualidade de moradia para seus clientes e segurança e rentabilidade para os investidores. Trazer inovação e qualidade é o que buscamos incansavelmente em todos os nossos projetos.
               </p>
               <div className="flex items-center gap-4">
                 <span className="text-[#e3e3e3] text-sm font-bold">Siga a gente</span>
@@ -155,7 +157,7 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-3 text-white" style={{ opacity: 0.45 }}>
               <span className="text-xs font-bold">2026 Zimbel Incorporadora © - Todos os direitos reservados</span>
               <span className="hidden md:inline" style={{ opacity: 0.4 }}>|</span>
-              <span className="text-xs font-bold">Política de Privacidade e Cookies</span>
+              <Link to="/politica-de-privacidade" className="text-xs font-bold hover:opacity-70 transition-opacity">Política de Privacidade e Cookies</Link>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-white text-sm font-normal opacity-70">Feito com ♥ por</span>
