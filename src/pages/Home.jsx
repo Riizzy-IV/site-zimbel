@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Empreendimentos from '../components/Empreendimentos'
@@ -8,6 +10,14 @@ import Depoimentos from '../components/Depoimentos'
 import Footer from '../components/Footer'
 
 export default function Home() {
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (!hash) return
+    const el = document.querySelector(hash)
+    if (el) requestAnimationFrame(() => el.scrollIntoView({ behavior: 'smooth' }))
+  }, [hash])
+
   return (
     <>
       <Header />

@@ -7,6 +7,7 @@ const Evolution = lazy(() => import('./pages/empreendimentos/Evolution'))
 const PoliticaDePrivacidade = lazy(() => import('./pages/PoliticaDePrivacidade'))
 const SejaUmCorretor = lazy(() => import('./pages/SejaUmCorretor'))
 const SejaUmInvestidor = lazy(() => import('./pages/SejaUmInvestidor'))
+const TodosOsEmpreendimentos = lazy(() => import('./pages/TodosOsEmpreendimentos'))
 
 function PageLoader() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/politica-de-privacidade" element={<PoliticaDePrivacidade />} />
           <Route path="/seja-um-corretor" element={<SejaUmCorretor />} />
           <Route path="/seja-um-investidor" element={<SejaUmInvestidor />} />
+          <Route path="/empreendimentos" element={<TodosOsEmpreendimentos />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

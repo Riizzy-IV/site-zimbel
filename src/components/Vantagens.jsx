@@ -50,7 +50,9 @@ export default function Vantagens() {
             </p>
 
             <a
-              href="#contato"
+              href="https://wa.me/5511910837322?text=Ol%C3%A1%2C%20quero%20oferecer%20um%20terreno%20%C3%A0%20Zimbel."
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-3 text-white text-[15px] font-semibold w-fit hover:opacity-90 transition-opacity"
               style={{ background: '#5b0a28', padding: '16px 32px', borderRadius: '10px' }}
             >

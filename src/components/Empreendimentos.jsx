@@ -28,11 +28,16 @@ const tabs = [
   },
 ];
 
-const smallCards = [
-  { img: imgEvolution, city: 'Tatuapé - São Paulo', name: 'Evolution Tatuapé', href: '/empreendimentos/evolution',
-    specs: [{ icon: iconBed, label: '2 dormitórios' }, { icon: iconArea, label: '34 a 50m²' }, { icon: iconCar, label: '1 vaga' }, { icon: iconBalcony, label: 'Área Gourmet' }] },
-  { img: imgEsperanca, city: 'Vila Esperança - São Paulo', name: 'Esperança Prime', href: null,
-    specs: [{ icon: iconBed, label: 'Suítes e 1 dorm.' }, { icon: iconArea, label: '32 a 200m²' }, { icon: iconCar, label: '1 vaga' }, { icon: iconBalcony, label: 'Varanda Gourmet' }] },
+const empreendimentos = [
+  { key: 'vertice', img: imgVertice, city: 'Anália Franco - São Paulo', name: 'Vértice Anália Franco', href: '/empreendimentos/vertice',
+    specs: [{ icon: iconBed, label: 'Studio e 1 dorm.' }, { icon: iconArea, label: '24 a 54m²' }, { icon: iconCar, label: '1 vaga' }, { icon: iconBalcony, label: 'Rooftop com vista livre' }],
+    status: ['Lançamentos', 'Em obras'] },
+  { key: 'evolution', img: imgEvolution, city: 'Tatuapé - São Paulo', name: 'Evolution Tatuapé', href: '/empreendimentos/evolution',
+    specs: [{ icon: iconBed, label: '2 dormitórios' }, { icon: iconArea, label: '34 a 50m²' }, { icon: iconCar, label: '1 vaga' }, { icon: iconBalcony, label: 'Área Gourmet' }],
+    status: ['Lançamentos', 'Em obras'] },
+  { key: 'esperanca', img: imgEsperanca, city: 'Vila Esperança - São Paulo', name: 'Esperança Prime', href: null,
+    specs: [{ icon: iconBed, label: 'Suítes e 1 dorm.' }, { icon: iconArea, label: '32 a 200m²' }, { icon: iconCar, label: '1 vaga' }, { icon: iconBalcony, label: 'Varanda Gourmet' }],
+    status: ['Lançamentos', 'Em obras', 'Pronto para morar'] },
 ];
 
 function SpecIcon({ src, children }) {
@@ -67,8 +72,11 @@ export default function Empreendimentos() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(0);
 
+  const filtrados = empreendimentos.filter(e => e.status.includes(tabs[activeTab].label));
+  const [big, ...smallCards] = filtrados;
+
   return (
-    <section className="bg-white" style={{ paddingTop: '72px', paddingBottom: '32px' }}>
+    <section id="empreendimentos" className="bg-white" style={{ paddingTop: '72px', paddingBottom: '32px' }}>
       <div style={{ paddingLeft: gridPl, paddingRight: gridPr }}>
 
         {/* ── Breadcrumb + título ── */}
@@ -165,19 +173,20 @@ export default function Empreendimentos() {
         </div>
 
         {/* ── Card grande ── */}
+        {big && (
         <div
           className="relative w-full rounded-lg overflow-hidden"
           style={{
             height: 'clamp(280px, 75vw, 560px)',
             marginBottom: '24px',
             boxShadow: '0 20px 60px rgba(51,2,24,0.4)',
-            cursor: 'pointer',
+            cursor: big.href ? 'pointer' : 'default',
           }}
-          onClick={() => navigate('/empreendimentos/vertice')}
+          onClick={() => big.href && navigate(big.href)}
         >
           <img
-            src={imgVertice}
-            alt="Vértice Anália Franco"
+            src={big.img}
+            alt={big.name}
             className="absolute inset-0 w-full h-full object-cover"
             style={{ objectPosition: 'center center' }}
             loading="lazy"
@@ -204,23 +213,24 @@ export default function Empreendimentos() {
               <div>
                 <div className="flex items-center gap-2" style={{ marginBottom: '6px' }}>
                   <img src={iconLocation} alt="" className="w-[15px] h-[15px] object-contain brightness-0 invert" />
-                  <span className="text-white/80 text-[10px] md:text-[14px] uppercase tracking-wide md:whitespace-nowrap">Anália Franco - São Paulo</span>
+                  <span className="text-white/80 text-[10px] md:text-[14px] uppercase tracking-wide md:whitespace-nowrap">{big.city}</span>
                 </div>
-                <h3 className="text-white text-[13px] md:text-[30px] leading-none font-extrabold uppercase md:whitespace-nowrap">Vértice Anália Franco</h3>
+                <h3 className="text-white text-[13px] md:text-[30px] leading-none font-extrabold uppercase md:whitespace-nowrap">{big.name}</h3>
               </div>
               <div className="hidden md:flex items-center gap-8">
-                <SpecIcon src={iconBed}>Studio e 1 dorm.</SpecIcon>
-                <SpecIcon src={iconArea}>24 a 54m²</SpecIcon>
-                <SpecIcon src={iconCar}>1 vaga</SpecIcon>
-                <SpecIcon src={iconBalcony}>Rooftop com vista livre</SpecIcon>
+                {big.specs.map((s) => (
+                  <SpecIcon key={s.label} src={s.icon}>{s.label}</SpecIcon>
+                ))}
               </div>
             </div>
           </div>
 
           <SaibaMais className="absolute bottom-0 right-0 w-32 md:w-48 h-[50px] md:h-[70px] rounded-tl-lg" />
         </div>
+        )}
 
-        {/* ── Dois cards menores ── */}
+        {/* ── Cards menores ── */}
+        {smallCards.length > 0 && (
         <div className="flex flex-col md:flex-row gap-6" style={{ marginBottom: '72px' }}>
           {smallCards.map((card) => {
             const cardInner = (
@@ -270,6 +280,7 @@ export default function Empreendimentos() {
             return <div key={card.name} style={{ flex: 1 }}>{cardInner}</div>
           })}
         </div>
+        )}
 
         {/* ── CTA Banner ── */}
         <div
@@ -295,6 +306,7 @@ export default function Empreendimentos() {
             </p>
           </div>
           <button
+            onClick={() => navigate('/empreendimentos')}
             className="relative flex items-center justify-center gap-3 text-white text-[15px] font-semibold cursor-pointer transition-colors hover:opacity-90 w-full md:w-auto shrink-0"
             style={{ background: '#5b0a28', padding: '18px 36px', borderRadius: '10px' }}
           >

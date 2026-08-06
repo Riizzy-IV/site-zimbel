@@ -19,7 +19,7 @@ function ArrowUp() {
 export default function Sobre() {
 
   return (
-    <section className="bg-white" style={{ paddingTop: '72px', paddingBottom: '80px' }}>
+    <section id="sobre" className="bg-white" style={{ paddingTop: '72px', paddingBottom: '80px' }}>
       <div style={{ paddingLeft: gridPl, paddingRight: gridPr }}>
 
         {/* ── Breadcrumb + título ── */}
@@ -61,11 +61,11 @@ export default function Sobre() {
               </p>
             </div>
             <a
-              href="#"
+              href="https://wa.me/5511910837322?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Zimbel." target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 text-white text-sm font-semibold w-fit cursor-pointer hover:opacity-90 transition-opacity"
               style={{ background: '#5b0a28', padding: '12px 24px', borderRadius: '6px' }}
             >
-              Saiba mais sobre a Zimbel
+              Entre em contato
               <ArrowUp />
             </a>
           </div>
@@ -98,11 +98,11 @@ export default function Sobre() {
                 </p>
               </div>
               <a
-                href="#"
+                href="https://wa.me/5511910837322?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Zimbel." target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 text-white text-sm font-semibold w-fit cursor-pointer hover:opacity-90 transition-opacity"
                 style={{ background: '#5b0a28', padding: '12px 24px', borderRadius: '6px' }}
               >
-                Saiba mais sobre a Zimbel
+                Entre em contato
                 <ArrowUp />
               </a>
             </div>
