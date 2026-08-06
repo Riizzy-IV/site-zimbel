@@ -16,38 +16,42 @@ function IconPartners() {
   return <img src="/icon/parceiros.svg" alt="" style={{ width: '72px', height: '72px', objectFit: 'contain' }} />;
 }
 
-export default function Footer() {
+export default function Footer({ showContactHeader = true } = {}) {
   return (
     <footer className="w-full">
 
       {/* ── Contato header — fundo BRANCO ── */}
-      <section id="contato" className="bg-white" style={{ paddingTop: '56px', paddingBottom: '40px' }}>
-        <div style={{ paddingLeft: gridPl, paddingRight: gridPr }}>
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-7">
-              <div className="flex items-center gap-2.5">
-                <img src="/icon/contato.svg" alt="" style={{ width: '18px', height: '18px', objectFit: 'contain' }} />
-                <span className="text-[#494c4f] text-[13px] font-semibold uppercase tracking-wide">Contato</span>
+      {showContactHeader && (
+        <section id="contato" className="bg-white" style={{ paddingTop: '56px', paddingBottom: '40px' }}>
+          <div style={{ paddingLeft: gridPl, paddingRight: gridPr }}>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-7">
+                <div className="flex items-center gap-2.5">
+                  <img src="/icon/contato.svg" alt="" style={{ width: '18px', height: '18px', objectFit: 'contain' }} />
+                  <span className="text-[#494c4f] text-[13px] font-semibold uppercase tracking-wide">Contato</span>
+                </div>
+                <span className="w-1.5 h-1.5 bg-[#5b0a28] shrink-0" />
+                <span className="text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
               </div>
-              <span className="w-1.5 h-1.5 bg-[#5b0a28] shrink-0" />
-              <span className="text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
-            </div>
-            <div className="w-full h-px bg-[#e3e3e3]" />
-            <div className="flex flex-col gap-1" style={{ marginTop: '20px' }}>
-              <h2 className="text-[#3d3d3d] text-[26px] md:text-[38px] font-extrabold uppercase leading-tight">
-                Entre em contato com a Zimbel
-              </h2>
-              <p className="text-[#a7a7a7] text-base font-medium">
-                E tire suas dúvidas
-              </p>
+              <div className="w-full h-px bg-[#e3e3e3]" />
+              <div className="flex flex-col gap-1" style={{ marginTop: '20px' }}>
+                <h2 className="text-[#3d3d3d] text-[26px] md:text-[38px] font-extrabold uppercase leading-tight">
+                  Entre em contato com a Zimbel
+                </h2>
+                <p className="text-[#a7a7a7] text-base font-medium">
+                  E tire suas dúvidas
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── Zona de transição: cards metade branco / metade navy ── */}
       <div style={{
-        background: 'linear-gradient(to bottom, #ffffff 50%, #330218 50%)',
+        background: showContactHeader
+          ? 'linear-gradient(to bottom, #ffffff 50%, #330218 50%)'
+          : 'linear-gradient(to bottom, #f6f6f6 50%, #330218 50%)',
         paddingLeft: gridPl,
         paddingRight: gridPr,
         paddingTop: '24px',

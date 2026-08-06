@@ -5,6 +5,7 @@ const Home      = lazy(() => import('./pages/Home'))
 const Vertice   = lazy(() => import('./pages/empreendimentos/Vertice'))
 const Evolution = lazy(() => import('./pages/empreendimentos/Evolution'))
 const PoliticaDePrivacidade = lazy(() => import('./pages/PoliticaDePrivacidade'))
+const SejaUmCorretor = lazy(() => import('./pages/SejaUmCorretor'))
 
 function PageLoader() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/empreendimentos/vertice" element={<Vertice />} />
           <Route path="/empreendimentos/evolution" element={<Evolution />} />
           <Route path="/politica-de-privacidade" element={<PoliticaDePrivacidade />} />
+          <Route path="/seja-um-corretor" element={<SejaUmCorretor />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

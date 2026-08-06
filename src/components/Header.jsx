@@ -150,7 +150,7 @@ export default function Header() {
                 <span className="w-1 h-1 rounded-full bg-[#5b0a28] shrink-0" />
                 <a href="#" className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap">Investidores</a>
                 <span className="w-1 h-1 rounded-full bg-[#5b0a28] shrink-0" />
-                <a href="#" className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap">Seja um Corretor</a>
+                <button onClick={() => navigate('/seja-um-corretor')} className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>Seja um Corretor</button>
               </nav>
 
               {/* Botão Contato */}
@@ -257,7 +257,7 @@ export default function Header() {
           {/* Seja um Corretor */}
           <a
             href="#"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => { navigate('/seja-um-corretor'); setMenuOpen(false); }}
             className="flex items-center justify-between border-b border-white/10 hover:text-[#5b0a28] transition-colors"
             style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600 }}
           >
