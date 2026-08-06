@@ -70,7 +70,7 @@ export default function Footer({ showContactHeader = true } = {}) {
             >
               <div className="hidden md:block">{card.icon}</div>
               <div className="flex flex-col gap-1">
-                <p className="text-[#ca4080] text-[11px] md:text-[15px] font-semibold">{card.label}</p>
+                <p className="text-[#c5a26a] text-[11px] md:text-[15px] font-semibold">{card.label}</p>
                 <p className="text-white text-[22px] md:text-[40px] font-extrabold leading-none">{card.title}</p>
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function Footer({ showContactHeader = true } = {}) {
               <div className="flex flex-col md:flex-row gap-8 md:gap-16">
                 <div className="flex flex-col gap-5">
                   <div className="flex flex-col gap-3">
-                    <p className="text-[#ca4080] text-sm font-bold uppercase tracking-wide">Empreendimentos</p>
+                    <p className="text-[#c5a26a] text-sm font-bold uppercase tracking-wide">Empreendimentos</p>
                     <div className="w-8 h-0.5 bg-white opacity-25" />
                   </div>
                   <div className="flex flex-col gap-2 text-[#abb6ba] text-sm">
@@ -142,7 +142,7 @@ export default function Footer({ showContactHeader = true } = {}) {
                 </div>
                 <div className="flex flex-col gap-5">
                   <div className="flex flex-col gap-3">
-                    <p className="text-[#ca4080] text-sm font-bold uppercase tracking-wide">Páginas</p>
+                    <p className="text-[#c5a26a] text-sm font-bold uppercase tracking-wide">Páginas</p>
                     <div className="w-8 h-0.5 bg-white opacity-25" />
                   </div>
                   <div className="flex flex-col gap-2 text-[#abb6ba] text-sm">

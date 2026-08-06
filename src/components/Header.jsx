@@ -148,7 +148,7 @@ export default function Header() {
                 </div>
 
                 <span className="w-1 h-1 rounded-full bg-[#5b0a28] shrink-0" />
-                <a href="#" className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap">Investidores</a>
+                <button onClick={() => navigate('/seja-um-investidor')} className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>Investidores</button>
                 <span className="w-1 h-1 rounded-full bg-[#5b0a28] shrink-0" />
                 <button onClick={() => navigate('/seja-um-corretor')} className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>Seja um Corretor</button>
               </nav>
@@ -244,7 +244,7 @@ export default function Header() {
           {/* Investidores */}
           <a
             href="#"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => { navigate('/seja-um-investidor'); setMenuOpen(false); }}
             className="flex items-center justify-between border-b border-white/10 hover:text-[#5b0a28] transition-colors"
             style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600 }}
           >

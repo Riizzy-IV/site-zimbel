@@ -96,14 +96,14 @@ export default function Depoimentos() {
           <div className="flex items-center gap-7">
             <div className="flex items-center gap-2.5">
               <svg width="18" height="17" viewBox="0 0 18 17" fill="none">
-                <rect x="1" y="5" width="16" height="11" rx="1" stroke="#5b0a28" strokeWidth="1.4"/>
-                <path d="M5 5V3.5C5 2.12 6.79 1 9 1C11.21 1 13 2.12 13 3.5V5" stroke="#5b0a28" strokeWidth="1.4" strokeLinecap="round"/>
-                <rect x="6.5" y="8" width="5" height="4" rx="0.5" stroke="#5b0a28" strokeWidth="1.2"/>
+                <rect x="1" y="5" width="16" height="11" rx="1" stroke="#c5a26a" strokeWidth="1.4"/>
+                <path d="M5 5V3.5C5 2.12 6.79 1 9 1C11.21 1 13 2.12 13 3.5V5" stroke="#c5a26a" strokeWidth="1.4" strokeLinecap="round"/>
+                <rect x="6.5" y="8" width="5" height="4" rx="0.5" stroke="#c5a26a" strokeWidth="1.2"/>
               </svg>
-              <span className="text-[#5b0a28] text-[13px] font-semibold uppercase tracking-wide">Sobre</span>
+              <span className="text-[#c5a26a] text-[13px] font-semibold uppercase tracking-wide">Sobre</span>
             </div>
-            <span className="w-1.5 h-1.5 bg-[#5b0a28] shrink-0" />
-            <span className="text-[#45081f] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
+            <span className="w-1.5 h-1.5 bg-[#c5a26a] shrink-0" />
+            <span className="text-[#c5a26a] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>
           </div>
           <div className="w-full h-px" style={{ background: 'rgba(255,255,255,0.1)' }} />
 
@@ -112,7 +112,7 @@ export default function Depoimentos() {
               <h2 className="text-white text-[26px] lg:text-[38px] font-extrabold uppercase leading-tight">
                 Conheça um pouco sobre a Zimbel
               </h2>
-              <p style={{ color: '#45081f' }} className="text-base font-medium">
+              <p style={{ color: '#c5a26a' }} className="text-base font-medium">
                 Transformamos sonhos em projetos reais
               </p>
             </div>
