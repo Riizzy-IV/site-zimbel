@@ -232,11 +232,12 @@ function ConceitoVertice() {
             <div style={{ width: '5px', background: '#330218', flexShrink: 0 }} />
             <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '12px', padding: '16px', flex: 1 }}>
               {[
-                { icon: '/empreendimentos/vertice/cta-book.svg', line1: 'Baixe o', line2: 'Book digital', href: '#' },
+                { icon: '/empreendimentos/vertice/cta-book.svg', line1: 'Baixe o', line2: 'Book digital', href: '/book/vertice-analia-franco.pdf' },
               ].map(({ icon, line1, line2, href }) => (
                 <a
                   key={line2}
                   href={href}
+                  download="Vertice-Analia-Franco-Book.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:brightness-110 transition-all"
