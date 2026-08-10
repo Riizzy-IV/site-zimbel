@@ -17,17 +17,19 @@ const plantasNavArrow  = '/empreendimentos/vertice/plantas-nav-arrow.svg'
 const plantasDownload  = '/empreendimentos/vertice/plantas-download-icon.svg'
 const plantasSpecBed   = '/empreendimentos/vertice/plantas-spec-bed.svg'
 const plantasSpecPe    = '/empreendimentos/vertice/plantas-spec-pe-direito.svg'
+const plantasSpecCar   = '/empreendimentos/vertice/plantas-spec-car.svg'
+const plantasSpecTerraco = '/empreendimentos/vertice/plantas-spec-terraco.svg'
 const PLANTAS = [
-  { id: 0, area: '44,30m²', tipo: 'Planta tipo • Unidade 11 + Terraço descoberto', dorms: '2 dorms.', pe: 'Varanda Gourmet • 1 vaga', floor: '/empreendimentos/evolution/plantas/planta-0.webp' },
-  { id: 1, area: '34,97m²', tipo: 'Planta tipo • Unidades 12–17 + Terraço descoberto', dorms: '2 dorms.', pe: '', floor: '/empreendimentos/evolution/plantas/planta-1.webp' },
-  { id: 2, area: '40,40m²', tipo: 'Planta tipo • Unidade 18 + Terraço descoberto', dorms: '2 dorms.', pe: '', floor: '/empreendimentos/evolution/plantas/planta-2.webp' },
-  { id: 3, area: '44,30m²', tipo: 'Planta tipo • Unidades 21 e 31', dorms: '2 dorms.', pe: 'Varanda Gourmet • 1 vaga', floor: '/empreendimentos/evolution/plantas/planta-3.webp' },
-  { id: 4, area: '34,97m²', tipo: 'Planta tipo • Unidades 22–27 e 32–37', dorms: '2 dorms.', pe: '', floor: '/empreendimentos/evolution/plantas/planta-4.webp' },
-  { id: 5, area: '40,40m²', tipo: 'Planta tipo • Unidades 28 e 38', dorms: '2 dorms.', pe: '', floor: '/empreendimentos/evolution/plantas/planta-5.webp' },
-  { id: 6, area: '49,90m²', tipo: 'Planta tipo • Unidade 41 + Área externa', dorms: '2 dorms. c/ 1 suíte', pe: 'Varanda Gourmet • 1 vaga', floor: '/empreendimentos/evolution/plantas/planta-6.webp' },
-  { id: 7, area: '49,90m²', tipo: 'Planta tipo • Unidades 51, 61, 71, 81 e 91', dorms: '2 dorms. c/ 1 suíte', pe: 'Varanda Gourmet • 1 vaga', floor: '/empreendimentos/evolution/plantas/planta-7.webp' },
-  { id: 8, area: '38,96m²', tipo: 'Planta tipo • Unidades 52, 62, 72, 82 e 92', dorms: '2 dorms.', pe: '', floor: '/empreendimentos/evolution/plantas/planta-8.webp' },
-  { id: 9, area: '44,74m²', tipo: 'Planta tipo • Unidades 53, 63, 73, 83 e 93', dorms: '2 dorms.', pe: 'Varanda Gourmet • 1 vaga', floor: '/empreendimentos/evolution/plantas/planta-9.webp' },
+  { id: 0, area: '44,30m²', tipo: 'Planta tipo • Unidade 11 + Terraço descoberto', dorms: '2 dorms.', pe: 'Varanda Gourmet', vaga: '1 vaga', terraco: 'Terraço descoberto', floor: '/empreendimentos/evolution/plantas/planta-0.webp' },
+  { id: 1, area: '34,97m²', tipo: 'Planta tipo • Unidades 12–17 + Terraço descoberto', dorms: '2 dorms.', pe: '', vaga: '', terraco: 'Terraço descoberto', floor: '/empreendimentos/evolution/plantas/planta-1.webp' },
+  { id: 2, area: '40,40m²', tipo: 'Planta tipo • Unidade 18 + Terraço descoberto', dorms: '2 dorms.', pe: '', vaga: '', terraco: 'Terraço descoberto', floor: '/empreendimentos/evolution/plantas/planta-2.webp' },
+  { id: 3, area: '44,30m²', tipo: 'Planta tipo • Unidades 21 e 31', dorms: '2 dorms.', pe: 'Varanda Gourmet', vaga: '1 vaga', terraco: '', floor: '/empreendimentos/evolution/plantas/planta-3.webp' },
+  { id: 4, area: '34,97m²', tipo: 'Planta tipo • Unidades 22–27 e 32–37', dorms: '2 dorms.', pe: '', vaga: '', terraco: '', floor: '/empreendimentos/evolution/plantas/planta-4.webp' },
+  { id: 5, area: '40,40m²', tipo: 'Planta tipo • Unidades 28 e 38', dorms: '2 dorms.', pe: '', vaga: '', terraco: '', floor: '/empreendimentos/evolution/plantas/planta-5.webp' },
+  { id: 6, area: '49,90m²', tipo: 'Planta tipo • Unidade 41 + Área externa', dorms: '2 dorms. c/ 1 suíte', pe: 'Varanda Gourmet', vaga: '1 vaga', terraco: 'Área externa', floor: '/empreendimentos/evolution/plantas/planta-6.webp' },
+  { id: 7, area: '49,90m²', tipo: 'Planta tipo • Unidades 51, 61, 71, 81 e 91', dorms: '2 dorms. c/ 1 suíte', pe: 'Varanda Gourmet', vaga: '1 vaga', terraco: '', floor: '/empreendimentos/evolution/plantas/planta-7.webp' },
+  { id: 8, area: '38,96m²', tipo: 'Planta tipo • Unidades 52, 62, 72, 82 e 92', dorms: '2 dorms.', pe: '', vaga: '', terraco: '', floor: '/empreendimentos/evolution/plantas/planta-8.webp' },
+  { id: 9, area: '44,74m²', tipo: 'Planta tipo • Unidades 53, 63, 73, 83 e 93', dorms: '2 dorms.', pe: 'Varanda Gourmet', vaga: '1 vaga', terraco: '', floor: '/empreendimentos/evolution/plantas/planta-9.webp' },
 ]
 
 const gridPad = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))'
@@ -57,7 +59,7 @@ function HeroEvolution() {
       {/* Background */}
       <div className="absolute inset-0">
         <img src={heroBg} alt="" className="w-full h-full object-cover object-center" fetchpriority="high" decoding="sync" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(51,2,24,0.55) 0%, rgba(51,2,24,0.35) 50%, rgba(51,2,24,0.05) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 45%, transparent 75%)' }} />
       </div>
 
       {/* Breadcrumb (desktop only) */}
@@ -201,7 +203,6 @@ function ConceitoEvolution() {
             <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '12px', padding: '16px', flex: 1 }}>
               {[
                 { icon: '/empreendimentos/vertice/cta-book.svg',  line1: 'Baixe o',  line2: 'Book digital', href: '#' },
-                { icon: '/empreendimentos/vertice/cta-house.svg', line1: 'Visite o', line2: 'Hotsite',      href: '#' },
               ].map(({ icon, line1, line2, href }) => (
                 <a
                   key={line2}
@@ -209,7 +210,7 @@ function ConceitoEvolution() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:brightness-110 transition-all"
-                  style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#ca4080', borderRadius: '8px', padding: '12px 24px', textDecoration: 'none', flex: isMobile ? undefined : '1 1 0' }}
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#ca4080', borderRadius: '8px', padding: '14px 48px', textDecoration: 'none', flex: 'none' }}
                 >
                   <img src={icon} alt="" style={{ width: '24px', height: '24px', objectFit: 'contain' }} />
                   <img src="/empreendimentos/vertice/cta-arrow.svg" alt="" style={{ width: '8px', height: '14px' }} />
@@ -523,12 +524,13 @@ function VideoEvolution() {
 
   return (
     <>
-      <section style={{ position: 'relative', height: isMobile ? '360px' : isTablet ? '440px' : '520px', overflow: 'hidden', background: '#000' }}>
+      <section style={{ position: 'relative', height: isMobile ? '400px' : isTablet ? '500px' : '620px', overflow: 'hidden', background: '#000' }}>
         <img
           src={fachada}
           alt="Capa do vídeo"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
         />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 45%, transparent 75%)' }} />
 
         {/* Botão play central-direito */}
         {!isMobile && (
@@ -538,14 +540,15 @@ function VideoEvolution() {
               position: 'absolute', zIndex: 2,
               right: '25%', top: '50%', transform: 'translate(50%, -50%)',
               width: '140px', height: '140px', borderRadius: '50%',
-              background: 'rgba(91,10,40,0.2)',
-              border: '2px solid rgba(91,10,40,0.7)',
-              backdropFilter: 'blur(6px)',
+              background: 'rgba(0,0,0,0.25)',
+              border: '1px solid rgba(197,162,106,0.6)',
+              boxShadow: '0 0 30px rgba(197,162,106,0.15)',
+              backdropFilter: 'blur(8px)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               cursor: 'pointer', transition: 'all 0.2s ease',
             }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(91,10,40,0.45)'; e.currentTarget.style.transform = 'translate(50%, -50%) scale(1.08)' }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(91,10,40,0.2)'; e.currentTarget.style.transform = 'translate(50%, -50%) scale(1)' }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(0,0,0,0.4)'; e.currentTarget.style.transform = 'translate(50%, -50%) scale(1.08)' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(0,0,0,0.25)'; e.currentTarget.style.transform = 'translate(50%, -50%) scale(1)' }}
           >
             <svg width="52" height="52" viewBox="0 0 32 32" fill="none">
               <path d="M10 6L26 16L10 26V6Z" fill="white" />
@@ -564,7 +567,7 @@ function VideoEvolution() {
               </div>
               <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.15)' }} />
             </div>
-            <h2 style={{ fontSize: 'clamp(22px, 2vw, 32px)', color: '#ca4080', fontWeight: 800, textTransform: 'uppercase', marginBottom: '16px', lineHeight: 1.2 }}>
+            <h2 style={{ fontSize: 'clamp(22px, 2vw, 32px)', color: '#c5a26a', fontWeight: 800, textTransform: 'uppercase', marginBottom: '16px', lineHeight: 1.2 }}>
               Viver Bem é<br />Evoluir Sempre
             </h2>
             <p style={{ fontSize: '16px', color: '#a7a7a7', marginBottom: '64px' }}>
@@ -574,7 +577,7 @@ function VideoEvolution() {
               onClick={() => setOpen(true)}
               style={{ display: 'flex', alignItems: 'center', gap: '16px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
             >
-              <span style={{ fontSize: '16px', fontWeight: 800, color: '#ca4080', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <span style={{ fontSize: '16px', fontWeight: 800, color: '#c5a26a', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Assista ao vídeo
               </span>
               <img src="/empreendimentos/vertice/icon-play.svg" alt="" style={{ width: '24px', height: '24px', objectFit: 'contain' }} />
@@ -608,8 +611,8 @@ function VideoEvolution() {
    SEÇÃO 6 — TOUR VIRTUAL
 ════════════════════════════════════════════════════════ */
 const TOUR_UNITS = [
-  { label: '34,97m² + terraço descoberto', src: 'https://tour360.meupasseiovirtual.com/064248/273055/tourvirtual/index.html?autoplaysound=yes&showfloorplans=no' },
-  { label: '44,30m² + terraço descoberto', src: 'https://tour360.meupasseiovirtual.com/064248/273098/tourvirtual/index.html?autoplaysound=yes&showfloorplans=no' },
+  { label: '34,97m² + terraço descoberto', src: 'https://tour360.meupasseiovirtual.com/064248/273098/tourvirtual/index.html?autoplaysound=yes&showfloorplans=no' },
+  { label: '44,30m² + terraço descoberto', src: 'https://tour360.meupasseiovirtual.com/064248/273055/tourvirtual/index.html?autoplaysound=yes&showfloorplans=no' },
 ]
 
 function TourEvolution() {
@@ -791,6 +794,22 @@ function PlantasEvolution() {
                       <img src={plantasSpecPe} alt="" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
                     </div>
                     <span style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600 }}>{planta.pe}</span>
+                  </div>
+                )}
+                {planta.vaga && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
+                    <div style={{ width: '32px', height: '32px', border: '1px solid #ca4080', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <img src={plantasSpecCar} alt="" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
+                    </div>
+                    <span style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600 }}>{planta.vaga}</span>
+                  </div>
+                )}
+                {planta.terraco && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '13px' }}>
+                    <div style={{ width: '32px', height: '32px', border: '1px solid #ca4080', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <img src={plantasSpecTerraco} alt="" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
+                    </div>
+                    <span style={{ fontSize: '14px', color: '#494c4f', fontWeight: 600 }}>{planta.terraco}</span>
                   </div>
                 )}
               </div>
@@ -1041,8 +1060,8 @@ export default function Evolution() {
           { label: 'Alvenaria',  pct: 100 },
           { label: 'Hidráulica', pct: 95  },
           { label: 'Elétrica',   pct: 95  },
-          { label: 'Acabamento', pct: 60  },
-          { label: 'Pintura',    pct: 60  },
+          { label: 'Acabamento', pct: 90  },
+          { label: 'Pintura',    pct: 90  },
         ]}
         fotos={[
           /* ── Julho 2025 ── */

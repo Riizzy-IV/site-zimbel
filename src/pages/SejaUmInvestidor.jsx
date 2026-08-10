@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -27,22 +27,16 @@ function ArrowUp() {
   )
 }
 
-const EMPREENDIMENTOS = [
-  { label: 'Esperança Prime', href: null },
-  { label: 'Evolution Tatuapé', href: '/empreendimentos/evolution' },
-  { label: 'Vértice Anália Franco', href: '/empreendimentos/vertice' },
-]
-
 /* ════════════════════════════════════════════════════════
    SEÇÃO 1 — HERO
 ════════════════════════════════════════════════════════ */
 function HeroInvestidor() {
   const { isMobile } = useBreakpoint()
   return (
-    <section className="relative w-full" style={{ height: isMobile ? '420px' : '520px' }}>
+    <section className="relative w-full" style={{ height: isMobile ? '420px' : '620px' }}>
       <div className="absolute inset-0">
         <img src="/investidor/hero-bg.avif" alt="" className="w-full h-full object-cover object-center" fetchpriority="high" decoding="sync" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.15) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.45) 45%, transparent 75%)' }} />
       </div>
 
       {!isMobile && (
@@ -54,17 +48,19 @@ function HeroInvestidor() {
       )}
 
       <div className="absolute z-10 flex flex-col" style={{ left: gridPad, right: gridPad, bottom: isMobile ? '24px' : '48px' }}>
-        <div className="flex items-center justify-center gap-4 bg-[#5b0a28] rounded-sm w-fit" style={{ alignSelf: 'flex-start', height: '36px', marginBottom: '16px', padding: '0 20px' }}>
+        <div className="flex items-center justify-center gap-4 rounded-full w-fit" style={{ alignSelf: 'flex-start', height: '36px', marginBottom: '24px', padding: '0 20px', border: '1px solid #c5a26a' }}>
           <span className="text-white text-[13px] font-bold uppercase tracking-wide whitespace-nowrap">Invista na</span>
-          <span className="w-1 h-1 rounded-full bg-white shrink-0" />
+          <span className="w-1 h-1 rounded-full bg-[#c5a26a] shrink-0" />
           <span className="text-white text-[13px] font-bold uppercase tracking-wide whitespace-nowrap">Zimbel Incorporadora</span>
         </div>
 
-        <h1 className="text-white font-extrabold uppercase leading-tight" style={{ fontSize: isMobile ? '24px' : '34px', marginBottom: '10px' }}>
+        <h1 className="text-white font-extrabold uppercase leading-tight" style={{ fontSize: isMobile ? '32px' : '56px', marginBottom: '20px' }}>
           Seja um investidor
         </h1>
 
-        <p className="text-[#ca4080] font-bold uppercase" style={{ fontSize: isMobile ? '12px' : '16px' }}>
+        <div style={{ width: '48px', height: '2px', background: '#c5a26a', marginBottom: '16px' }} />
+
+        <p className="text-[#c5a26a] font-bold uppercase" style={{ fontSize: isMobile ? '13px' : '18px', lineHeight: 1.4 }}>
           Invista em empreendimentos de alta rentabilidade
         </p>
       </div>
@@ -97,15 +93,14 @@ function VantagensInvestidor() {
                 Vantagens de investir na Zimbel
               </h2>
               <p className="text-[#a7a7a7] text-base font-medium">
-                Empreendimentos modernos em todos os detalhes, pensados em rentabilidade e no cliente
+                Empreendimentos pensados para unir localização, qualidade e potencial de valorização.
               </p>
             </div>
             <div className="text-[#494c4f] text-[14px] leading-relaxed flex flex-col gap-2">
-              <p>A Zimbel Incorporadora é uma empresa sólida e confiável, com imóveis de valor no mercado. Temos um portfólio focado em HMP e HIS.</p>
-              <p>
-                Se você está procurando uma oportunidade de investimento segura e rentável, a{' '}
-                <span className="font-bold">Zimbel Incorporadora é a escolha certa</span>. Entre em contato conosco e saiba mais sobre nossas opções de investimento.
-              </p>
+              <p>Investir em um imóvel vai muito além da escolha de uma planta. É uma decisão que envolve localização, qualidade construtiva, liquidez e perspectiva de valorização ao longo do tempo.</p>
+              <p>Na Zimbel Incorporadora, cada empreendimento é desenvolvido com atenção a esses fatores, buscando criar projetos contemporâneos, bem localizados e alinhados às novas formas de morar e investir.</p>
+              <p>Nosso portfólio contempla imóveis com diferentes perfis e possibilidades de investimento, permitindo encontrar oportunidades de acordo com seus objetivos — seja para geração de renda, formação de patrimônio ou valorização imobiliária.</p>
+              <p>Mais do que adquirir um imóvel, você investe em um patrimônio pensado para o presente e preparado para o futuro.</p>
             </div>
 
             <div className="flex flex-col gap-1" style={{ marginTop: isMobile ? '48px' : '80px', marginBottom: '18px' }}>
@@ -113,8 +108,13 @@ function VantagensInvestidor() {
                 Como funciona
               </h2>
               <p className="text-[#a7a7a7] text-base font-medium">
-                Conheça o passo a passo para investir com segurança em nossos empreendimentos, do primeiro contato à rentabilidade do seu investimento.
+                Do primeiro contato à escolha do imóvel, uma jornada simples, transparente e orientada aos seus objetivos.
               </p>
+            </div>
+            <div className="text-[#494c4f] text-[14px] leading-relaxed flex flex-col gap-2">
+              <p>Nossa equipe acompanha você durante todo o processo de investimento, apresentando os empreendimentos, diferenciais, condições comerciais e informações necessárias para uma tomada de decisão mais segura.</p>
+              <p>Você conhece as oportunidades disponíveis, entende o perfil de cada projeto e escolhe a alternativa que melhor se conecta à sua estratégia de investimento.</p>
+              <p>Conheça as oportunidades da Zimbel e encontre o empreendimento ideal para o seu próximo investimento.</p>
             </div>
           </div>
 
@@ -130,44 +130,7 @@ function VantagensInvestidor() {
 }
 
 /* ════════════════════════════════════════════════════════
-   SEÇÃO 3 — RENTABILIDADE
-════════════════════════════════════════════════════════ */
-function RentabilidadeInvestidor() {
-  const navigate = useNavigate()
-  const { isMobile } = useBreakpoint()
-  const [active, setActive] = useState(EMPREENDIMENTOS.length - 1)
-
-  return (
-    <section className="bg-[#f6f6f6]" style={{ paddingTop: isMobile ? '48px' : '72px', paddingBottom: isMobile ? '48px' : '72px' }}>
-      <div style={{ paddingLeft: gridPad, paddingRight: gridPad }}>
-        <h2 className="text-[#5b0a28] font-extrabold uppercase text-center" style={{ fontSize: 'clamp(24px, 3vw, 38px)', marginBottom: '32px' }}>
-          Rentabilidade
-        </h2>
-
-        <div className="flex flex-wrap items-center justify-center gap-4" style={{ marginBottom: '32px' }}>
-          {EMPREENDIMENTOS.map((emp, i) => (
-            <button
-              key={emp.label}
-              onClick={() => { setActive(i); if (emp.href) navigate(emp.href) }}
-              className="flex items-center justify-center gap-2.5 rounded transition-colors"
-              style={{ background: active === i ? '#5b0a28' : '#ca4080', height: '62px', padding: '0 24px' }}
-            >
-              <span className="text-white text-sm font-semibold whitespace-nowrap">{emp.label}</span>
-              <img src="/investidor/icon-arrow.svg" alt="" style={{ width: '20px', height: '19px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
-            </button>
-          ))}
-        </div>
-
-        <div className="w-full rounded-lg overflow-hidden mx-auto" style={{ maxWidth: '1088px' }}>
-          <img src="/investidor/rentabilidade-chart.png" alt="Gráfico de rentabilidade" className="w-full h-auto" loading="lazy" decoding="async" />
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ════════════════════════════════════════════════════════
-   SEÇÃO 4 — CONTATO / CADASTRO
+   SEÇÃO 3 — CONTATO / CADASTRO
 ════════════════════════════════════════════════════════ */
 function ContatoInvestidor() {
   const { isMobile } = useBreakpoint()
@@ -259,7 +222,6 @@ export default function SejaUmInvestidor() {
       <Header />
       <HeroInvestidor />
       <VantagensInvestidor />
-      <RentabilidadeInvestidor />
       <ContatoInvestidor />
       <Footer showContactHeader={false} />
     </>

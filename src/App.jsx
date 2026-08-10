@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 const Home      = lazy(() => import('./pages/Home'))
 const Vertice   = lazy(() => import('./pages/empreendimentos/Vertice'))
 const Evolution = lazy(() => import('./pages/empreendimentos/Evolution'))
+const Esperanca = lazy(() => import('./pages/empreendimentos/Esperanca'))
 const PoliticaDePrivacidade = lazy(() => import('./pages/PoliticaDePrivacidade'))
 const SejaUmCorretor = lazy(() => import('./pages/SejaUmCorretor'))
 const SejaUmInvestidor = lazy(() => import('./pages/SejaUmInvestidor'))
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/empreendimentos/vertice" element={<Vertice />} />
           <Route path="/empreendimentos/evolution" element={<Evolution />} />
+          <Route path="/empreendimentos/esperanca" element={<Esperanca />} />
           <Route path="/politica-de-privacidade" element={<PoliticaDePrivacidade />} />
           <Route path="/seja-um-corretor" element={<SejaUmCorretor />} />
           <Route path="/seja-um-investidor" element={<SejaUmInvestidor />} />

@@ -8,6 +8,21 @@ const stats = [
   { value: '+3 anos', desc: 'De experiência no mercado imobiliário.' },
 ];
 
+function BuildingIcon() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <rect x="10" y="4" width="20" height="32" rx="1.5" stroke="#5b0a28" strokeWidth="1.6" />
+      <path d="M17 36V29a3 3 0 0 1 3-3 3 3 0 0 1 3 3v7" stroke="#5b0a28" strokeWidth="1.6" />
+      <circle cx="15.5" cy="11" r="1.3" fill="#5b0a28" />
+      <circle cx="20" cy="11" r="1.3" fill="#5b0a28" />
+      <circle cx="24.5" cy="11" r="1.3" fill="#5b0a28" />
+      <circle cx="15.5" cy="17" r="1.3" fill="#5b0a28" />
+      <circle cx="20" cy="17" r="1.3" fill="#5b0a28" />
+      <circle cx="24.5" cy="17" r="1.3" fill="#5b0a28" />
+    </svg>
+  );
+}
+
 function ArrowUp() {
   return (
     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -121,21 +136,20 @@ export default function Sobre() {
         </div>
 
         {/* ── Stats ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 justify-items-center text-center">
+        <div
+          className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 justify-items-center text-center rounded-xl"
+          style={{ background: '#f7eef0', padding: 'clamp(32px, 4vw, 56px) clamp(20px, 4vw, 40px)' }}
+        >
           {stats.map((stat, i) => (
-            <div key={i} className="flex flex-col gap-1 md:gap-4">
+            <div key={i} className="flex flex-col items-center gap-3 md:gap-4">
+              <BuildingIcon />
               <p
                 className="text-[#330218] font-semibold leading-none"
-                style={{ fontSize: 'clamp(48px, 5vw, 64px)' }}
+                style={{ fontSize: 'clamp(40px, 4vw, 56px)' }}
               >
                 {stat.value}
               </p>
-              <div>
-                <div className="flex justify-center mb-1 md:mb-4">
-                  <div className="w-8 md:w-24 h-[3px] bg-[#5b0a28] rounded" />
-                </div>
-                <p className="text-[#6b7280] leading-snug" style={{ fontSize: 'clamp(15px, 1.1vw, 15px)' }}>{stat.desc}</p>
-              </div>
+              <p className="text-[#6b7280] leading-snug" style={{ fontSize: 'clamp(15px, 1.1vw, 15px)' }}>{stat.desc}</p>
             </div>
           ))}
         </div>

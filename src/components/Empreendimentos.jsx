@@ -37,7 +37,7 @@ const empreendimentos = [
     status: ['Lançamentos', 'Em obras'] },
   { key: 'esperanca', img: imgEsperanca, city: 'Vila Esperança - São Paulo', name: 'Esperança Prime', href: null,
     specs: [{ icon: iconBed, label: 'Suítes e 1 dorm.' }, { icon: iconArea, label: '32 a 200m²' }, { icon: iconCar, label: '1 vaga' }, { icon: iconBalcony, label: 'Varanda Gourmet' }],
-    status: ['Lançamentos', 'Em obras', 'Pronto para morar'] },
+    status: ['Lançamentos', 'Pronto para morar'] },
 ];
 
 function SpecIcon({ src, children }) {

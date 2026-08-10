@@ -60,11 +60,14 @@ export default function Footer({ showContactHeader = true } = {}) {
         {/* Contact cards: sempre side-by-side */}
         <div className="flex flex-row gap-3 md:gap-8 w-full">
           {[
-            { icon: <IconClients />, label: 'Contato para', title: 'Clientes' },
-            { icon: <IconPartners />, label: 'Contato para', title: 'Parceiros' },
+            { icon: <IconClients />, label: 'Contato para', title: 'Clientes', wpp: 'https://wa.me/5511910837322?text=Ol%C3%A1%2C%20sou%20cliente%20e%20gostaria%20de%20atendimento.' },
+            { icon: <IconPartners />, label: 'Contato para', title: 'Parceiros', wpp: 'https://wa.me/5511910837322?text=Ol%C3%A1%2C%20sou%20corretor%20parceiro%20e%20gostaria%20de%20atendimento.' },
           ].map((card) => (
-            <div
+            <a
               key={card.title}
+              href={card.wpp}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-1 flex items-center gap-4 md:gap-14 cursor-pointer"
               style={{ background: '#4c0522', borderRadius: '10px', height: '90px', padding: '0 16px', minWidth: 0 }}
             >
@@ -73,7 +76,7 @@ export default function Footer({ showContactHeader = true } = {}) {
                 <p className="text-[#c5a26a] text-[11px] md:text-[15px] font-semibold">{card.label}</p>
                 <p className="text-white text-[22px] md:text-[40px] font-extrabold leading-none">{card.title}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -102,13 +105,9 @@ export default function Footer({ showContactHeader = true } = {}) {
               <div className="flex items-center gap-4">
                 <span className="text-[#e3e3e3] text-sm font-bold">Siga a gente</span>
                 <div className="flex items-center gap-2">
-                  <img src="/Menu/instagram.svg" alt="Instagram" className="w-9 h-9 object-contain cursor-pointer brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
-                  {/* Facebook */}
-                  <div className="w-9 h-9 flex items-center justify-center rounded cursor-pointer opacity-70 hover:opacity-100 transition-opacity" style={{ background: 'rgba(255,255,255,0.1)' }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                    </svg>
-                  </div>
+                  <a href="https://www.instagram.com/zimbel.incorporadora/" target="_blank" rel="noopener noreferrer">
+                    <img src="/Menu/instagram.svg" alt="Instagram" className="w-9 h-9 object-contain cursor-pointer brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
+                  </a>
                 </div>
               </div>
             </div>

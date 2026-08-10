@@ -139,7 +139,7 @@ export default function Hero() {
         style={{
           background: isMobile
             ? 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.1) 30%, rgba(51,2,24,0.75) 60%, rgba(51,2,24,0.95) 100%)'
-            : 'linear-gradient(to bottom, transparent, transparent, rgba(0,0,0,0.88))',
+            : 'linear-gradient(to bottom, transparent, transparent, rgba(0,0,0,0.88)), linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.25) 40%, transparent 70%)',
         }}
       />
 
@@ -186,7 +186,7 @@ export default function Hero() {
           >
             {slide.title}
           </h1>
-          <p className="text-[#c5a26a] font-bold uppercase" style={{ fontSize: isMobile ? '13px' : '18px', textShadow: '0 1px 8px rgba(0,0,0,0.8)' }}>
+          <p className="text-[#c5a26a] font-bold uppercase" style={{ fontSize: isMobile ? '13px' : '18px' }}>
             {slide.subtitle}
           </p>
         </div>
