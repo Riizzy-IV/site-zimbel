@@ -64,15 +64,19 @@ export default function Sobre() {
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-4">
               <p className="text-[#4b5563] text-[15px] leading-relaxed">
-                A Zimbel nasceu com um único propósito: Oferecer qualidade de moradia para seus clientes
-                e segurança e rentabilidade para os investidores.
+                Acreditamos que viver bem será o maior símbolo de sucesso das próximas gerações.
               </p>
               <p className="text-[#4b5563] text-[15px] leading-relaxed">
-                Fundada em 2023, a Zimbel foi criada para ser diferente. Temos o compromisso de realizar
-                o sonho da casa própria de nossos clientes e ser uma empresa segura, responsável e transparente.
+                Em um mundo cada vez mais acelerado, o verdadeiro luxo está no tempo, na saúde, no bem-estar, nas conexões e no propósito.
               </p>
               <p className="text-[#4b5563] text-[15px] leading-relaxed">
-                Trazer inovação e qualidade é o que buscaremos incansavelmente em todos nossos projetos.
+                Por isso, criamos mais do que empreendimentos. Desenvolvemos espaços que promovem qualidade de vida, aproximam pessoas e integram inovação de forma inteligente.
+              </p>
+              <p className="text-[#4b5563] text-[15px] leading-relaxed">
+                Porque o maior patrimônio não é apenas onde se vive, mas a vida que se constrói ali.
+              </p>
+              <p className="text-[#4b5563] text-[15px] leading-relaxed italic font-semibold">
+                Zimbel. Viver bem é o novo luxo.
               </p>
             </div>
             <a
