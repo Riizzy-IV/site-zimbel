@@ -17,6 +17,15 @@ export default function Header() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  function goToSection(id) {
+    if (window.location.pathname === '/') {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate(`/#${id}`);
+    }
+  }
+
   return (
     <>
       <header
@@ -110,7 +119,7 @@ export default function Header() {
 
               {/* Links de navegação */}
               <nav className="flex items-center gap-[30px]">
-                <button onClick={() => navigate('/#sobre')} className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>Sobre a Zimbel</button>
+                <button onClick={() => goToSection('sobre')} className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>Sobre a Zimbel</button>
                 <span className="w-1 h-1 rounded-full bg-[#5b0a28] shrink-0" />
 
                 <button onClick={() => navigate('/empreendimentos')} className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>Empreendimentos</button>
@@ -170,7 +179,7 @@ export default function Header() {
           {/* Sobre a Zimbel */}
           <a
             href="#"
-            onClick={() => { navigate('/#sobre'); setMenuOpen(false); }}
+            onClick={() => { goToSection('sobre'); setMenuOpen(false); }}
             className="flex items-center justify-between border-b border-white/10 hover:text-[#5b0a28] transition-colors"
             style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600 }}
           >

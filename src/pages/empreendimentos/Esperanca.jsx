@@ -169,9 +169,9 @@ function ConceitoEsperanca() {
           <div style={{ flex: 1 }}>
             <img
               src={vistaAerea}
-              alt="Vista aérea do empreendimento"
+              alt="Fachada do empreendimento"
               className="w-full rounded-2xl object-cover"
-              style={{ aspectRatio: '4/3' }}
+              style={{ aspectRatio: '4/5' }}
               loading="lazy"
               decoding="async"
             />

@@ -14,8 +14,17 @@ export default function Home() {
 
   useEffect(() => {
     if (!hash) return
-    const el = document.querySelector(hash)
-    if (el) requestAnimationFrame(() => el.scrollIntoView({ behavior: 'smooth' }))
+    let attempts = 0
+    const tryScroll = () => {
+      const el = document.querySelector(hash)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+      } else if (attempts < 20) {
+        attempts += 1
+        setTimeout(tryScroll, 50)
+      }
+    }
+    tryScroll()
   }, [hash])
 
   return (

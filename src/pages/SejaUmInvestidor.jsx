@@ -83,7 +83,7 @@ function VantagensInvestidor() {
               <div className="flex items-center gap-7 flex-wrap">
                 <div className="flex items-center gap-2.5">
                   <img src="/icon/vantagens.svg" alt="" style={{ width: '18px', height: '17px', objectFit: 'contain' }} />
-                  <span className="text-[#494c4f] text-[13px] font-semibold uppercase tracking-wide">Porque investir</span>
+                  <span className="text-[#494c4f] text-[13px] font-semibold uppercase tracking-wide">Por que investir</span>
                 </div>
                 <span className="w-1 h-1 rounded-full bg-[#ca4080] shrink-0" />
                 <span className="text-[#a7a7a7] text-[13px] font-semibold uppercase tracking-wide">Zimbel Incorporadora</span>

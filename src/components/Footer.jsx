@@ -130,23 +130,18 @@ export default function Footer({ showContactHeader = true } = {}) {
               <div className="flex flex-col md:flex-row gap-8 md:gap-16">
                 <div className="flex flex-col gap-5">
                   <div className="flex flex-col gap-3">
-                    <p className="text-[#c5a26a] text-sm font-bold uppercase tracking-wide">Empreendimentos</p>
-                    <div className="w-8 h-0.5 bg-white opacity-25" />
-                  </div>
-                  <div className="flex flex-col gap-2 text-[#abb6ba] text-sm">
-                    {['Lançamentos', 'Breve Lançamento', 'Em Obras', 'Pronto para Morar', 'Portfólio Completo'].map(l => (
-                      <a key={l} href="#" className="hover:text-white transition-colors">- {l}</a>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex flex-col gap-5">
-                  <div className="flex flex-col gap-3">
                     <p className="text-[#c5a26a] text-sm font-bold uppercase tracking-wide">Páginas</p>
                     <div className="w-8 h-0.5 bg-white opacity-25" />
                   </div>
                   <div className="flex flex-col gap-2 text-[#abb6ba] text-sm">
-                    {['Home', 'Sobre a Zimbel', 'Empreendimentos', 'Portfólio', 'Contato'].map(l => (
-                      <a key={l} href="#" className="hover:text-white transition-colors">- {l}</a>
+                    {[
+                      { label: 'Home', to: '/' },
+                      { label: 'Sobre a Zimbel', to: '/#sobre' },
+                      { label: 'Empreendimentos', to: '/empreendimentos' },
+                      { label: 'Investidores', to: '/seja-um-investidor' },
+                      { label: 'Seja um Corretor', to: '/seja-um-corretor' },
+                    ].map(l => (
+                      <Link key={l.label} to={l.to} className="hover:text-white transition-colors">- {l.label}</Link>
                     ))}
                   </div>
                 </div>
