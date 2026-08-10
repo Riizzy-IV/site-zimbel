@@ -13,9 +13,18 @@ const youtubeSrc   = '/Menu/Youtube.svg';
 const gridPl = 'max(40px, calc((100vw - 1312px) / 2))';
 const gridPr = 'max(40px, calc((100vw - 1312px) / 2))';
 
+const EMPREENDIMENTOS_OPTIONS = [
+  { label: 'Todas', filtro: 'todas' },
+  { label: 'Lançamentos', filtro: 'lancamentos' },
+  { label: 'Obras', filtro: 'obras' },
+  { label: 'Entregues', filtro: 'entregues' },
+];
+
 export default function Header() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [empOpen, setEmpOpen] = useState(false);
+  const [mobileEmpOpen, setMobileEmpOpen] = useState(false);
 
   function goToSection(id) {
     if (window.location.pathname === '/') {
@@ -122,7 +131,36 @@ export default function Header() {
                 <button onClick={() => goToSection('sobre')} className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>Sobre a Zimbel</button>
                 <span className="w-1 h-1 rounded-full bg-[#5b0a28] shrink-0" />
 
-                <button onClick={() => navigate('/empreendimentos')} className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>Empreendimentos</button>
+                <div className="relative">
+                  <button
+                    onClick={() => setEmpOpen(o => !o)}
+                    onBlur={() => setTimeout(() => setEmpOpen(false), 150)}
+                    className="flex items-center gap-2 cursor-pointer"
+                    style={{ background: 'none', border: 'none', padding: 0 }}
+                  >
+                    <span className="text-[#330218] text-[14px] font-semibold whitespace-nowrap">Empreendimentos</span>
+                    <svg width="9" height="5" viewBox="0 0 9 5" fill="none" style={{ transition: 'transform 0.2s', transform: empOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                      <path d="M0 0L4.5 5L9 0H0Z" fill="#330218" />
+                    </svg>
+                  </button>
+                  {empOpen && (
+                    <div
+                      className="absolute top-full left-0 bg-white rounded-lg shadow-lg flex flex-col overflow-hidden"
+                      style={{ marginTop: '12px', minWidth: '180px', border: '1px solid rgba(51,2,24,0.12)', zIndex: 100 }}
+                    >
+                      {EMPREENDIMENTOS_OPTIONS.map((opt) => (
+                        <button
+                          key={opt.filtro}
+                          onClick={() => navigate(`/empreendimentos?filtro=${opt.filtro}`)}
+                          className="text-left text-[#330218] text-[14px] font-semibold hover:bg-[#f6f6f6] transition-colors"
+                          style={{ padding: '12px 20px', background: 'none', border: 'none', cursor: 'pointer' }}
+                        >
+                          {opt.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
 
                 <span className="w-1 h-1 rounded-full bg-[#5b0a28] shrink-0" />
                 <button onClick={() => navigate('/seja-um-investidor')} className="text-[#330218] text-[14px] font-semibold hover:text-[#45081f] transition-colors whitespace-nowrap" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>Investidores</button>
@@ -190,17 +228,32 @@ export default function Header() {
           </a>
 
           {/* Empreendimentos com submenu */}
-          <a
-            href="#"
-            onClick={() => { navigate('/empreendimentos'); setMenuOpen(false); }}
-            className="flex items-center justify-between border-b border-white/10 hover:text-[#5b0a28] transition-colors"
-            style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600 }}
-          >
-            Empreendimentos
-            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" style={{ opacity: 0.4, flexShrink: 0 }}>
-              <path d="M1 1l5 5-5 5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
+          <div className="border-b border-white/10">
+            <button
+              onClick={() => setMobileEmpOpen(o => !o)}
+              className="flex items-center justify-between w-full hover:text-[#5b0a28] transition-colors"
+              style={{ paddingTop: '18px', paddingBottom: '18px', color: 'white', fontSize: '15px', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer' }}
+            >
+              Empreendimentos
+              <svg width="9" height="5" viewBox="0 0 9 5" fill="none" style={{ opacity: 0.6, flexShrink: 0, transition: 'transform 0.2s', transform: mobileEmpOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                <path d="M0 0L4.5 5L9 0H0Z" fill="white" />
+              </svg>
+            </button>
+            {mobileEmpOpen && (
+              <div className="flex flex-col" style={{ paddingBottom: '8px' }}>
+                {EMPREENDIMENTOS_OPTIONS.map((opt) => (
+                  <button
+                    key={opt.filtro}
+                    onClick={() => { navigate(`/empreendimentos?filtro=${opt.filtro}`); setMenuOpen(false); }}
+                    className="text-left hover:text-[#5b0a28] transition-colors"
+                    style={{ paddingTop: '12px', paddingBottom: '12px', paddingLeft: '16px', color: 'rgba(255,255,255,0.7)', fontSize: '14px', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer' }}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
 
           {/* Investidores */}
           <a

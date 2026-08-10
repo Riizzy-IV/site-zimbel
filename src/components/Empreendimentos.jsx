@@ -15,6 +15,10 @@ const gridPr = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
 
 const tabs = [
   {
+    label: 'Todos',
+    icon: <img src="/icon/todos.svg" alt="" className="w-[20px] h-[20px] object-contain" />,
+  },
+  {
     label: 'Lançamentos',
     icon: <img src="/icon/star.svg" alt="" className="w-[20px] h-[20px] object-contain" />,
   },
@@ -34,10 +38,10 @@ const empreendimentos = [
     status: ['Lançamentos', 'Em obras'] },
   { key: 'evolution', img: imgEvolution, city: 'Tatuapé - São Paulo', name: 'Evolution Tatuapé', href: '/empreendimentos/evolution',
     specs: [{ icon: iconBed, label: '2 dormitórios' }, { icon: iconArea, label: '34 a 50m²' }, { icon: iconCar, label: '1 vaga' }, { icon: iconBalcony, label: 'Área Gourmet' }],
-    status: ['Lançamentos', 'Em obras'] },
+    status: ['Em obras'] },
   { key: 'esperanca', img: imgEsperanca, city: 'Vila Esperança - São Paulo', name: 'Esperança Prime', href: null,
     specs: [{ icon: iconBed, label: 'Suítes e 1 dorm.' }, { icon: iconArea, label: '32 a 200m²' }, { icon: iconCar, label: '1 vaga' }, { icon: iconBalcony, label: 'Varanda Gourmet' }],
-    status: ['Lançamentos', 'Pronto para morar'] },
+    status: ['Pronto para morar'] },
 ];
 
 function SpecIcon({ src, children }) {
@@ -72,7 +76,9 @@ export default function Empreendimentos() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(0);
 
-  const filtrados = empreendimentos.filter(e => e.status.includes(tabs[activeTab].label));
+  const filtrados = tabs[activeTab].label === 'Todos'
+    ? empreendimentos
+    : empreendimentos.filter(e => e.status.includes(tabs[activeTab].label));
   const [big, ...smallCards] = filtrados;
 
   return (

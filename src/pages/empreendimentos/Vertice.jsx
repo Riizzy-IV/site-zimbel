@@ -36,7 +36,7 @@ const PLANTAS = [
   { id: 9,  area: '29,31m²', tipo: 'Unidades 15 e 25 • 1º e 2º Pavimento', dorms: '1 dorm.', pe: '', floor: '/plantas/29,31m%C2%B2.avif' },
   { id: 10, area: '31,15m²', tipo: 'Unidades 16 e 26 • 1º e 2º Pavimento', dorms: 'Studio', pe: '', floor: '/plantas/31,15m%C2%B2.avif' },
   { id: 11, area: '29,10m²', tipo: 'Unidades 17 e 27 • 1º e 2º Pavimento', dorms: 'Studio', pe: '', floor: '/plantas/29,10m%C2%B2.avif' },
-  { id: 12, area: '28,85m²', tipo: 'Unidades 18 e 28 • 1º e 2º Pavimento', dorms: 'Studio', pe: '', floor: plantaFloor },
+  { id: 12, area: '28,85m²', tipo: 'Unidades 18 e 28 • 1º e 2º Pavimento', dorms: 'Studio', pe: '', floor: '/plantas/28,85m%C2%B2.avif' },
   { id: 13, area: '27,50m²', tipo: 'Unidades 19 e 29 • 1º e 2º Pavimento', dorms: 'Studio', pe: '', floor: '/plantas/27,50m%C2%B2.avif' },
   /* ── Pavimento Tipo 3 — 3º Pav. (com área descoberta) ── */
   { id: 14, area: '33,37m²', tipo: 'Unidade 33 • 3º Pavimento', dorms: '1 dorm.', pe: 'Garden', floor: '/plantas/33,37m%C2%B2.avif' },
