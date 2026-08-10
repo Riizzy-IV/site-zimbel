@@ -40,7 +40,7 @@ const PLANTAS = [
   { id: 13, area: '27,50m²', tipo: 'Unidades 19 e 29 • 1º e 2º Pavimento', dorms: 'Studio', pe: '', floor: '/plantas/27,50m%C2%B2.avif' },
   /* ── Pavimento Tipo 3 — 3º Pav. (com área descoberta) ── */
   { id: 14, area: '33,37m²', tipo: 'Unidade 33 • 3º Pavimento', dorms: '1 dorm.', pe: 'Garden', floor: '/plantas/33,37m%C2%B2.avif' },
-  { id: 15, area: '33,52m²', tipo: 'Unidade 34 • 3º Pavimento', dorms: '1 dorm.', pe: 'Garden', floor: plantaFloor },
+  { id: 15, area: '33,52m²', tipo: 'Unidade 34 • 3º Pavimento', dorms: '1 dorm.', pe: 'Garden', floor: '/plantas/33,52m%C2%B2.avif' },
   { id: 16, area: '54,42m²', tipo: 'Unidade 35 • 3º Pavimento', dorms: '1 dorm.', pe: 'Garden', floor: '/plantas/54,42m%C2%B2.avif' },
   /* ── Pavimento Tipo 4 — 4º ao 12º Pav. ── */
   { id: 17, area: '35,57m²', tipo: 'Planta Final 1 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: '', floor: '/plantas/35,57m%C2%B2.avif' },
