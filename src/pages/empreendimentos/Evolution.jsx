@@ -1069,6 +1069,7 @@ export default function Evolution() {
           { src: '/empreendimentos/evolution/obra/obra-jul-1.avif', date: 'Jul / 2025', caption: 'Andamento da obra' },
           { src: '/empreendimentos/evolution/obra/obra-jul-2.avif', date: 'Jul / 2025', caption: 'Andamento da obra' },
           { src: '/empreendimentos/evolution/obra/obra-jul-3.avif', date: 'Jul / 2025', caption: 'Andamento da obra' },
+          { src: '/empreendimentos/evolution/obra/obra-jul-4.avif', date: 'Jul / 2025', caption: 'Andamento da obra' },
           /* ── Março 2026 ── */
           { src: '/empreendimentos/evolution/obra/obra-mar-1.avif', date: 'Mar / 2026', caption: 'Andamento da obra' },
           { src: '/empreendimentos/evolution/obra/obra-mar-2.avif', date: 'Mar / 2026', caption: 'Andamento da obra' },
