@@ -39,7 +39,7 @@ const empreendimentos = [
   { key: 'evolution', img: imgEvolution, city: 'Tatuapé - São Paulo', name: 'Evolution Tatuapé', href: '/empreendimentos/evolution',
     specs: [{ icon: iconBed, label: '2 dormitórios' }, { icon: iconArea, label: '34 a 50m²' }, { icon: iconCar, label: '1 vaga' }, { icon: iconBalcony, label: 'Área Gourmet' }],
     status: ['Em obras'] },
-  { key: 'esperanca', img: imgEsperanca, city: 'Vila Esperança - São Paulo', name: 'Esperança Prime', href: null,
+  { key: 'esperanca', img: imgEsperanca, city: 'Vila Esperança - São Paulo', name: 'Esperança Prime', href: '/empreendimentos/esperanca',
     specs: [{ icon: iconBed, label: 'Suítes e 1 dorm.' }, { icon: iconArea, label: '32 a 200m²' }, { icon: iconCar, label: '1 vaga' }, { icon: iconBalcony, label: 'Varanda Gourmet' }],
     status: ['Pronto para morar'] },
 ];

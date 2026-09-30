@@ -44,7 +44,7 @@ const slides = [
     bg: '/empreendimentos/fachada-esperanca.avif',
     logo: null,
     logoText: 'Esperança Prime',
-    href: null,
+    href: '/empreendimentos/esperanca',
     specs: [
       { icon: '/cards/cama.svg', label: '1 e 2 dorm.' },
       { icon: '/cards/area.svg', label: '30 a 42m²' },

@@ -45,7 +45,7 @@ const empreendimentos = [
     status: ['Em obras'],
   },
   {
-    img: '/empreendimentos/esperanca-fachada.avif', city: 'Vila Esperança - São Paulo', name: 'Esperança Prime', href: null,
+    img: '/empreendimentos/esperanca-fachada.avif', city: 'Vila Esperança - São Paulo', name: 'Esperança Prime', href: '/empreendimentos/esperanca',
     specs: [{ icon: '/cards/cama.svg', label: 'Suítes e 1 dorm.' }, { icon: '/cards/area.svg', label: '32 a 200m²' }, { icon: '/cards/Frame-2.svg', label: '1 vaga' }, { icon: '/cards/area.svg', label: 'Varanda Gourmet' }],
     status: ['Pronto para morar'],
   },
