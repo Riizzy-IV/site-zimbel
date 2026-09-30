@@ -89,7 +89,7 @@ function HeroEsperanca() {
         <div className="flex items-center justify-center gap-4 bg-[#5b0a28] rounded-sm w-fit" style={{ alignSelf: 'flex-start', height: '36px', marginBottom: '16px', padding: '0 20px' }}>
           <span className="text-white text-[13px] font-bold uppercase tracking-wide whitespace-nowrap">Pronto para morar</span>
           <span className="w-1 h-1 rounded-full bg-white shrink-0" />
-          <span className="text-white text-[13px] font-bold uppercase tracking-wide whitespace-nowrap">Zimbel Incorporadora</span>
+          <span className="text-white text-[13px] font-bold uppercase tracking-wide whitespace-nowrap">100% vendido</span>
         </div>
 
         <h1 className="text-white font-extrabold uppercase leading-tight" style={{ fontSize: isMobile ? '24px' : '34px', marginBottom: '10px' }}>

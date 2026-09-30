@@ -41,8 +41,16 @@ const empreendimentos = [
     status: ['Em obras'] },
   { key: 'esperanca', img: imgEsperanca, city: 'Vila Esperança - São Paulo', name: 'Esperança Prime', href: '/empreendimentos/esperanca',
     specs: [{ icon: iconBed, label: 'Suítes e 1 dorm.' }, { icon: iconArea, label: '32 a 200m²' }, { icon: iconCar, label: '1 vaga' }, { icon: iconBalcony, label: 'Varanda Gourmet' }],
-    status: ['Pronto para morar'] },
+    status: ['Pronto para morar'], sold: true },
 ];
+
+function SoldTag() {
+  return (
+    <span className="absolute top-4 left-4 z-10 bg-[#5b0a28] text-white text-[12px] md:text-[13px] font-bold uppercase tracking-wide rounded-sm px-4 py-2">
+      100% vendido
+    </span>
+  );
+}
 
 function SpecIcon({ src, children }) {
   return (
@@ -198,6 +206,7 @@ export default function Empreendimentos() {
             loading="lazy"
             decoding="async"
           />
+          {big.sold && <SoldTag />}
 
           <div
             className="absolute inset-0"
@@ -260,6 +269,7 @@ export default function Empreendimentos() {
                   className="absolute inset-0"
                   style={{ background: 'linear-gradient(to bottom, rgba(51,2,24,0) 20%, #330218 100%)' }}
                 />
+                {card.sold && <SoldTag />}
 
                 <div className="absolute flex items-end gap-4" style={{ bottom: '20px', left: '0px', right: '140px' }}>
                   <div style={{ width: '3px', height: '70px', background: '#5b0a28', borderRadius: '2px', flexShrink: 0 }} />

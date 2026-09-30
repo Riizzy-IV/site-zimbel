@@ -48,8 +48,17 @@ const empreendimentos = [
     img: '/empreendimentos/esperanca-fachada.avif', city: 'Vila Esperança - São Paulo', name: 'Esperança Prime', href: '/empreendimentos/esperanca',
     specs: [{ icon: '/cards/cama.svg', label: 'Suítes e 1 dorm.' }, { icon: '/cards/area.svg', label: '32 a 200m²' }, { icon: '/cards/Frame-2.svg', label: '1 vaga' }, { icon: '/cards/area.svg', label: 'Varanda Gourmet' }],
     status: ['Pronto para morar'],
+    sold: true,
   },
 ]
+
+function SoldTag() {
+  return (
+    <span className="absolute top-4 left-4 z-10 bg-[#5b0a28] text-white text-[12px] md:text-[13px] font-bold uppercase tracking-wide rounded-sm px-4 py-2">
+      100% vendido
+    </span>
+  )
+}
 
 /* ════════════════════════════════════════════════════════
    SEÇÃO 1 — HERO
@@ -171,6 +180,7 @@ function ListaEmpreendimentos() {
                 >
                   <img src={big.img} alt={big.name} className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(51,2,24,0) 35%, rgba(51,2,24,0.72) 72%, #330218 100%)' }} />
+                  {big.sold && <SoldTag />}
 
                   <div className="absolute bottom-0 flex items-end gap-5" style={{ left: 0, right: isMobile ? 0 : '200px', padding: isMobile ? '20px' : '32px' }}>
                     <div style={{ width: '4px', height: '90px', background: '#ca4080', borderRadius: '2px', flexShrink: 0 }} />
@@ -213,6 +223,7 @@ function ListaEmpreendimentos() {
                     >
                       <img src={emp.img} alt={emp.name} className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
                       <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(51,2,24,0) 20%, #330218 100%)' }} />
+                      {emp.sold && <SoldTag />}
 
                       <div className="absolute flex items-end gap-4" style={{ bottom: '20px', left: 0, right: '140px' }}>
                         <div style={{ width: '3px', height: '70px', background: '#ca4080', borderRadius: '2px', flexShrink: 0 }} />
