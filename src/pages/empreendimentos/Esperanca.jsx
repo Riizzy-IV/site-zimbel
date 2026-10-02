@@ -169,7 +169,7 @@ function ConceitoEsperanca() {
           <div style={{ flex: 1 }}>
             <img
               src={vistaAerea}
-              alt="Fachada do empreendimento"
+              alt="Vista aérea do Esperança Prime"
               className="w-full rounded-2xl object-cover"
               style={{ aspectRatio: '4/5' }}
               loading="lazy"
