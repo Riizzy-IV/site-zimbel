@@ -34,3 +34,13 @@ p:last-child {
 
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
+
+:root {
+  --grid-pad: max(min(160px, 12vw), calc((100vw - 1312px) / 2));
+}
+
+@media (max-width: 767px) {
+  :root {
+    --grid-pad: 20px;
+  }
+}

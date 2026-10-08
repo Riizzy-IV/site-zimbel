@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-const gridPad = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))'
+const gridPad = 'var(--grid-pad)'
 
 const SECOES = [
   {

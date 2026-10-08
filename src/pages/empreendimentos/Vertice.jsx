@@ -50,7 +50,7 @@ const PLANTAS = [
   { id: 21, area: '28,14m²', tipo: 'Planta Final 5 • 4º ao 12º Pavimento', dorms: '1 dorm.', pe: '', floor: '/plantas/28,14m%C2%B2.avif' },
 ]
 
-const gridPad = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))'
+const gridPad = 'var(--grid-pad)'
 
 function useBreakpoint() {
   const get = () => {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const gridPl = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
-const gridPr = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
+const gridPl = 'var(--grid-pad)';
+const gridPr = 'var(--grid-pad)';
 
 export default function EvolucaoObra({ etapas, fotos = [] }) {
   const [imgIdx, setImgIdx] = useState(0);

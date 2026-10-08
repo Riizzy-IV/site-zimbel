@@ -1,6 +1,6 @@
 
-const gridPl = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
-const gridPr = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))';
+const gridPl = 'var(--grid-pad)';
+const gridPr = 'var(--grid-pad)';
 
 const stats = [
   { value: '+10 mil', desc: 'Metros quadrados de obra executados.' },

@@ -47,7 +47,7 @@ const DESTAQUES = [
   { tempo: '12 min', label: 'Shopping Metrô Itaquera' },
 ]
 
-const gridPad = 'max(min(160px, 12vw), calc((100vw - 1312px) / 2))'
+const gridPad = 'var(--grid-pad)'
 
 function useBreakpoint() {
   const get = () => {
