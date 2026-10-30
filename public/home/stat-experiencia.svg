@@ -1,0 +1,7 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame">
+<rect x="0.5" y="0.5" width="71" height="71" rx="3.5" fill="#6D1136"/>
+<rect x="0.5" y="0.5" width="71" height="71" rx="3.5" stroke="#CA4080"/>
+<path id="Vector" d="M29.64 43.2H26.58C24.864 43.2 24 42.336 24 40.62V26.58C24 24.864 24.864 24 26.58 24H31.7401C33.4561 24 34.3201 24.864 34.3201 26.58V28.8M37.6799 28.8V26.58C37.6799 24.864 38.544 24 40.26 24H45.42C47.136 24 48 24.864 48 26.58V40.62C48 42.336 47.136 43.2 45.42 43.2H42.444M33.6 34.8H38.4001M33.6 38.4H38.4001M36.0001 48V44.4M42.444 31.704V45.096C42.444 47.028 41.4841 48 39.5521 48H32.544C30.6119 48 29.64 47.028 29.64 45.096V31.704C29.64 29.772 30.6119 28.8 32.544 28.8H39.5521C41.4841 28.8 42.444 29.772 42.444 31.704Z" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+</g>
+</svg>

@@ -1,13 +1,12 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import Header from '../components/Header'
-import Hero from '../components/Hero'
-import Empreendimentos from '../components/Empreendimentos'
-import Sobre from '../components/Sobre'
-import VideoSection from '../components/VideoSection'
-import Vantagens from '../components/Vantagens'
-import Depoimentos from '../components/Depoimentos'
-import Footer from '../components/Footer'
+import HomeIntro from '../components/HomeIntro'
+import HomeHero from '../components/HomeHero'
+import Destaque from '../components/home/Destaque'
+import TodosEmpreendimentos from '../components/home/TodosEmpreendimentos'
+import Diferenciais from '../components/home/Diferenciais'
+import SobreZimbel from '../components/home/SobreZimbel'
+import Contato from '../components/home/Contato'
 
 export default function Home() {
   const { hash } = useLocation()
@@ -29,14 +28,15 @@ export default function Home() {
 
   return (
     <>
-      <Header />
-      <Hero />
-      <Empreendimentos />
-      <Sobre />
-      <VideoSection />
-      <Vantagens />
-      <Depoimentos />
-      <Footer />
+      <HomeIntro />
+      <HomeHero />
+      <main>
+        <Destaque />
+        <TodosEmpreendimentos />
+        <Diferenciais />
+        <SobreZimbel />
+        <Contato />
+      </main>
     </>
   )
 }
