@@ -9,21 +9,26 @@ const EASE = 'cubic-bezier(0.5, 0, 0.5, 1)'
 const TIMELINE = [
   ['recolhe', 700],
   ['simbolo', 1900],
-  ['cresce', 2700],
-  ['cobre', 3400],
-  ['foto', 3900],
-  ['sai', 4600],
-  ['fim', 5300],
+  ['cresce', 2520],
+  ['cobre', 3220],
+  ['foto', 3720],
+  ['sai', 4420],
+  ['fim', 5120],
 ]
 const ORDEM = ['inicio', ...TIMELINE.map(([p]) => p)]
 
 // Geometria do símbolo Z em cada frame (coordenadas do frame de 1920x1080).
 const Z_W = 129.894
+const Z_H = 124
+// Largura reservada ao símbolo dentro do logo (o Z ocupa 0–130px; o texto começa depois).
+const SIMBOLO_W = 140
+// Ao crescer, o Z escala a partir do próprio centro (na posição do frame 3) em vez de seguir para o canto.
+const centrado = (k) => ({ x: 895 + (Z_W - Z_W * k) / 2, y: 462 + (Z_H - Z_H * k) / 2, k })
 const Z_POS = {
   logo: { x: 620, y: 462, k: 1 },
   centro: { x: 895, y: 462, k: 1 },
-  frame4: { x: 895, y: 462, k: 2313 / Z_W },
-  frame5: { x: -82, y: -73, k: 4267 / Z_W },
+  // Um único crescimento contínuo até bem além do frame 5, para não haver parada antes de a foto cobrir a tela.
+  final: centrado((4267 / Z_W) * 2.5),
 }
 
 function deveTocar() {
@@ -94,12 +99,10 @@ export default function HomeIntro() {
     setTimeout(() => avancar('fim'), 700)
   }
 
-  const z = passou('cobre') ? Z_POS.frame5 : passou('cresce') ? Z_POS.frame4 : passou('simbolo') ? Z_POS.centro : Z_POS.logo
-  const zTiming = passou('cobre')
-    ? `600ms ${EASE}`
-    : passou('cresce')
-      ? '700ms cubic-bezier(0.6, 0, 0.4, 1)'
-      : `500ms ${EASE} 200ms`
+  const z = passou('cresce') ? Z_POS.final : passou('simbolo') ? Z_POS.centro : Z_POS.logo
+  const zTiming = passou('cresce')
+    ? '1800ms cubic-bezier(0.35, 0, 0.75, 0.15)'
+    : `650ms ${EASE}`
 
   // A mesma geometria do Z, em pixels da tela, para recortar a foto no formato do símbolo.
   const { w, h, s: escala } = tela
@@ -150,17 +153,45 @@ export default function HomeIntro() {
           />
         ))}
 
-        {/* Logo completo: entra à esquerda e desliza para o centro */}
-        <img
-          src="/home/intro-logo.svg"
-          alt=""
+        {/* Logo completo: entra à esquerda e desliza para o centro. Depois o texto "ZIMBEL" desliza
+            para dentro do símbolo e some, e só então o Z segue sozinho para o centro. */}
+        <div
           style={{
-            position: 'absolute', left: 120, top: 462, width: 681, height: 124, maxWidth: 'none',
+            position: 'absolute', left: 120, top: 462, width: 681, height: 124,
             transform: `translateX(${passou('recolhe') ? 500 : 0}px)`,
-            transition: `transform 880ms ${EASE}, opacity 400ms ease`,
-            opacity: passou('simbolo') ? 0 : 1,
+            transition: `transform 880ms ${EASE}`,
           }}
-        />
+        >
+          <img
+            src="/home/intro-logo.svg"
+            alt=""
+            style={{
+              position: 'absolute', left: 0, top: 0, width: 681, height: 124, maxWidth: 'none',
+              clipPath: `inset(0 ${681 - SIMBOLO_W}px 0 0)`,
+              opacity: passou('simbolo') ? 0 : 1,
+            }}
+          />
+          {/* Como no Smart Animate do Figma (frame 2 → 3), tudo converge para o centro num só movimento:
+              a janela do texto acompanha o Z indo ao centro enquanto o texto desliza para dentro dele. */}
+          <div
+            style={{
+              position: 'absolute', left: SIMBOLO_W, top: 0, width: 681 - SIMBOLO_W, height: 124, overflow: 'hidden',
+              transform: `translateX(${passou('simbolo') ? Z_POS.centro.x - Z_POS.logo.x : 0}px)`,
+              transition: `transform 650ms ${EASE}`,
+            }}
+          >
+            <img
+              src="/home/intro-logo.svg"
+              alt=""
+              style={{
+                position: 'absolute', left: -SIMBOLO_W, top: 0, width: 681, height: 124, maxWidth: 'none',
+                transform: `translateX(${passou('simbolo') ? -(681 - SIMBOLO_W) : 0}px)`,
+                opacity: passou('simbolo') ? 0 : 1,
+                transition: `transform 650ms ${EASE}, opacity 550ms ease`,
+              }}
+            />
+          </div>
+        </div>
 
         {/* "Viver bem é o novo luxo" recolhe para a direita */}
         <div
@@ -190,7 +221,7 @@ export default function HomeIntro() {
             position: 'absolute', left: 0, top: 0, width: Z_W, height: 124, maxWidth: 'none',
             transformOrigin: '0 0',
             transform: `translate(${z.x}px, ${z.y}px) scale(${z.k})`,
-            transition: `transform ${zTiming}, opacity 350ms ease`,
+            transition: `transform ${zTiming}, opacity ${passou('cresce') ? '350ms' : '0ms'} ease`,
             opacity: passou('simbolo') && !passou('cresce') ? 1 : 0,
           }}
         />
