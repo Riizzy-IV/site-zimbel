@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { rolarPara } from '../lib/rolagem'
 import HomeIntro from '../components/HomeIntro'
 import HomeHero from '../components/HomeHero'
 import Destaque from '../components/home/Destaque'
@@ -17,7 +18,7 @@ export default function Home() {
     const tryScroll = () => {
       const el = document.querySelector(hash)
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' })
+        rolarPara(el)
       } else if (attempts < 20) {
         attempts += 1
         setTimeout(tryScroll, 50)

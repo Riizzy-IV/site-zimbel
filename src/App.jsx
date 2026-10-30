@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { rolarPara } from './lib/rolagem'
 
 const Home      = lazy(() => import('./pages/Home'))
 const Vertice   = lazy(() => import('./pages/empreendimentos/Vertice'))
@@ -13,7 +14,7 @@ const TodosOsEmpreendimentos = lazy(() => import('./pages/TodosOsEmpreendimentos
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
-    if (!hash) window.scrollTo(0, 0)
+    if (!hash) rolarPara(0, { immediate: true })
   }, [pathname, hash])
   return null
 }

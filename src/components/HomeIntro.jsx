@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useState } from 'react'
 import LinhaDecorativa from './LinhaDecorativa'
+import { pausarRolagem, retomarRolagem, rolarPara } from '../lib/rolagem'
 
 const STAGE_W = 1920
 const STAGE_H = 1080
@@ -64,12 +65,14 @@ export default function HomeIntro() {
     window.addEventListener('wheel', bloquear, { passive: false })
     window.addEventListener('touchmove', bloquear, { passive: false })
     window.addEventListener('keydown', bloquearTecla)
-    window.scrollTo(0, 0)
+    rolarPara(0, { immediate: true })
+    pausarRolagem()
     return () => {
       window.removeEventListener('resize', onResize)
       window.removeEventListener('wheel', bloquear)
       window.removeEventListener('touchmove', bloquear)
       window.removeEventListener('keydown', bloquearTecla)
+      retomarRolagem()
     }
   }, [ativo])
 

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Botao, Cabecalho, LinhaH } from './ui'
+import { pausarRolagem, retomarRolagem } from '../../lib/rolagem'
 import { COR, PAD, TEXT, TRIM } from './tokens'
 
 const FOTOS = [
@@ -48,9 +49,11 @@ function Ampliada({ indice, onFechar, onTrocar }) {
     }
     window.addEventListener('keydown', onTecla)
     document.documentElement.style.overflow = 'hidden'
+    pausarRolagem()
     return () => {
       window.removeEventListener('keydown', onTecla)
       document.documentElement.style.overflow = ''
+      retomarRolagem()
     }
   }, [onFechar, onTrocar])
 

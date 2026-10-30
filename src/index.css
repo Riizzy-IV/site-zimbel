@@ -9,7 +9,6 @@
 html {
   scrollbar-color: #c1c1c1 #f1f1f1;
   transition: scrollbar-color 700ms ease, background-color 700ms ease;
-  scroll-behavior: smooth;
   width: 100%;
   overflow-x: hidden;
 }
@@ -33,6 +32,18 @@ p:last-child {
   max-width: 100vw;
   overflow-x: clip;
   text-align: left;
+}
+
+/* Lenis (rolagem suave) — sem o "overflow: clip" do CSS oficial ao pausar, para a barra de rolagem não sumir */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

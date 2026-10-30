@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import LinhaDecorativa from './LinhaDecorativa'
+import { rolarPara } from '../lib/rolagem'
 
 const DISPLAY = "'Zalando Sans Expanded', sans-serif"
 const TEXT = "'Zalando Sans', sans-serif"
@@ -34,7 +35,7 @@ function HomeHeader({ claro }) {
 
   function ir(item) {
     setAberto(false)
-    if (item.secao) document.getElementById(item.secao)?.scrollIntoView({ behavior: 'smooth' })
+    if (item.secao) rolarPara(document.getElementById(item.secao))
     else navigate(item.rota)
   }
 
@@ -56,7 +57,7 @@ function HomeHeader({ claro }) {
         }}
       >
         {claro && <img src="/home/header-linha.svg" alt="" style={{ position: 'absolute', left: SIDE, right: SIDE, bottom: 0, width: `calc(100% - 2 * ${SIDE})`, height: 1 }} />}
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Zimbel Incorporadora" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex' }}>
+        <button onClick={() => rolarPara(0)} aria-label="Zimbel Incorporadora" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex' }}>
           <img src={claro ? '/home/header-logo-escuro.svg' : '/home/header-logo.svg'} alt="Zimbel Incorporadora" style={{ width: 189, height: claro ? 34 : 32, maxWidth: 'none' }} />
         </button>
 
