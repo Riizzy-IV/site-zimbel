@@ -32,8 +32,12 @@ const Z_POS = {
   final: centrado((4267 / Z_W) * 2.5),
 }
 
+// A abertura toca ao carregar o site (inclusive ao recarregar), mas não ao voltar para a home
+// navegando dentro do site — a variável vive enquanto a página não for recarregada.
+let jaTocouNestaVisita = false
+
 function deveTocar() {
-  return !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  return !jaTocouNestaVisita && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
 
 function medirTela() {
@@ -90,6 +94,7 @@ export default function HomeIntro() {
 
   useEffect(() => {
     if (!tocar) return
+    jaTocouNestaVisita = true
     const timers = TIMELINE.map(([p, t]) => setTimeout(() => avancar(p), t))
     return () => timers.forEach(clearTimeout)
   }, [tocar])
